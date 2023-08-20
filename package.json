@@ -1,0 +1,12 @@
+{
+  "name": "feed-reader",
+  "author": "Robbe Van Petegem <robbe@vanpetegem.me>",
+  "private": true,
+  "devDependencies": {
+  },
+  "dependencies": {
+    "lightningcss": "^1.21.6",
+    "vite": "^4.4.9",
+    "vite-plugin-ruby": "^3.2.2"
+  }
+}

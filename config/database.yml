@@ -1,0 +1,25 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see Rails configuration guide
+  # https://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: feed_reader_development
+  host: <%= ENV['DATABASE_HOST'] || 'localhost' %>
+  username: feed_reader
+  password: feed_reader
+
+test:
+  <<: *default
+  database: feed_reader_test
+  host: <%= ENV['DATABASE_HOST'] || 'localhost' %>
+  username: feed_reader
+  password: feed_reader
+
+production:
+  <<: *default
+  database: <%= ENV['DATABASE_NAME'] || 'feed_reader_production' %>
+  username: feed_reader

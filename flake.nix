@@ -12,7 +12,7 @@
     };
   };
 
-outputs = { self, nixpkgs, flake-utils, devshell }:
+  outputs = { self, nixpkgs, flake-utils, devshell }:
     flake-utils.lib.eachDefaultSystem (system:
       let
         version = "0.1.0";

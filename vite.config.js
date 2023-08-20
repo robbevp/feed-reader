@@ -1,11 +1,9 @@
-import { defineConfig } from 'vite'
-import RubyPlugin from 'vite-plugin-ruby'
+import { defineConfig } from "vite";
+import RubyPlugin from "vite-plugin-ruby";
 
 export default defineConfig({
-  plugins: [
-    RubyPlugin(),
-  ],
+  plugins: [RubyPlugin()],
   css: {
-    transformer: 'lightningcss'
-  }
-})
+    transformer: "lightningcss",
+  },
+});

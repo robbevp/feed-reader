@@ -2,11 +2,30 @@
   "name": "feed-reader",
   "author": "Robbe Van Petegem <robbe@vanpetegem.me>",
   "private": true,
-  "devDependencies": {
+  "scripts": {
+    "lint:css": "stylelint **/*.css --ignore-path .gitignore",
+    "lint:js": "eslint . --ext js,jsx,ts --ignore-path .gitignore"
   },
   "dependencies": {
     "lightningcss": "^1.21.6",
     "vite": "^4.4.9",
     "vite-plugin-ruby": "^3.2.2"
+  },
+  "devDependencies": {
+    "@tree-company/eslint-config": "^0.2.1",
+    "@tree-company/stylelint-config": "^0.2.1",
+    "eslint": "^8.47.0",
+    "prettier": "^2.8.8",
+    "stylelint": "^15.10.3"
+  },
+  "eslintConfig": {
+    "extends": [
+      "@tree-company/eslint-config"
+    ]
+  },
+  "stylelint": {
+    "extends": [
+      "@tree-company/stylelint-config"
+    ]
   }
 }

@@ -1,0 +1,114 @@
+name: CI
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      RAILS_ENV: "test"
+      DATABASE_URL: "postgres://feed_reader:feed_reader@127.0.0.1:5432/feed_reader"
+    services:
+      postgresql:
+        image: postgres
+        env:
+          POSTGRES_DB: feed_reader_test
+          POSTGRES_PASSWORD: "feed_reader"
+          POSTGRES_USER: feed_reader
+        ports:
+        - 5432:5432
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup ruby from /.ruby_version
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+      - name: Set up Node
+        uses: actions/setup-node@v3
+        with: 
+          node-version: 'lts/*'
+          cache: 'yarn'
+      - name: Install dependencies
+        run: yarn install
+      - name: Compile assets
+        run: RAILS_ENV=test bundle exec rails assets:precompile
+      - name: Run tests
+        env:
+          CI: true
+        run: |
+          bundle exec rails db:setup
+          bundle exec rails db:migrate
+          bundle exec rails test
+  lint-ruby:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup ruby from /.ruby_version
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+      - name: Lint with rubocop
+        run: bundle exec rubocop -c .rubocop.yml
+      - name: Lint with erblint
+        run: bundle exec erblint --lint-all
+  lint-node:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Node
+        uses: actions/setup-node@v3
+        with: 
+          node-version: 'lts/*'
+          cache: 'yarn'
+      - name: Install dependencies
+        run: yarn install
+      - name: Lint with eslint
+        run: yarn run lint:js --no-fix --max-warnings 0
+      - name: Lint with stylelint
+        run: yarn run lint:css --max-warnings 0
+  lint-nix:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_ACCESS_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v3
+      - uses: cachix/install-nix-action@v22
+        with:
+          nix_path: nixpkgs=channel:nixos-23.05
+      - name: Lint with nixpkgs-fmt
+        run: nix-shell -p nixpkgs-fmt --run "nixpkgs-fmt --check flake.nix"
+  precompile:
+    runs-on: ubuntu-latest
+    env:
+      RAILS_ENV: "test"
+      DATABASE_URL: "postgres://feed_reader:feed_reader@127.0.0.1:5432/feed_reader"
+    services:
+      postgresql:
+        image: postgres
+        env:
+          POSTGRES_DB: feed_reader_test
+          POSTGRES_PASSWORD: "feed_reader"
+          POSTGRES_USER: feed_reader
+        ports:
+        - 5432:5432
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup ruby from /.ruby_version
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+      - name: Set up Node
+        uses: actions/setup-node@v3
+        with: 
+          node-version: 'lts/*'
+          cache: 'yarn'
+      - name: Install dependencies
+        run: yarn install
+      - name: Compile assets
+        run: bundle exec rails assets:precompile

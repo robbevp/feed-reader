@@ -1,0 +1,50 @@
+version: 2
+
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  groups:
+    'eslint & stylelint config':
+      patterns:
+        - "@tree-company/eslint-config"
+        - "@tree-company/stylelint-config"
+  schedule:
+    interval: daily
+    time: "06:00"
+    timezone: Europe/Brussels
+  open-pull-requests-limit: 10
+  reviewers:
+  - robbevp
+- package-ecosystem: bundler
+  directory: "/"
+  allow:
+    # vite_ruby should be upgraded directly, so that it is updated in sync with the vite-ruby-plugin in package.json
+    - dependency-name: "vite*"
+      dependency-type: "all"
+    # For all other dependencies, we only do updates of direct dependencies
+    - dependency-name: "*"
+      dependency-type: "direct"
+  groups:
+    rubocop:
+      patterns:
+        - "rubocop-*"
+    vite:
+      patterns:
+        - "vite*"
+  schedule:
+    interval: daily
+    time: "06:00"
+    timezone: Europe/Brussels
+  open-pull-requests-limit: 10
+  reviewers:
+  - robbevp
+- package-ecosystem: github-actions
+  directory: "/"
+  schedule:
+    interval: weekly
+    day: saturday
+    time: "06:00"
+    timezone: Europe/Brussels
+  open-pull-requests-limit: 10
+  reviewers:
+  - robbevp

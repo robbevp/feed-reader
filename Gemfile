@@ -7,6 +7,7 @@ gem "rails", "~> 7.0.7"
 
 gem 'bcrypt' # Use Active Model has_secure_password
 gem 'bootsnap', require: false # Reduces boot times through caching; required in config/boot.rb
+gem 'good_job' # Multithreaded, Postgres-based, ActiveJob backend for Ruby on Rails
 gem 'image_processing' # Use Active Storage variants
 gem 'pg' # Use postgresql as the database for Active Record
 gem 'puma' # Use the Puma web server [https://github.com/puma/puma]

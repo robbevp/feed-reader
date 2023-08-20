@@ -265,6 +265,17 @@
     };
     version = "1.12.0";
   };
+  et-orbi = {
+    dependencies = ["tzinfo"];
+    groups = ["default"];
+    platforms = [];
+    source = {
+      remotes = ["https://rubygems.org"];
+      sha256 = "1d2z4ky2v15dpcz672i2p7lb2nc793dasq3yq3660h2az53kss9v";
+      type = "gem";
+    };
+    version = "1.2.7";
+  };
   ffi = {
     groups = ["default"];
     platforms = [];
@@ -274,6 +285,17 @@
       type = "gem";
     };
     version = "1.15.5";
+  };
+  fugit = {
+    dependencies = ["et-orbi" "raabro"];
+    groups = ["default"];
+    platforms = [];
+    source = {
+      remotes = ["https://rubygems.org"];
+      sha256 = "1cm2lrvhrpqq19hbdsxf4lq2nkb2qdldbdxh3gvi15l62dlb5zqq";
+      type = "gem";
+    };
+    version = "1.8.1";
   };
   globalid = {
     dependencies = ["activesupport"];
@@ -285,6 +307,17 @@
       type = "gem";
     };
     version = "1.1.0";
+  };
+  good_job = {
+    dependencies = ["activejob" "activerecord" "concurrent-ruby" "fugit" "railties" "thor"];
+    groups = ["default"];
+    platforms = [];
+    source = {
+      remotes = ["https://rubygems.org"];
+      sha256 = "13jbxcshx90g9gwfnyxs99l639vycd3xwsb0vsmcr0lzfgdcb6z8";
+      type = "gem";
+    };
+    version = "3.17.3";
   };
   i18n = {
     dependencies = ["concurrent-ruby"];
@@ -552,6 +585,16 @@
       type = "gem";
     };
     version = "5.6.7";
+  };
+  raabro = {
+    groups = ["default"];
+    platforms = [];
+    source = {
+      remotes = ["https://rubygems.org"];
+      sha256 = "10m8bln9d00dwzjil1k42i5r7l82x25ysbi45fwyv4932zsrzynl";
+      type = "gem";
+    };
+    version = "1.4.0";
   };
   racc = {
     groups = ["default"];

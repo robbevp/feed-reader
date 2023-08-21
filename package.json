@@ -7,7 +7,7 @@
     "lint:js": "eslint . --ext js,jsx,ts --ignore-path .gitignore"
   },
   "dependencies": {
-    "lightningcss": "^1.21.6",
+    "lightningcss": "^1.21.7",
     "vite": "^4.4.9",
     "vite-plugin-ruby": "^3.2.2"
   },

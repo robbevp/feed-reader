@@ -30,6 +30,12 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
+# Nix devshell data directory ($PRJ_DATA_DIR)
+/.data
+
+# Ignore coverage reports
+coverage/
+
 # Vite Ruby
 /public/vite*
 node_modules

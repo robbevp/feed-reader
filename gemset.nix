@@ -399,10 +399,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "13jbxcshx90g9gwfnyxs99l639vycd3xwsb0vsmcr0lzfgdcb6z8";
+      sha256 = "0n0s5jm8frnzcw0xzvlc5ixjkxh0434xzcxs19qsva61fmsjxb2j";
       type = "gem";
     };
-    version = "3.17.3";
+    version = "3.17.4";
   };
   i18n = {
     dependencies = ["concurrent-ruby"];

@@ -38,3 +38,18 @@ class ActiveSupport::TestCase
     Faker::UniqueGenerator.clear
   end
 end
+
+module SessionHelper
+  def sign_in(user)
+    # NOTE: We currently sent a request to get the proper cookies back, but maybe we can fake/mock this in some way?
+    post sign_in_url, params: { session: { email: user.email, password: user.password } }
+  end
+
+  def sign_out
+    integration_session.cookies[:participant_id] = nil
+  end
+end
+
+class ActionDispatch::IntegrationTest
+  include SessionHelper
+end

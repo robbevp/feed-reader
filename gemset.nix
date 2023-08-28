@@ -1079,6 +1079,17 @@
     };
     version = "2.4.2";
   };
+  view_component = {
+    dependencies = ["activesupport" "concurrent-ruby" "method_source"];
+    groups = ["default"];
+    platforms = [];
+    source = {
+      remotes = ["https://rubygems.org"];
+      sha256 = "1bz86m3bbnhy8j1gmpm76jcgqfyjafqwyxjdd1bk2f5jmgswvqy3";
+      type = "gem";
+    };
+    version = "3.5.0";
+  };
   vite_rails = {
     dependencies = ["railties" "vite_ruby"];
     groups = ["default"];

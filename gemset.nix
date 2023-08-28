@@ -712,6 +712,17 @@
     };
     version = "6.3.1";
   };
+  pundit = {
+    dependencies = ["activesupport"];
+    groups = ["default"];
+    platforms = [];
+    source = {
+      remotes = ["https://rubygems.org"];
+      sha256 = "10diasjqi1g7s19ns14sldia4wl4c0z1m4pva66q4y2jqvks4qjw";
+      type = "gem";
+    };
+    version = "2.3.1";
+  };
   raabro = {
     groups = ["default"];
     platforms = [];

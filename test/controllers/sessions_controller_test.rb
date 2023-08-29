@@ -13,18 +13,18 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test 'should redirect to ... if user id is present' do
-    skip 'TODO when we have other routes'
+  test 'should redirect to `profile_url` if user id is present' do
     sign_in(@user)
 
     get sign_in_url
 
-    assert_redirected_to
+    assert_redirected_to profile_url
   end
 
   test 'should log in user' do
     post sign_in_url, params: { session: { email: 'example@example.org', password: 'password1234' } }
 
+    assert_redirected_to profile_url
     assert_equal @user.id, session[:user_id]
   end
 

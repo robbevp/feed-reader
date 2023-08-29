@@ -44,6 +44,7 @@ class UserTest < ActiveSupport::TestCase
     user = create(:user, password: 'a' * 12)
 
     user.password_challenge = 'b' * 12
+
     assert_not_predicate user, :valid?
     assert_includes user.errors['password_challenge'], 'is invalid'
   end

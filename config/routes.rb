@@ -9,4 +9,7 @@ Rails.application.routes.draw do
   post '/sign_in', to: 'sessions#create'
   delete '/sign_out', to: 'sessions#destroy'
 
+  get '/profile', to: 'users#edit'
+  patch '/profile', to: 'users#update'
+
 end

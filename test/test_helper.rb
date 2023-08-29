@@ -53,3 +53,12 @@ end
 class ActionDispatch::IntegrationTest
   include SessionHelper
 end
+
+module FormComponentsHelper
+  def form_with(object, **opts)
+    lookup_context = ActionView::LookupContext.new(ActionController::Base.view_paths)
+    template = ActionView::Base.new(lookup_context, {}, ApplicationController.new)
+    object_name = object.respond_to?(:model_name) ? object.model_name.param_key : :user
+    ComponentFormBuilder.new(object_name, object, template, opts)
+  end
+end

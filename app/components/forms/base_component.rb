@@ -14,7 +14,7 @@ class Forms::BaseComponent < ViewComponent::Base
   end
 
   def error
-    @error.presence || (form.object && form.object.errors[name])
+    @error.presence || (form.object && form.object.errors.full_messages_for(name).first)
   end
 
   def valid?

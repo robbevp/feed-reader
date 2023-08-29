@@ -12,4 +12,8 @@ Rails.application.routes.draw do
   get '/profile', to: 'users#edit'
   patch '/profile', to: 'users#update'
 
+  # Only allow access to GoodJob dashboard if user is an admin
+  constraints(->(request) { User.find_by(id: request.session[:user_id])&.admin? }) do
+    mount GoodJob::Engine => 'good_job'
+  end
 end

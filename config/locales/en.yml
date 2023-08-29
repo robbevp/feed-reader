@@ -30,4 +30,19 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  layouts:
+    application: 
+      sign_out: Sign out
+  sessions:
+    new:
+      page_title: Sign in
+  users:
+    edit:
+      page_title: Update your profile
+  helpers:
+    submit:
+      session:
+        submit: 'Sign in'
+      user:
+        update: 'Update profile'
+

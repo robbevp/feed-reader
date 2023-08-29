@@ -11,7 +11,14 @@
   </head>
 
   <body class="page">
-    <%= content_tag :h1, yield(:page_title), class: 'page__title' %>
+    <header class="page__header header">
+      <%= content_tag :h1, yield(:page_title), class: 'header__title' %>
+      <nav class="header__nav">
+        <%- if current_user.present? %>
+          <%= link_to t('.sign_out'), sign_out_path, data: { turbo_method: :delete } %>
+        <%- end %>
+      </nav>
+    </header>
     <%= yield %>
   </body>
 </html>

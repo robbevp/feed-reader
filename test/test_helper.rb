@@ -9,6 +9,8 @@ require 'simplecov'
 SimpleCov.start 'rails' do
   enable_coverage :branch
   add_filter 'vendor'
+  add_group 'Components', 'app/components'
+  add_group 'Policies', 'app/policies'
 end
 
 if ENV['CI'].present? && ENV['SKIP_CODECOV'].blank?

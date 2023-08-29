@@ -1058,6 +1058,17 @@
     };
     version = "0.4.0";
   };
+  turbo-rails = {
+    dependencies = ["actionpack" "activejob" "railties"];
+    groups = ["default"];
+    platforms = [];
+    source = {
+      remotes = ["https://rubygems.org"];
+      sha256 = "0vm3iqgr3kxyyz5i09lhvfszp4pw1gw5j5rhhv1gmasv4kq2p3qh";
+      type = "gem";
+    };
+    version = "1.4.0";
+  };
   tzinfo = {
     dependencies = ["concurrent-ruby"];
     groups = ["default"];

@@ -1,0 +1,18 @@
+.form {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.input {
+  display: block;
+}
+
+.input__label {
+  display: block;
+}
+
+.input__field {
+  display: block;
+  margin-top: 0.25rem;
+}

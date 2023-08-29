@@ -186,6 +186,8 @@ GEM
     public_suffix (5.0.3)
     puma (6.3.1)
       nio4r (~> 2.0)
+    pundit (2.3.1)
+      activesupport (>= 3.0.0)
     raabro (1.4.0)
     racc (1.7.1)
     rack (2.2.8)
@@ -272,9 +274,17 @@ GEM
     smart_properties (1.17.0)
     thor (1.2.2)
     timeout (0.4.0)
+    turbo-rails (1.4.0)
+      actionpack (>= 6.0.0)
+      activejob (>= 6.0.0)
+      railties (>= 6.0.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.4.2)
+    view_component (3.5.0)
+      activesupport (>= 5.2.0, < 8.0)
+      concurrent-ruby (~> 1.0)
+      method_source (~> 1.0)
     vite_rails (3.0.15)
       railties (>= 5.1, < 8)
       vite_ruby (~> 3.0, >= 3.2.2)
@@ -316,6 +326,7 @@ DEPENDENCIES
   pg
   pgreset
   puma
+  pundit
   rack-mini-profiler
   rails (~> 7.0.7)
   rubocop
@@ -325,6 +336,8 @@ DEPENDENCIES
   selenium-webdriver
   simplecov
   simplecov-cobertura
+  turbo-rails
+  view_component
   vite_rails
   web-console
   webdrivers

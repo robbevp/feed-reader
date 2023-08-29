@@ -7,6 +7,7 @@
     "lint:js": "eslint . --ext js,jsx,ts --ignore-path .gitignore"
   },
   "dependencies": {
+    "@hotwired/turbo-rails": "^7.3.0",
     "lightningcss": "^1.21.7",
     "vite": "^4.4.9",
     "vite-plugin-ruby": "^3.2.2"

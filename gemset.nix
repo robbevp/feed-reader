@@ -302,10 +302,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0i1xmbsa7mw98ygmgy7w822xa64ihd2k34zdgs40nk75i04aicj7";
+      sha256 = "1h4rpid0d50hikb1yx7apk0vp53qsqgj1cn6rrfqnk580ln4zm5c";
       type = "gem";
     };
-    version = "0.4.0";
+    version = "0.5.0";
   };
   erubi = {
     groups = ["default"];

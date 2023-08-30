@@ -108,7 +108,7 @@ GEM
       reline (>= 0.3.1)
     docile (1.4.0)
     dry-cli (1.0.0)
-    erb_lint (0.4.0)
+    erb_lint (0.5.0)
       activesupport
       better_html (>= 2.0.1)
       parser (>= 2.7.1.4)

@@ -21,6 +21,7 @@ end
 require_relative '../config/environment'
 require 'rails/test_help'
 require 'faker'
+require 'webmock/minitest'
 
 class ActiveSupport::TestCase
   include FactoryBot::Syntax::Methods
@@ -62,5 +63,16 @@ module FormComponentsHelper
     template = ActionView::Base.new(lookup_context, {}, ApplicationController.new)
     object_name = object.respond_to?(:model_name) ? object.model_name.param_key : :user
     ComponentFormBuilder.new(object_name, object, template, opts)
+  end
+end
+
+module FeedHelper
+  def mock_feed(feed, file)
+    feed.expects(:fetch_feed).returns(Feedjira.parse(Rails.root.join(file).read))
+  end
+
+  def mock_all_feeds(file = 'test/fixtures/files/example_feed.xml')
+    io = Feedjira.parse(Rails.root.join(file).read)
+    Feed.any_instance.stubs(:fetch_feed).returns(io)
   end
 end

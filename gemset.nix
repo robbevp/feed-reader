@@ -361,6 +361,17 @@
     };
     version = "3.2.1";
   };
+  feedjira = {
+    dependencies = ["loofah" "sax-machine"];
+    groups = ["default"];
+    platforms = [];
+    source = {
+      remotes = ["https://rubygems.org"];
+      sha256 = "10070szssxmvzxw4jh37yl73jgxs329i7s7bk2x4yhplipyzz7av";
+      type = "gem";
+    };
+    version = "3.2.2";
+  };
   ffi = {
     groups = ["default"];
     platforms = [];
@@ -974,6 +985,16 @@
       type = "gem";
     };
     version = "2.3.2";
+  };
+  sax-machine = {
+    groups = ["default"];
+    platforms = [];
+    source = {
+      remotes = ["https://rubygems.org"];
+      sha256 = "0fhdflwdj8q0gfgz51k3zn1giq24fwvhvji75104rsly0dw2c4d1";
+      type = "gem";
+    };
+    version = "1.3.2";
   };
   selenium-webdriver = {
     dependencies = ["rexml" "rubyzip" "websocket"];

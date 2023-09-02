@@ -4,7 +4,7 @@ FactoryBot.define do
   factory :entry do
     feed
     data { { title: 'Entry title' } }
-    
+
     trait :with_all_details do
       author { Faker::Name.name }
       body { Faker::Lorem.paragraphs(number: 4) }

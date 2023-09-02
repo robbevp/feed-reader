@@ -4,6 +4,6 @@ FactoryBot.define do
   factory :feed do
     user
     name { Faker::Lorem.word }
-    url { Faker::Internet.domain_name }
+    url { Faker::Internet.url }
   end
 end

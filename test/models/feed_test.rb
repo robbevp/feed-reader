@@ -3,8 +3,6 @@
 require 'test_helper'
 
 class FeedTest < ActiveSupport::TestCase
-  include FeedHelper
-
   # Validations
   test 'should not be valid without name' do
     feed = build(:feed, name: nil)
@@ -45,7 +43,8 @@ class FeedTest < ActiveSupport::TestCase
   # Refresh feed
   test 'should create entries when refreshing feed' do
     feed = create(:feed)
-    mock_feed(feed, 'test/fixtures/files/example_feed.xml')
+    stub_request(:any, feed.url)
+      .to_return(body: Rails.root.join('test/fixtures/files/example_feed.xml').read)
 
     assert_difference 'Entry.count' do
       feed.refresh!
@@ -57,7 +56,8 @@ class FeedTest < ActiveSupport::TestCase
   test 'should ignore existing entries based on external id when refreshing feed' do
     feed = create(:feed)
     create(:entry, feed:, external_id: 'urn:uuid:1225c695-cfb8-4ebb-aaaa-80da344efa6a')
-    mock_feed(feed, 'test/fixtures/files/example_feed.xml')
+    stub_request(:any, feed.url)
+      .to_return(body: Rails.root.join('test/fixtures/files/example_feed.xml').read)
 
     assert_no_difference 'Entry.count' do
       feed.refresh!
@@ -69,7 +69,8 @@ class FeedTest < ActiveSupport::TestCase
   test 'should ignore existing entries based on url when refreshing feed' do
     feed = create(:feed)
     create(:entry, feed:, url: 'http://example.org/2023/08/30/entry1')
-    mock_feed(feed, 'test/fixtures/files/entry_without_id.xml')
+    stub_request(:any, feed.url)
+      .to_return(body: Rails.root.join('test/fixtures/files/entry_without_id.xml').read)
 
     assert_no_difference 'Entry.count' do
       feed.refresh!
@@ -79,10 +80,10 @@ class FeedTest < ActiveSupport::TestCase
   end
 
   test 'should follow redirect when feed returns 301' do
-    stub_request(:any, 'https://www.example.com').to_return(status: 301,
-                                                            headers: { 'Location' => 'https://example.be' })
-    stub_request(:any,
-                 'https://example.be').to_return(body: Rails.root.join('test/fixtures/files/example_feed.xml').read)
+    stub_request(:any, 'https://www.example.com')
+      .to_return(status: 301, headers: { 'Location' => 'https://example.be' })
+    stub_request(:any, 'https://example.be')
+      .to_return(body: Rails.root.join('test/fixtures/files/example_feed.xml').read)
 
     feed = create(:feed, url: 'https://www.example.com')
 
@@ -94,10 +95,10 @@ class FeedTest < ActiveSupport::TestCase
   end
 
   test 'should follow redirect when feed returns 302' do
-    stub_request(:any, 'https://www.example.com').to_return(status: 302,
-                                                            headers: { 'Location' => 'https://example.be' })
-    stub_request(:any,
-                 'https://example.be').to_return(body: Rails.root.join('test/fixtures/files/example_feed.xml').read)
+    stub_request(:any, 'https://www.example.com')
+      .to_return(status: 302, headers: { 'Location' => 'https://example.be' })
+    stub_request(:any, 'https://example.be')
+      .to_return(body: Rails.root.join('test/fixtures/files/example_feed.xml').read)
 
     feed = create(:feed, url: 'https://www.example.com')
 
@@ -109,10 +110,10 @@ class FeedTest < ActiveSupport::TestCase
   end
 
   test 'should follow redirect when feed returns path-only redirect' do
-    stub_request(:any, 'https://www.example.com/rss.xml').to_return(status: 302,
-                                                                    headers: { 'Location' => '/feed.atom' })
-    stub_request(:any,
-                 'https://www.example.com/feed.atom').to_return(body: Rails.root.join('test/fixtures/files/example_feed.xml').read)
+    stub_request(:any, 'https://www.example.com/rss.xml')
+      .to_return(status: 302, headers: { 'Location' => '/feed.atom' })
+    stub_request(:any, 'https://www.example.com/feed.atom')
+      .to_return(body: Rails.root.join('test/fixtures/files/example_feed.xml').read)
 
     feed = create(:feed, url: 'https://www.example.com/rss.xml')
 

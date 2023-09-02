@@ -3,11 +3,10 @@
 require 'test_helper'
 
 class RefreshFeedJobTest < ActiveJob::TestCase
-  include FeedHelper
-
   setup do
     @feed = create(:feed)
-    mock_all_feeds
+    stub_request(:any, @feed.url)
+      .to_return(body: Rails.root.join('test/fixtures/files/example_feed.xml').read)
   end
 
   test 'should run refresh on feed' do

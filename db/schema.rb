@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_21_181310) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_30_060706) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
   enable_extension "plpgsql"
@@ -41,6 +41,34 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_21_181310) do
     t.bigint "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+  end
+
+  create_table "entries", force: :cascade do |t|
+    t.jsonb "data", null: false
+    t.text "title"
+    t.text "author"
+    t.text "summary"
+    t.text "body"
+    t.text "external_id"
+    t.datetime "published_at"
+    t.text "url"
+    t.bigint "feed_id", null: false
+    t.datetime "read_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["external_id", "feed_id"], name: "index_entries_on_external_id_and_feed_id", unique: true
+    t.index ["feed_id"], name: "index_entries_on_feed_id"
+  end
+
+  create_table "feeds", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "name", null: false
+    t.text "url", null: false
+    t.datetime "last_fetched_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["url", "user_id"], name: "index_feeds_on_url_and_user_id", unique: true
+    t.index ["user_id"], name: "index_feeds_on_user_id"
   end
 
   create_table "good_job_batches", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -131,4 +159,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_21_181310) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "entries", "feeds"
+  add_foreign_key "feeds", "users"
 end

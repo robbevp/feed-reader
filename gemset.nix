@@ -237,6 +237,17 @@
     };
     version = "1.2.2";
   };
+  crack = {
+    dependencies = ["rexml"];
+    groups = ["default" "test"];
+    platforms = [];
+    source = {
+      remotes = ["https://rubygems.org"];
+      sha256 = "1cr1kfpw3vkhysvkk3wg7c54m75kd68mbm9rs5azdjdq57xid13r";
+      type = "gem";
+    };
+    version = "0.4.5";
+  };
   crass = {
     groups = ["default"];
     platforms = [];
@@ -361,6 +372,17 @@
     };
     version = "3.2.1";
   };
+  feedjira = {
+    dependencies = ["loofah" "sax-machine"];
+    groups = ["default"];
+    platforms = [];
+    source = {
+      remotes = ["https://rubygems.org"];
+      sha256 = "10070szssxmvzxw4jh37yl73jgxs329i7s7bk2x4yhplipyzz7av";
+      type = "gem";
+    };
+    version = "3.2.2";
+  };
   ffi = {
     groups = ["default"];
     platforms = [];
@@ -403,6 +425,16 @@
       type = "gem";
     };
     version = "3.18.1";
+  };
+  hashdiff = {
+    groups = ["default" "test"];
+    platforms = [];
+    source = {
+      remotes = ["https://rubygems.org"];
+      sha256 = "1nynpl0xbj0nphqx1qlmyggq58ms1phf5i03hk64wcc0a17x1m1c";
+      type = "gem";
+    };
+    version = "1.0.1";
   };
   i18n = {
     dependencies = ["concurrent-ruby"];
@@ -649,6 +681,16 @@
       type = "gem";
     };
     version = "1.15.4";
+  };
+  pagy = {
+    groups = ["default"];
+    platforms = [];
+    source = {
+      remotes = ["https://rubygems.org"];
+      sha256 = "06vk6hcp8jfijksf0rfmr47la87raw19mr9gmsp3a112nhi75pvz";
+      type = "gem";
+    };
+    version = "6.0.4";
   };
   parallel = {
     groups = ["default" "development"];
@@ -975,6 +1017,16 @@
     };
     version = "2.3.2";
   };
+  sax-machine = {
+    groups = ["default"];
+    platforms = [];
+    source = {
+      remotes = ["https://rubygems.org"];
+      sha256 = "0fhdflwdj8q0gfgz51k3zn1giq24fwvhvji75104rsly0dw2c4d1";
+      type = "gem";
+    };
+    version = "1.3.2";
+  };
   selenium-webdriver = {
     dependencies = ["rexml" "rubyzip" "websocket"];
     groups = ["test"];
@@ -1133,6 +1185,17 @@
       type = "gem";
     };
     version = "4.2.0";
+  };
+  webmock = {
+    dependencies = ["addressable" "crack" "hashdiff"];
+    groups = ["test"];
+    platforms = [];
+    source = {
+      remotes = ["https://rubygems.org"];
+      sha256 = "0vfispr7wd2p1fs9ckn1qnby1yyp4i1dl7qz8n482iw977iyxrza";
+      type = "gem";
+    };
+    version = "3.19.1";
   };
   websocket = {
     groups = ["default" "test"];

@@ -9,8 +9,10 @@ gem 'rails', '~> 7.0.7'
 
 gem 'bcrypt' # Use Active Model has_secure_password
 gem 'bootsnap', require: false # Reduces boot times through caching; required in config/boot.rb
+gem 'feedjira' # Parse RSS feeds
 gem 'good_job' # Multithreaded, Postgres-based, ActiveJob backend for Ruby on Rails
 gem 'image_processing' # Use Active Storage variants
+gem 'pagy' # Use pagy for pagination
 gem 'pg' # Use postgresql as the database for Active Record
 gem 'puma' # Use the Puma web server [https://github.com/puma/puma]
 gem 'pundit' # Use pundit for easy authorization
@@ -43,4 +45,5 @@ group :test do
   gem 'selenium-webdriver'
   gem 'simplecov', require: false
   gem 'simplecov-cobertura'
+  gem 'webmock'
 end

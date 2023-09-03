@@ -1,0 +1,9 @@
+<%= content_for :page_title, t('.page_title', entry_title: @entry.title) %>
+
+<%- if @entry.read? %>
+  <%= button_to t('.mark_as_unread'), entry_path(@entry, params: { entry: { read: false } }), method: :patch %>
+<%- else %>
+  <%= button_to t('.mark_as_read'), entry_path(@entry, params: { entry: { read: true } }), method: :patch %>
+<%- end %>
+
+<%= render EntryComponent.new(entry: @entry) %>

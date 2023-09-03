@@ -6,11 +6,20 @@
 # Both of these projects are released under the MIT License
 
 class ComponentFormBuilder < ActionView::Helpers::FormBuilder
-  COMPONENT_MAP = {}.freeze
+  COMPONENT_MAP = {
+    string: 'Text'
+  }.freeze
 
-  def input(method, as: nil, **, &block)
-    component = component_klass(method:, as:).new(form: self, name: method, **)
+  def input(method, as: nil, **args, &block)
+    args[:class] = ['form__input', args.delete(:class)].compact.flatten
+    component = component_klass(method:, as:).new(form: self, name: method, **args)
     component.render_in(@template, &block)
+  end
+
+  # Add default class to form submit
+  def submit(value = nil, options = {})
+    options[:class] = ['form__submit', options.delete(:class)].compact.flatten
+    super(value, options)
   end
 
   private
@@ -25,7 +34,7 @@ class ComponentFormBuilder < ActionView::Helpers::FormBuilder
     case input_type
     when :timestamp
       :datetime
-    when :string, :citext, nil
+    when :string, :citext, :text, nil
       attachment?(method:) ? :file : (string_type(method:).presence || input_type.presence || :string)
     else
       input_type

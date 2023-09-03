@@ -21,6 +21,7 @@ end
 require_relative '../config/environment'
 require 'rails/test_help'
 require 'faker'
+require 'webmock/minitest'
 
 class ActiveSupport::TestCase
   include FactoryBot::Syntax::Methods
@@ -45,6 +46,9 @@ module SessionHelper
   def sign_in(user)
     # NOTE: We currently sent a request to get the proper cookies back, but maybe we can fake/mock this in some way?
     post sign_in_url, params: { session: { email: user.email, password: user.password } }
+
+    # We return the user for convinience
+    user
   end
 
   def sign_out

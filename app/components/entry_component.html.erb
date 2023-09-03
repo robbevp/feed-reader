@@ -1,0 +1,17 @@
+<article class="entry">
+  <%= content_tag :h2, title, class: 'entry__title' %>
+  <%= content_tag :span, author, class: 'entry__author' %>
+  <%- if published_at.present? %>
+    <%= content_tag :span, helpers.l(published_at), class: 'entry__published-at' %>
+  <% end %>
+
+  <%= content_tag :div, class: 'entry__summary' do %>
+    <%= helpers.sanitize(summary) %>
+  <% end %>
+  <%= content_tag :div, class: 'entry__body' do %>
+    <%= helpers.sanitize(body) %>
+  <% end %>
+  <%- if url.present? %>
+    <%= link_to t('.go_to_original'), url, class: 'entry__link', target: '_blank', rel: 'noopener noreferrer' %>
+  <% end %>
+</article>

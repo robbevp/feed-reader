@@ -16,6 +16,9 @@ class Entry < ApplicationRecord
   validates :data, presence: true
   validates :external_id, uniqueness: { scope: :feed }
 
+  scope :read, -> { where.not(read_at: nil) }
+  scope :unread, -> { where(read_at: nil) }
+
   def self.from_feedjira_entry(entry)
     attrs = {}
     FEEDJIRA_KEYS_MAP.each_pair do |old_key, new_key|
@@ -30,5 +33,9 @@ class Entry < ApplicationRecord
     else
       url == feedjira_entry.url
     end
+  end
+
+  def read?
+    read_at.present?
   end
 end

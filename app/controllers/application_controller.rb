@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
+  include Pagy::Backend
   include Pundit::Authorization
+
   default_form_builder ::ComponentFormBuilder
 
   helper_method :current_user

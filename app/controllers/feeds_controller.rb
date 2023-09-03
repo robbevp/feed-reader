@@ -4,8 +4,9 @@ class FeedsController < ApplicationController
   before_action :set_feed, only: %i[show edit update destroy]
   def index
     authorize Feed
-    @feeds = policy_scope(Feed).left_joins(:entries).select('feeds.*',
-                                                            'count(*) as entries_count').group(:id).order(:name)
+    @feeds = policy_scope(Feed).left_joins(:entries)
+                               .select('feeds.*', 'count(*) as entries_count')
+                               .group(:id).order(:name)
   end
 
   def new
@@ -27,7 +28,7 @@ class FeedsController < ApplicationController
   end
 
   def show
-    @entries = @feed.entries.order(published_at: :desc)
+    @pagy, @entries = pagy(@feed.entries.order(published_at: :desc))
   end
 
   def edit; end

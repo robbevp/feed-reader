@@ -15,7 +15,12 @@
       <%= content_tag :h1, yield(:page_title), class: 'header__title' %>
       <nav class="header__nav">
         <%- if current_user.present? %>
+          <%= link_to t('.home'), root_path %>
+          <%= link_to t('.feeds'), feeds_path %>
           <%= link_to t('.sign_out'), sign_out_path, data: { turbo_method: :delete } %>
+          <%- if current_user.admin? %>
+            <%= link_to t('.good_job'), good_job_path %>
+          <% end %>
         <%- end %>
       </nav>
     </header>

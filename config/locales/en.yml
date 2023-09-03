@@ -23,6 +23,8 @@ en:
       page_title: '%{feed_name}'
   layouts:
     application: 
+      feeds: All feeds
+      good_job: Good job dashboard
       sign_out: Sign out
   sessions:
     new:

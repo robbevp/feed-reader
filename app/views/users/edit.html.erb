@@ -1,8 +1,8 @@
 <%= content_for :page_title, t('.page_title') %>
 <%= form_with model: @current_user, url: profile_path, class: 'form' do |form| %>
-  <%= form.input :email, class: 'form__input' %>
-  <%= form.input :password, class: 'form__input' %>
-  <%= form.input :password_confirmation, class: 'form__input' %>
-  <%= form.input :password_challenge, class: 'form__input' %>
-  <%= form.submit class: 'form__submit' %>
+  <%= form.input :email %>
+  <%= form.input :password %>
+  <%= form.input :password_confirmation %>
+  <%= form.input :password_challenge %>
+  <%= form.submit %>
 <% end %>

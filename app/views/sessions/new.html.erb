@@ -1,5 +1,5 @@
 <%= content_for :page_title, t('.page_title') %>
-<%= form_with scope: :session, url: sign_in_path, class: 'form' do |form| %>
+<%= form_with scope: :session, class: 'form' do |form| %>
   <%= form.input :email, class: 'form__input' %>
   <%= form.input :password, class: 'form__input' %>
   <%= form.submit class: 'form__submit' %>

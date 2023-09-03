@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     authorize current_user, policy_class: UserPolicy
     if current_user.update(transformed_attributes)
       flash[:success] = t '.success'
-      redirect_to profile_path
+      redirect_to edit_user_path
     else
       flash[:danger] = t '.danger'
       render :edit, status: :unprocessable_entity

@@ -11,12 +11,18 @@ Rails.application.routes.draw do
   resources :entries
 
   # Special routes for sign in/out and profile
-  get '/sign_in', to: 'sessions#new'
-  post '/sign_in', to: 'sessions#create'
-  delete '/sign_out', to: 'sessions#destroy'
+  scope :users do
+    resource :session, only: [], path: '' do
+      get :new, path: '/sign_in', as: :new
+      post :create, path: '/sign_in'
+      delete :destroy, path: '/sign_out', as: :destroy
+    end
 
-  get '/profile', to: 'users#edit'
-  patch '/profile', to: 'users#update'
+
+    resource :user, path: 'profile', only: %i[update] do
+      get :edit, path: ''
+    end
+  end
 
   # Only allow access to GoodJob dashboard if user is an admin
   constraints(->(request) { User.find_by(id: request.session[:user_id])&.admin? }) do

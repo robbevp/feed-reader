@@ -1,5 +1,5 @@
 <%= content_for :page_title, t('.page_title') %>
-<%= form_with model: @current_user, url: profile_path, class: 'form' do |form| %>
+<%= form_with model: @current_user, class: 'form', method: :patch do |form| %>
   <%= form.input :email %>
   <%= form.input :password %>
   <%= form.input :password_confirmation %>

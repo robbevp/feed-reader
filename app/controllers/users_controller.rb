@@ -11,7 +11,6 @@ class UsersController < ApplicationController
       flash[:success] = t '.success'
       redirect_to edit_user_path
     else
-      flash[:danger] = t '.danger'
       render :edit, status: :unprocessable_entity
     end
   end

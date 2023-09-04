@@ -33,7 +33,7 @@ class PasswordsController < ApplicationController
     @user = User.find_by_password_reset_token params[:token]
 
     if @user.nil?
-      flash[:danger] = t '.danger'
+      flash[:danger] = t '.invalid_token'
       redirect_to new_password_path
     end
 

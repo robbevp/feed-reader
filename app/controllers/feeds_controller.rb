@@ -22,7 +22,6 @@ class FeedsController < ApplicationController
       RefreshFeedJob.perform_later(@feed)
       redirect_to @feed
     else
-      flash[:danger] = t '.danger'
       render :new, status: :unprocessable_entity
     end
   end
@@ -38,7 +37,6 @@ class FeedsController < ApplicationController
       flash[:success] = t '.success'
       redirect_to @feed
     else
-      flash[:danger] = t '.danger'
       render :edit, status: :unprocessable_entity
     end
   end

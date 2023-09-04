@@ -1,6 +1,8 @@
 <%= content_for :page_title, t('.page_title') %>
 <%= form_with scope: :session, class: 'form' do |form| %>
-  <%= form.input :email, class: 'form__input' %>
-  <%= form.input :password, class: 'form__input' %>
-  <%= form.submit class: 'form__submit' %>
+  <%= form.input :email %>
+  <%= form.input :password %>
+  <%= form.submit %>
 <% end %>
+
+<%= link_to t('.forgot_password'), new_password_path %>

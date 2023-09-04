@@ -410,10 +410,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0kqm5ndzaybpnpxqiqkc41k4ksyxl41ln8qqr6kb130cdxsf2dxk";
+      sha256 = "1mwlf0jvzgidsgmb6a40p4z8p3a5rkvrf3qdybfx5kzhs64g6b05";
       type = "gem";
     };
-    version = "1.1.0";
+    version = "1.2.0";
   };
   good_job = {
     dependencies = ["activejob" "activerecord" "concurrent-ruby" "fugit" "railties" "thor"];
@@ -421,10 +421,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "08p0440779gh2pzhfrqckizg3grxw8jjgc5ly2zc4ajinjfbzj39";
+      sha256 = "071yilk6iv57yqag0fgk4wmcscwg41p38q0jbw8mdl4qzv5bsi6z";
       type = "gem";
     };
-    version = "3.18.1";
+    version = "3.18.2";
   };
   hashdiff = {
     groups = ["default" "test"];
@@ -718,10 +718,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1zcvxmfa8hxkhpp59fhxyxy1arp70f11zi1jh9c7bsdfspifb7kb";
+      sha256 = "0pfj771p5a29yyyw58qacks464sl86d5m3jxjl5rlqqw2m3v5xq4";
       type = "gem";
     };
-    version = "1.5.3";
+    version = "1.5.4";
   };
   pgreset = {
     groups = ["development"];
@@ -959,10 +959,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1gm31ny25cpw9mwbwfxbg3wxzqkcykxk4pwxwdwbvxsc2yjh3fw7";
+      sha256 = "0r0bif9fssw7jyxsbnxa5rqnihb9ips0jak8c9y8yx3xg3q3d9xx";
       type = "gem";
     };
-    version = "0.31.0";
+    version = "0.31.1";
   };
   rubocop-performance = {
     dependencies = ["rubocop" "rubocop-ast"];

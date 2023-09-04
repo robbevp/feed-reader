@@ -38,4 +38,7 @@ en:
         submit: 'Sign in'
       user:
         update: 'Update profile'
+  user_mailer:
+    reset_password:
+      subject: 'Reset your password'
 

@@ -45,7 +45,7 @@ end
 module SessionHelper
   def sign_in(user)
     # NOTE: We currently sent a request to get the proper cookies back, but maybe we can fake/mock this in some way?
-    post sign_in_url, params: { session: { email: user.email, password: user.password } }
+    post session_url, params: { session: { email: user.email, password: user.password } }
 
     # We return the user for convinience
     user

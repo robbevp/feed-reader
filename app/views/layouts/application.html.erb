@@ -17,13 +17,20 @@
         <%- if current_user.present? %>
           <%= link_to t('.home'), root_path %>
           <%= link_to t('.feeds'), feeds_path %>
-          <%= link_to t('.sign_out'), sign_out_path, data: { turbo_method: :delete } %>
+          <%= link_to t('.sign_out'), destroy_session_path, data: { turbo_method: :delete } %>
           <%- if current_user.admin? %>
             <%= link_to t('.good_job'), good_job_path %>
           <% end %>
         <%- end %>
       </nav>
     </header>
-    <%= yield %>
+    <main class="page__main">
+      <div class="page__messages">
+        <% flash.each do |type, msg| %>
+          <%= content_tag :span, msg, class: ['message', "message--#{type}"] %>
+        <% end %>
+      </div>
+      <%= yield %>
+    </main>
   </body>
 </html>

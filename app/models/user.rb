@@ -19,6 +19,28 @@ class User < ApplicationRecord
   # NOTE: Delete when upgrading to rails 7.1
   validate :check_password_challenge
 
+  # Reset password
+  # NOTE: Replace with `generates_token_for` when upgrading to rails 7.1
+  def self.token_verifier
+    @token_verifier ||= Rails.application.message_verifier('feed_reader/user_token')
+  end
+
+  def self.find_by_password_reset_token(password_reset_token)
+    payload = token_verifier.verified(password_reset_token)
+    user = find_by(id: payload && payload[0])
+    return nil if user.nil?
+
+    salt = BCrypt::Password.new(user.password_digest).salt[-10..]
+    user if payload == [user.id, salt]
+  end
+
+  def password_reset_token(expires_in: nil)
+    # We use the current password digest to generate a token
+    # This way a changed password, will cause the token to be invalid
+    salt = BCrypt::Password.new(password_digest).salt[-10..]
+    self.class.token_verifier.generate([id, salt], expires_in:)
+  end
+
   private
 
   def normalize_email

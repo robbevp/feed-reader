@@ -1,8 +1,6 @@
 <%= content_for :page_title, t('.page_title') %>
-<%= form_with model: @current_user, class: 'form', method: :patch do |form| %>
-  <%= form.input :email %>
+<%= form_with scope: :password, url: password_url(token: params[:token]), method: :patch, class: 'form' do |form| %>
   <%= form.input :password %>
   <%= form.input :password_confirmation %>
-  <%= form.input :password_challenge %>
   <%= form.submit %>
 <% end %>

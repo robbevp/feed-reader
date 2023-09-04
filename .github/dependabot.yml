@@ -27,7 +27,11 @@ updates:
   groups:
     rubocop:
       patterns:
+        - "rubocop"
         - "rubocop-*"
+    sentry:
+      patterns:
+        - "sentry-*"
     vite:
       patterns:
         - "vite*"

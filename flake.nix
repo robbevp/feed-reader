@@ -49,19 +49,20 @@
               name = "source";
             };
 
-            buildInputs = [ pkgs.nodejs-18_x ];
+            buildInputs = [ pkgs.yarn ];
 
             buildPhase = ''
-              # Set version
+              # 1. Set revision
               echo ${self.rev or ""} > REVISION
 
-              # Compile bootsnap cache
+              # 2. Compile bootsnap cache
               ${gems}/bin/bundle exec bootsnap precompile --gemfile app/ lib/
 
-              # Compile assets 
+              # 3. Compile assets 
               ln -s ${node-modules}/node_modules .
+
               # We need to compile with the production flag, so vite_rails compiles to the right folder
-              # We also need to provide rails with _some_ SECRET_KEY_BASE, so just provide a dummy value
+              # We also need to provide rails with _some_ SECRET_KEY_BASE, so we just provide a dummy value
               SECRET_KEY_BASE=abc RAILS_ENV=production ${gems}/bin/bundle exec rails assets:precompile
               rm node_modules
             '';

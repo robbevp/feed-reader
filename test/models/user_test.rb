@@ -3,6 +3,7 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
+  # Validations
   test 'should not be valid without an email' do
     user = build(:user, email: nil)
 
@@ -47,5 +48,18 @@ class UserTest < ActiveSupport::TestCase
 
     assert_not_predicate user, :valid?
     assert_includes user.errors['password_challenge'], 'is invalid'
+  end
+
+  # Reset password
+  test 'should be able to generate reset password token and find by it' do
+    user = create(:user, password: 'a' * 12)
+    token = user.password_reset_token
+
+    assert_equal user, User.find_by_password_reset_token(token)
+
+    user.update(password: 'b' * 12)
+
+    assert_nil User.find_by_password_reset_token(token)
+    assert_nil User.find_by_password_reset_token('abc--123')
   end
 end

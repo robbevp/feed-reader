@@ -29,6 +29,10 @@ en:
   sessions:
     new:
       page_title: Sign in
+      forgot_password: Forgotten your password?
+  passwords:
+    new:
+      page_title: Reset password
   users:
     edit:
       page_title: Update your profile
@@ -36,6 +40,8 @@ en:
     submit:
       session:
         submit: 'Sign in'
+      password:
+        submit: 'Submit'
       user:
         update: 'Update profile'
   user_mailer:

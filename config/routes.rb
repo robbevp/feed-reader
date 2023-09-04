@@ -18,6 +18,7 @@ Rails.application.routes.draw do
       delete :destroy, path: '/sign_out', as: :destroy
     end
 
+    resource :password, only: %i[new create edit update]
 
     resource :user, path: 'profile', only: %i[update] do
       get :edit, path: ''

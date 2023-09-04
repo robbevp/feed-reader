@@ -1,0 +1,6 @@
+<%= content_for :page_title, t('.page_title') %>
+<%= form_with scope: :password, url: password_url(token: params[:token]), method: :patch, class: 'form' do |form| %>
+  <%= form.input :password %>
+  <%= form.input :password_confirmation %>
+  <%= form.submit %>
+<% end %>

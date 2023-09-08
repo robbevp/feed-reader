@@ -1181,10 +1181,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1hrkaj4131rh3kq519gkn2lrlpm22f6q5ys1b5fk0v9xm1bm1w78";
+      sha256 = "087y4byl2s3fg0nfhix4s0r25cv1wk7d2j8n5324waza21xg7g77";
       type = "gem";
     };
-    version = "4.2.0";
+    version = "4.2.1";
   };
   webmock = {
     dependencies = ["addressable" "crack" "hashdiff"];

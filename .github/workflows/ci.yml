@@ -83,7 +83,7 @@ jobs:
         with:
           nix_path: nixpkgs=channel:nixos-23.05
       - name: Lint with nixpkgs-fmt
-        run: nix-shell -p nixpkgs-fmt --run "nixpkgs-fmt --check flake.nix"
+        run: nix-shell -p nixpkgs-fmt --run "nixpkgs-fmt --check flake.nix module.nix"
   precompile:
     runs-on: ubuntu-latest
     env:

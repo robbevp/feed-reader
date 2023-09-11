@@ -8,14 +8,14 @@
   },
   "dependencies": {
     "@hotwired/turbo-rails": "^7.3.0",
-    "lightningcss": "^1.21.7",
+    "lightningcss": "^1.21.8",
     "vite": "^4.4.9",
     "vite-plugin-ruby": "^3.2.2"
   },
   "devDependencies": {
     "@tree-company/eslint-config": "^0.2.1",
     "@tree-company/stylelint-config": "^0.2.1",
-    "eslint": "^8.47.0",
+    "eslint": "^8.49.0",
     "prettier": "^2.8.8",
     "stylelint": "^15.10.3"
   },

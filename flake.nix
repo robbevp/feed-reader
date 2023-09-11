@@ -64,7 +64,7 @@
 
                 # We need to compile with the production flag, so vite_rails compiles to the right folder
                 # We also need to provide rails with _some_ SECRET_KEY_BASE, so we just provide a dummy value
-                SECRET_KEY_BASE=abc RAILS_ENV=production ${gems}/bin/bundle exec rails assets:precompile
+                RAILS_ENV=production ${gems}/bin/bundle exec vite build
                 rm node_modules
               '';
 

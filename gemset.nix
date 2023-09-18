@@ -970,10 +970,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1v3a2g3wk3aqa0k0zzla10qkxlc625zkj3yf4zcsybs86r5bm4xn";
+      sha256 = "1pzsrnjmrachdjxzl9jpw47cydicn3408vgdg3a4bss4v5r42rjj";
       type = "gem";
     };
-    version = "1.19.0";
+    version = "1.19.1";
   };
   rubocop-rails = {
     dependencies = ["activesupport" "rack" "rubocop"];

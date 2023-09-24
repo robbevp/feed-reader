@@ -812,10 +812,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1a62439xwn5v6hsl9s11hdk4wj58czhcbg7lminv23mnkc0ca147";
+      sha256 = "12jw7401j543fj8cc83lmw72d8k6bxvkp9rvbifi88hh01blnsj4";
       type = "gem";
     };
-    version = "0.7.6";
+    version = "0.7.7";
   };
   rack-test = {
     dependencies = ["rack"];
@@ -1159,10 +1159,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0q7qbi3npw47xza8spvd8ni0x0ahjb6lkd12y9a4pqppxn555v5q";
+      sha256 = "069l979flw79b8vrvjfn8y31pmfs96n03c5vrp6qq7bdkk00jhdf";
       type = "gem";
     };
-    version = "3.0.15";
+    version = "3.0.16";
   };
   vite_ruby = {
     dependencies = ["dry-cli" "rack-proxy" "zeitwerk"];

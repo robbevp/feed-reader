@@ -959,10 +959,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "048431yqggvjnixkny15f4xqh9ldphwmldapnagr5mg0czs4g3k9";
+      sha256 = "1znljj99mcx4mpvcvs06zn1wi4px1qbqp5n6z71awhmk0lmqqylr";
       type = "gem";
     };
-    version = "0.32.1";
+    version = "0.32.2";
   };
   rubocop-performance = {
     dependencies = ["rubocop" "rubocop-ast"];

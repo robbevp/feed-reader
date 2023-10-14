@@ -4,10 +4,13 @@ updates:
 - package-ecosystem: npm
   directory: "/"
   groups:
-    'eslint & stylelint config':
+    linting:
       patterns:
         - "@tree-company/eslint-config"
         - "@tree-company/stylelint-config"
+        - "prettier"
+        - "eslint"
+        - "stylelint"
   schedule:
     interval: daily
     time: "06:00"

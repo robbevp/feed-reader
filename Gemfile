@@ -20,6 +20,12 @@ gem 'turbo-rails' # Use Turbo for progressive enhancement of requests
 gem 'view_component' # Use ViewComponent to replace partials
 gem 'vite_rails' # Use ViteRails to compile assets
 
+group :production do
+  # Report issues in production
+  gem 'sentry-rails'
+  gem 'sentry-ruby'
+end
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri mingw x64_mingw]

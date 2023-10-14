@@ -1,7 +1,8 @@
 {
   "name": "feed-reader",
-  "author": "Robbe Van Petegem <robbe@vanpetegem.me>",
+  "author": "Robbe Van Petegem <git@robbevp.be>",
   "private": true,
+  "version": "0.0.1",
   "scripts": {
     "lint:css": "stylelint **/*.css --ignore-path .gitignore",
     "lint:js": "eslint . --ext js,jsx,ts --ignore-path .gitignore"

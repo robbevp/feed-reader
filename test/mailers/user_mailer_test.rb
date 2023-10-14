@@ -25,11 +25,11 @@ class UserMailerTest < ActionMailer::TestCase
     # Text part
     match = CGI.unescape(mail.text_part.body.to_s).match(/#{Regexp.quote base_path}(#{signed_id_match})/)
 
-    assert_equal @user, User.find_by_password_reset_token(match[1])
+    assert_equal @user, User.find_by_token_for(:password_reset, match[1])
 
     # HTML part
     match = CGI.unescape(mail.html_part.body.to_s).match(/#{Regexp.quote base_path}(#{signed_id_match})/)
 
-    assert_equal @user, User.find_by_password_reset_token(match[1])
+    assert_equal @user, User.find_by_token_for(:password_reset, match[1])
   end
 end

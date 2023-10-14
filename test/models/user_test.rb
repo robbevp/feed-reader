@@ -53,13 +53,13 @@ class UserTest < ActiveSupport::TestCase
   # Reset password
   test 'should be able to generate reset password token and find by it' do
     user = create(:user, password: 'a' * 12)
-    token = user.password_reset_token
+    token = user.generate_token_for :password_reset
 
-    assert_equal user, User.find_by_password_reset_token(token)
+    assert_equal user, User.find_by_token_for(:password_reset, token)
 
     user.update(password: 'b' * 12)
 
-    assert_nil User.find_by_password_reset_token(token)
-    assert_nil User.find_by_password_reset_token('abc--123')
+    assert_nil User.find_by_token_for(:password_reset, token)
+    assert_nil User.find_by_token_for(:password_reset, 'abc--123')
   end
 end

@@ -62,7 +62,7 @@ Rails/ActionOrder:
     - destroy
 Rails/DynamicFindBy:
   Enabled: true
-  AllowedMethods: [find_by_password_reset_token] # We add the methods we define ourselves
+  AllowedMethods: [] # We add the methods we define ourselves
 
 Style/Documentation:
   Enabled: false

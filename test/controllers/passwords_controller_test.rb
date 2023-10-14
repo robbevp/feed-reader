@@ -33,7 +33,7 @@ class PasswordsControllerTest < ActionDispatch::IntegrationTest
 
   # Edit
   test 'should be able to get edit with valid token' do
-    token = @user.password_reset_token
+    token = @user.generate_token_for :password_reset
 
     get edit_password_url, params: { token: }
 
@@ -41,7 +41,8 @@ class PasswordsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should redirect from edit when token is invalid' do
-    token = @user.password_reset_token(expires_in: 0.seconds)
+    token = @user.generate_token_for :password_reset
+    travel_to 61.minutes.from_now
 
     get edit_password_url, params: { token: }
 
@@ -50,7 +51,7 @@ class PasswordsControllerTest < ActionDispatch::IntegrationTest
 
   # Update
   test 'should be able to set new password with valid token' do
-    token = @user.password_reset_token
+    token = @user.generate_token_for :password_reset
 
     assert_changes '@user.reload.password_digest' do
       patch password_url, params: { token:, password: { password: 'a' * 12, password_confirmation: 'a' * 12 } }
@@ -60,7 +61,8 @@ class PasswordsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should redirect from update when token is invalid' do
-    token = @user.password_reset_token(expires_in: 0.seconds)
+    token = @user.generate_token_for :password_reset
+    travel_to 61.minutes.from_now
 
     patch password_url, params: { token: }
 
@@ -68,7 +70,7 @@ class PasswordsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should return edit if user is invalid' do
-    token = @user.password_reset_token
+    token = @user.generate_token_for :password_reset
 
     assert_no_changes '@user.reload.password_digest' do
       patch password_url, params: { token:, password: { password: 'a' * 12, password_confirmation: 'b' * 12 } }
@@ -78,7 +80,7 @@ class PasswordsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should return edit if user tries to skip confirmation' do
-    token = @user.password_reset_token
+    token = @user.generate_token_for :password_reset
 
     assert_no_changes '@user.reload.password_digest' do
       patch password_url, params: { token:, password: { password: 'a' * 12 } }

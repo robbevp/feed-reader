@@ -4,7 +4,7 @@ class UserMailer < ApplicationMailer
   before_action :set_user
 
   def reset_password
-    @token = @user.password_reset_token(expires_in: 1.hour)
+    @token = @user.generate_token_for(:password_reset)
     mail to: @user.email
   end
 

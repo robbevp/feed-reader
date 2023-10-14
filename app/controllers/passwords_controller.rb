@@ -30,7 +30,7 @@ class PasswordsController < ApplicationController
   private
 
   def set_user
-    @user = User.find_by_password_reset_token params[:token]
+    @user = User.find_by_token_for :password_reset, params[:token]
 
     if @user.nil?
       flash[:danger] = t '.invalid_token'

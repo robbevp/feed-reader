@@ -1,0 +1,16 @@
+.entry {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.entry__title {
+  margin-bottom: 0.25rem;
+}
+
+.entry__body {
+  & img {
+    max-width: 100%;
+    object-fit: contain;
+  }
+}

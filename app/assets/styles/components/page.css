@@ -1,0 +1,30 @@
+.page {
+  max-width: var(--screen-sm);
+  margin-block: 1.5rem;
+  margin-inline: auto;
+  padding-inline: 2rem;
+}
+
+@media (--screen-md) {
+  .page {
+    max-width: var(--screen-md);
+  }
+}
+
+@media (--screen-lg) {
+  .page {
+    max-width: var(--screen-lg);
+  }
+}
+
+@media (--screen-xl) {
+  .page {
+    max-width: var(--screen-xl);
+  }
+}
+
+@media (--screen-2xl) {
+  .page {
+    max-width: var(--screen-2xl);
+  }
+}

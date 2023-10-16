@@ -52,7 +52,7 @@ module SessionHelper
   end
 
   def sign_out
-    integration_session.cookies[:participant_id] = nil
+    session[:user_id] = nil
   end
 end
 

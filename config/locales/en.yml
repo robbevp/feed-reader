@@ -1,12 +1,17 @@
 en:
+  application_controller:
+    helpers:
+      user_not_authorized:
+        forbidden: "You are not authorized to do this"
+        sign_in: "Please sign in first"
   entries:
     index:
       actions: Actions
       page_title: Overview
-      published_at_unknown: 'Unknown'
+      published_at_unknown: "Unknown"
       show: Show
     show:
-      page_title: '%{entry_title}'
+      page_title: "%{entry_title}"
       mark_as_read: Mark as read
       mark_as_unread: Mark as unread
   feeds:
@@ -21,18 +26,18 @@ en:
       page_title: Add new feed
       show: Show
     create:
-      success: 'Created feed'
+      success: "Created feed"
     destroy:
-      success: 'Deleted feed'
+      success: "Deleted feed"
     edit:
       page_title: Edit feed
     show:
-      page_title: '%{feed_name}'
+      page_title: "%{feed_name}"
       actions: Actions
     update:
       success: Updated feed
   layouts:
-    application: 
+    application:
       feeds: All feeds
       good_job: Good job dashboard
       home: Home
@@ -43,28 +48,27 @@ en:
       forgot_password: Forgotten your password?
   passwords:
     create:
-      success: 'You will receive an email with a link to reset your password'
+      success: "You will receive an email with a link to reset your password"
     edit:
       page_title: Set a new password
-    invalid_token: 'Your token is no longer valid. Please request a new one.'
+    invalid_token: "Your token is no longer valid. Please request a new one."
     new:
       page_title: Reset password
     update:
-      success: 'Your password has been changed.'
+      success: "Your password has been changed."
   users:
     edit:
       page_title: Update your profile
     update:
-      success: 'Your account was updated.'
+      success: "Your account was updated."
   helpers:
     submit:
       session:
-        submit: 'Sign in'
+        submit: "Sign in"
       password:
-        submit: 'Submit'
+        submit: "Submit"
       user:
-        update: 'Update profile'
+        update: "Update profile"
   user_mailer:
     reset_password:
-      subject: 'Reset your password'
-
+      subject: "Reset your password"

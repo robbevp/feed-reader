@@ -6,7 +6,7 @@ class Forms::TextInputComponentTest < ViewComponent::TestCase
   include FormComponentsHelper
 
   setup do
-    @object = build(:feed, name: 'My blog')
+    @object = build(:subscription, name: 'My blog')
     @form = form_with(@object)
   end
 

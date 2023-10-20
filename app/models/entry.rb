@@ -11,10 +11,10 @@ class Entry < ApplicationRecord
     url: :url
   }.freeze
 
-  belongs_to :feed, inverse_of: :entries
+  belongs_to :subscription, inverse_of: :entries
 
   validates :data, presence: true
-  validates :external_id, uniqueness: { scope: :feed }
+  validates :external_id, uniqueness: { scope: :subscription }
 
   scope :read, -> { where.not(read_at: nil) }
   scope :unread, -> { where(read_at: nil) }
@@ -38,4 +38,6 @@ class Entry < ApplicationRecord
   def read?
     read_at.present?
   end
+
+  delegate :user_id, to: :subscription
 end

@@ -1,0 +1,13 @@
+<%# locals: (subscription:) -%>
+
+<%= form_with model: subscription, class: 'form' do |form| %>
+  <%= form.hidden_field :subscribable_type, value: 'RssFeed' %>
+
+  <%= form.input :name %>
+
+  <%= form.fields_for :subscribable, form.object.subscribable.presence || RssFeed.new do |fields| %>
+    <%= fields.input :url %>
+  <% end %>
+
+  <%= form.submit %>
+<% end %>

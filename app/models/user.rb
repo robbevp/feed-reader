@@ -7,7 +7,8 @@ class User < ApplicationRecord
     BCrypt::Password.new(password_digest).salt.last(10)
   end
 
-  has_many :feeds, dependent: :destroy
+  has_many :subscriptions, dependent: :destroy
+  has_many :entries, through: :subscriptions
 
   normalizes :email, with: ->(email) { email&.strip&.downcase }
 

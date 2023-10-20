@@ -14,7 +14,7 @@
   <tbody class="table__body">
     <%- @entries.each do |entry| %>
       <tr class="table__row">
-        <%= content_tag :td, entry.feed.name, class: 'table__cell' %>
+        <%= content_tag :td, entry.subscription.name, class: 'table__cell' %>
         <%= content_tag :td, entry.title, class: 'table__cell' %>
         <%= content_tag :td, entry.author, class: 'table__cell' %>
         <%= content_tag :td, entry.published_at.present? ? l(entry.published_at) : t('.published_at_unknown'), class: 'table__cell' %>

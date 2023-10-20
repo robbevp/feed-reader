@@ -14,31 +14,31 @@ en:
       page_title: "%{entry_title}"
       mark_as_read: Mark as read
       mark_as_unread: Mark as unread
-  feeds:
+  subscriptions:
     index:
-      page_title: Feeds
+      page_title: Subscriptions
       actions: Actions
       add_new: Add new
       not_yet_fetched: Not yet fetched
       show: Show
       edit: Edit
     new:
-      page_title: Add new feed
+      page_title: Add new subscription
       show: Show
     create:
-      success: "Created feed"
+      success: "Created subscription"
     destroy:
-      success: "Deleted feed"
+      success: "Deleted subscription"
     edit:
-      page_title: Edit feed
+      page_title: Edit subscription
     show:
-      page_title: "%{feed_name}"
+      page_title: "%{subscription_name}"
       actions: Actions
     update:
-      success: Updated feed
+      success: Updated subscription
   layouts:
     application:
-      feeds: All feeds
+      subscriptions: All subscriptions
       good_job: Good job dashboard
       home: Home
       sign_out: Sign out

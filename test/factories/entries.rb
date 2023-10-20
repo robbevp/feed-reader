@@ -2,7 +2,7 @@
 
 FactoryBot.define do
   factory :entry do
-    feed
+    subscription
     data { { title: 'Entry title' } }
 
     trait :with_all_details do

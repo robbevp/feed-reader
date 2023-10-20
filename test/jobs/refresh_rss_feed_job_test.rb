@@ -2,9 +2,9 @@
 
 require 'test_helper'
 
-class RefreshFeedJobTest < ActiveJob::TestCase
+class RefreshRssFeedJobTest < ActiveJob::TestCase
   setup do
-    @feed = create(:feed)
+    @feed = create(:rss_feed)
     stub_request(:any, @feed.url)
       .to_return(body: Rails.root.join('test/fixtures/files/example_feed.xml').read)
   end
@@ -12,7 +12,7 @@ class RefreshFeedJobTest < ActiveJob::TestCase
   test 'should run refresh on feed' do
     assert_difference 'Entry.count' do
       assert_changes '@feed.reload.last_fetched_at' do
-        RefreshFeedJob.perform_now(@feed)
+        RefreshRssFeedJob.perform_now(@feed)
       end
     end
   end

@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   root 'entries#index'
 
   # Resource based routes
-  resources :feeds
+  resources :subscriptions
   resources :entries
 
   # Special routes for sign in/out and profile

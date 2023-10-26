@@ -430,10 +430,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1cm2lrvhrpqq19hbdsxf4lq2nkb2qdldbdxh3gvi15l62dlb5zqq";
+      sha256 = "08fjxnzqvql8mg8wbpddg6fl9lrsp38dwhiyfpfsz550524f2ap9";
       type = "gem";
     };
-    version = "1.8.1";
+    version = "1.9.0";
   };
   globalid = {
     dependencies = ["activesupport"];
@@ -452,10 +452,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0isy0q1wxqswgdiaf4gsk0f8h2i7zsrh6x657clmzkyb5rzxc3hv";
+      sha256 = "1m16pr853gqy9lmy98ijkiv0kmw06w2jhqb77haa2g7smvj16gbx";
       type = "gem";
     };
-    version = "3.19.4";
+    version = "3.20.0";
   };
   hashdiff = {
     groups = ["default" "test"];

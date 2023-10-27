@@ -8,8 +8,8 @@
   <%= content_tag :div, class: 'entry__summary' do %>
     <%= helpers.sanitize(summary) %>
   <% end %>
-  <%= content_tag :div, class: 'entry__body' do %>
-    <%= helpers.sanitize(body) %>
+  <% if body? %>
+    <%= content_tag :iframe, '', sandbox: 'allow-same-origin', srcdoc: body, class: 'entry__body', height: '500px', data: { sprinkles_component: 'resize-iframe' } %>
   <% end %>
   <%- if url.present? %>
     <%= link_to t('.go_to_original'), url, class: 'entry__link', target: '_blank', rel: 'noopener noreferrer' %>

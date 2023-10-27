@@ -18,7 +18,7 @@ class NewsletterMailbox < ApplicationMailbox
   def set_newsletter
     match_data = mail.to.first.match(/newsletter-(\d+)\+(\h+)@/)
     @newsletter = Newsletter.find_by(id: match_data[1], public_id: match_data[2])
-    bounced! unless @newsletter.present?
+    bounced! if @newsletter.blank?
   end
 
   def mail_body

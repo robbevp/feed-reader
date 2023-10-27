@@ -16,7 +16,7 @@
       <tr class="table__row">
         <%= content_tag :td, subscription.name, class: 'table__cell' %>
         <%= content_tag :td, subscription.entries_count, class: 'table__cell' %>
-        <%= content_tag :td, subscription.subscribable.last_fetched_at.present? ? l(subscription.subscribable.last_fetched_at) : t('.not_yet_fetched'), class: 'table__cell' %>
+        <%= content_tag :td, subscription.last_fetched_info, class: 'table__cell' %>
         <%= content_tag :td, class: 'table__cell' do %>
           <%= link_to t('.show'), subscription, class: 'table__link' %>
           <%= link_to t('.edit'), [:edit, subscription], class: 'table__link' %>

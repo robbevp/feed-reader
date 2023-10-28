@@ -53,7 +53,7 @@ let
   '';
   relayMailScript = pkgs.writeShellScript "feed-reader-mail-relay" ''
     ${exports}
-    export $(cat ${cfg.environmentFile} | xargs)
+    export $(${pkgs.coreutils}/bin/cat ${cfg.environmentFile} | ${pkgs.findutils}/bin/xargs)
     cd ${feed-reader}
     ${feed-reader.env}/bin/bundle exec rails action_mailbox:ingress:postfix URL='https://${cfg.hostname}/rails/action_mailbox/relay/inbound_emails' INGRESS_PASSWORD=$RAILS_INBOUND_EMAIL_PASSWORD
   '';
@@ -169,7 +169,9 @@ in
 
       inboundDomain = mkOption {
         description = ''
-          The mail domain on which you want to receive emails
+          The mail domain on which you want to receive emails.
+
+          This will install postfix on mail.DOMAIN.
         '';
         example = "mail.example.com";
         type = types.str;
@@ -205,32 +207,45 @@ in
       }];
     };
 
+    # # Allow postfix user to run our `mailRelayScript` as `feed_reader`
+    # security.sudo.extraRules = [
+    #   { users = [ "postfix" ]; runAs = "feed_reader:feed_reader"; commands = [ "${relayMailScript}" ]; }
+    # ];
+    # security.wrappers = {
+    #   pipe = { setuid = true; owner = "postfix"; group = "postfix"; source = "${pkgs.postfix}/libexec/postfix/pipe"; };
+    # };
+
     services.postfix =
       let
         certDir = config.security.acme.certs."${cfg.mailer.inboundDomain}".directory;
       in
       {
         enable = true;
-        hostname = cfg.mailer.inboundDomain;
+        hostname = "mail.${cfg.mailer.inboundDomain}";
         virtual = ''
           @${cfg.mailer.inboundDomain} feed_reader@${cfg.mailer.inboundDomain}
         '';
         transport = ''
           ${cfg.mailer.inboundDomain} forward_to_feed_reader:
         '';
+        relayDomains = [
+          cfg.mailer.inboundDomain
+        ];
         masterConfig.forward_to_feed_reader = {
           command = "pipe";
+          privileged = true;
           args = [
             # See pipe manual for details on these settings https://www.postfix.org/pipe.8.html
-            "chroot=${feed-reader}"
             "flags=Xhq"
-            "user=feed_reader:feed_reader"
+            "user=feed_reader"
             "argv=${relayMailScript}"
           ];
         };
         sslCert = "${certDir}/cert.pem";
         sslKey = "${certDir}/key.pem";
       };
+
+    networking.firewall.allowedTCPPorts = [ 25 ];
 
     systemd.tmpfiles.rules = [
       "d /run/feed_reader 0755 feed_reader feed_reader -"
@@ -318,6 +333,8 @@ in
       };
     };
 
+    security.acme.certs."${cfg.mailer.inboundDomain}".webroot = "/var/lib/acme/.challenges";
+
     services.nginx.virtualHosts = mkIf (cfg.nginx != null) {
       "${cfg.hostname}" = mkMerge [
         cfg.nginx
@@ -336,9 +353,8 @@ in
           };
         }
       ];
-      "${cfg.mailer.inboundDomain}" = {
+      "mail.${cfg.mailer.inboundDomain}" = {
         enableACME = true;
-        acmeRoot = null;
       };
     };
 

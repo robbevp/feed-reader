@@ -38,6 +38,9 @@ let
     RAILS_SMTP_ADDRESS = cfg.mailer.smtpAddress;
     RAILS_SMTP_DOMAIN = cfg.mailer.smtpDomain;
     RAILS_SMTP_USER_NAME = cfg.mailer.smtpUserName;
+
+    # Action mailer
+    RAILS_INBOUND_EMAIL_DOMAIN = cfg.mailer.inboundDomain;
   };
   exports = lib.concatStringsSep "\n"
     (lib.mapAttrsToList (name: value: ''export ${name}="${value}"'') env);
@@ -47,6 +50,12 @@ let
     export $(cat ${cfg.environmentFile} | xargs)
     cd ${feed-reader}
     ${feed-reader.env}/bin/bundle exec rails "$@"
+  '';
+  relayMailScript = pkgs.writeShellScript "feed-reader-mail-relay" ''
+    ${exports}
+    export $(cat ${cfg.environmentFile} | xargs)
+    cd ${feed-reader}
+    ${feed-reader.env}/bin/bundle exec rails action_mailbox:ingress:postfix URL='https://${cfg.hostname}/rails/action_mailbox/relay/inbound_emails' INGRESS_PASSWORD=$RAILS_INBOUND_EMAIL_PASSWORD
   '';
 in
 {
@@ -157,7 +166,17 @@ in
         default = cfg.mailer.smtpAddress;
         type = types.str;
       };
+
+      inboundDomain = mkOption {
+        description = ''
+          The mail domain on which you want to receive emails
+        '';
+        example = "mail.example.com";
+        type = types.str;
+      };
     };
+
+
 
     nginx = mkOption {
       default = { };
@@ -185,6 +204,33 @@ in
         ensurePermissions = { "DATABASE feed_reader" = "ALL PRIVILEGES"; };
       }];
     };
+
+    services.postfix =
+      let
+        certDir = config.security.acme.certs."${cfg.mailer.inboundDomain}".directory;
+      in
+      {
+        enable = true;
+        hostname = cfg.mailer.inboundDomain;
+        virtual = ''
+          @${cfg.mailer.inboundDomain} feed_reader@${cfg.mailer.inboundDomain}
+        '';
+        transport = ''
+          ${cfg.mailer.inboundDomain} forward_to_feed_reader:
+        '';
+        masterConfig.forward_to_feed_reader = {
+          command = "pipe";
+          args = [
+            # See pipe manual for details on these settings https://www.postfix.org/pipe.8.html
+            "chroot=${feed-reader}"
+            "flags=Xhq"
+            "user=feed_reader:feed_reader"
+            "argv=${relayMailScript}"
+          ];
+        };
+        sslCert = "${certDir}/cert.pem";
+        sslKey = "${certDir}/key.pem";
+      };
 
     systemd.tmpfiles.rules = [
       "d /run/feed_reader 0755 feed_reader feed_reader -"
@@ -290,6 +336,10 @@ in
           };
         }
       ];
+      "${cfg.mailer.inboundDomain}" = {
+        enableACME = true;
+        acmeRoot = null;
+      };
     };
 
     services.postgresqlBackup = {

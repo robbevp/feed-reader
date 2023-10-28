@@ -26,6 +26,6 @@ class NewsletterTest < ActiveSupport::TestCase
   test 'should construct expected mail address' do
     newsletter = create(:newsletter, public_id: 'abc')
 
-    assert_equal "newsletter-#{newsletter.id}+abc", newsletter.email_address
+    assert_equal "newsletter-#{newsletter.id}+abc@example.com", newsletter.email_address
   end
 end

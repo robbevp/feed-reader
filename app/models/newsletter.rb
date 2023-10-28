@@ -10,7 +10,7 @@ class Newsletter < ApplicationRecord
   before_create :set_public_id
 
   def email_address
-    "newsletter-#{id}+#{public_id}"
+    "newsletter-#{id}+#{public_id}@#{Rails.application.config.inbound_email_domain}"
   end
 
   private

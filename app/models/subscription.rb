@@ -20,6 +20,9 @@ class Subscription < ApplicationRecord
   end
 
   def build_subscribable(params)
-    self.subscribable = subscribable_type.constantize.new(params)
+    self.subscribable = subscribable_type.constantize.new
+    params.each_pair do |key, value|
+      subscribable.send(:"#{key}=", value) if subscribable.has_attribute? key
+    end
   end
 end

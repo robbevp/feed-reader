@@ -5,6 +5,7 @@ class SubscriptionsController < ApplicationController
   def index
     authorize Subscription
     @subscriptions = policy_scope(Subscription)
+                     .includes(:subscribable)
                      .left_joins(:entries)
                      .select('subscriptions.*', 'count(entries.id) as entries_count')
                      .group(:id).order(:name)

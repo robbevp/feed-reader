@@ -16,7 +16,7 @@
       <nav class="header__nav">
         <%- if current_user.present? %>
           <%= link_to t('.home'), root_path %>
-          <%= link_to t('.feeds'), feeds_path %>
+          <%= link_to t('.subscriptions'), subscriptions_path %>
           <%= link_to t('.sign_out'), destroy_session_path, data: { turbo_method: :delete } %>
           <%- if current_user.admin? %>
             <%= link_to t('.good_job'), good_job_path %>

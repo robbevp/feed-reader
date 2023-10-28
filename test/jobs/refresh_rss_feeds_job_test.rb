@@ -2,14 +2,14 @@
 
 require 'test_helper'
 
-class RefreshFeedsJobTest < ActiveJob::TestCase
+class RefreshRssFeedsJobTest < ActiveJob::TestCase
   setup do
-    @feed = create(:feed)
+    @feed = create(:rss_feed)
   end
 
   test 'should schedule job for each feed' do
     assert_enqueued_jobs 1 do
-      RefreshFeedsJob.perform_now
+      RefreshRssFeedsJob.perform_now
     end
   end
 end

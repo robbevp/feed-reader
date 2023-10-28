@@ -1,22 +1,23 @@
 # frozen_string_literal: true
 
-class Feed < ApplicationRecord
-  belongs_to :user, inverse_of: :feeds
-  has_many :entries, dependent: :destroy
+class RssFeed < ApplicationRecord
+  has_one :subscription, as: :subscribable, dependent: :destroy
+  has_many :entries, through: :subscription
 
-  validates :name, presence: true
-  validates :url, presence: true, uniqueness: { scope: :user }
+  validates :url, presence: true
 
   def refresh!
     fetch_feed.entries.each do |entry|
       next if entries.any? { |e| e.same?(entry) }
 
-      entries.push Entry.from_feedjira_entry(entry)
+      subscription.entries.push Entry.from_feedjira_entry(entry)
     end
 
     self[:last_fetched_at] = DateTime.current
     save!
   end
+
+  delegate :user, to: :subscription
 
   private
 

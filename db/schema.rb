@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_10_14_141513) do
+ActiveRecord::Schema[7.1].define(version: 2023_10_20_152736) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
   enable_extension "plpgsql"
@@ -52,23 +52,12 @@ ActiveRecord::Schema[7.1].define(version: 2023_10_14_141513) do
     t.text "external_id"
     t.datetime "published_at"
     t.text "url"
-    t.bigint "feed_id", null: false
     t.datetime "read_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["external_id", "feed_id"], name: "index_entries_on_external_id_and_feed_id", unique: true
-    t.index ["feed_id"], name: "index_entries_on_feed_id"
-  end
-
-  create_table "feeds", force: :cascade do |t|
-    t.bigint "user_id"
-    t.string "name", null: false
-    t.text "url", null: false
-    t.datetime "last_fetched_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["url", "user_id"], name: "index_feeds_on_url_and_user_id", unique: true
-    t.index ["user_id"], name: "index_feeds_on_user_id"
+    t.bigint "subscription_id", null: false
+    t.index ["external_id", "subscription_id"], name: "index_entries_on_external_id_and_subscription_id", unique: true
+    t.index ["subscription_id"], name: "index_entries_on_subscription_id"
   end
 
   create_table "good_job_batches", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -148,6 +137,24 @@ ActiveRecord::Schema[7.1].define(version: 2023_10_14_141513) do
     t.index ["scheduled_at"], name: "index_good_jobs_on_scheduled_at", where: "(finished_at IS NULL)"
   end
 
+  create_table "rss_feeds", force: :cascade do |t|
+    t.text "url", null: false
+    t.datetime "last_fetched_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "subscriptions", force: :cascade do |t|
+    t.string "name", null: false
+    t.bigint "user_id", null: false
+    t.string "subscribable_type", null: false
+    t.bigint "subscribable_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["subscribable_type", "subscribable_id"], name: "index_subscriptions_on_subscribable"
+    t.index ["user_id"], name: "index_subscriptions_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.citext "email", null: false
     t.string "password_digest", null: false
@@ -159,6 +166,6 @@ ActiveRecord::Schema[7.1].define(version: 2023_10_14_141513) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "entries", "feeds"
-  add_foreign_key "feeds", "users"
+  add_foreign_key "entries", "subscriptions"
+  add_foreign_key "subscriptions", "users"
 end

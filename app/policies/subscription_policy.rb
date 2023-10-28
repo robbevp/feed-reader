@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class FeedPolicy < ApplicationPolicy
+class SubscriptionPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.where(user:)
@@ -28,6 +28,7 @@ class FeedPolicy < ApplicationPolicy
   end
 
   def permitted_attributes
-    %i[name url]
+    own = %i[name subscribable_type]
+    own + [subscribable_attributes: %i[url]]
   end
 end

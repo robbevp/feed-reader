@@ -5,7 +5,7 @@ require 'test_helper'
 class EntriesControllerTest < ActionDispatch::IntegrationTest
   setup do
     @user = create(:user)
-    @entry = create(:entry, feed: build(:feed, user: @user))
+    @entry = create(:entry, subscription: build(:subscription, user: @user))
   end
 
   # Index

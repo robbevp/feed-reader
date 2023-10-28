@@ -6,7 +6,7 @@ class Forms::UrlInputComponentTest < ViewComponent::TestCase
   include FormComponentsHelper
 
   setup do
-    @object = build(:feed, url: 'https://www.example.org')
+    @object = build(:rss_feed, url: 'https://www.example.org')
     @form = form_with(@object)
   end
 

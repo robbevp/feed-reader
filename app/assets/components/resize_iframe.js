@@ -4,7 +4,7 @@ export default class ResizeIframeComponent extends SprinklesComponent {
   connect() {
     document.addEventListener("load", () => this.setCorrectHeight());
     this.element.contentWindow.addEventListener("load", () =>
-      this.setCorrectHeight()
+      this.setCorrectHeight(),
     );
     window.addEventListener("resize", () => this.setCorrectHeight());
     this.setCorrectHeight();

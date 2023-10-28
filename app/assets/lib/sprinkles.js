@@ -21,7 +21,7 @@ export class Sprinkles {
 
   initializeComponents() {
     const nodes = document.querySelectorAll(
-      "[data-sprinkles-component]:not([data-sprinkles-component-initialized])"
+      "[data-sprinkles-component]:not([data-sprinkles-component-initialized])",
     );
     nodes.forEach((node) => {
       const componentName = node.getAttribute("data-sprinkles-component");
@@ -32,7 +32,7 @@ export class Sprinkles {
         // eslint-disable-next-line no-console
         console.error(
           `Sprinkles components: component ${componentName} was not registered before it was discovered in the DOM`,
-          node
+          node,
         );
       }
     });

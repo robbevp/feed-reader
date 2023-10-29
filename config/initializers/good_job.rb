@@ -7,7 +7,7 @@ Rails.application.configure do
   config.good_job.cron = {
     refresh_feeds: { # each recurring job must have a unique key
       cron: 'every 2 hours', # cron-style scheduling format by fugit gem
-      class: 'RefreshFeedsJob', # reference the Job class with a string
+      class: 'RefreshRssFeedsJob', # reference the Job class with a string
       description: 'Recurring job that fetches new entries in rss feeds'
     }
   }

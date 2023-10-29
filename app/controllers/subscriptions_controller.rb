@@ -6,7 +6,7 @@ class SubscriptionsController < ApplicationController
     authorize Subscription
     @subscriptions = policy_scope(Subscription)
                      .left_joins(:entries)
-                     .select('subscriptions.*', 'count(*) as entries_count')
+                     .select('subscriptions.*', 'count(entries.id) as entries_count')
                      .group(:id).order(:name)
   end
 

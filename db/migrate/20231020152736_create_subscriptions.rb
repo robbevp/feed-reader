@@ -16,7 +16,6 @@ class CreateSubscriptions < ActiveRecord::Migration[7.1]
       t.references :subscription, foreign_key: true, null: true
       t.index %i[external_id subscription_id], unique: true
       t.remove_index %i[external_id feed_id], unique: true
-      t.remove_foreign_key :feeds
     end
 
     change_table :rss_feeds, bulk: true do |t|

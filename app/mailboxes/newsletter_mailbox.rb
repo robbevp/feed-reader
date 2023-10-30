@@ -16,8 +16,16 @@ class NewsletterMailbox < ApplicationMailbox
   private
 
   def set_newsletter
-    match_data = mail.to.first.match(/newsletter-(\d+)\+(\h+)@/)
-    @newsletter = Newsletter.find_by(id: match_data[1], public_id: match_data[2])
+    # Look in direct recipients and find the first on that matches
+    mail.recipients.each do |recipient|
+      match_data = recipient.match(/newsletter-(\d+)\+(\h+)@/)
+      if match_data.present?
+        @newsletter = Newsletter.find_by(id: match_data[1], public_id: match_data[2])
+        break
+      end
+    end
+
+    # Mark as bounced if no email matched
     bounced! if @newsletter.blank?
   end
 

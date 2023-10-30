@@ -5,6 +5,7 @@ class SubscriptionsController < ApplicationController
   def index
     authorize Subscription
     @subscriptions = policy_scope(Subscription)
+                     .includes(:subscribable)
                      .left_joins(:entries)
                      .select('subscriptions.*', 'count(entries.id) as entries_count')
                      .group(:id).order(:name)
@@ -20,7 +21,6 @@ class SubscriptionsController < ApplicationController
     @subscription = Subscription.new(permitted_attributes(Subscription).merge(user: current_user))
     if @subscription.save
       flash[:success] = t '.success'
-      RefreshRssFeedJob.perform_later(@subscription)
       redirect_to @subscription
     else
       render :new, status: :unprocessable_entity

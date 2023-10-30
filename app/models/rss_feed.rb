@@ -6,6 +6,8 @@ class RssFeed < ApplicationRecord
 
   validates :url, presence: true
 
+  after_create_commit -> { RefreshRssFeedJob.perform_later(self) }
+
   def refresh!
     fetch_feed.entries.each do |entry|
       next if entries.any? { |e| e.same?(entry) }

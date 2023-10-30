@@ -97,4 +97,10 @@ Rails.application.configure do
   # ]
   # Skip DNS rebinding protection for the default health check endpoint.
   # config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
+
+  # We use postfix to receive emails. Set a password using `RAILS_INBOUND_EMAIL_PASSWORD`
+  config.action_mailbox.ingress = :relay
+
+  # Set domain for inbound emails
+  config.inbound_email_domain = ENV.fetch('RAILS_INBOUND_EMAIL_DOMAIN')
 end

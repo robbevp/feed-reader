@@ -1,6 +1,6 @@
 <%= content_tag :div, class: ['input', 'input--text', { 'input--valid': valid? }, { 'input--invalid': invalid? }, @class], **@html_attrs do %>
   <%= form.label name, class: 'input__label' %>
-  <%= form.text_field name, class: 'input__field' %>
+  <%= form.text_field name, class: 'input__field', disabled: %>
   <%- if hint.present? %>
     <%= content_tag :span, hint, class: 'input__hint' %>
   <%- end %>

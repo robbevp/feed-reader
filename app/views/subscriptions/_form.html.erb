@@ -1,12 +1,23 @@
 <%# locals: (subscription:) -%>
 
 <%= form_with model: subscription, class: 'form' do |form| %>
-  <%= form.hidden_field :subscribable_type, value: 'RssFeed' %>
 
   <%= form.input :name %>
+  <%= form.input :subscribable_type, as: :radio,
+                                     collection: [['RssFeed', 'Rss Feed'], ['Newsletter', 'Newsletter']],
+                                     disabled: form.object.persisted? %>
 
-  <%= form.fields_for :subscribable, form.object.subscribable.presence || RssFeed.new do |fields| %>
-    <%= fields.input :url %>
+  <%- if !form.object.persisted? || form.object.subscribable_type == 'RssFeed' %>
+    <%= form.fields_for :subscribable, (form.object.subscribable_type == 'RssFeed' && form.object.subscribable.presence) || RssFeed.new do |fields| %>
+      <%= fields.input :url, data: { show_only: 'RssFeed' } %>
+    <% end %>
+  <% end %>
+
+  <%# Show email if newsletter and persisted %>
+  <%- if form.object.persisted? && form.object.subscribable_type == 'Newsletter' %>
+    <p>
+      Sent emails to: <%= mail_to form.object.subscribable.email_address %>
+    </p>
   <% end %>
 
   <%= form.submit %>

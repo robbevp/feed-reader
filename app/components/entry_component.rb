@@ -8,5 +8,9 @@ class EntryComponent < ViewComponent::Base
     @entry = entry
   end
 
+  def body?
+    body&.length&.positive?
+  end
+
   delegate :title, :author, :published_at, :summary, :body, :url, to: :entry
 end

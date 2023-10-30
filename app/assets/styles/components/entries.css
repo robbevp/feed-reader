@@ -9,8 +9,5 @@
 }
 
 .entry__body {
-  & img {
-    max-width: 100%;
-    object-fit: contain;
-  }
+  border: none;
 }

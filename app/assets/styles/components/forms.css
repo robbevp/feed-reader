@@ -16,3 +16,12 @@
   display: block;
   margin-top: 0.25rem;
 }
+
+/* Show/hide fields based on other fields */
+.form:has(input[value="RssFeed"]) [data-show-only="RssFeed"] {
+  display: none;
+}
+
+.form:has(input[value="RssFeed"]:checked) [data-show-only="RssFeed"] {
+  display: unset;
+}

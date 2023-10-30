@@ -38,6 +38,9 @@ let
     RAILS_SMTP_ADDRESS = cfg.mailer.smtpAddress;
     RAILS_SMTP_DOMAIN = cfg.mailer.smtpDomain;
     RAILS_SMTP_USER_NAME = cfg.mailer.smtpUserName;
+
+    # Action mailer
+    RAILS_INBOUND_EMAIL_DOMAIN = cfg.mailer.inboundDomain;
   };
   exports = lib.concatStringsSep "\n"
     (lib.mapAttrsToList (name: value: ''export ${name}="${value}"'') env);
@@ -47,6 +50,12 @@ let
     export $(cat ${cfg.environmentFile} | xargs)
     cd ${feed-reader}
     ${feed-reader.env}/bin/bundle exec rails "$@"
+  '';
+  relayMailScript = pkgs.writeShellScript "feed-reader-mail-relay" ''
+    ${exports}
+    export $(${pkgs.coreutils}/bin/cat ${cfg.environmentFile} | ${pkgs.findutils}/bin/xargs)
+    cd ${feed-reader}
+    ${feed-reader.env}/bin/bundle exec rails action_mailbox:ingress:postfix URL='https://${cfg.hostname}/rails/action_mailbox/relay/inbound_emails' INGRESS_PASSWORD=$RAILS_INBOUND_EMAIL_PASSWORD
   '';
 in
 {
@@ -157,7 +166,21 @@ in
         default = cfg.mailer.smtpAddress;
         type = types.str;
       };
+
+      inboundDomain = mkOption {
+        description = ''
+          The mail domain on which you want to receive emails. The hostname is used by default.
+          
+          This will install postfix on mail.DOMAIN.
+          You need to add an MX record from DOMAIN to mail.DOMAIN to your DNS settings. 
+        '';
+        example = "mail.example.com";
+        default = cfg.hostname;
+        type = types.str;
+      };
     };
+
+
 
     nginx = mkOption {
       default = { };
@@ -185,6 +208,38 @@ in
         ensurePermissions = { "DATABASE feed_reader" = "ALL PRIVILEGES"; };
       }];
     };
+
+    services.postfix =
+      let
+        certDir = config.security.acme.certs."${cfg.mailer.inboundDomain}".directory;
+      in
+      {
+        enable = true;
+        hostname = "mail.${cfg.mailer.inboundDomain}";
+        virtual = ''
+          @${cfg.mailer.inboundDomain} feed_reader@${cfg.mailer.inboundDomain}
+        '';
+        transport = ''
+          ${cfg.mailer.inboundDomain} forward_to_feed_reader:
+        '';
+        relayDomains = [
+          cfg.mailer.inboundDomain
+        ];
+        masterConfig.forward_to_feed_reader = {
+          command = "pipe";
+          privileged = true;
+          args = [
+            # See pipe manual for details on these settings https://www.postfix.org/pipe.8.html
+            "flags=Xhq"
+            "user=feed_reader"
+            "argv=${relayMailScript}"
+          ];
+        };
+        sslCert = "${certDir}/cert.pem";
+        sslKey = "${certDir}/key.pem";
+      };
+
+    networking.firewall.allowedTCPPorts = [ 25 ];
 
     systemd.tmpfiles.rules = [
       "d /run/feed_reader 0755 feed_reader feed_reader -"
@@ -272,6 +327,8 @@ in
       };
     };
 
+    security.acme.certs."${cfg.mailer.inboundDomain}".webroot = "/var/lib/acme/.challenges";
+
     services.nginx.virtualHosts = mkIf (cfg.nginx != null) {
       "${cfg.hostname}" = mkMerge [
         cfg.nginx
@@ -290,6 +347,9 @@ in
           };
         }
       ];
+      "mail.${cfg.mailer.inboundDomain}" = {
+        enableACME = true;
+      };
     };
 
     services.postgresqlBackup = {

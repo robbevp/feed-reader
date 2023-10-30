@@ -207,14 +207,6 @@ in
       }];
     };
 
-    # # Allow postfix user to run our `mailRelayScript` as `feed_reader`
-    # security.sudo.extraRules = [
-    #   { users = [ "postfix" ]; runAs = "feed_reader:feed_reader"; commands = [ "${relayMailScript}" ]; }
-    # ];
-    # security.wrappers = {
-    #   pipe = { setuid = true; owner = "postfix"; group = "postfix"; source = "${pkgs.postfix}/libexec/postfix/pipe"; };
-    # };
-
     services.postfix =
       let
         certDir = config.security.acme.certs."${cfg.mailer.inboundDomain}".directory;

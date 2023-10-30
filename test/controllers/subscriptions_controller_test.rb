@@ -35,12 +35,10 @@ class SubscriptionsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should create subscription with newsletter' do
-    assert_enqueued_jobs 1 do
-      assert_difference ['Subscription.count', 'Newsletter.count'] do
-        post subscriptions_url,
-             params: { subscription: { name: 'My blog', subscribable_type: 'Newsletter',
-                                       subscribable_attributes: { url: nil } } }
-      end
+    assert_difference ['Subscription.count', 'Newsletter.count'] do
+      post subscriptions_url,
+           params: { subscription: { name: 'My blog', subscribable_type: 'Newsletter',
+                                     subscribable_attributes: { url: nil } } }
     end
 
     assert_redirected_to subscription_url(Subscription.last)

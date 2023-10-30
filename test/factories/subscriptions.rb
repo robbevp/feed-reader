@@ -4,6 +4,6 @@ FactoryBot.define do
   factory :subscription do
     name { Faker::Lorem.word }
     user
-    subscribable factory: :rss_feed
+    subscribable factory: :newsletter
   end
 end

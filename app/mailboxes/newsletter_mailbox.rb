@@ -17,7 +17,7 @@ class NewsletterMailbox < ApplicationMailbox
 
   def set_newsletter
     # Look in direct recipients and find the first on that matches
-    mail.recipients.each do |recipient|
+    recipients.each do |recipient|
       match_data = recipient.match(/newsletter-(\d+)\+(\h+)@/)
       if match_data.present?
         @newsletter = Newsletter.find_by(id: match_data[1], public_id: match_data[2])
@@ -37,5 +37,13 @@ class NewsletterMailbox < ApplicationMailbox
     else
       mail.decoded
     end
+  end
+
+  def recipients
+    arr = [*mail.recipients]
+    # Look in the received header, since some forwards don't modify recipients
+    received = mail.received&.first&.decoded&.match(/<([a-z@\d\.\-\+]+)>/i)
+    arr.push(received[1]) if received.present?
+    arr
   end
 end

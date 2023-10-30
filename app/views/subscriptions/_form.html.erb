@@ -9,7 +9,7 @@
 
   <%- if !form.object.persisted? || form.object.subscribable_type == 'RssFeed' %>
     <%= form.fields_for :subscribable, (form.object.subscribable_type == 'RssFeed' && form.object.subscribable.presence) || RssFeed.new do |fields| %>
-      <%= fields.input :url %>
+      <%= fields.input :url, data: { show_only: 'RssFeed' } %>
     <% end %>
   <% end %>
 

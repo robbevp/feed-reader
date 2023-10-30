@@ -39,9 +39,9 @@
         in
         {
           packages = rec {
-            default = pictureIt;
-            pictureIt = pkgs.stdenv.mkDerivation rec {
-              pname = "FeedReader";
+            default = feed-reader;
+            feed-reader = pkgs.stdenv.mkDerivation rec {
+              pname = "feed-reader";
               inherit version;
               src = pkgs.lib.cleanSourceWith {
                 filter = name: type:
@@ -77,8 +77,8 @@
             };
           };
           devShells = rec {
-            default = pictureIt;
-            pictureIt = pkgs.devshell.mkShell {
+            default = feed-reader;
+            feed-reader = pkgs.devshell.mkShell {
               name = "Feed Reader";
               packages = [
                 gems

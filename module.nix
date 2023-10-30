@@ -169,11 +169,13 @@ in
 
       inboundDomain = mkOption {
         description = ''
-          The mail domain on which you want to receive emails.
-
+          The mail domain on which you want to receive emails. The hostname is used by default.
+          
           This will install postfix on mail.DOMAIN.
+          You need to add an MX record from DOMAIN to mail.DOMAIN to your DNS settings. 
         '';
         example = "mail.example.com";
+        default = cfg.hostname;
         type = types.str;
       };
     };

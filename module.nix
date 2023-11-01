@@ -194,7 +194,7 @@ in
         type = types.str;
       };
 
-      tracesSampleRate = mkOptions {
+      tracesSampleRate = mkOption {
         description = ''
           Set the sample rate for performance metrics.
         '';

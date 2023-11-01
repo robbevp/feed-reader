@@ -15,12 +15,12 @@ class EntryComponent < ViewComponent::Base
   def transformed_summary
     return if entry.summary.blank?
 
-    doc = Nokogiri.parse(entry.summary)
+    doc = Nokogiri::HTML5.parse(entry.summary)
     replace_images(doc).to_html.strip
   end
 
   def transformed_body
-    doc = Nokogiri.parse(entry.body)
+    doc = Nokogiri::HTML5.parse(entry.body)
     replace_images(doc).to_html.strip
   end
 

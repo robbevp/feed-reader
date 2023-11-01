@@ -11,7 +11,7 @@ class DetectEntryImagesJob < ApplicationJob
   private
 
   def process(entry, method)
-    doc = Nokogiri.parse(entry.send(method))
+    doc = Nokogiri::HTML5.parse(entry.send(method))
     doc.css('img').each do |node|
       next if TrackingDetection.tracking_pixel?(node) || !node.key?('src')
 

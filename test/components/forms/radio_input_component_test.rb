@@ -12,7 +12,7 @@ class Forms::RadioInputComponentTest < ViewComponent::TestCase
   end
 
   test 'should render input with options' do
-    render_inline(Forms::RadioInputComponent.new(form: @form, name: :email, collection: @options))
+    render_inline(Forms::RadioInputComponent.new(form: @form, name: :email, options: @options))
 
     assert_selector '.radio-buttons'
     assert_selector '.radio-buttons__label', text: 'Email'
@@ -20,7 +20,7 @@ class Forms::RadioInputComponentTest < ViewComponent::TestCase
   end
 
   test 'should render hint and error when value is passed' do
-    render_inline(Forms::RadioInputComponent.new(form: @form, name: :email, collection: @options,
+    render_inline(Forms::RadioInputComponent.new(form: @form, name: :email, options: @options,
                                                  hint: 'foobar@example.org',
                                                  error: 'This field is required'))
 
@@ -33,13 +33,13 @@ class Forms::RadioInputComponentTest < ViewComponent::TestCase
     @object.email = nil
     @object.validate
 
-    render_inline(Forms::RadioInputComponent.new(form: @form, name: :email, collection: @options))
+    render_inline(Forms::RadioInputComponent.new(form: @form, name: :email, options: @options))
 
     assert_selector '.radio-buttons__error', text: 'Email can\'t be blank'
   end
 
   test 'should render additional html attributes' do
-    render_inline(Forms::RadioInputComponent.new(form: @form, name: :email, collection: @options,
+    render_inline(Forms::RadioInputComponent.new(form: @form, name: :email, options: @options,
                                                  class: 'my-class',
                                                  data: { foo: :bar }))
 

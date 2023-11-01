@@ -28,7 +28,7 @@ class SubscriptionPolicy < ApplicationPolicy
   end
 
   def permitted_attributes
-    own = %i[name subscribable_type]
+    own = %i[name subscribable_type category_text]
     own + [subscribable_attributes: %i[url]]
   end
 end

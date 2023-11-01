@@ -1,6 +1,13 @@
 <%= content_tag :div, class: ['input', 'input--url', { 'input--valid': valid? }, { 'input--invalid': invalid? }, @class], **@html_attrs do %>
   <%= form.label name, class: 'input__label' %>
-  <%= form.url_field name, class: 'input__field', disabled: %>
+  <%= form.url_field name, class: 'input__field', disabled:, list: element_id(:datalist) %>
+    <%- if options.present? %>
+    <%= content_tag :datalist, id: element_id(:datalist) do %>
+      <%- options.each do |opt| %>
+        <%= content_tag :option, opt[1].presence || opt[0], value: opt[0] %>
+      <%- end %>
+    <% end %>
+  <%- end %>
   <%- if hint.present? %>
     <%= content_tag :span, hint, class: 'input__hint' %>
   <%- end %>

@@ -43,4 +43,12 @@ class Forms::PasswordInputComponentTest < ViewComponent::TestCase
 
     assert_selector '.input.my-class[data-foo="bar"]'
   end
+
+  test 'should raise error if passed options' do
+    options = ['opt1', ['opt2', 'Option 2']]
+
+    assert_raises ArgumentError do
+      render_inline(Forms::PasswordInputComponent.new(form: @form, name: :password, options:))
+    end
+  end
 end

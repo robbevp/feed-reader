@@ -1,17 +1,18 @@
 # frozen_string_literal: true
 
 class Forms::BaseComponent < ViewComponent::Base
-  attr_reader :form, :name, :hint, :disabled
+  attr_reader :form, :name, :hint, :disabled, :options
 
   # rubocop:disable Metrics/ParameterLists
   # We need to have a lot of parameters here, since this is a very generic component
-  def initialize(form:, name:, hint: nil, error: nil, disabled: false, **html_attrs)
+  def initialize(form:, name:, hint: nil, error: nil, disabled: false, options: [], **html_attrs)
     super
     @form = form
     @name = name
     @hint = hint
     @error = error
     @disabled = disabled
+    @options = options.map { |opt| Array.wrap(opt) }
     @class = html_attrs.delete(:class).presence || ''
     @html_attrs = html_attrs
   end
@@ -27,5 +28,9 @@ class Forms::BaseComponent < ViewComponent::Base
 
   def invalid?
     error.present?
+  end
+
+  def element_id(type)
+    [form.object_name, name, type].join('_')
   end
 end

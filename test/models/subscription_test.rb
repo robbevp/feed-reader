@@ -11,6 +11,15 @@ class SubscriptionTest < ActiveSupport::TestCase
     assert_includes subscription.errors['name'], "can't be blank"
   end
 
+  # Normalizes
+  test 'should normalize categy text' do
+    subscription = build(:subscription, category_text: ' Music>Bands  > Concerts')
+
+    subscription.validate
+
+    assert_equal 'Music > Bands > Concerts', subscription.category_text
+  end
+
   # Callbacks
   test 'should create categories based on text during validations' do
     subscription = build(:subscription, category_text: 'music > bands')

@@ -3,6 +3,7 @@
 <%= form_with model: subscription, class: 'form' do |form| %>
 
   <%= form.input :name %>
+  <%= form.input :category_text, hint: t('.category_hint') %>
   <%= form.input :subscribable_type, as: :radio,
                                      collection: [['RssFeed', 'Rss Feed'], ['Newsletter', 'Newsletter']],
                                      disabled: form.object.persisted? %>

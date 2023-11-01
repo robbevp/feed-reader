@@ -1,4 +1,9 @@
 en:
+  activerecord:
+    attributes:
+      subscription:
+        category_text: 'Category'
+        subscribable_type: 'Type'
   application_controller:
     helpers:
       user_not_authorized:
@@ -15,6 +20,8 @@ en:
       mark_as_read: Mark as read
       mark_as_unread: Mark as unread
   subscriptions:
+    form:
+      category_hint: 'You can nest categories using `>`. For example: `Music > Bands`'
     index:
       page_title: Subscriptions
       actions: Actions

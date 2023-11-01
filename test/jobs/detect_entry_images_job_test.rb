@@ -2,7 +2,7 @@
 
 require 'test_helper'
 
-class ProxyEntryImagesJobTest < ActiveJob::TestCase
+class DetectEntryImagesJobTest < ActiveJob::TestCase
   test 'should do nothing if body and summary are empty' do
     entry = create(:entry, body: nil, summary: nil)
 
@@ -40,7 +40,7 @@ class ProxyEntryImagesJobTest < ActiveJob::TestCase
   end
 
   test 'should ignore images that have inline data' do
-    body = '<div><img src="data:image/jpeg;base64,some_image" width="1" height="1" /></div>'
+    body = '<div><img src="data:image/jpeg;base64,some_image" /></div>'
     entry = create(:entry, body:)
 
     assert_no_difference 'ProxiedImage.count' do

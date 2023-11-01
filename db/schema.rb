@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_10_20_182805) do
+ActiveRecord::Schema[7.1].define(version: 2023_11_01_100919) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
   enable_extension "plpgsql"
@@ -153,6 +153,15 @@ ActiveRecord::Schema[7.1].define(version: 2023_10_20_182805) do
     t.index ["public_id"], name: "index_newsletters_on_public_id", unique: true
   end
 
+  create_table "proxied_images", force: :cascade do |t|
+    t.string "url", null: false
+    t.bigint "entry_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["entry_id"], name: "index_proxied_images_on_entry_id"
+    t.index ["url", "entry_id"], name: "index_proxied_images_on_url_and_entry_id", unique: true
+  end
+
   create_table "rss_feeds", force: :cascade do |t|
     t.text "url", null: false
     t.datetime "last_fetched_at"
@@ -183,5 +192,6 @@ ActiveRecord::Schema[7.1].define(version: 2023_10_20_182805) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "entries", "subscriptions"
+  add_foreign_key "proxied_images", "entries"
   add_foreign_key "subscriptions", "users"
 end

@@ -12,9 +12,12 @@ class Entry < ApplicationRecord
   }.freeze
 
   belongs_to :subscription, inverse_of: :entries
+  has_many :proxied_images, dependent: :destroy
 
   validates :data, presence: true
   validates :external_id, uniqueness: { scope: :subscription }
+
+  after_create_commit -> { DetectEntryImagesJob.perform_later(self) }
 
   scope :read, -> { where.not(read_at: nil) }
   scope :unread, -> { where(read_at: nil) }

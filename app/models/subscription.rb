@@ -8,7 +8,7 @@ class Subscription < ApplicationRecord
 
   accepts_nested_attributes_for :subscribable
 
-  normalizes :category_text, with: ->(text) { text&.split('>')&.map(&:strip)&.join(' > ') }
+  normalizes :category_text, with: ->(text) { text.split('>').map(&:strip).join(' > ') if text.present? }
 
   validates :name, presence: true
 

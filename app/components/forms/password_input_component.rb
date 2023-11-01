@@ -3,6 +3,6 @@
 class Forms::PasswordInputComponent < Forms::BaseComponent
   def initialize(**)
     super(**)
-    raise 'Options is not supported for password inputs' if options.present?
+    raise ArgumentError, 'Options is not supported for password inputs' if options.present?
   end
 end

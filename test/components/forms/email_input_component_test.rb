@@ -45,7 +45,7 @@ class Forms::EmailInputComponentTest < ViewComponent::TestCase
 
   test 'should render datalist if passed options' do
     options = ['opt1', ['opt2', 'Option 2']]
-    render_inline(Forms.user_email_datalistInputComponent.new(form: @form, name: :email, options:))
+    render_inline(Forms::EmailInputComponent.new(form: @form, name: :email, options:))
 
     assert_selector 'datalist#user_email_datalist'
     assert_selector 'datalist option[value="opt1"]', text: 'opt1'

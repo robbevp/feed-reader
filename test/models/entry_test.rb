@@ -30,4 +30,14 @@ class EntryTest < ActiveSupport::TestCase
       # rubocop:enable Rails/SkipsModelValidations
     end
   end
+
+  # Callbacks
+  test 'should detect image after create' do
+    stub_request(:any, 'https://example.com/image.jpg')
+      .to_return(body: Rails.root.join('test/fixtures/files/image.jpg').read)
+
+    assert_difference ['ProxiedImage.count', 'ActiveStorage::Attachment.count'] do
+      create(:entry, body: '<div><img src="https://example.com/image.jpg" /></div>')
+    end
+  end
 end

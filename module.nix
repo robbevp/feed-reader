@@ -43,7 +43,7 @@ let
     RAILS_INBOUND_EMAIL_DOMAIN = cfg.mailer.inboundDomain;
 
     # Sentry
-    SENTRY_DSN = cfg.sentry.DNS;
+    SENTRY_DSN = cfg.sentry.DSN;
     SENTRY_TRACES_SAMPLE_RATE = cfg.sentry.tracesSampleRate;
   };
   exports = lib.concatStringsSep "\n"

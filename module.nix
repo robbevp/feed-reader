@@ -39,8 +39,12 @@ let
     RAILS_SMTP_DOMAIN = cfg.mailer.smtpDomain;
     RAILS_SMTP_USER_NAME = cfg.mailer.smtpUserName;
 
-    # Action mailer
+    # Action mailbox
     RAILS_INBOUND_EMAIL_DOMAIN = cfg.mailer.inboundDomain;
+
+    # Sentry
+    SENTRY_DSN = cfg.sentry.DNS;
+    SENTRY_TRACES_SAMPLE_RATE = cfg.sentry.tracesSampleRate;
   };
   exports = lib.concatStringsSep "\n"
     (lib.mapAttrsToList (name: value: ''export ${name}="${value}"'') env);
@@ -180,7 +184,25 @@ in
       };
     };
 
+    sentry = {
+      DSN = mkOption {
+        description = ''
+          Set a Sentry Data Source Name to report issues and performance metrics to.
+        '';
+        example = "https://abc.ingest.sentry.io/123";
+        default = "";
+        type = types.str;
+      };
 
+      tracesSampleRate = mkOptions {
+        description = ''
+          Set the sample rate for performance metrics.
+        '';
+        example = 0.5;
+        default = 0;
+        type = types.float;
+      };
+    };
 
     nginx = mkOption {
       default = { };

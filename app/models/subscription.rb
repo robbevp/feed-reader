@@ -31,6 +31,14 @@ class Subscription < ApplicationRecord
     end
   end
 
+  def self.category_text_options
+    where.not(category_text: nil).pluck(:category_text).map do |text|
+      text.split('>').each_with_object([]) do |part, arr|
+        arr.push [arr.last, part.strip].compact.join(' > ')
+      end
+    end.flatten.uniq.sort
+  end
+
   private
 
   def create_categories_from_text

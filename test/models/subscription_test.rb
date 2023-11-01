@@ -43,4 +43,16 @@ class SubscriptionTest < ActiveSupport::TestCase
     assert_equal 'bands', subscription.category.name
     assert_equal category, subscription.category.parent
   end
+
+  # Class methods
+  test 'should build category text options' do
+    create(:subscription, category_text: nil)
+    create(:subscription, category_text: 'Music > Bands > Concerts')
+    create(:subscription, category_text: 'Music > Venues')
+    create(:subscription, category_text: 'Art > Exhibitions')
+
+    expected = ['Art', 'Art > Exhibitions', 'Music', 'Music > Bands', 'Music > Bands > Concerts', 'Music > Venues']
+
+    assert_equal expected, Subscription.category_text_options
+  end
 end

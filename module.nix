@@ -44,7 +44,7 @@ let
 
     # Sentry
     SENTRY_DSN = cfg.sentry.DSN;
-    SENTRY_TRACES_SAMPLE_RATE = "${cfg.sentry.tracesSampleRate}";
+    SENTRY_TRACES_SAMPLE_RATE = lib.strings.floatToString cfg.sentry.tracesSampleRate;
   };
   exports = lib.concatStringsSep "\n"
     (lib.mapAttrsToList (name: value: ''export ${name}="${value}"'') env);

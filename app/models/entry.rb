@@ -12,6 +12,7 @@ class Entry < ApplicationRecord
   }.freeze
 
   belongs_to :subscription, inverse_of: :entries
+  has_many :proxied_images, dependent: :destroy
 
   validates :data, presence: true
   validates :external_id, uniqueness: { scope: :subscription }

@@ -20,7 +20,7 @@ class EntryComponentTest < ViewComponent::TestCase
     render_inline(EntryComponent.new(entry:))
 
     assert_selector '.entry__body'
-    assert_equal '<div></div>', page.find('.entry__body')[:srcdoc]
+    assert_equal '<html><head></head><body><div></div></body></html>', page.find('.entry__body')[:srcdoc]
   end
 
   test 'should remove tracking pixels when rendering summary' do
@@ -40,7 +40,8 @@ class EntryComponentTest < ViewComponent::TestCase
     render_inline(EntryComponent.new(entry:))
 
     assert_selector '.entry__body'
-    assert_equal body, page.find('.entry__body')[:srcdoc]
+    assert_equal '<html><head></head><body><div><img src="https://example.com/image.jpg"></div></body></html>',
+                 page.find('.entry__body')[:srcdoc]
   end
 
   test 'should reaplce image src when proxied' do

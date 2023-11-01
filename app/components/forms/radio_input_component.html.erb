@@ -1,6 +1,6 @@
 <%= content_tag :div, class: ['radio-buttons', { 'radio-buttons--valid': valid? }, { 'radio-buttons--invalid': invalid? }, @class], **@html_attrs do %>
   <%= form.label name, class: 'radio-buttons__label' %>
-  <%= form.collection_radio_buttons name, collection, :first, :second, { disabled:, include_hidden: false } do |rb| %>
+  <%= form.collection_radio_buttons name, options, :first, :second, { disabled:, include_hidden: false } do |rb| %>
     <%= rb.radio_button class: 'radio-buttons__option-field', disabled: %>
     <%= rb.label class: 'radio-buttons__option-label' %>
   <% end %>

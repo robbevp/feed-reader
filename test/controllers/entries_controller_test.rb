@@ -56,4 +56,15 @@ class EntriesControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to @entry
     assert_not_predicate @entry, :read?
   end
+
+  # Destroy
+  test 'should destroy entry' do
+    sign_in @user
+
+    assert_difference 'Entry.count', -1 do
+      delete entry_url(@entry)
+    end
+
+    assert_redirected_to @entry.subscription
+  end
 end

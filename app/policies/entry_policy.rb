@@ -12,14 +12,24 @@ class EntryPolicy < ApplicationPolicy
   end
 
   def show?
-    record.user_id == user&.id
+    user_owns_record?
   end
 
   def update?
-    record.user_id == user&.id
+    user_owns_record?
+  end
+
+  def destroy?
+    user_owns_record?
   end
 
   def permitted_attributes
     %i[read]
+  end
+
+  private
+
+  def user_owns_record?
+    record.user_id == user&.id
   end
 end

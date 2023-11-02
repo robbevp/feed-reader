@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   # Resource based routes
   resources :subscriptions
-  resources :entries
+  resources :entries, only: %i[index show update destroy]
 
   # Special routes for sign in/out and profile
   scope :users do

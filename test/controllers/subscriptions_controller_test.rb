@@ -75,6 +75,19 @@ class SubscriptionsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to subscription_url(@subscription)
   end
 
+  test 'should update subscription and subscribable' do
+    subscribable = create(:rss_feed)
+    @subscription.update(subscribable:)
+  
+    assert_changes '@subscription.reload.name' do
+      assert_changes 'subscribable.reload.url' do
+        patch subscription_url(@subscription), params: { subscription: { name: 'My new blog', subscribable_attributes: { id: subscribable.id, url: 'https://example.com/atom.xml' } } }
+      end
+    end
+
+    assert_redirected_to subscription_url(@subscription)
+  end
+
   test 'should render edit if subscription is invalid' do
     assert_no_changes '@subscription.reload.name' do
       patch subscription_url(@subscription), params: { subscription: { name: nil } }

@@ -4,7 +4,7 @@
     <%- if options.present? %>
     <%= content_tag :datalist, id: element_id(:datalist) do %>
       <%- options.each do |opt| %>
-        <%= content_tag :option, opt[1].presence || opt[0], value: opt[0] %>
+        <%= content_tag :option, opt.send(label_method), value: opt.send(value_method) %>
       <%- end %>
     <% end %>
   <%- end %>

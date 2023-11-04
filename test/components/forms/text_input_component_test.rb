@@ -44,11 +44,11 @@ class Forms::TextInputComponentTest < ViewComponent::TestCase
   end
 
   test 'should render datalist if passed options' do
-    options = ['opt1', ['opt2', 'Option 2']]
+    options = [['opt1', 'Option 1'], ['opt2', 'Option 2']]
     render_inline(Forms::TextInputComponent.new(form: @form, name: :name, options:))
 
     assert_selector 'datalist#subscription_name_datalist'
-    assert_selector 'datalist option[value="opt1"]', text: 'opt1'
+    assert_selector 'datalist option[value="opt1"]', text: 'Option 1'
     assert_selector 'datalist option[value="opt2"]', text: 'Option 2'
   end
 end

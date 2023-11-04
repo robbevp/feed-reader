@@ -20,6 +20,24 @@ class DetectEntryImagesJobTest < ActiveJob::TestCase
     end
   end
 
+  test 'should create proxied image for style elements with url' do
+    body = '<style>.class{background:url(https://example.com/image.jpg)}</style>'
+    entry = create(:entry, body:)
+
+    assert_difference 'ProxiedImage.count' do
+      DetectEntryImagesJob.perform_now(entry)
+    end
+  end
+
+  test 'should create proxied image for inline styles with url' do
+    body = '<div style="background:url(https://example.com/image.jpg)"></div>'
+    entry = create(:entry, body:)
+
+    assert_difference 'ProxiedImage.count' do
+      DetectEntryImagesJob.perform_now(entry)
+    end
+  end
+
   test 'should ignore existing proxied images' do
     body = '<div><img src="https://example.com/image.jpg" /></div>'
     entry = create(:entry, body:)

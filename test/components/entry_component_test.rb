@@ -44,7 +44,7 @@ class EntryComponentTest < ViewComponent::TestCase
                  page.find('.entry__body')[:srcdoc]
   end
 
-  test 'should reaplce image src when proxied' do
+  test 'should replace image src when proxied' do
     body = '<div><img src="https://example.com/image.jpg"></div>'
     stub_request(:any, 'https://example.com/image.jpg')
       .to_return(body: Rails.root.join('test/fixtures/files/image.jpg').read)
@@ -57,6 +57,40 @@ class EntryComponentTest < ViewComponent::TestCase
     assert_selector '.entry__body'
 
     regex = %r{<img src="/rails/active_storage/blobs/redirect/[A-z\d\=\-]+/image.jpg">}
+
+    assert_match regex, page.find('.entry__body')[:srcdoc]
+  end
+
+  test 'should replace style element urls when proxied' do
+    body = '<style>.class{background:url(https://example.com/image.jpg)}</style>'
+    stub_request(:any, 'https://example.com/image.jpg')
+      .to_return(body: Rails.root.join('test/fixtures/files/image.jpg').read)
+
+    # Creating the entry will detect the image and proxy the image
+    entry = create(:entry, body:)
+
+    render_inline(EntryComponent.new(entry:))
+
+    assert_selector '.entry__body'
+
+    regex = %r{<style>.class{background:url\(/rails/active_storage/blobs/redirect/[A-z\d\=\-]+/image.jpg\)}</style>}
+
+    assert_match regex, page.find('.entry__body')[:srcdoc]
+  end
+
+  test 'should replace inline style urls when proxied' do
+    body = '<div style="background:url(https://example.com/image.jpg)"></div>'
+    stub_request(:any, 'https://example.com/image.jpg')
+      .to_return(body: Rails.root.join('test/fixtures/files/image.jpg').read)
+
+    # Creating the entry will detect the image and proxy the image
+    entry = create(:entry, body:)
+
+    render_inline(EntryComponent.new(entry:))
+
+    assert_selector '.entry__body'
+
+    regex = %r{<div style="background:url\(/rails/active_storage/blobs/redirect/[A-z\d\=\-]+/image.jpg\)"></div>}
 
     assert_match regex, page.find('.entry__body')[:srcdoc]
   end

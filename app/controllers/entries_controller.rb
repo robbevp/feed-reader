@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class EntriesController < ApplicationController
-  before_action :set_entry, only: %i[show update]
+  before_action :set_entry, only: %i[show update destroy]
 
   def index
     authorize Entry
@@ -13,6 +13,11 @@ class EntriesController < ApplicationController
   def update
     @entry.update!(transformed_attributes)
     redirect_back_or_to @entry
+  end
+
+  def destroy
+    @entry.destroy!
+    redirect_to @entry.subscription
   end
 
   private

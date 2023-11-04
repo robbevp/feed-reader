@@ -2,8 +2,8 @@ en:
   activerecord:
     attributes:
       subscription:
-        category_text: 'Category'
-        subscribable_type: 'Type'
+        category_text: "Category"
+        subscribable_type: "Type"
   application_controller:
     helpers:
       user_not_authorized:
@@ -19,9 +19,11 @@ en:
       page_title: "%{entry_title}"
       mark_as_read: Mark as read
       mark_as_unread: Mark as unread
+      delete: Delete
+      delete_confirm: "Are you sure? This can not be undone. Note that rss feed entries might show up again when the feed refreshes."
   subscriptions:
     form:
-      category_hint: 'You can nest categories using `>`. For example: `Music > Bands`'
+      category_hint: "You can nest categories using `>`. For example: `Music > Bands`"
     index:
       page_title: Subscriptions
       actions: Actions

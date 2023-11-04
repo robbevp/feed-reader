@@ -6,4 +6,6 @@
   <%= button_to t('.mark_as_read'), entry_path(@entry, params: { entry: { read: true } }), method: :patch %>
 <%- end %>
 
+<%= link_to t('.delete'), entry_path(@entry), data: { turbo_confirm: t('.delete_confirm'), turbo_method: :delete } %>
+
 <%= render EntryComponent.new(entry: @entry) %>

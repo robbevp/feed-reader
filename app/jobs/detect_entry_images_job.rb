@@ -3,26 +3,26 @@
 class DetectEntryImagesJob < ApplicationJob
   queue_as :default
 
+  attr_reader :entry
+
   def perform(entry)
-    process(entry, :body) if entry.body.present?
-    process(entry, :summary) if entry.summary.present?
-  end
+    %i[body summary].each do |method|
+      text = entry.send(method)
+      next if text.blank?
 
-  private
+      RichText.new(text:).handle_img_urls do |url|
+        begin
+          # Skip if url is inline data
+          next if url.nil? || url.match?(%r{data:[a-z]+/[a-z]+;base64})
 
-  def process(entry, method)
-    doc = Nokogiri::HTML5.parse(entry.send(method))
-    doc.css('img').each do |node|
-      next if TrackingDetection.tracking_pixel?(node) || !node.key?('src')
+          ProxiedImage.create!(url:, entry:)
+        rescue ActiveRecord::RecordNotUnique
+          # If the record is not unique, we simply ignore this and continue
+        end
 
-      url = node.attribute('src').value
-      # Skip if url is inline data
-      next if url.match?(%r{data:[a-z]+/[a-z]+;base64})
-
-      ProxiedImage.create!(url:, entry:)
-    rescue ActiveRecord::RecordNotUnique
-      # If the record is not unique, we simply ignore this and continue
-      next
+        # Return url, so the document stays the same
+        url
+      end
     end
   end
 end

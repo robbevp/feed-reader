@@ -2,20 +2,5 @@
 @import url("./theme.css");
 @import url("./components/entries.css");
 @import url("./components/forms.css");
+@import url("./components/homepage.css");
 @import url("./components/page.css");
-
-.homepage {
-  position: relative;
-  display: flex;
-  gap: 1rem;
-}
-
-.homepage__filters {
-  position: sticky;
-  top: 0.5rem;
-  left: 0;
-  flex-grow: 0;
-  flex-shrink: 0;
-  width: 15rem;
-  height: min-content;
-}

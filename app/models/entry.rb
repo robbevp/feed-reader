@@ -42,5 +42,9 @@ class Entry < ApplicationRecord
     read_at.present?
   end
 
+  def self.ransackable_scopes(_auth_object = nil)
+    %i[unread]
+  end
+
   delegate :user_id, to: :subscription
 end

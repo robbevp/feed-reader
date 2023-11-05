@@ -5,7 +5,8 @@ class EntriesController < ApplicationController
 
   def index
     authorize Entry
-    @pagy, @entries = pagy(policy_scope(Entry).includes(:subscription).order(published_at: :desc))
+    @query = policy_scope(Entry).includes(:subscription).ransack(params[:q])
+    @pagy, @entries = pagy(@query.result.order(published_at: :desc))
   end
 
   def show; end

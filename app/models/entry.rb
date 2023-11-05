@@ -48,5 +48,10 @@ class Entry < ApplicationRecord
     %i[unread by_category]
   end
 
+  def self.ransackable_scopes_skip_sanitize_args
+    # Make sure Ransack doesn't treat `by_category(1)` as a boolean
+    %i[by_category]
+  end
+
   delegate :user_id, to: :subscription
 end

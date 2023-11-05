@@ -1,0 +1,12 @@
+<%= content_tag :div, class: ['checkbox', { 'checkbox--valid': valid? }, { 'checkbox--invalid': invalid? }, @class], **@html_attrs do %>
+  <div class="checkbox__field-wrapper">
+    <%= form.check_box name, class: 'checkbox__field', disabled: %>
+    <%= form.label name, class: 'checkbox__label' %>
+  </div>
+  <%- if hint.present? %>
+    <%= content_tag :span, hint, class: 'checkbox__hint' %>
+  <%- end %>
+  <%- if invalid? %>
+    <%= content_tag :span, error, class: 'checkbox__error' %>
+  <%- end %>
+<% end %>

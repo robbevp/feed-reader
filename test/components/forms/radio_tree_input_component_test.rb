@@ -38,7 +38,8 @@ class Forms::RadioTreeInputComponentTest < ViewComponent::TestCase
   end
 
   test 'should render hint and error when value is passed' do
-    render_inline(Forms::RadioTreeInputComponent.new(form: @form, name: :category, options: @options, value_method: :name, label_method: :name,
+    render_inline(Forms::RadioTreeInputComponent.new(form: @form, name: :category, options: @options,
+                                                     value_method: :name, label_method: :name,
                                                      hint: 'foobar@example.org',
                                                      error: 'This field is required'))
 
@@ -57,7 +58,8 @@ class Forms::RadioTreeInputComponentTest < ViewComponent::TestCase
   end
 
   test 'should render additional html attributes' do
-    render_inline(Forms::RadioTreeInputComponent.new(form: @form, name: :category, options: @options, value_method: :name, label_method: :name,
+    render_inline(Forms::RadioTreeInputComponent.new(form: @form, name: :category, options: @options,
+                                                     value_method: :name, label_method: :name,
                                                      class: 'my-class',
                                                      data: { foo: :bar }))
 

@@ -31,4 +31,49 @@ class CategoryTest < ActiveSupport::TestCase
       # rubocop:enable Rails/SkipsModelValidations
     end
   end
+
+  # `WithRecursiveSearch` concern
+  test 'should find ancestors based on ids' do
+    parent = create(:category)
+    record = create(:category, parent:)
+    sibling = create(:category, parent:)
+    child = create(:category, parent: record)
+
+    assert_equal 2, Category.ancestors_by_id(child.id).length
+    assert_equal 1, Category.ancestors_by_id(record.id).length
+    assert_equal 1, Category.ancestors_by_id(sibling.id).length
+  end
+
+  test 'should find descendants based on ids' do
+    parent = create(:category)
+    record = create(:category, parent:)
+    sibling = create(:category, parent:)
+    create(:category, parent: record)
+
+    assert_equal 3, Category.descendants_by_id(parent.id).length
+    assert_equal 1, Category.descendants_by_id(record.id).length
+    assert_equal 0, Category.descendants_by_id(sibling.id).length
+  end
+
+  test 'should find ancestors with self based on ids' do
+    parent = create(:category)
+    record = create(:category, parent:)
+    sibling = create(:category, parent:)
+    child = create(:category, parent: record)
+
+    assert_equal 3, Category.ancestors_by_id(child.id, include_self: true).length
+    assert_equal 2, Category.ancestors_by_id(record.id, include_self: true).length
+    assert_equal 2, Category.ancestors_by_id(sibling.id, include_self: true).length
+  end
+
+  test 'should find descendants with self based on ids' do
+    parent = create(:category)
+    record = create(:category, parent:)
+    sibling = create(:category, parent:)
+    create(:category, parent: record)
+
+    assert_equal 4, Category.descendants_by_id(parent.id, include_self: true).length
+    assert_equal 2, Category.descendants_by_id(record.id, include_self: true).length
+    assert_equal 1, Category.descendants_by_id(sibling.id, include_self: true).length
+  end
 end

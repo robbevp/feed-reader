@@ -14,6 +14,8 @@ class Subscription < ApplicationRecord
 
   before_validation :create_categories_from_text
 
+  scope :by_category, ->(cat_id) { where(category: Category.descendants_by_id(cat_id, include_self: true)) }
+
   def refreshable?
     subscribable.respond_to? :refresh!
   end

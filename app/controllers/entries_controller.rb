@@ -7,6 +7,7 @@ class EntriesController < ApplicationController
     authorize Entry
     @query = policy_scope(Entry).includes(:subscription).ransack(params[:q])
     @pagy, @entries = pagy(@query.result.order(published_at: :desc))
+    @category_options = policy_scope(Category)
   end
 
   def show; end

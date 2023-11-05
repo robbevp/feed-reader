@@ -21,6 +21,8 @@ class Entry < ApplicationRecord
 
   scope :read, -> { where.not(read_at: nil) }
   scope :unread, -> { where(read_at: nil) }
+  # Delegate scope to `Subscription`
+  scope :by_category, ->(cat_id) { where(subscription: Subscription.by_category(cat_id)) }
 
   def self.from_feedjira_entry(entry)
     attrs = {}
@@ -43,7 +45,7 @@ class Entry < ApplicationRecord
   end
 
   def self.ransackable_scopes(_auth_object = nil)
-    %i[unread]
+    %i[unread by_category]
   end
 
   delegate :user_id, to: :subscription

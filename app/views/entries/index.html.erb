@@ -4,6 +4,7 @@
   <div class="homepage__filters">
     <%= search_form_for @query, url: url_for, builder: ComponentFormBuilder do |form| %>
       <%= form.input :unread, as: :boolean %>
+      <%= form.input :by_category, as: :radio_tree, options: @category_options %>
       <%= form.submit %>
     <% end %>
   </div>

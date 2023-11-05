@@ -30,8 +30,6 @@ class Forms::RadioTreeInputComponentTest < ViewComponent::TestCase
     page = render_inline(Forms::RadioTreeInputComponent.new(form: @form, name: :category, options: @options,
                                                             value_method: :name, label_method: :name))
 
-    pp page.to_html
-
     assert_selector 'ul[data-tree-level="0"] > li > input[type="radio"][value="parent"]'
     assert_selector 'ul[data-tree-level="1"] > li > input[type="radio"]', count: 2
     assert_selector 'ul[data-tree-level="2"] > li > input[type="radio"][value="child"]'

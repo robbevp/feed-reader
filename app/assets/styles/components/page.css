@@ -1,7 +1,7 @@
 .page {
   max-width: var(--screen-sm);
-  margin-block: 1.5rem;
   margin-inline: auto;
+  padding-block: 1.5rem;
   padding-inline: 2rem;
 }
 

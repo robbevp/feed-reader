@@ -1,0 +1,40 @@
+<%= content_tag :div, class: ['radio-buttons', 'radio-buttons--tree', { 'radio-buttons--valid': valid? }, { 'radio-buttons--invalid': invalid? }, @class], **@html_attrs do %>
+  <%= form.label name, class: 'radio-buttons__label' %>
+
+  <%# ROOTS %>
+  <ul class="radio-buttons__options" data-tree-level="0">
+  <%- roots.each do |root| %>
+    <li>
+      <%= form.radio_button name, root.send(value_method), class: 'radio-buttons__option-field', disabled: %>
+      <%= form.label name, root.send(label_method), value: root.send(value_method), class: 'radio-buttons__option-label' %>
+    </li>
+
+    <%# Children %>
+    <ul class="radio-buttons__options" data-tree-level="1">
+    <%- children_for(root).each do |child| %>
+      <li>
+        <%= form.radio_button name, child.send(value_method), class: 'radio-buttons__option-field', disabled: %>
+        <%= form.label name, child.send(label_method), value: child.send(value_method), class: 'radio-buttons__option-label' %>
+      </li>
+
+      <%# Grandchildren %>
+      <ul class="radio-buttons__options" data-tree-level="2">
+      <%- children_for(child).each do |grandchild| %>
+        <li>
+          <%= form.radio_button name, grandchild.send(value_method), class: 'radio-buttons__option-field', disabled: %>
+          <%= form.label name, grandchild.send(label_method), value: grandchild.send(value_method), class: 'radio-buttons__option-label' %>
+        </li>
+      <%- end %>
+      </ul>
+    <%- end %>
+    </ul>
+  <%- end %>
+  </ul>
+
+  <%- if hint.present? %>
+    <%= content_tag :span, hint, class: 'radio-buttons__hint' %>
+  <%- end %>
+  <%- if invalid? %>
+    <%= content_tag :span, error, class: 'radio-buttons__error' %>
+  <%- end %>
+<% end %>

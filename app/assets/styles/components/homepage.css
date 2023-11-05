@@ -1,0 +1,23 @@
+.homepage {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  @media (--screen-md) {
+    flex-direction: row;
+  }
+}
+
+.homepage__filters {
+  flex-grow: 0;
+  flex-shrink: 0;
+  height: min-content;
+
+  @media (--screen-md) {
+    position: sticky;
+    top: 0.5rem;
+    left: 0;
+    width: 15rem;
+  }
+}

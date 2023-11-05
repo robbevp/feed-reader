@@ -7,7 +7,8 @@
 
 class ComponentFormBuilder < ActionView::Helpers::FormBuilder
   COMPONENT_MAP = {
-    string: 'Text'
+    string: 'Forms::TextInputComponent',
+    boolean: 'Forms::CheckboxComponent'
   }.freeze
 
   def input(method, as: nil, **args, &block)
@@ -26,7 +27,7 @@ class ComponentFormBuilder < ActionView::Helpers::FormBuilder
 
   def component_klass(method:, as:)
     type = as.presence || input_type(method:)
-    "Forms::#{COMPONENT_MAP[type].presence || type.capitalize}InputComponent".constantize
+    (COMPONENT_MAP[type].presence || "Forms::#{type.to_s.camelize}InputComponent").constantize
   end
 
   def input_type(method:)

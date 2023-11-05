@@ -5,7 +5,7 @@ class EntriesController < ApplicationController
 
   def index
     authorize Entry
-    @query = policy_scope(Entry).includes(:subscription).ransack(params[:q])
+    @query = policy_scope(Entry).includes(:subscription).ransack(search_params)
     @pagy, @entries = pagy(@query.result.order(published_at: :desc))
     @category_options = policy_scope(Category)
   end
@@ -33,5 +33,10 @@ class EntriesController < ApplicationController
     attrs = permitted_attributes(@entry)
     attrs[:read_at] = attrs.delete(:read) == 'true' ? DateTime.current : nil
     attrs
+  end
+
+  def search_params
+    # Provide default params if no params were passed
+    params.fetch(:q, {}).permit(policy(Entry).permitted_attributes_for_index)
   end
 end

@@ -27,8 +27,8 @@ class Forms::RadioTreeInputComponentTest < ViewComponent::TestCase
   end
 
   test 'should render options as tree' do
-    page = render_inline(Forms::RadioTreeInputComponent.new(form: @form, name: :category, options: @options,
-                                                            value_method: :name, label_method: :name))
+    render_inline(Forms::RadioTreeInputComponent.new(form: @form, name: :category, options: @options,
+                                                     value_method: :name, label_method: :name))
 
     assert_selector 'ul[data-tree-level="0"] > li > input[type="radio"][value="parent"]'
     assert_selector 'ul[data-tree-level="1"] > li > input[type="radio"]', count: 2

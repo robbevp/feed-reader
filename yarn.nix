@@ -1890,83 +1890,83 @@
       };
     }
     {
-      name = "lightningcss_darwin_arm64___lightningcss_darwin_arm64_1.22.0.tgz";
+      name = "lightningcss_darwin_arm64___lightningcss_darwin_arm64_1.22.1.tgz";
       path = fetchurl {
-        name = "lightningcss_darwin_arm64___lightningcss_darwin_arm64_1.22.0.tgz";
-        url  = "https://registry.yarnpkg.com/lightningcss-darwin-arm64/-/lightningcss-darwin-arm64-1.22.0.tgz";
-        sha512 = "aH2be3nNny+It5YEVm8tBSSdRlBVWQV8m2oJ7dESiYRzyY/E/bQUe2xlw5caaMuhlM9aoTMtOH25yzMhir0qPg==";
+        name = "lightningcss_darwin_arm64___lightningcss_darwin_arm64_1.22.1.tgz";
+        url  = "https://registry.yarnpkg.com/lightningcss-darwin-arm64/-/lightningcss-darwin-arm64-1.22.1.tgz";
+        sha512 = "ldvElu+R0QimNTjsKpaZkUv3zf+uefzLy/R1R19jtgOfSRM+zjUCUgDhfEDRmVqJtMwYsdhMI2aJtJChPC6Osg==";
       };
     }
     {
-      name = "lightningcss_darwin_x64___lightningcss_darwin_x64_1.22.0.tgz";
+      name = "lightningcss_darwin_x64___lightningcss_darwin_x64_1.22.1.tgz";
       path = fetchurl {
-        name = "lightningcss_darwin_x64___lightningcss_darwin_x64_1.22.0.tgz";
-        url  = "https://registry.yarnpkg.com/lightningcss-darwin-x64/-/lightningcss-darwin-x64-1.22.0.tgz";
-        sha512 = "9KHRFA0Y6mNxRHeoQMp0YaI0R0O2kOgUlYPRjuasU4d+pI8NRhVn9bt0yX9VPs5ibWX1RbDViSPtGJvYYrfVAQ==";
+        name = "lightningcss_darwin_x64___lightningcss_darwin_x64_1.22.1.tgz";
+        url  = "https://registry.yarnpkg.com/lightningcss-darwin-x64/-/lightningcss-darwin-x64-1.22.1.tgz";
+        sha512 = "5p2rnlVTv6Gpw4PlTLq925nTVh+HFh4MpegX8dPDYJae+NFVjQ67gY7O6iHIzQjLipDiYejFF0yHrhjU3XgLBQ==";
       };
     }
     {
-      name = "lightningcss_freebsd_x64___lightningcss_freebsd_x64_1.22.0.tgz";
+      name = "lightningcss_freebsd_x64___lightningcss_freebsd_x64_1.22.1.tgz";
       path = fetchurl {
-        name = "lightningcss_freebsd_x64___lightningcss_freebsd_x64_1.22.0.tgz";
-        url  = "https://registry.yarnpkg.com/lightningcss-freebsd-x64/-/lightningcss-freebsd-x64-1.22.0.tgz";
-        sha512 = "xaYL3xperGwD85rQioDb52ozF3NAJb+9wrge3jD9lxGffplu0Mn35rXMptB8Uc2N9Mw1i3Bvl7+z1evlqVl7ww==";
+        name = "lightningcss_freebsd_x64___lightningcss_freebsd_x64_1.22.1.tgz";
+        url  = "https://registry.yarnpkg.com/lightningcss-freebsd-x64/-/lightningcss-freebsd-x64-1.22.1.tgz";
+        sha512 = "1FaBtcFrZqB2hkFbAxY//Pnp8koThvyB6AhjbdVqKD4/pu13Rl91fKt2N9qyeQPUt3xy7ORUvSO+dPk3J6EjXg==";
       };
     }
     {
-      name = "lightningcss_linux_arm_gnueabihf___lightningcss_linux_arm_gnueabihf_1.22.0.tgz";
+      name = "lightningcss_linux_arm_gnueabihf___lightningcss_linux_arm_gnueabihf_1.22.1.tgz";
       path = fetchurl {
-        name = "lightningcss_linux_arm_gnueabihf___lightningcss_linux_arm_gnueabihf_1.22.0.tgz";
-        url  = "https://registry.yarnpkg.com/lightningcss-linux-arm-gnueabihf/-/lightningcss-linux-arm-gnueabihf-1.22.0.tgz";
-        sha512 = "epQGvXIjOuxrZpMpMnRjK54ZqzhiHhCPLtHvw2fb6NeK2kK9YtF0wqmeTBiQ1AkbWfnnXGTstYaFNiadNK+StQ==";
+        name = "lightningcss_linux_arm_gnueabihf___lightningcss_linux_arm_gnueabihf_1.22.1.tgz";
+        url  = "https://registry.yarnpkg.com/lightningcss-linux-arm-gnueabihf/-/lightningcss-linux-arm-gnueabihf-1.22.1.tgz";
+        sha512 = "6rub98tYGfE5I5j0BP8t/2d4BZyu1S7Iz9vUkm0H26snAFHYxLfj3RbQn0xHHIePSetjLnhcg3QlfwUAkD/FYg==";
       };
     }
     {
-      name = "lightningcss_linux_arm64_gnu___lightningcss_linux_arm64_gnu_1.22.0.tgz";
+      name = "lightningcss_linux_arm64_gnu___lightningcss_linux_arm64_gnu_1.22.1.tgz";
       path = fetchurl {
-        name = "lightningcss_linux_arm64_gnu___lightningcss_linux_arm64_gnu_1.22.0.tgz";
-        url  = "https://registry.yarnpkg.com/lightningcss-linux-arm64-gnu/-/lightningcss-linux-arm64-gnu-1.22.0.tgz";
-        sha512 = "AArGtKSY4DGTA8xP8SDyNyKtpsUl1Rzq6FW4JomeyUQ4nBrR71uPChksTpj3gmWuGhZeRKLeCUI1DBid/zhChg==";
+        name = "lightningcss_linux_arm64_gnu___lightningcss_linux_arm64_gnu_1.22.1.tgz";
+        url  = "https://registry.yarnpkg.com/lightningcss-linux-arm64-gnu/-/lightningcss-linux-arm64-gnu-1.22.1.tgz";
+        sha512 = "nYO5qGtb/1kkTZu3FeTiM+2B2TAb7m2DkLCTgQIs2bk2o9aEs7I96fwySKcoHWQAiQDGR9sMux9vkV4KQXqPaQ==";
       };
     }
     {
-      name = "lightningcss_linux_arm64_musl___lightningcss_linux_arm64_musl_1.22.0.tgz";
+      name = "lightningcss_linux_arm64_musl___lightningcss_linux_arm64_musl_1.22.1.tgz";
       path = fetchurl {
-        name = "lightningcss_linux_arm64_musl___lightningcss_linux_arm64_musl_1.22.0.tgz";
-        url  = "https://registry.yarnpkg.com/lightningcss-linux-arm64-musl/-/lightningcss-linux-arm64-musl-1.22.0.tgz";
-        sha512 = "RRraNgP8hnBPhInTTUdlFm+z16C/ghbxBG51Sw00hd7HUyKmEUKRozyc5od+/N6pOrX/bIh5vIbtMXIxsos0lg==";
+        name = "lightningcss_linux_arm64_musl___lightningcss_linux_arm64_musl_1.22.1.tgz";
+        url  = "https://registry.yarnpkg.com/lightningcss-linux-arm64-musl/-/lightningcss-linux-arm64-musl-1.22.1.tgz";
+        sha512 = "MCV6RuRpzXbunvzwY644iz8cw4oQxvW7oer9xPkdadYqlEyiJJ6wl7FyJOH7Q6ZYH4yjGAUCvxDBxPbnDu9ZVg==";
       };
     }
     {
-      name = "lightningcss_linux_x64_gnu___lightningcss_linux_x64_gnu_1.22.0.tgz";
+      name = "lightningcss_linux_x64_gnu___lightningcss_linux_x64_gnu_1.22.1.tgz";
       path = fetchurl {
-        name = "lightningcss_linux_x64_gnu___lightningcss_linux_x64_gnu_1.22.0.tgz";
-        url  = "https://registry.yarnpkg.com/lightningcss-linux-x64-gnu/-/lightningcss-linux-x64-gnu-1.22.0.tgz";
-        sha512 = "grdrhYGRi2KrR+bsXJVI0myRADqyA7ekprGxiuK5QRNkv7kj3Yq1fERDNyzZvjisHwKUi29sYMClscbtl+/Zpw==";
+        name = "lightningcss_linux_x64_gnu___lightningcss_linux_x64_gnu_1.22.1.tgz";
+        url  = "https://registry.yarnpkg.com/lightningcss-linux-x64-gnu/-/lightningcss-linux-x64-gnu-1.22.1.tgz";
+        sha512 = "RjNgpdM20VUXgV7us/VmlO3Vn2ZRiDnc3/bUxCVvySZWPiVPprpqW/QDWuzkGa+NCUf6saAM5CLsZLSxncXJwg==";
       };
     }
     {
-      name = "lightningcss_linux_x64_musl___lightningcss_linux_x64_musl_1.22.0.tgz";
+      name = "lightningcss_linux_x64_musl___lightningcss_linux_x64_musl_1.22.1.tgz";
       path = fetchurl {
-        name = "lightningcss_linux_x64_musl___lightningcss_linux_x64_musl_1.22.0.tgz";
-        url  = "https://registry.yarnpkg.com/lightningcss-linux-x64-musl/-/lightningcss-linux-x64-musl-1.22.0.tgz";
-        sha512 = "t5f90X+iQUtIyR56oXIHMBUyQFX/zwmPt72E6Dane3P8KNGlkijTg2I75XVQS860gNoEFzV7Mm5ArRRA7u5CAQ==";
+        name = "lightningcss_linux_x64_musl___lightningcss_linux_x64_musl_1.22.1.tgz";
+        url  = "https://registry.yarnpkg.com/lightningcss-linux-x64-musl/-/lightningcss-linux-x64-musl-1.22.1.tgz";
+        sha512 = "ZgO4C7Rd6Hv/5MnyY2KxOYmIlzk4rplVolDt3NbkNR8DndnyX0Q5IR4acJWNTBICQ21j3zySzKbcJaiJpk/4YA==";
       };
     }
     {
-      name = "lightningcss_win32_x64_msvc___lightningcss_win32_x64_msvc_1.22.0.tgz";
+      name = "lightningcss_win32_x64_msvc___lightningcss_win32_x64_msvc_1.22.1.tgz";
       path = fetchurl {
-        name = "lightningcss_win32_x64_msvc___lightningcss_win32_x64_msvc_1.22.0.tgz";
-        url  = "https://registry.yarnpkg.com/lightningcss-win32-x64-msvc/-/lightningcss-win32-x64-msvc-1.22.0.tgz";
-        sha512 = "64HTDtOOZE9PUCZJiZZQpyqXBbdby1lnztBccnqh+NtbKxjnGzP92R2ngcgeuqMPecMNqNWxgoWgTGpC+yN5Sw==";
+        name = "lightningcss_win32_x64_msvc___lightningcss_win32_x64_msvc_1.22.1.tgz";
+        url  = "https://registry.yarnpkg.com/lightningcss-win32-x64-msvc/-/lightningcss-win32-x64-msvc-1.22.1.tgz";
+        sha512 = "4pozV4eyD0MDET41ZLHAeBo+H04Nm2UEYIk5w/ts40231dRFV7E0cjwbnZvSoc1DXFgecAhiC0L16ruv/ZDCpg==";
       };
     }
     {
-      name = "lightningcss___lightningcss_1.22.0.tgz";
+      name = "lightningcss___lightningcss_1.22.1.tgz";
       path = fetchurl {
-        name = "lightningcss___lightningcss_1.22.0.tgz";
-        url  = "https://registry.yarnpkg.com/lightningcss/-/lightningcss-1.22.0.tgz";
-        sha512 = "+z0qvwRVzs4XGRXelnWRNwqsXUx8k3bSkbP8vD42kYKSk3z9OM2P3e/gagT7ei/gwh8DTS80LZOFZV6lm8Z8Fg==";
+        name = "lightningcss___lightningcss_1.22.1.tgz";
+        url  = "https://registry.yarnpkg.com/lightningcss/-/lightningcss-1.22.1.tgz";
+        sha512 = "Fy45PhibiNXkm0cK5FJCbfO8Y6jUpD/YcHf/BtuI+jvYYqSXKF4muk61jjE8YxCR9y+hDYIWSzHTc+bwhDE6rQ==";
       };
     }
     {

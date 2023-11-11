@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
 class EntriesController < ApplicationController
+  before_action :set_entry_search, only: %i[index]
   before_action :set_entry, only: %i[show update destroy]
 
   def index
     authorize Entry
-    @query = policy_scope(Entry).includes(:subscription).ransack(search_params)
-    @pagy, @entries = pagy(@query.result.order(published_at: :desc))
+    @pagy, @entries = pagy(@entry_search.apply(policy_scope(Entry).includes(:subscription)).order(published_at: :desc))
     @category_options = policy_scope(Category)
   end
 
@@ -35,8 +35,8 @@ class EntriesController < ApplicationController
     attrs
   end
 
-  def search_params
-    # Provide default params if no params were passed
-    params.fetch(:q, {}).permit(policy(Entry).permitted_attributes_for_index)
+  def set_entry_search
+    search_params = params.fetch(:search, {}).permit(policy(Entry).permitted_attributes_for_index)
+    @entry_search = EntrySearch.new(**search_params)
   end
 end

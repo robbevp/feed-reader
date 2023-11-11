@@ -16,7 +16,6 @@ gem 'pagy' # Use pagy for pagination
 gem 'pg' # Use postgresql as the database for Active Record
 gem 'puma' # Use the Puma web server [https://github.com/puma/puma]
 gem 'pundit' # Use pundit for easy authorization
-gem 'ransack' # Use ransack for searching and sorting
 gem 'turbo-rails' # Use Turbo for progressive enhancement of requests
 gem 'view_component' # Use ViewComponent to replace partials
 gem 'vite_rails' # Use ViteRails to compile assets

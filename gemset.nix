@@ -974,17 +974,6 @@
     };
     version = "13.1.0";
   };
-  ransack = {
-    dependencies = ["activerecord" "activesupport" "i18n"];
-    groups = ["default"];
-    platforms = [];
-    source = {
-      remotes = ["https://rubygems.org"];
-      sha256 = "00c9g182v9pfdr5652vzphjdydjv02q3whrcg8a9zgi9vq721nq1";
-      type = "gem";
-    };
-    version = "4.1.1";
-  };
   rdoc = {
     dependencies = ["psych"];
     groups = ["default" "development" "production" "test"];

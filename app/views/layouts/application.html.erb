@@ -15,7 +15,7 @@
       <%= content_tag :h1, yield(:page_title), class: 'header__title' %>
       <nav class="header__nav">
         <%- if current_user.present? %>
-          <%= link_to t('.home'), root_path %>
+          <%= link_to t('.home'), root_path(search: session[:entry_search]) %>
           <%= link_to t('.subscriptions'), subscriptions_path %>
           <%= link_to t('.sign_out'), destroy_session_path, data: { turbo_method: :delete } %>
           <%- if current_user.admin? %>

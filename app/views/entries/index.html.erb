@@ -2,9 +2,9 @@
 
 <div class="homepage">
   <div class="homepage__filters">
-    <%= search_form_for @query, url: url_for, builder: ComponentFormBuilder do |form| %>
+    <%= form_with model: @entry_search, scope: :search, method: :get, url: url_for do |form| %>
       <%= form.input :unread, as: :boolean %>
-      <%= form.input :by_category, as: :radio_tree, options: @category_options, value_method: :id, label_method: :name %>
+      <%= form.input :category_id, as: :radio_tree, options: @category_options, value_method: :id, label_method: :name %>
       <%= form.submit t('.search') %>
     <% end %>
   </div>

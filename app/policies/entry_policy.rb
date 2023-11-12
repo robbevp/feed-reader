@@ -28,7 +28,7 @@ class EntryPolicy < ApplicationPolicy
   end
 
   def permitted_attributes_for_index
-    %i[unread by_category] if user.present?
+    %i[unread category_id] if user.present?
   end
 
   private

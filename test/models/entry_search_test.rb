@@ -17,6 +17,7 @@ class EntrySearchTest < ActiveSupport::TestCase
     search = EntrySearch.new(unread: true)
 
     result = search.apply(Entry)
+
     assert_equal 1, result.length
     assert_equal unread_entry, result.first
   end
@@ -29,6 +30,7 @@ class EntrySearchTest < ActiveSupport::TestCase
     search = EntrySearch.new(category_id: category.id)
 
     result = search.apply(Entry)
+
     assert_equal 1, result.length
     assert_equal entry, result.first
   end

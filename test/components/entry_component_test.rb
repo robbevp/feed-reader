@@ -20,7 +20,7 @@ class EntryComponentTest < ViewComponent::TestCase
     render_inline(EntryComponent.new(entry:))
 
     assert_selector '.entry__body'
-    assert_equal '<html><head></head><body><div></div></body></html>', page.find('.entry__body')[:srcdoc]
+    assert_includes page.find('.entry__body')[:srcdoc], '<body><div></div></body>'
   end
 
   test 'should remove tracking pixels when rendering summary' do
@@ -40,8 +40,7 @@ class EntryComponentTest < ViewComponent::TestCase
     render_inline(EntryComponent.new(entry:))
 
     assert_selector '.entry__body'
-    assert_equal '<html><head></head><body><div><img src="https://example.com/image.jpg"></div></body></html>',
-                 page.find('.entry__body')[:srcdoc]
+    assert_includes page.find('.entry__body')[:srcdoc], '<body><div><img src="https://example.com/image.jpg"></div></body>'
   end
 
   test 'should replace image src when proxied' do
@@ -91,6 +90,18 @@ class EntryComponentTest < ViewComponent::TestCase
     assert_selector '.entry__body'
 
     regex = %r{<div style="background:url\(/rails/active_storage/blobs/redirect/[A-z\d\=\-]+/image.jpg\)"></div>}
+
+    assert_match regex, page.find('.entry__body')[:srcdoc]
+  end
+
+  test 'should inject `entry-body` stylesheet in head' do
+    body = '<div></div>'
+    entry = build(:entry, body:)
+
+    render_inline(EntryComponent.new(entry:))
+
+    assert_selector '.entry__body'
+    regex = %r{<head><link rel="stylesheet" href="/vite-test/assets/entry-body-\h+.css"></head>}
 
     assert_match regex, page.find('.entry__body')[:srcdoc]
   end

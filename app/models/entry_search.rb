@@ -20,6 +20,7 @@ class EntrySearch
   end
 
   alias unread? unread
+  alias to_h to_hash
 
   private
 

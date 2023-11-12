@@ -1,0 +1,13 @@
+/* 
+ * This file contains all the style for the iframe containing the entries body
+ * We explicitly try to limit the selector specificity as much as possible, so that we only override the browser's default styles.
+ */
+:where(body) {
+  margin: 0;
+}
+
+:where(img) {
+  height: auto; /* Reduce height when the element has a `height` attribute */
+  max-width: 100%; /* Make sure images don't overflow container */
+  object-fit: contain; /* Make sure we don't modify the image aspect ratio */
+}

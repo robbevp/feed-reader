@@ -23,6 +23,7 @@ class EntryComponent < ViewComponent::Base
   def transformed_body
     text = RichText.new(text: body)
     text.handle_img_urls { |url| find_proxy_blob_for_url(url) }
+    text.add_to_head(helpers.vite_stylesheet_tag('entry-body.css'))
     text.to_html
   end
 

@@ -28,7 +28,11 @@ class RichText
     end
   end
 
-  delegate :to_html, :css, to: :doc
+  def add_to_head(node_or_string)
+    at_css('head').add_child(node_or_string)
+  end
+
+  delegate :to_html, :css, :at_css, to: :doc
 
   private
 

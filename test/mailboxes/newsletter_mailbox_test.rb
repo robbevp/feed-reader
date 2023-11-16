@@ -56,6 +56,21 @@ class NewsletterMailboxTest < ActionMailbox::TestCase
     assert_equal 'Hello world!', Entry.last.title
   end
 
+  test 'should find newsletter if plus was written as `%2B`' do
+    assert_difference 'Entry.count' do
+      receive_inbound_email_from_mail do |mail|
+        mail.to 'hello@example.com'
+        mail.cc = "newsletter-#{@newsletter.id}%2B#{@newsletter.public_id}@example.com"
+        mail.from '"me" <me@example.com>'
+        mail.subject 'Hello world!'
+        mail.body 'Hello?'
+      end
+    end
+
+    assert_equal 'me <me@example.com>', Entry.last.author
+    assert_equal 'Hello world!', Entry.last.title
+  end
+
   test 'should bounce email when public id is mismatched' do
     assert_no_difference 'Entry.count' do
       receive_inbound_email_from_mail do |mail|

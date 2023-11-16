@@ -46,6 +46,6 @@ class NewsletterMailbox < ApplicationMailbox
     # NOTE: `mail.received` can be an instance of `Mail::ReceivedField` or an array of instances
     received = Array.wrap(mail.received).first&.decoded&.match(/<([a-z@\d\.\-\+]+)>/i)
     arr.push(received[1]) if received.present?
-    arr
+    arr.map { |email| email.gsub('%2B', '+') }
   end
 end

@@ -15,9 +15,8 @@ class DetectEntryImagesJob < ApplicationJob
           # Skip if url is inline data
           next if url.nil? || url.match?(%r{data:[a-z]+/[a-z]+;base64})
 
-          ProxiedImage.create!(url:, entry:)
-        rescue ActiveRecord::RecordNotUnique
-          # If the record is not unique, we simply ignore this and continue
+          url = entry.normalize_url(url)
+          entry.proxied_images << ProxiedImage.create_or_find_by!(url:)
         end
 
         # Return url, so the document stays the same

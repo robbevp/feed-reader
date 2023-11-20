@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class ProxiedImage < ApplicationRecord
-  belongs_to :entry, inverse_of: :proxied_images
+  has_and_belongs_to_many :entries
 
   has_one_attached :image
 
@@ -12,7 +12,7 @@ class ProxiedImage < ApplicationRecord
   def process
     Tempfile.create(encoding: 'ascii-8bit') do |file|
       file.write fetch_image
-      filename = normalized_uri.path.split('/').last.split('.').first
+      filename = URI(url).path.split('/').last.split('.').first
       content_type = Marcel::MimeType.for(file)
       ext = Marcel::Magic.new(content_type).extensions.first
       image.attach(io: file, filename: "#{filename}.#{ext}", content_type:)
@@ -22,7 +22,7 @@ class ProxiedImage < ApplicationRecord
   private
 
   def fetch_image
-    uri = normalized_uri
+    uri = URI(url)
     limit = 5
     while limit >= 0
       http = Net::HTTP.start(uri.host, uri.port, use_ssl: uri.is_a?(URI::HTTPS))
@@ -40,13 +40,5 @@ class ProxiedImage < ApplicationRecord
       end
     end
     raise TooManyRedirectsError, 'More than 5 redirects in a row. Aborting request.'
-  end
-
-  def normalized_uri
-    # Some urls might contain spaces, so we replace these
-    uri = URI(url.gsub(' ', '%20'))
-    # Some entries might contain absolute/relative path to the page they were on
-    uri = URI(entry.url).merge(uri) if entry.url.present?
-    uri
   end
 end

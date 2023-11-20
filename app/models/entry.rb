@@ -12,7 +12,7 @@ class Entry < ApplicationRecord
   }.freeze
 
   belongs_to :subscription, inverse_of: :entries
-  has_many :proxied_images, dependent: :destroy
+  has_and_belongs_to_many :proxied_images
 
   validates :data, presence: true
   validates :external_id, uniqueness: { scope: :subscription }
@@ -42,6 +42,14 @@ class Entry < ApplicationRecord
 
   def read?
     read_at.present?
+  end
+
+  def normalize_url(input)
+    # Some urls might contain spaces, so we replace these
+    uri = URI(input.gsub(' ', '%20'))
+    # Some entries might contain absolute/relative path to the page they were on
+    uri = URI(url).merge(uri) if url.present?
+    uri.to_s
   end
 
   delegate :user_id, to: :subscription

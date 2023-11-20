@@ -41,9 +41,9 @@ class DetectEntryImagesJobTest < ActiveJob::TestCase
   test 'should ignore existing proxied images' do
     body = '<div><img src="https://example.com/image.jpg" /></div>'
     entry = create(:entry, body:)
-    create(:proxied_image, entry:, url: 'https://example.com/image.jpg')
+    create(:proxied_image, url: 'https://example.com/image.jpg')
 
-    assert_no_difference 'ProxiedImage.count' do
+    assert_difference 'ProxiedImage.first.entries.count' do
       DetectEntryImagesJob.perform_now(entry)
     end
   end

@@ -2,7 +2,6 @@
 
 FactoryBot.define do
   factory :proxied_image do
-    entry
-    url { Faker::Internet.domain_name }
+    url { Faker::Internet.unique.domain_name }
   end
 end

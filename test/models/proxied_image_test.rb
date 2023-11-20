@@ -11,17 +11,16 @@ class ProxiedImageTest < ActiveSupport::TestCase
     assert_includes image.errors['url'], "can't be blank"
   end
 
-  test 'should not save in database with an url that is not unique for entry' do
-    entry = create(:entry)
+  test 'should not save in database with an url that is not unique' do
     stub_request(:any, 'http://example.com/image.jpg')
       .to_return(body: Rails.root.join('test/fixtures/files/image.jpg').read)
 
-    create(:proxied_image, entry:, url: 'http://example.com/image.jpg')
+    create(:proxied_image, url: 'http://example.com/image.jpg')
 
     assert_raises ActiveRecord::RecordNotUnique do
       # rubocop:disable Rails/SkipsModelValidations
       # We intentionally skip model validations to test the database constraint
-      ProxiedImage.insert!(attributes_for(:proxied_image, entry_id: entry.id, url: 'http://example.com/image.jpg'))
+      ProxiedImage.insert!(attributes_for(:proxied_image, url: 'http://example.com/image.jpg'))
       # rubocop:enable Rails/SkipsModelValidations
     end
   end
@@ -52,33 +51,6 @@ class ProxiedImageTest < ActiveSupport::TestCase
 
     assert_equal 'image/jpeg', proxy.image.content_type
     assert_equal 'image.jpg', proxy.image.filename.to_s
-  end
-
-  test 'should handle url with spaces and attach image' do
-    proxy = build(:proxied_image, url: 'https://example.com/image 1.jpg')
-    stub_request(:any, 'https://example.com/image%201.jpg')
-      .to_return(body: Rails.root.join('test/fixtures/files/image.jpg').read)
-
-    assert_difference ['ActiveStorage::Attachment.count', 'ActiveStorage::Blob.count'] do
-      # Automatically calls `.process` in `after_create_commit` callback
-      proxy.save!
-    end
-
-    assert_predicate proxy.image, :attached?
-  end
-
-  test 'should handle path-only urls with help from entry' do
-    entry = build(:entry, url: 'https://example.com/posts/first.html')
-    proxy = build(:proxied_image, url: '/image.jpg', entry:)
-    stub_request(:any, 'https://example.com/image.jpg')
-      .to_return(body: Rails.root.join('test/fixtures/files/image.jpg').read)
-
-    assert_difference ['ActiveStorage::Attachment.count', 'ActiveStorage::Blob.count'] do
-      # Automatically calls `.process` in `after_create_commit` callback
-      proxy.save!
-    end
-
-    assert_predicate proxy.image, :attached?
   end
 
   test 'should follow redirect when url returns 301' do

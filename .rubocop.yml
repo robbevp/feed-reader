@@ -63,6 +63,8 @@ Rails/ActionOrder:
 Rails/DynamicFindBy:
   Enabled: true
   AllowedMethods: [] # We add the methods we define ourselves
+Rails/HasAndBelongsToMany:
+  Enabled: false
 
 Style/Documentation:
   Enabled: false

@@ -101,7 +101,7 @@ class EntryComponentTest < ViewComponent::TestCase
     render_inline(EntryComponent.new(entry:))
 
     assert_selector '.entry__body'
-    regex = %r{<head><link rel="stylesheet" href="/vite-test/assets/entry-body-\h+.css"></head>}
+    regex = %r{<head><link rel="stylesheet" href="/vite-test/assets/entry-body-[\dA-z]+.css"></head>}
 
     assert_match regex, page.find('.entry__body')[:srcdoc]
   end

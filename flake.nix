@@ -88,6 +88,9 @@
                 pkgs.postgresql_15
                 pkgs.yarn
               ];
+              devshell.startup.link-node-modules.text = ''
+                ln -sf ${node-modules}/node_modules .
+              '';
               env = [
                 {
                   name = "PGDATA";

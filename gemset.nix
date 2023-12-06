@@ -861,10 +861,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "18vj7q740f7ffj677i258abryj97w0a6g3d5859y0lgypm5big1v";
+      sha256 = "02ksyg68i9b4k6sv3xy4460brfnms9lnfnyx91qfk8792i0rv589";
       type = "gem";
     };
-    version = "3.1.1";
+    version = "3.2.0";
   };
   rack-proxy = {
     dependencies = ["rack"];

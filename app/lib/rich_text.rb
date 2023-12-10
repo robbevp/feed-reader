@@ -21,7 +21,7 @@ class RichText
     css('img[src]').each do |node|
       node.set_attribute('src', yield(node['src']))
     end
-    css('img[srcset]').each do |node|
+    css('img[srcset],picture source[srcset]').each do |node|
       node.set_attribute('srcset', urls_in_srcset(node['srcset'], &))
     end
     css('style:contains("url")').each do |node|

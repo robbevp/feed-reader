@@ -16,9 +16,13 @@ class RichText
 
   # Iterate over all urls in the document
   # If the block returns a new url, the element gets replaced
+  # rubocop:disable Metrics/AbcSize
   def handle_img_urls(&)
     css('img[src]').each do |node|
       node.set_attribute('src', yield(node['src']))
+    end
+    css('img[srcset]').each do |node|
+      node.set_attribute('srcset', urls_in_srcset(node['srcset'], &))
     end
     css('style:contains("url")').each do |node|
       node.content = urls_in_styles(node.text, &)
@@ -27,6 +31,7 @@ class RichText
       node.set_attribute('style', urls_in_styles(node['style'], &))
     end
   end
+  # rubocop:enable Metrics/AbcSize
 
   def add_to_head(node_or_string)
     at_css('head').add_child(node_or_string)
@@ -35,6 +40,13 @@ class RichText
   delegate :to_html, :css, :at_css, to: :doc
 
   private
+
+  def urls_in_srcset(srcset)
+    srcset.split(',').map(&:strip).each do |src|
+      srcset.gsub!(src.split.first, yield(src.split.first))
+    end
+    srcset
+  end
 
   def urls_in_styles(text)
     text.scan(STYLE_URL_REGEXP).flatten.each { |url| text.gsub!(url, yield(url)) }

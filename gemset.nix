@@ -452,10 +452,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "11bkx94qmirl4xda4p9bkzif17nz5ahs864rnq37n0hz88wp0p9w";
+      sha256 = "0laxix4zvfp8xz0bxlhl6zj0n63b4savarxs7kl3skwnvzj1z4s3";
       type = "gem";
     };
-    version = "3.21.2";
+    version = "3.21.3";
   };
   hashdiff = {
     groups = ["default" "test"];

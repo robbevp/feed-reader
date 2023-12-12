@@ -45,6 +45,14 @@ Metrics/BlockNesting:
   Max: 4
 Metrics/ClassLength:
   Enabled: false
+Metrics/CyclomaticComplexity:
+  Enabled: true
+  Exclude:
+    - "db/migrate/**/*"
+Metrics/PerceivedComplexity:
+  Enabled: true
+  Exclude:
+    - "db/migrate/**/*"
 
 Metrics/MethodLength:
   Enabled: false

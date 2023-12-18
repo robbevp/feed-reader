@@ -186,14 +186,14 @@
     version = "2.0.2";
   };
   bigdecimal = {
-    groups = ["default" "development" "test"];
+    groups = ["default" "development" "production" "test"];
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "07y615s8yldk3k13lmkhpk1k190lcqvmxmnjwgh4bzjan9xrc36y";
+      sha256 = "1b1gqa90amazwnll9590m5ighywh9sacsmpyd5ihljivmvjswksk";
       type = "gem";
     };
-    version = "3.1.4";
+    version = "3.1.5";
   };
   bindex = {
     groups = ["default" "development"];
@@ -738,10 +738,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0jcc512l38c0c163ni3jgskvq1vc3mr8ly5pvjijzwvfml9lf597";
+      sha256 = "15wkxrg1sj3n1h2g8jcrn7gcapwcgxr659ypjf75z1ipkgxqxwsv";
       type = "gem";
     };
-    version = "1.23.0";
+    version = "1.24.0";
   };
   parser = {
     dependencies = ["ast" "racc"];
@@ -1055,15 +1055,15 @@
     version = "1.30.0";
   };
   rubocop-minitest = {
-    dependencies = ["rubocop"];
+    dependencies = ["rubocop" "rubocop-ast"];
     groups = ["development"];
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0zzw24ilba5l7gxviq58p5ssdhgp0j4piisi0lq9bzbgg7hcq7rr";
+      sha256 = "0zvw4adk7iwk6dn6d9jqrgzmydi97q6r82lmi4h0lkbvdah003rb";
       type = "gem";
     };
-    version = "0.33.0";
+    version = "0.34.1";
   };
   rubocop-performance = {
     dependencies = ["rubocop" "rubocop-ast"];
@@ -1071,10 +1071,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1pzsrnjmrachdjxzl9jpw47cydicn3408vgdg3a4bss4v5r42rjj";
+      sha256 = "1jinbbqf412d202qpkq4z57zimllyrk5mka383y3krnfy4ip6y08";
       type = "gem";
     };
-    version = "1.19.1";
+    version = "1.20.0";
   };
   rubocop-rails = {
     dependencies = ["activesupport" "rack" "rubocop" "rubocop-ast"];
@@ -1082,10 +1082,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0ym0h2w97b8c2h6zl44m22lzg253qkmim0ali32aiy58ddvbj0mm";
+      sha256 = "0vdbzk5kzjqgwvcpnrn1b6livbyaw12qq0pivf0m55wkyya0m71d";
       type = "gem";
     };
-    version = "2.22.2";
+    version = "2.23.0";
   };
   ruby-progressbar = {
     groups = ["default" "development"];

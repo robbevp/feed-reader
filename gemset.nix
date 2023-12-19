@@ -490,7 +490,7 @@
     version = "1.12.2";
   };
   io-console = {
-    groups = ["default" "development" "test"];
+    groups = ["default" "development" "production" "test"];
     platforms = [{
       engine = "maglev";
     } {
@@ -502,10 +502,10 @@
     }];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0dikardh14c72gd9ypwh8dim41wvqmzfzf35mincaj5yals9m7ff";
+      sha256 = "1fmwbcapyhla84xhwj3gfws6rb4lw3928ybz6g3lr372dgxakzx5";
       type = "gem";
     };
-    version = "0.6.0";
+    version = "0.7.1";
   };
   irb = {
     dependencies = ["rdoc" "reline"];
@@ -788,10 +788,10 @@
     }];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0wjzrkssjfjpynij5dpycyflhqbjvi1gc2j73xgq3b196s1d3c24";
+      sha256 = "0s5383m6004q76xm3lb732bp4sjzb6mxb6rbgn129gy2izsj4wrk";
       type = "gem";
     };
-    version = "5.1.1.1";
+    version = "5.1.2";
   };
   public_suffix = {
     groups = ["default" "test"];
@@ -988,10 +988,10 @@
     }];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1zaarjpxbxpsfm8i70lmph11q2jdgxmjpslvbpjcyyggkf7nzm6r";
+      sha256 = "14wnrpd1kl43ynk1wwwgv9avsw84d1lrvlfyrjy3d4h7h7ndnqzp";
       type = "gem";
     };
-    version = "6.6.1";
+    version = "6.6.2";
   };
   regexp_parser = {
     groups = ["default" "development" "test"];
@@ -1155,10 +1155,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "04jpd27ypgapp62w3llf8m1s7l6ss9szrsdm0ba8vjch67cckbpq";
+      sha256 = "0jrmb47n1gnazqsc8i3zqzyv74ak9h66ckpi91mb4lbyi2hclrc8";
       type = "gem";
     };
-    version = "5.15.0";
+    version = "5.15.2";
   };
   sentry-ruby = {
     dependencies = ["concurrent-ruby"];
@@ -1166,10 +1166,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0cpw5gm5flgh3ablzhxg8nzh62wgibvljrxn6yf59c9c17c0aqps";
+      sha256 = "1fsvv4mkxjymd8rqkbdpxfdggzi74rfqmklpccqnxqz9qvgyhvxs";
       type = "gem";
     };
-    version = "5.15.0";
+    version = "5.15.2";
   };
   simplecov = {
     dependencies = ["docile" "simplecov-html" "simplecov_json_formatter"];

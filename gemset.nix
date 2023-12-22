@@ -302,10 +302,10 @@
     }];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "13zf7xl929id0qwad34psmb5k620p3q1ai4ccfmmi9zf3kpk4zn0";
+      sha256 = "1npzlgpvvms97gw0ixndapnvwy7ih3zc5r3s3wd4y64rlbaadwc6";
       type = "gem";
     };
-    version = "1.9.0";
+    version = "1.9.1";
   };
   docile = {
     groups = ["default" "test"];
@@ -521,10 +521,10 @@
     }];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1qmy3jb9qffnc6swi4gh3hv2prb6ykpr9mk8jmmjs6vpz5fvnicw";
+      sha256 = "0phrzmmxbwqmkh4dzld3pc82yml996nzfdzjipniv8wwrxwbgb3r";
       type = "gem";
     };
-    version = "1.10.1";
+    version = "1.11.0";
   };
   json = {
     groups = ["default" "development"];

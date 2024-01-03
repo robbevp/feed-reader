@@ -35,6 +35,8 @@ class ProxiedImage < ApplicationRecord
         # We follow the redirect and merge the current and new URI
         # this way, redirects that only contain a path get handled correctly.
         uri = uri.merge(URI(response['Location']))
+      when Net::HTTPNotFound
+        raise ImageNotFoundError, 'Image could not be found.'
       else
         response.error!
       end

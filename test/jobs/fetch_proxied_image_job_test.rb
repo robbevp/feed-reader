@@ -16,4 +16,15 @@ class FetchProxiedImageJobTest < ActiveJob::TestCase
 
     assert_predicate @image.reload.image, :attached?
   end
+
+  test 'should discard images that return 404' do
+    stub_request(:any, 'https://example.com/image.jpg')
+      .to_return(status: [404, 'Image not found'])
+
+    assert_no_difference ['ActiveStorage::Attachment.count', 'ActiveStorage::Blob.count'] do
+      FetchProxiedImageJob.perform_now(@image)
+    end
+
+    assert_not_predicate @image.reload.image, :attached?
+  end
 end

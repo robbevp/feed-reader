@@ -42,8 +42,25 @@ class RichText
   private
 
   def urls_in_srcset(srcset)
-    srcset.split(',').map(&:strip).each do |src|
-      srcset.gsub!(src.split.first, yield(src.split.first))
+    # srcset is tricky to parse, since the url might contain commas and the descriptor is optional
+    # Since we only care about the urls, we just try to find the first string after each comma
+    # See https://html.spec.whatwg.org/multipage/images.html#parsing-a-srcset-attribute
+    skip_until_comma = false
+    copy = srcset.strip # We need to make a copy, since we can't scan and modify at the same time
+    copy.scan(/[^\s]+/) do |match|
+      if match[0] == ','
+        skip_until_comma = false
+        match = match[1..]
+      end
+
+      if skip_until_comma
+        skip_until_comma = match[-1] != ','
+        next
+      end
+
+      skip_until_comma = match[-1] != ','
+      match = match[...-1] unless skip_until_comma
+      srcset.gsub!(match, yield(match))
     end
     srcset
   end

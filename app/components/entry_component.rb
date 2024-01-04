@@ -32,7 +32,8 @@ class EntryComponent < ViewComponent::Base
   private
 
   def find_proxy_blob_for_url(url)
-    proxy = proxied_images.find { |p| p.url == entry.normalize_url(url) }
+    normalized_url = entry.normalize_url(url)
+    proxy = proxied_images.find { |p| p.url == normalized_url }
     return url unless proxy.present? && proxy.image.attached?
 
     helpers.rails_blob_path(proxy.image)

@@ -131,11 +131,11 @@ class RssFeedTest < ActiveSupport::TestCase
   end
 
   test 'should raise error if feed returns error' do
-    stub_request(:any, 'https://example.com').to_return(status: 500)
+    stub_request(:any, 'https://example.com').to_return(status: 403)
 
     feed = build(:rss_feed, url: 'https://example.com')
 
-    assert_raises Net::HTTPFatalError do
+    assert_raises Net::HTTPClientException do
       feed.save! # Will trigger `refresh!` in `after_create_commit`
     end
 

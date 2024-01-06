@@ -18,7 +18,7 @@ let
     RAILS_ENV = "production";
     RACK_ENV = "production";
     RAILS_LOG_TO_STDOUT = "yes";
-    RUBY_YJIT_ENABLE = "1";
+    # RUBY_YJIT_ENABLE = "1";
     DATABASE_URL = "postgres://%2Frun%2Fpostgresql/feed_reader";
     DATABASE_NAME = "feed_reader";
     BOOTSNAP_READONLY = "TRUE";

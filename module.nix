@@ -269,6 +269,9 @@ in
         };
         sslCert = "${certDir}/cert.pem";
         sslKey = "${certDir}/key.pem";
+        extraConfig = ''
+          notify_classes = resource, software, delay, 2bounce, bounce
+        '';
       };
 
     networking.firewall.allowedTCPPorts = [ 25 ];

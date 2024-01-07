@@ -182,6 +182,15 @@ in
         default = cfg.hostname;
         type = types.str;
       };
+
+      postmasterAlias = mkOption {
+        description = ''
+          Set the email on which to reports issues with mail delivery. 
+        '';
+        example = "you@example.com";
+        default = "postmaster@${cfg.mailer.inboundDomain}";
+        type = types.str;
+      };
     };
 
     sentry = {
@@ -238,6 +247,7 @@ in
       {
         enable = true;
         hostname = "mail.${cfg.mailer.inboundDomain}";
+        postmasterAlias = cfg.mailer.postmasterAlias;
         virtual = ''
           @${cfg.mailer.inboundDomain} feed_reader@${cfg.mailer.inboundDomain}
         '';
@@ -259,6 +269,9 @@ in
         };
         sslCert = "${certDir}/cert.pem";
         sslKey = "${certDir}/key.pem";
+        extraConfig = ''
+          notify_classes = resource, software, delay, 2bounce, bounce
+        '';
       };
 
     networking.firewall.allowedTCPPorts = [ 25 ];

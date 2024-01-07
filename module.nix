@@ -236,7 +236,7 @@ in
       ensureDatabases = [ "feed_reader" ];
       ensureUsers = [{
         name = "feed_reader";
-        ensurePermissions = { "DATABASE feed_reader" = "ALL PRIVILEGES"; };
+        ensureDBOwnership = true;
       }];
     };
 

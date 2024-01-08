@@ -3,11 +3,11 @@
 class EntrySearch
   extend ActiveModel::Naming
 
-  attr_reader :unread, :category_id
+  attr_reader :include_read, :category_id
 
   def initialize(**values)
     values.symbolize_keys!
-    @unread = ActiveModel::Type::Boolean.new.cast(values[:unread])
+    @include_read = ActiveModel::Type::Boolean.new.cast(values[:include_read])
     @category_id = values[:category_id]
   end
 
@@ -16,17 +16,17 @@ class EntrySearch
   end
 
   def to_hash
-    { category_id:, unread: }.compact
+    { category_id:, include_read: }.compact
   end
 
-  alias unread? unread
+  alias include_read? include_read
   alias to_h to_hash
 
   private
 
   def scopes
     scopes = []
-    scopes.push([:unread]) if unread?
+    scopes.push([:unread]) unless include_read?
     scopes.push([:by_category, category_id]) if category_id.present?
     scopes
   end

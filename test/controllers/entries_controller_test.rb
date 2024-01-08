@@ -26,18 +26,18 @@ class EntriesControllerTest < ActionDispatch::IntegrationTest
   test 'should get store search in session' do
     sign_in @user
 
-    get entries_url(search: { unread: '1' })
+    get entries_url(search: { include_read: '1' })
 
     assert_response :success
-    assert_equal ({ unread: true }), session[:entry_search]
+    assert_equal ({ include_read: true }), session[:entry_search]
   end
 
   test 'should use stored search for `home` link' do
     sign_in @user
 
-    get entries_url(search: { unread: '1' })
+    get entries_url(search: { include_read: '1' })
 
-    assert_select '[href="/?search%5Bunread%5D=true"]', text: 'Home'
+    assert_select '[href="/?search%5Binclude_read%5D=true"]', text: 'Home'
   end
 
   # Show

@@ -4,9 +4,9 @@ require 'test_helper'
 
 class EntrySearchTest < ActiveSupport::TestCase
   test 'should initialize with keywords' do
-    search = EntrySearch.new(unread: true, category_id: 1)
+    search = EntrySearch.new(include_read: true, category_id: 1)
 
-    assert_predicate search, :unread?
+    assert_predicate search, :include_read?
     assert_equal 1, search.category_id
   end
 
@@ -14,7 +14,7 @@ class EntrySearchTest < ActiveSupport::TestCase
     unread_entry = create(:entry, read_at: nil)
     create(:entry, read_at: 1.hour.ago)
 
-    search = EntrySearch.new(unread: true)
+    search = EntrySearch.new(include_read: false)
 
     result = search.apply(Entry)
 

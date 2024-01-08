@@ -3,7 +3,7 @@
 <div class="homepage">
   <div class="homepage__filters">
     <%= form_with model: @entry_search, scope: :search, method: :get, url: url_for do |form| %>
-      <%= form.input :unread, as: :boolean %>
+      <%= form.input :include_read, as: :boolean %>
       <%= form.input :category_id, as: :radio_tree, options: @category_options, value_method: :id, label_method: :name %>
       <%= form.submit t('.search') %>
     <% end %>

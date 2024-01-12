@@ -521,10 +521,10 @@
     }];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0phrzmmxbwqmkh4dzld3pc82yml996nzfdzjipniv8wwrxwbgb3r";
+      sha256 = "0hh8d5l4ki6vg2p5x3v000gkrdqi1kdjv4vk5v8lfz9gr4kdc007";
       type = "gem";
     };
-    version = "1.11.0";
+    version = "1.11.1";
   };
   json = {
     groups = ["default" "development"];
@@ -629,14 +629,14 @@
     version = "2.8.5";
   };
   minitest = {
-    groups = ["default" "development" "test"];
+    groups = ["default" "development" "production" "test"];
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0bkmfi9mb49m0fkdhl2g38i3xxa02d411gg0m8x0gvbwfmmg5ym3";
+      sha256 = "1g4sjps6k8gvsm9hig3v6hnlpklgjipdaha2z2q0grxdfh6hrsb8";
       type = "gem";
     };
-    version = "5.20.0";
+    version = "5.21.1";
   };
   msgpack = {
     groups = ["default"];
@@ -1017,10 +1017,10 @@
     }];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1hi6zfj6zqzxcbamhjm9w9cswv62f76l8gsdfcnmhpw35cyxphh8";
+      sha256 = "0fhwdmw89zqb1fdxcd6lr57zabbfi08z8j6kqwngak0xnxi2j10l";
       type = "gem";
     };
-    version = "0.4.1";
+    version = "0.4.2";
   };
   rexml = {
     groups = ["default" "test"];
@@ -1155,10 +1155,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0jrmb47n1gnazqsc8i3zqzyv74ak9h66ckpi91mb4lbyi2hclrc8";
+      sha256 = "16jyjm0rcj1y175bjmj6bhf7dclp5yw5dh1fna0xy4r07ysq864g";
       type = "gem";
     };
-    version = "5.15.2";
+    version = "5.16.1";
   };
   sentry-ruby = {
     dependencies = ["concurrent-ruby"];
@@ -1166,10 +1166,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1fsvv4mkxjymd8rqkbdpxfdggzi74rfqmklpccqnxqz9qvgyhvxs";
+      sha256 = "0fsqs1f7nb4y45qwlg14hz155r4pf8ny3j8gzpxlqafpd3dz2zkn";
       type = "gem";
     };
-    version = "5.15.2";
+    version = "5.16.1";
   };
   simplecov = {
     dependencies = ["docile" "simplecov-html" "simplecov_json_formatter"];

@@ -17,7 +17,7 @@
     "@tree-company/eslint-config": "^0.3.1",
     "@tree-company/stylelint-config": "^0.3.1",
     "eslint": "^8.56.0",
-    "prettier": "^3.2.2",
+    "prettier": "^3.2.3",
     "stylelint": "^16.1.0"
   },
   "eslintConfig": {

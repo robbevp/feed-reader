@@ -12,7 +12,7 @@ AllCops:
     - "tmp/**/*"
     - "node_modules/**/*"
     - "vendor/**/*"
-  TargetRubyVersion: 3.2
+  TargetRubyVersion: 3.3
   NewCops: enable
 
 Layout/FirstArrayElementIndentation:

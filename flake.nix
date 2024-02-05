@@ -2,12 +2,13 @@
   description = "A flake to run feed reader";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-23.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
     devshell = {
       url = "github:numtide/devshell";
       inputs = {
         nixpkgs.follows = "nixpkgs";
+        flake-utils.follows = "flake-utils";
       };
     };
   };
@@ -23,7 +24,7 @@
           };
           gems = pkgs.bundlerEnv rec {
             name = "feed-reader-env";
-            ruby = pkgs.ruby_3_2;
+            ruby = pkgs.ruby_3_3;
             gemfile = ./Gemfile;
             lockfile = ./Gemfile.lock;
             gemset = ./gemset.nix;
@@ -176,7 +177,7 @@
                   category = "Dependencies";
                   help = "Update `Gemfile.lock` and `gemset.nix`";
                   command = ''
-                    ${pkgs.ruby_3_2}/bin/bundle lock
+                    ${pkgs.ruby_3_3}/bin/bundle lock
                     ${pkgs.bundix}/bin/bundix
                   '';
                 }

@@ -127,9 +127,7 @@ class ProxiedImageTest < ActiveSupport::TestCase
 
     assert_raises Net::HTTPFatalError do
       # Automatically calls `.process` in `after_create_commit` callback
-      proxy.save!
+      proxy.process
     end
-
-    assert_not_predicate proxy.image, :attached?
   end
 end

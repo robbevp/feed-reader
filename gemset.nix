@@ -846,14 +846,14 @@
     version = "1.7.3";
   };
   rack = {
-    groups = ["default" "development" "test"];
+    groups = ["default" "development" "production" "test"];
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0j3j8lxb3pda25lq9l3661rjd99a3z2ky6cqxbg7sdmvnwpr2b4w";
+      sha256 = "1b3ybjvj5mzj178y6r1xd4q34aj8hgpgyqxva6mlzwwdprzln47m";
       type = "gem";
     };
-    version = "3.0.8";
+    version = "3.0.9";
   };
   rack-mini-profiler = {
     dependencies = ["rack"];
@@ -861,10 +861,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1cbz4ih4ji2ika935x03in060kh236lyxfwk0c09p2l1wim59xcv";
+      sha256 = "00d80wjavaakhs177b7g542qs3n55kj4icjkwj0lbxcmaxyxxw1b";
       type = "gem";
     };
-    version = "3.3.0";
+    version = "3.3.1";
   };
   rack-proxy = {
     dependencies = ["rack"];

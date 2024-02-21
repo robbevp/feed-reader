@@ -1343,10 +1343,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0spn03dryg851r2pbg506pb7drwcwf9qcalf6c7qhjzzbdr8zzfs";
+      sha256 = "13jb9q0qv9ajw1ajr4cawnqj4h0dws3w5j4v5n6v3xk7a8rnjzr7";
       type = "gem";
     };
-    version = "3.21.2";
+    version = "3.22.0";
   };
   webrick = {
     groups = ["default" "development" "test"];

@@ -274,19 +274,19 @@
       };
     }
     {
-      name = "_hotwired_turbo_rails___turbo_rails_7.3.0.tgz";
+      name = "_hotwired_turbo_rails___turbo_rails_8.0.0.tgz";
       path = fetchurl {
-        name = "_hotwired_turbo_rails___turbo_rails_7.3.0.tgz";
-        url  = "https://registry.yarnpkg.com/@hotwired/turbo-rails/-/turbo-rails-7.3.0.tgz";
-        sha512 = "fvhO64vp/a2UVQ3jue9WTc2JisMv9XilIC7ViZmXAREVwiQ2S4UC7Go8f9A1j4Xu7DBI6SbFdqILk5ImqVoqyA==";
+        name = "_hotwired_turbo_rails___turbo_rails_8.0.0.tgz";
+        url  = "https://registry.yarnpkg.com/@hotwired/turbo-rails/-/turbo-rails-8.0.0.tgz";
+        sha512 = "5+yAKXFarExK3Q1oLYtqiunOgd8Rk9WiSy759MsujquUippgUZMBAfXjrYeRF/x8GslWJjvWZzpQsM5dzAwkOQ==";
       };
     }
     {
-      name = "_hotwired_turbo___turbo_7.3.0.tgz";
+      name = "_hotwired_turbo___turbo_8.0.0.tgz";
       path = fetchurl {
-        name = "_hotwired_turbo___turbo_7.3.0.tgz";
-        url  = "https://registry.yarnpkg.com/@hotwired/turbo/-/turbo-7.3.0.tgz";
-        sha512 = "Dcu+NaSvHLT7EjrDrkEmH4qET2ZJZ5IcCWmNXxNQTBwlnE5tBZfN6WxZ842n5cHV52DH/AKNirbPBtcEXDLW4g==";
+        name = "_hotwired_turbo___turbo_8.0.0.tgz";
+        url  = "https://registry.yarnpkg.com/@hotwired/turbo/-/turbo-8.0.0.tgz";
+        sha512 = "9jjazHwVMwnCRPhQJ2uDvE6GbcIX4IplxJA102/xpwVYyrBhrJa5lqiVrHEFb0ehnZ79O9Rca1E/lJqTeNRRsw==";
       };
     }
     {

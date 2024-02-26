@@ -409,10 +409,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "10070szssxmvzxw4jh37yl73jgxs329i7s7bk2x4yhplipyzz7av";
+      sha256 = "1mkbq9n999bmbmwkrpv817kpb03jbh7lbgrh9950hbz8kyj6k85n";
       type = "gem";
     };
-    version = "3.2.2";
+    version = "3.2.3";
   };
   ffi = {
     groups = ["default"];

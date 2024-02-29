@@ -37,6 +37,21 @@ class ProxiedImageTest < ActiveSupport::TestCase
     end
 
     assert_predicate proxy.image, :attached?
+    assert_equal 'image.jpg', proxy.image.filename.to_s
+  end
+
+  test 'should add default filename when url does not contain path' do
+    proxy = build(:proxied_image, url: 'https://example.com/?foo=bar')
+    stub_request(:any, 'https://example.com/?foo=bar')
+      .to_return(body: Rails.root.join('test/fixtures/files/image.jpg').read)
+
+    assert_difference ['ActiveStorage::Attachment.count', 'ActiveStorage::Blob.count'] do
+      # Automatically calls `.process` in `after_create_commit` callback
+      proxy.save!
+    end
+
+    assert_predicate proxy.image, :attached?
+    assert_equal 'proxied-image.jpg', proxy.image.filename.to_s
   end
 
   test 'should attach image without content type based on response' do

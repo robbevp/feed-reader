@@ -6,8 +6,8 @@ class FetchProxiedImageJob < ApplicationJob
   # Retry when we can't open a connection or get a server error
   retry_on Errno::EBUSY, Net::HTTPFatalError, Socket::ResolutionError, wait: :polynomially_longer, attempts: 10
 
-  # Ignore any resource that return a 404 error
-  discard_on ImageNotFoundError
+  # Ignore any client errors, as we can't fix these issues
+  discard_on Net::HTTPClientException
 
   def perform(proxied_image)
     proxied_image.process

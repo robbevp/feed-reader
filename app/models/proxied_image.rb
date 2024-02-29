@@ -12,7 +12,7 @@ class ProxiedImage < ApplicationRecord
   def process
     Tempfile.create(encoding: 'ascii-8bit') do |file|
       file.write fetch_image
-      filename = URI(url).path.split('/').last.split('.').first
+      filename = URI(url).path.split('/').last&.split('.')&.first || 'proxied-image'
       content_type = Marcel::MimeType.for(file)
       ext = Marcel::Magic.new(content_type).extensions.first
       image.attach(io: file, filename: "#{filename}.#{ext}", content_type:)

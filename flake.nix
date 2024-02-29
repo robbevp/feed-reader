@@ -85,7 +85,7 @@
                 gems
                 (pkgs.lowPrio gems.wrappedRuby)
                 pkgs.nixpkgs-fmt
-                pkgs.nodejs-18_x
+                pkgs.nodejs_20
                 pkgs.postgresql_15
                 pkgs.yarn
               ];

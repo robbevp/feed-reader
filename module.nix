@@ -362,8 +362,6 @@ in
       };
     };
 
-    security.acme.certs."${cfg.mailer.inboundDomain}".webroot = "/var/lib/acme/.challenges";
-
     services.nginx.virtualHosts = mkIf (cfg.nginx != null) {
       "${cfg.hostname}" = mkMerge [
         cfg.nginx
@@ -383,6 +381,9 @@ in
         }
       ];
       "mail.${cfg.mailer.inboundDomain}" = {
+        enableACME = true;
+      };
+      "${cfg.mailer.inboundDomain}" = {
         enableACME = true;
       };
     };

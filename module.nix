@@ -242,7 +242,7 @@ in
 
     services.postfix =
       let
-        certDir = config.security.acme.certs."${cfg.mailer.inboundDomain}".directory;
+        certDir = config.security.acme.certs.${cfg.mailer.inboundDomain}.directory;
       in
       {
         enable = true;

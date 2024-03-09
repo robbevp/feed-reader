@@ -19,4 +19,9 @@
 
   /* Fonts */
   --font-body: system-ui, sans-serif;
+  --text-base: 1rem;
+
+  /* Colours */
+  --color-white: oklch(100% 0 0deg);
+  --color-black: oklch(24.42% 0.006 0.59deg);
 }

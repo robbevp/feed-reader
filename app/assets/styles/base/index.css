@@ -1,0 +1,8 @@
+@import url("./reset.css");
+@import url("./theme.css");
+
+html {
+  color: var(--color-black);
+  font-size: var(--text-base);
+  font-family: var(--font-body);
+}

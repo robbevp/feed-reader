@@ -11,10 +11,10 @@ class ComponentFormBuilder < ActionView::Helpers::FormBuilder
     boolean: 'Forms::CheckboxComponent'
   }.freeze
 
-  def input(method, as: nil, **args, &block)
+  def input(method, as: nil, **args, &)
     args[:class] = ['form__input', args.delete(:class)].compact.flatten
     component = component_klass(method:, as:).new(form: self, name: method, **args)
-    component.render_in(@template, &block)
+    component.render_in(@template, &)
   end
 
   # Add default class to form submit

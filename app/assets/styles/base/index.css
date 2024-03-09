@@ -1,0 +1,6 @@
+@import url("./reset.css");
+@import url("./theme.css");
+
+html {
+  font-family: var(--font-body);
+}

@@ -383,7 +383,8 @@ in
       "mail.${cfg.mailer.inboundDomain}" = {
         enableACME = true;
       };
-      "${cfg.mailer.inboundDomain}" = {
+    } // mkIf (cfg.mailer.inboundDomain != cfg.hostname) {
+      "${cfg.mailer.inboundDomain}" =  {
         enableACME = true;
       };
     };

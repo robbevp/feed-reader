@@ -101,7 +101,19 @@ class EntryComponentTest < ViewComponent::TestCase
     render_inline(EntryComponent.new(entry:))
 
     assert_selector '.entry__body'
-    regex = %r{<head><link rel="stylesheet" href="/vite-test/assets/entry-body-[\dA-z]+.css"></head>}
+    regex = %r{<head>[\s\S]*<link rel="stylesheet" href="/vite-test/assets/entry-body-[\dA-z]+.css">[\s\S]*</head>}
+
+    assert_match regex, page.find('.entry__body')[:srcdoc]
+  end
+
+  test 'should inject base with target in head' do
+    body = '<div></div>'
+    entry = build(:entry, body:)
+
+    render_inline(EntryComponent.new(entry:))
+
+    assert_selector '.entry__body'
+    regex = %r{<head>[\s\S]*<base target="_parent">[\s\S]*</head>}
 
     assert_match regex, page.find('.entry__body')[:srcdoc]
   end

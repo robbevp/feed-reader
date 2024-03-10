@@ -9,3 +9,12 @@
 <%= link_to t('.delete'), entry_path(@entry), data: { turbo_confirm: t('.delete_confirm'), turbo_method: :delete } %>
 
 <%= render EntryComponent.new(entry: @entry) %>
+
+<%= content_tag :nav, aria: { label: t('.nav_pagination_label') } do %>
+  <%- if @previous_entry.present? %>
+    <%= link_to t('.previous'), entry_path(@previous_entry) %>
+  <%- end %>
+  <%- if @next_entry.present? %>
+    <%= link_to t('.next'), entry_path(@next_entry) %>
+  <%- end %>
+<%- end %>

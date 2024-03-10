@@ -34,4 +34,28 @@ class EntrySearchTest < ActiveSupport::TestCase
     assert_equal 1, result.length
     assert_equal entry, result.first
   end
+
+  test 'should get next and previous entry' do
+    previous = create(:entry, published_at: DateTime.current)
+    current = create(:entry, published_at: 2.minutes.ago)
+    next_entry = create(:entry, published_at: 4.minutes.ago)
+
+    search = EntrySearch.new
+
+    assert_equal previous, search.previous(Entry, current)
+    assert_equal next_entry, search.next(Entry, current)
+  end
+
+  test 'should respect filter when getting next and previous entry' do
+    create(:entry, :read, published_at: 3.minutes.ago)
+    create(:entry, :read, published_at: 1.minute.ago)
+    previous = create(:entry, published_at: DateTime.current)
+    current = create(:entry, published_at: 2.minutes.ago)
+    next_entry = create(:entry, published_at: 4.minutes.ago)
+
+    search = EntrySearch.new
+
+    assert_equal previous, search.previous(Entry, current)
+    assert_equal next_entry, search.next(Entry, current)
+  end
 end

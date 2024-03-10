@@ -24,6 +24,7 @@ class EntryComponent < ViewComponent::Base
     text = RichText.new(text: body)
     text.handle_img_urls { |url| find_proxy_blob_for_url(url) }
     text.add_to_head(helpers.vite_stylesheet_tag('entry-body.css'))
+    text.add_to_head(helpers.tag(:base, target: '_parent'))
     text.to_html
   end
 

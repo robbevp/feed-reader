@@ -9,7 +9,7 @@
     <%= helpers.sanitize(transformed_summary) %>
   <% end %>
   <% if body? %>
-    <%= content_tag :iframe, '', sandbox: 'allow-same-origin', srcdoc: transformed_body, class: 'entry__body', height: '500px', data: { sprinkles_component: 'resize-iframe' } %>
+    <%= content_tag :iframe, '', sandbox: 'allow-same-origin allow-top-navigation allow-top-navigation-by-user-activation', srcdoc: transformed_body, class: 'entry__body', height: '500px', data: { sprinkles_component: 'resize-iframe' } %>
   <% end %>
   <%- if url.present? %>
     <%= link_to t('.go_to_original'), url, class: 'entry__link', target: '_blank', rel: 'noopener noreferrer' %>

@@ -242,7 +242,7 @@ in
 
     services.postfix =
       let
-        certDir = config.security.acme.certs."${cfg.mailer.inboundDomain}".directory;
+        certDir = config.security.acme.certs.${cfg.mailer.inboundDomain}.directory;
       in
       {
         enable = true;
@@ -362,27 +362,30 @@ in
       };
     };
 
-    security.acme.certs."${cfg.mailer.inboundDomain}".webroot = "/var/lib/acme/.challenges";
-
-    services.nginx.virtualHosts = mkIf (cfg.nginx != null) {
-      "${cfg.hostname}" = mkMerge [
-        cfg.nginx
-        {
-          root = "${feed-reader}/public";
-          enableACME = true;
-          forceSSL = true;
-          locations = {
-            "/" = { tryFiles = "$uri @rails"; };
-            "@rails" = {
-              proxyPass = "http://feed_reader_server";
-              extraConfig = ''
-                proxy_set_header X-Forwarded-Ssl on;
-              '';
+    services.nginx.virtualHosts = mkIf (cfg.nginx != null)
+      {
+        "${cfg.hostname}" = mkMerge [
+          cfg.nginx
+          {
+            root = "${feed-reader}/public";
+            enableACME = true;
+            forceSSL = true;
+            locations = {
+              "/" = { tryFiles = "$uri @rails"; };
+              "@rails" = {
+                proxyPass = "http://feed_reader_server";
+                extraConfig = ''
+                  proxy_set_header X-Forwarded-Ssl on;
+                '';
+              };
             };
-          };
-        }
-      ];
-      "mail.${cfg.mailer.inboundDomain}" = {
+          }
+        ];
+        "mail.${cfg.mailer.inboundDomain}" = {
+          enableACME = true;
+        };
+      } // optionalAttrs (cfg.mailer.inboundDomain != cfg.hostname) {
+      "${cfg.mailer.inboundDomain}" = {
         enableACME = true;
       };
     };

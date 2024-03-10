@@ -40,7 +40,7 @@ class EntriesController < ApplicationController
 
   def set_entry_search
     search_params = params.fetch(:search, {}).permit(policy(Entry).permitted_attributes_for_index)
-    @entry_search = EntrySearch.new(**(search_params.presence || session[:entry_search]))
+    @entry_search = EntrySearch.new(**(search_params.presence || session[:entry_search].presence || {}))
     session[:entry_search] = @entry_search.to_h
   end
 end

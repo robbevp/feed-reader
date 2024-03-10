@@ -13,6 +13,7 @@ class EntrySearch
 
   def apply(entry_scope)
     scopes.inject(entry_scope) { |entries, scope| entries.send(*scope) }
+          .order(published_at: :desc, id: :asc)
   end
 
   def to_hash

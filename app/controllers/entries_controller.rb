@@ -6,7 +6,7 @@ class EntriesController < ApplicationController
 
   def index
     authorize Entry
-    @pagy, @entries = pagy(@entry_search.apply(policy_scope(Entry).includes(:subscription)).order(published_at: :desc))
+    @pagy, @entries = pagy(@entry_search.apply(policy_scope(Entry).includes(:subscription)))
     @category_options = policy_scope(Category)
   end
 

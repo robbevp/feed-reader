@@ -3,6 +3,8 @@
 class EntryPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
+      return scope.none if user.blank?
+
       scope.where(subscription: user.subscriptions)
     end
   end

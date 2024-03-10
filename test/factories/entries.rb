@@ -5,6 +5,10 @@ FactoryBot.define do
     subscription
     data { { title: 'Entry title' } }
 
+    trait :read do
+      read_at { DateTime.current }
+    end
+
     trait :with_all_details do
       author { Faker::Name.name }
       body { Faker::Lorem.paragraphs(number: 4) }

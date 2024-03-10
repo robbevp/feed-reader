@@ -16,6 +16,14 @@ class EntrySearch
           .order(published_at: :desc, id: :asc)
   end
 
+  def next(entry_scope, current)
+    apply(entry_scope).where.not(id: current.id).find_by(published_at: ..current.published_at)
+  end
+
+  def previous(entry_scope, current)
+    apply(entry_scope).reverse_order.where.not(id: current.id).find_by(published_at: current.published_at..)
+  end
+
   def to_hash
     { category_id:, include_read: }.compact
   end

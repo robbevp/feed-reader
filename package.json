@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@hotwired/turbo-rails": "^7.3.0",
-    "lightningcss": "^1.24.0",
+    "lightningcss": "^1.24.1",
     "vite": "^5.1.6",
     "vite-plugin-ruby": "^5.0.0"
   },

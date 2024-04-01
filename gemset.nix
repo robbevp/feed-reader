@@ -302,10 +302,10 @@
     }];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1npzlgpvvms97gw0ixndapnvwy7ih3zc5r3s3wd4y64rlbaadwc6";
+      sha256 = "1z77qyzcmvz3ciny6cb24s79a243jqkybqk30b310yichp02dq28";
       type = "gem";
     };
-    version = "1.9.1";
+    version = "1.9.2";
   };
   docile = {
     groups = ["default" "test"];

@@ -968,10 +968,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1ilr853hawi09626axx0mps4rkkmxcs54mapz9jnqvpnlwd3wsmy";
+      sha256 = "0lwv4rniry7k9dvz1n462d7j0dq9mrl6a95y6cvs6139h0ksxhgn";
       type = "gem";
     };
-    version = "13.1.0";
+    version = "13.2.0";
   };
   rdoc = {
     dependencies = ["psych"];
@@ -1144,10 +1144,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0z3cx4a6igxrfaj06bcg5pc2mv54lljvg2k3y6phvl10m6qmn08r";
+      sha256 = "0ia9crh99yv61zs5r65v6gx7k61bnwskvjsiwavv0yb49vzf59f5";
       type = "gem";
     };
-    version = "5.17.1";
+    version = "5.17.2";
   };
   sentry-ruby = {
     dependencies = ["bigdecimal" "concurrent-ruby"];
@@ -1155,10 +1155,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "00dimbqslmphw7nywnkhw7cc2n5y40pgjaj5hky3wik1jqrw8s2p";
+      sha256 = "1wpk1vyxnqapx0y40zkmz3125wkvwdsb663p6i6xq3ai8zjavixg";
       type = "gem";
     };
-    version = "5.17.1";
+    version = "5.17.2";
   };
   simplecov = {
     dependencies = ["docile" "simplecov-html" "simplecov_json_formatter"];

@@ -592,10 +592,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1pnyh44qycnf9mzi1j6fywd5fkskv3x7nmsqrrws0rjn5dd4ayfp";
+      sha256 = "1igmc3sq9ay90f8xjvfnswd1dybj1s3fi0dwd53inwsvqk4h24qq";
       type = "gem";
     };
-    version = "1.0.0";
+    version = "1.1.0";
   };
   mini_magick = {
     groups = ["default"];
@@ -1288,10 +1288,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "11c9p3grwmpx5b6p3fssw8xg9f9hfracfin2p98xva6qba3ialic";
+      sha256 = "12xi88jvx49p15nx2168wm0r00g90mb4cxzzsjxz92akjk92mkpj";
       type = "gem";
     };
-    version = "3.12.0";
+    version = "3.12.1";
   };
   vite_rails = {
     dependencies = ["railties" "vite_ruby"];

@@ -3,9 +3,10 @@
   "author": "Robbe Van Petegem <git@robbevp.be>",
   "private": true,
   "version": "0.0.1",
+  "type": "module",
   "scripts": {
     "lint:css": "stylelint **/*.css --ignore-path .gitignore",
-    "lint:js": "eslint . --ext js,jsx,ts --ignore-path .gitignore"
+    "lint:js": "eslint ."
   },
   "dependencies": {
     "@hotwired/turbo-rails": "^7.3.0",
@@ -14,16 +15,11 @@
     "vite-plugin-ruby": "^5.0.0"
   },
   "devDependencies": {
-    "@tree-company/eslint-config": "^0.3.2",
-    "@tree-company/stylelint-config": "^0.3.2",
-    "eslint": "^8.57.0",
+    "@tree-company/eslint-config": "^0.4.2",
+    "@tree-company/stylelint-config": "^0.4.2",
+    "eslint": "^9.2.0",
     "prettier": "^3.2.5",
-    "stylelint": "^16.3.1"
-  },
-  "eslintConfig": {
-    "extends": [
-      "@tree-company/eslint-config"
-    ]
+    "stylelint": "^16.5.0"
   },
   "stylelint": {
     "extends": [

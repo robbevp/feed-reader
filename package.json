@@ -4,6 +4,7 @@
   "private": true,
   "version": "0.0.1",
   "type": "module",
+  "license": "Hippocratic-2.1",
   "scripts": {
     "lint:css": "stylelint **/*.css --ignore-path .gitignore",
     "lint:js": "eslint ."

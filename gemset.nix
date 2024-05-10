@@ -773,6 +773,16 @@
     };
     version = "0.4";
   };
+  prism = {
+    groups = ["default" "development"];
+    platforms = [];
+    source = {
+      remotes = ["https://rubygems.org"];
+      sha256 = "0xqvz4xkys5876q9sfd8kb0i4pviahzd0g04qqz91py63i7hp3gn";
+      type = "gem";
+    };
+    version = "0.27.0";
+  };
   psych = {
     dependencies = ["stringio"];
     groups = ["default" "development" "production" "test"];
@@ -1086,6 +1096,17 @@
     };
     version = "2.24.1";
   };
+  ruby-lsp = {
+    dependencies = ["language_server-protocol" "prism" "sorbet-runtime"];
+    groups = ["development"];
+    platforms = [];
+    source = {
+      remotes = ["https://rubygems.org"];
+      sha256 = "1k4makdihhr9srd2jy2xwwv7liz1zmhj3f56z36balgzlry37zgf";
+      type = "gem";
+    };
+    version = "0.16.6";
+  };
   ruby-progressbar = {
     groups = ["default" "development"];
     platforms = [];
@@ -1211,6 +1232,16 @@
       type = "gem";
     };
     version = "1.17.0";
+  };
+  sorbet-runtime = {
+    groups = ["default" "development"];
+    platforms = [];
+    source = {
+      remotes = ["https://rubygems.org"];
+      sha256 = "1ghxhzdhrar24b5q9cm5alp1w8w87s38jblhrn1l66hqqpc10n2g";
+      type = "gem";
+    };
+    version = "0.5.11371";
   };
   stringio = {
     groups = ["default" "development" "production" "test"];

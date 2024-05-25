@@ -20,7 +20,7 @@ class ComponentFormBuilder < ActionView::Helpers::FormBuilder
   # Add default class to form submit
   def submit(value = nil, options = {})
     options[:class] = ['form__submit', options.delete(:class)].compact.flatten
-    super(value, options)
+    super
   end
 
   private

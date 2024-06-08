@@ -8,20 +8,16 @@ class EntryComponent < ViewComponent::Base
     @entry = entry
   end
 
-  def body?
-    body&.length&.positive?
+  def content
+    body.presence || summary
   end
 
-  def transformed_summary
-    return if summary.blank?
-
-    text = RichText.new(text: summary)
-    text.handle_img_urls { |url| find_proxy_blob_for_url(url) }
-    text.to_html
+  def content?
+    content&.length&.positive?
   end
 
-  def transformed_body
-    text = RichText.new(text: body)
+  def transformed_content
+    text = RichText.new(text: content)
     text.handle_img_urls { |url| find_proxy_blob_for_url(url) }
     text.add_to_head(helpers.vite_stylesheet_tag('entry-body.css'))
     text.add_to_head(helpers.tag(:base, target: '_parent'))

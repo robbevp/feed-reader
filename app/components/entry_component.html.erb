@@ -4,12 +4,8 @@
   <%- if published_at.present? %>
     <%= content_tag :span, helpers.l(published_at), class: 'entry__published-at' %>
   <% end %>
-
-  <%= content_tag :div, class: 'entry__summary' do %>
-    <%= helpers.sanitize(transformed_summary) %>
-  <% end %>
-  <% if body? %>
-    <%= content_tag :iframe, '', sandbox: 'allow-same-origin allow-top-navigation allow-top-navigation-by-user-activation', srcdoc: transformed_body, class: 'entry__body', height: '500px', data: { sprinkles_component: 'resize-iframe' } %>
+  <% if content? %>
+    <%= content_tag :iframe, '', sandbox: 'allow-same-origin allow-top-navigation allow-top-navigation-by-user-activation', srcdoc: transformed_content, class: 'entry__content', height: '500px', data: { sprinkles_component: 'resize-iframe' } %>
   <% end %>
   <%- if url.present? %>
     <%= link_to t('.go_to_original'), url, class: 'entry__link', target: '_blank', rel: 'noopener noreferrer' %>

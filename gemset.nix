@@ -1373,10 +1373,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0wza7pnwz8ym92gw0x4zr1icialhlw0l032kn4f86vw1vlzxmrd3";
+      sha256 = "0pczkk587lchfi48cazk0jgkdxq6rw854qgyw9v2y7cj4hqdj7ci";
       type = "gem";
     };
-    version = "3.5.0";
+    version = "3.6.0";
   };
   web-console = {
     dependencies = ["actionview" "activemodel" "bindex" "railties"];

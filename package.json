@@ -18,7 +18,7 @@
   "devDependencies": {
     "@tree-company/eslint-config": "^0.4.2",
     "@tree-company/stylelint-config": "^0.4.2",
-    "eslint": "^9.4.0",
+    "eslint": "^9.5.0",
     "prettier": "^3.3.2",
     "stylelint": "^16.6.1"
   },

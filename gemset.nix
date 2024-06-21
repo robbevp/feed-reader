@@ -1171,15 +1171,15 @@
     version = "1.3.2";
   };
   selenium-webdriver = {
-    dependencies = ["base64" "rexml" "rubyzip" "websocket"];
+    dependencies = ["base64" "logger" "rexml" "rubyzip" "websocket"];
     groups = ["test"];
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0qrjr30qs01b27km6ipzc2zasdlzhdgri5q7qrb53z1j8l0n82y3";
+      sha256 = "0rjxlivsh32xvjq78p1m1sr366aa04wms4hwb2r187ygrnmp0hv4";
       type = "gem";
     };
-    version = "4.21.1";
+    version = "4.22.0";
   };
   sentry-rails = {
     dependencies = ["railties" "sentry-ruby"];

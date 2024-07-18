@@ -332,10 +332,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1w39jms4bsggxvl23cxanhccv1ngb6nqxsqhi784v5bjz1lx3si8";
+      sha256 = "18cxi596f5x1vglnma4hhm6z15m7yma6yparsybyfz3a2z0iqc08";
       type = "gem";
     };
-    version = "1.0.0";
+    version = "1.1.0";
   };
   erb_lint = {
     dependencies = ["activesupport" "better_html" "parser" "rainbow" "rubocop" "smart_properties"];
@@ -1373,10 +1373,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0pczkk587lchfi48cazk0jgkdxq6rw854qgyw9v2y7cj4hqdj7ci";
+      sha256 = "0fgpwlvmasj10kx5929xyb4fysqlfb3iixbci68170k6bslssd2a";
       type = "gem";
     };
-    version = "3.6.0";
+    version = "3.7.0";
   };
   web-console = {
     dependencies = ["actionview" "activemodel" "bindex" "railties"];

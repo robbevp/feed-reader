@@ -418,10 +418,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1862ydmclzy1a0cjbvm8dz7847d9rch495ib0zb64y84d3xd4bkg";
+      sha256 = "07139870npj59jnl8vmk39ja3gdk3fb5z9vc0lf32y2h891hwqsi";
       type = "gem";
     };
-    version = "1.15.5";
+    version = "1.17.0";
   };
   fugit = {
     dependencies = ["et-orbi" "raabro"];
@@ -483,10 +483,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1f32dzj77p9mfp4q95930vfkp80psf88phjc46jhf9ncl72ykffk";
+      sha256 = "0rfxkhfsqz0bj2p32yb6kv7xibair2fn240bh2j1cfsp0wkzxkvi";
       type = "gem";
     };
-    version = "1.12.2";
+    version = "1.13.0";
   };
   io-console = {
     groups = ["default" "development" "production" "test"];
@@ -612,10 +612,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0slh78f9z6n0l1i2km7m48yz7l4fjrk88sj1f4mh1wb39sl2yc37";
+      sha256 = "1nfxjpmka12ihbwd87d5k2hh7d2pv3aq95x0l2lh8gca1s72bmki";
       type = "gem";
     };
-    version = "4.12.0";
+    version = "4.13.2";
   };
   mini_mime = {
     groups = ["default"];
@@ -1140,15 +1140,15 @@
     version = "1.13.0";
   };
   ruby-vips = {
-    dependencies = ["ffi"];
+    dependencies = ["ffi" "logger"];
     groups = ["default"];
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "19pzpx406rr9s3qk527rn9y3b76sjq5pi7y0xzqiy50q3k0hhg7g";
+      sha256 = "0nyxwib3y2fc1lciaac0s03y3i915kyfq1kn9m19hyl5yblyhnxg";
       type = "gem";
     };
-    version = "2.1.4";
+    version = "2.2.2";
   };
   rubyzip = {
     groups = ["default" "test"];

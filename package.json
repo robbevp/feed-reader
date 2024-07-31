@@ -16,11 +16,11 @@
     "vite-plugin-ruby": "^5.0.0"
   },
   "devDependencies": {
-    "@tree-company/eslint-config": "^0.4.2",
-    "@tree-company/stylelint-config": "^0.4.2",
+    "@tree-company/eslint-config": "^0.4.3",
+    "@tree-company/stylelint-config": "^0.4.3",
     "eslint": "^9.8.0",
     "prettier": "^3.3.3",
-    "stylelint": "^16.8.0"
+    "stylelint": "^16.8.1"
   },
   "stylelint": {
     "extends": [

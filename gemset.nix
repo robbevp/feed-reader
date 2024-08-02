@@ -180,10 +180,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1sk5s5lpwbd53s4a1xzm02nys3kfqdw5mh9i2qfn04hjsk8wk3gc";
+      sha256 = "0mdgwlc02f43svy92p0k5v1hipibpzxcdjm774lkz2j8s58kav04";
       type = "gem";
     };
-    version = "2.0.2";
+    version = "2.1.1";
   };
   bigdecimal = {
     groups = ["default" "development" "production" "test"];
@@ -343,10 +343,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1h4rpid0d50hikb1yx7apk0vp53qsqgj1cn6rrfqnk580ln4zm5c";
+      sha256 = "1kam8msbqx6jhw8ydxrlg85adjpndwwkf21642mj3s9fg5vqydij";
       type = "gem";
     };
-    version = "0.5.0";
+    version = "0.6.0";
   };
   erubi = {
     groups = ["default" "development" "production" "test"];
@@ -1058,10 +1058,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0zr5qpa8lampaqzhdcjcvyqnrqcjl7439mqjlkjz43wdhmpnh4s5";
+      sha256 = "0lavf9ki8ji8q3gd79b1slbxvbky4pvwb7i9g19lgy3id8kpd4ga";
       type = "gem";
     };
-    version = "3.3.2";
+    version = "3.3.4";
   };
   rubocop = {
     dependencies = ["json" "language_server-protocol" "parallel" "parser" "rainbow" "regexp_parser" "rexml" "rubocop-ast" "ruby-progressbar" "unicode-display_width"];

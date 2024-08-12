@@ -5,7 +5,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '~> 3.3.1'
 
-gem 'rails', '~> 7.1.3'
+gem 'rails', '~> 7.2.0'
 
 gem 'bcrypt' # Use Active Model has_secure_password
 gem 'bootsnap', require: false # Reduces boot times through caching; required in config/boot.rb
@@ -33,6 +33,7 @@ end
 
 group :development do
   gem 'annotate', github: 'robbevp/annotate_models', branch: 'enhc/support-virtual-columns'
+  gem 'brakeman', require: false
   gem 'erb_lint'
   gem 'pgreset' # Easily reset the database while connections are active
   gem 'rack-mini-profiler' # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]

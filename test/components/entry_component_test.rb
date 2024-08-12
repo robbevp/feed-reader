@@ -49,7 +49,7 @@ class EntryComponentTest < ViewComponent::TestCase
       .to_return(body: Rails.root.join('test/fixtures/files/image.jpg').read)
 
     # Creating the entry will detect the image and proxy the image
-    entry = create(:entry, body:)
+    entry = perform_enqueued_jobs { create(:entry, body:) }
 
     render_inline(EntryComponent.new(entry:))
 
@@ -66,7 +66,7 @@ class EntryComponentTest < ViewComponent::TestCase
       .to_return(body: Rails.root.join('test/fixtures/files/image.jpg').read)
 
     # Creating the entry will detect the image and proxy the image
-    entry = create(:entry, body:)
+    entry = perform_enqueued_jobs { create(:entry, body:) }
 
     render_inline(EntryComponent.new(entry:))
 
@@ -83,7 +83,7 @@ class EntryComponentTest < ViewComponent::TestCase
       .to_return(body: Rails.root.join('test/fixtures/files/image.jpg').read)
 
     # Creating the entry will detect the image and proxy the image
-    entry = create(:entry, body:)
+    entry = perform_enqueued_jobs { create(:entry, body:) }
 
     render_inline(EntryComponent.new(entry:))
 

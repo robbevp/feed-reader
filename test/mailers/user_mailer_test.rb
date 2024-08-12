@@ -19,7 +19,7 @@ class UserMailerTest < ActionMailer::TestCase
     mail = UserMailer.with(user: @user).reset_password
 
     # Find the url with the signed id though regexp, as this url is not deterministic
-    base_path = 'http://example.com/users/password/edit?token='
+    base_path = 'http://www.example.com/users/password/edit?token='
     signed_id_match = '[A-z0-9=]+--[a-z0-9]+'
 
     # Text part

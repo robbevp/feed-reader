@@ -195,6 +195,7 @@
                     set +e
                     rubocop
                     erblint --lint-all
+                    brakeman
                     yarn lint:js
                     yarn lint:css
                     nixpkgs-fmt --check flake.nix module.nix
@@ -208,6 +209,7 @@
                     set +e
                     rubocop -A
                     erblint --lint-all -a
+                    brakeman
                     yarn lint:js --fix
                     yarn lint:css --fix
                     nixpkgs-fmt flake.nix module.nix

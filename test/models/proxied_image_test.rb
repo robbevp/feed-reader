@@ -137,7 +137,7 @@ class ProxiedImageTest < ActiveSupport::TestCase
 
     perform_enqueued_jobs do
       assert_raises Net::HTTPFatalError do
-        proxy.process 
+        proxy.process
       end
     end
   end

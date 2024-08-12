@@ -33,6 +33,7 @@ end
 
 group :development do
   gem 'annotate', github: 'robbevp/annotate_models', branch: 'enhc/support-virtual-columns'
+  gem 'brakeman', require: false
   gem 'erb_lint'
   gem 'pgreset' # Easily reset the database while connections are active
   gem 'rack-mini-profiler' # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]

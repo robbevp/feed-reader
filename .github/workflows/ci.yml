@@ -58,6 +58,8 @@ jobs:
         run: bundle exec rubocop -c .rubocop.yml
       - name: Lint with erblint
         run: bundle exec erblint --lint-all
+      - name: Scan with brakeman
+        run: bundle exec brakeman --no-pager
   lint-node:
     runs-on: ubuntu-latest
     timeout-minutes: 10

@@ -123,8 +123,10 @@ class RssFeedTest < ActiveSupport::TestCase
 
     feed = build(:rss_feed, url: 'https://example.com')
 
-    assert_raises TooManyRedirectsError do
-      feed.save! # Will trigger `refresh!` in `after_create_commit`
+    perform_enqueued_jobs do
+      assert_raises TooManyRedirectsError do
+        feed.save! # Will trigger `refresh!` in `after_create_commit`
+      end
     end
 
     assert_nil feed.last_fetched_at
@@ -135,8 +137,10 @@ class RssFeedTest < ActiveSupport::TestCase
 
     feed = build(:rss_feed, url: 'https://example.com')
 
-    assert_raises Net::HTTPClientException do
-      feed.save! # Will trigger `refresh!` in `after_create_commit`
+    perform_enqueued_jobs do
+      assert_raises Net::HTTPClientException do
+        feed.save! # Will trigger `refresh!` in `after_create_commit`
+      end
     end
 
     assert_nil feed.last_fetched_at

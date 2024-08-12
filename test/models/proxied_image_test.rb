@@ -32,8 +32,7 @@ class ProxiedImageTest < ActiveSupport::TestCase
       .to_return(body: Rails.root.join('test/fixtures/files/image.jpg').read)
 
     assert_difference ['ActiveStorage::Attachment.count', 'ActiveStorage::Blob.count'] do
-      # Automatically calls `.process` in `after_create_commit` callback
-      proxy.save!
+      perform_enqueued_jobs { proxy.save! }
     end
 
     assert_predicate proxy.image, :attached?
@@ -46,8 +45,7 @@ class ProxiedImageTest < ActiveSupport::TestCase
       .to_return(body: Rails.root.join('test/fixtures/files/image.jpg').read)
 
     assert_difference ['ActiveStorage::Attachment.count', 'ActiveStorage::Blob.count'] do
-      # Automatically calls `.process` in `after_create_commit` callback
-      proxy.save!
+      perform_enqueued_jobs { proxy.save! }
     end
 
     assert_predicate proxy.image, :attached?
@@ -60,8 +58,7 @@ class ProxiedImageTest < ActiveSupport::TestCase
       .to_return(body: Rails.root.join('test/fixtures/files/image.jpg').read)
 
     assert_difference ['ActiveStorage::Attachment.count', 'ActiveStorage::Blob.count'] do
-      # Automatically calls `.process` in `after_create_commit` callback
-      proxy.save!
+      perform_enqueued_jobs { proxy.save! }
     end
 
     assert_equal 'image/jpeg', proxy.image.content_type
@@ -77,8 +74,7 @@ class ProxiedImageTest < ActiveSupport::TestCase
       .to_return(body: Rails.root.join('test/fixtures/files/image.jpg').read)
 
     assert_difference ['ActiveStorage::Attachment.count', 'ActiveStorage::Blob.count'] do
-      # Automatically calls `.process` in `after_create_commit` callback
-      proxy.save!
+      perform_enqueued_jobs { proxy.save! }
     end
 
     assert_predicate proxy.image, :attached?
@@ -93,8 +89,7 @@ class ProxiedImageTest < ActiveSupport::TestCase
       .to_return(body: Rails.root.join('test/fixtures/files/image.jpg').read)
 
     assert_difference ['ActiveStorage::Attachment.count', 'ActiveStorage::Blob.count'] do
-      # Automatically calls `.process` in `after_create_commit` callback
-      proxy.save!
+      perform_enqueued_jobs { proxy.save! }
     end
 
     assert_predicate proxy.image, :attached?
@@ -109,8 +104,7 @@ class ProxiedImageTest < ActiveSupport::TestCase
       .to_return(body: Rails.root.join('test/fixtures/files/image.jpg').read)
 
     assert_difference ['ActiveStorage::Attachment.count', 'ActiveStorage::Blob.count'] do
-      # Automatically calls `.process` in `after_create_commit` callback
-      proxy.save!
+      perform_enqueued_jobs { proxy.save! }
     end
 
     assert_predicate proxy.image, :attached?
@@ -127,9 +121,10 @@ class ProxiedImageTest < ActiveSupport::TestCase
     stub_request(:any, 'https://example.no').to_return(status: 302, headers: { 'Location' => 'https://example.fi' })
     stub_request(:any, 'https://example.fi').to_return(status: 302, headers: { 'Location' => 'https://example.dk' })
 
-    assert_raises TooManyRedirectsError do
-      # Automatically calls `.process` in `after_create_commit` callback
-      proxy.save!
+    perform_enqueued_jobs do
+      assert_raises TooManyRedirectsError do
+        proxy.save!
+      end
     end
 
     assert_not_predicate proxy.image, :attached?
@@ -140,9 +135,10 @@ class ProxiedImageTest < ActiveSupport::TestCase
 
     proxy = build(:proxied_image, url: 'https://example.com/image.jpg')
 
-    assert_raises Net::HTTPFatalError do
-      # Automatically calls `.process` in `after_create_commit` callback
-      proxy.process
+    perform_enqueued_jobs do
+      assert_raises Net::HTTPFatalError do
+        proxy.process 
+      end
     end
   end
 end

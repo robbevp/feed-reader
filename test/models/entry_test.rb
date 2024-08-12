@@ -37,7 +37,9 @@ class EntryTest < ActiveSupport::TestCase
       .to_return(body: Rails.root.join('test/fixtures/files/image.jpg').read)
 
     assert_difference ['ProxiedImage.count', 'ActiveStorage::Attachment.count'] do
-      create(:entry, body: '<div><img src="https://example.com/image.jpg" /></div>')
+      perform_enqueued_jobs do
+        create(:entry, body: '<div><img src="https://example.com/image.jpg" /></div>')
+      end
     end
   end
 

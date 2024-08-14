@@ -7,6 +7,9 @@ ruby '~> 3.3.1'
 
 gem 'rails', '~> 7.2.0'
 
+# Keep minitest pinned until https://github.com/minitest/minitest/issues/1007 is resolved
+gem 'minitest', '5.24.1'
+
 gem 'bcrypt' # Use Active Model has_secure_password
 gem 'bootsnap', require: false # Reduces boot times through caching; required in config/boot.rb
 gem 'feedjira' # Parse RSS feeds

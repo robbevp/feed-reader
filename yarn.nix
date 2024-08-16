@@ -2554,11 +2554,11 @@
       };
     }
     {
-      name = "postcss___postcss_8.4.40.tgz";
+      name = "postcss___postcss_8.4.41.tgz";
       path = fetchurl {
-        name = "postcss___postcss_8.4.40.tgz";
-        url  = "https://registry.yarnpkg.com/postcss/-/postcss-8.4.40.tgz";
-        sha512 = "YF2kKIUzAofPMpfH6hOi2cGnv/HrUlfucspc7pDyvv7kGdqXrfj8SCl/t8owkEgKEuu8ZcRjSOxFxVLqwChZ2Q==";
+        name = "postcss___postcss_8.4.41.tgz";
+        url  = "https://registry.yarnpkg.com/postcss/-/postcss-8.4.41.tgz";
+        sha512 = "TesUflQ0WKZqAvg52PWL6kHgLKP6xB6heTOdoYM0Wt2UHyxNa4K25EZZMgKns3BH1RLVbZCREPpLY0rhnNoHVQ==";
       };
     }
     {
@@ -3202,11 +3202,11 @@
       };
     }
     {
-      name = "vite___vite_5.4.0.tgz";
+      name = "vite___vite_5.4.1.tgz";
       path = fetchurl {
-        name = "vite___vite_5.4.0.tgz";
-        url  = "https://registry.yarnpkg.com/vite/-/vite-5.4.0.tgz";
-        sha512 = "5xokfMX0PIiwCMCMb9ZJcMyh5wbBun0zUzKib+L65vAZ8GY9ePZMXxFrHbr/Kyll2+LSCY7xtERPpxkBDKngwg==";
+        name = "vite___vite_5.4.1.tgz";
+        url  = "https://registry.yarnpkg.com/vite/-/vite-5.4.1.tgz";
+        sha512 = "1oE6yuNXssjrZdblI9AfBbHCC41nnyoVoEZxQnID6yvQZAFBzxxkqoFLtHUMkYunL8hwOLEjgTuxpkRxvba3kA==";
       };
     }
     {

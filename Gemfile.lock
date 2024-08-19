@@ -181,7 +181,7 @@ GEM
     mini_magick (4.13.2)
     mini_mime (1.1.5)
     mini_portile2 (2.8.7)
-    minitest (5.24.1)
+    minitest (5.25.1)
     msgpack (1.7.2)
     net-imap (0.4.14)
       date
@@ -381,7 +381,6 @@ DEPENDENCIES
   feedjira
   good_job
   image_processing
-  minitest (= 5.24.1)
   pagy
   pg
   pgreset

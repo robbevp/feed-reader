@@ -381,7 +381,6 @@ DEPENDENCIES
   feedjira
   good_job
   image_processing
-  minitest (= 5.25.1)
   pagy
   pg
   pgreset

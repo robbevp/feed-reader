@@ -738,10 +738,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0ql7hjkkdz77pmlmbi2dzh892n5lmhigcc4a8nz7qlj4hyfjbsra";
+      sha256 = "18vidkmaq05vps76v2hxjlm2rk8jq52h305493d7naxlqsb14hyq";
       type = "gem";
     };
-    version = "9.0.5";
+    version = "9.0.6";
   };
   parallel = {
     groups = ["default" "development"];

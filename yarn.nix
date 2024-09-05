@@ -3218,11 +3218,11 @@
       };
     }
     {
-      name = "vite_plugin_ruby___vite_plugin_ruby_5.0.0.tgz";
+      name = "vite_plugin_ruby___vite_plugin_ruby_5.1.0.tgz";
       path = fetchurl {
-        name = "vite_plugin_ruby___vite_plugin_ruby_5.0.0.tgz";
-        url  = "https://registry.yarnpkg.com/vite-plugin-ruby/-/vite-plugin-ruby-5.0.0.tgz";
-        sha512 = "c8PjTp21Ah/ttgnNUyu0qvCXZI08Jr9I24oUKg3TRIRhF5GcOZ++6wtlTCrNFd9COEQbpXHxlRIXd/MEg0iZJw==";
+        name = "vite_plugin_ruby___vite_plugin_ruby_5.1.0.tgz";
+        url  = "https://registry.yarnpkg.com/vite-plugin-ruby/-/vite-plugin-ruby-5.1.0.tgz";
+        sha512 = "Dgd/dCvb/8GYxZx2NEgxygEoUpHz9vfad7itlO4fXqYwdfAEwFwwOohC630yf/+kxIGBZXI5yk+Y3WkL9VkwcA==";
       };
     }
     {

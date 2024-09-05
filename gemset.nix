@@ -1394,10 +1394,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1zz6az33bgwhfhibcmjpmy2bynfrkrx50d1anm7061jwhm11ihlh";
+      sha256 = "1bpxn5yf5f2rg5j3vy97zmq8xcp7vxar9y7fcrv2dvz8d8ak19vr";
       type = "gem";
     };
-    version = "3.8.0";
+    version = "3.8.1";
   };
   web-console = {
     dependencies = ["actionview" "activemodel" "bindex" "railties"];
@@ -1478,9 +1478,9 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1b1azc3qlyzlnld4d5yav9j13dlqlyygnml5qf4gqpzaj861d588";
+      sha256 = "10cpfdswql21vildiin0q7drg5zfzf2sahnk9hv3nyzzjqwj2bdx";
       type = "gem";
     };
-    version = "2.6.17";
+    version = "2.6.18";
   };
 }

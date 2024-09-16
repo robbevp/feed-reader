@@ -62,6 +62,28 @@ class RssFeedTest < ActiveSupport::TestCase
     assert_not_nil feed.last_fetched_at
   end
 
+  test 'should store cache information when refreshing feed' do
+    feed = create(:rss_feed)
+    stub_request(:any, feed.url)
+      .to_return(body: Rails.root.join('test/fixtures/files/example_feed.xml').read,
+                 headers: { ETag: 'some-string', 'Last-Modified': 'Mon, 21 sep 2024 21:48:00 GMT' })
+
+    feed.refresh!
+
+    assert_equal 'some-string', feed.reload.last_etag
+    assert_equal '2024-09-21 21:48:00 UTC', feed.reload.last_modified_at.utc.to_s
+  end
+
+  test 'should not change entries when feed returns 304' do
+    feed = create(:rss_feed)
+    stub_request(:any, feed.url)
+      .to_return(status: 304)
+
+    assert_changes 'feed.reload.last_fetched_at' do
+      feed.refresh!
+    end
+  end
+
   test 'should follow redirect when feed returns 301' do
     stub_request(:any, 'https://www.example.com')
       .to_return(status: 301, headers: { 'Location' => 'https://example.be' })

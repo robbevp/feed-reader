@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_07_09_182634) do
+ActiveRecord::Schema[7.2].define(version: 2024_09_16_062220) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
   enable_extension "plpgsql"
@@ -190,6 +190,8 @@ ActiveRecord::Schema[7.2].define(version: 2024_07_09_182634) do
     t.datetime "last_fetched_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "last_modified_at"
+    t.string "last_etag"
   end
 
   create_table "subscriptions", force: :cascade do |t|

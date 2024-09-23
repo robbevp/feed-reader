@@ -1054,15 +1054,14 @@
     version = "0.5.9";
   };
   rexml = {
-    dependencies = ["strscan"];
-    groups = ["default" "development" "test"];
+    groups = ["default" "test"];
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1ik3in0957l9s6iwdm3nsk4za072cj27riiqgpx6zzcd22flbw3s";
+      sha256 = "09shc1dvg88c4yx83d4c9wf26z838nlapa3cmlq8iqdci39a98v2";
       type = "gem";
     };
-    version = "3.3.6";
+    version = "3.3.7";
   };
   rubocop = {
     dependencies = ["json" "language_server-protocol" "parallel" "parser" "rainbow" "regexp_parser" "rubocop-ast" "ruby-progressbar" "unicode-display_width"];
@@ -1187,10 +1186,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "09irqp6f1n85434kbqs6yfrqiw9fkkf8zbg7hnjm2nhjm6w7ij00";
+      sha256 = "1md0sixm8dq8a7riv50x4q1z273q47b5jvcbv5hxympxn3ran4by";
       type = "gem";
     };
-    version = "4.24.0";
+    version = "4.25.0";
   };
   sentry-rails = {
     dependencies = ["railties" "sentry-ruby"];
@@ -1293,16 +1292,6 @@
       type = "gem";
     };
     version = "3.1.1";
-  };
-  strscan = {
-    groups = ["default" "development" "test"];
-    platforms = [];
-    source = {
-      remotes = ["https://rubygems.org"];
-      sha256 = "0mamrl7pxacbc79ny5hzmakc9grbjysm3yy6119ppgsg44fsif01";
-      type = "gem";
-    };
-    version = "3.1.0";
   };
   thor = {
     groups = ["default" "development" "production" "test"];

@@ -3258,11 +3258,11 @@
       };
     }
     {
-      name = "vite___vite_5.4.7.tgz";
+      name = "vite___vite_5.4.8.tgz";
       path = fetchurl {
-        name = "vite___vite_5.4.7.tgz";
-        url  = "https://registry.yarnpkg.com/vite/-/vite-5.4.7.tgz";
-        sha512 = "5l2zxqMEPVENgvzTuBpHer2awaetimj2BGkhBPdnwKbPNOlHsODU+oiazEZzLK7KhAnOrO+XGYJYn4ZlUhDtDQ==";
+        name = "vite___vite_5.4.8.tgz";
+        url  = "https://registry.yarnpkg.com/vite/-/vite-5.4.8.tgz";
+        sha512 = "FqrItQ4DT1NC4zCUqMB4c4AZORMKIa0m8/URVCZ77OZ/QSNeJ54bU1vrFADbDsuwfIPcgknRkmqakQcgnL4GiQ==";
       };
     }
     {

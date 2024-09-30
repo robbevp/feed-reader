@@ -531,10 +531,10 @@
     }];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "05g6vpz3997q4j3xhrliswfx3g5flsn5cfn1p1s4h6dx7c0hbn2k";
+      sha256 = "1y40dv3caswr81dlsyln6vnmmpzf5jcal2rqjbsglvnkb0xh0xar";
       type = "gem";
     };
-    version = "1.14.0";
+    version = "1.14.1";
   };
   json = {
     groups = ["default" "development"];
@@ -1048,10 +1048,10 @@
     }];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0y6kyz7kcilwdpfy3saqfgnar38vr5ys9sp40ndffy6h1znxfbax";
+      sha256 = "0rl1jmxs7pay58l7lkxkrn6nkdpk52k8rvnfwqsd1swjlxlwjq0n";
       type = "gem";
     };
-    version = "0.5.9";
+    version = "0.5.10";
   };
   rexml = {
     groups = ["default" "test"];
@@ -1197,10 +1197,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "158rhsv547f3c31kfz8kdr7kpgm34sqm0bzbkxpqg3pazqim7bfl";
+      sha256 = "0jq6nxhc49ys6llii96ksrlfnq719hhxr67rypfxr15wraap8s81";
       type = "gem";
     };
-    version = "5.19.0";
+    version = "5.20.1";
   };
   sentry-ruby = {
     dependencies = ["bigdecimal" "concurrent-ruby"];
@@ -1208,10 +1208,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "12w3w779dcab85x1i4aavd5fw8xdb7mvhs3cvx85q2l48vr8kpqd";
+      sha256 = "11ya4p0hxp2xm5lp8rljrlzjgh7kvp61gk2xa0mbk0ry0s5v44jp";
       type = "gem";
     };
-    version = "5.19.0";
+    version = "5.20.1";
   };
   simplecov = {
     dependencies = ["docile" "simplecov-html" "simplecov_json_formatter"];
@@ -1411,14 +1411,14 @@
     version = "3.23.1";
   };
   webrick = {
-    groups = ["default" "development" "test"];
+    groups = ["default" "development" "production" "test"];
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "13qm7s0gr2pmfcl7dxrmq38asaza4w0i2n9my4yzs499j731wh8r";
+      sha256 = "089gy5494j560b242vi173wnbj2913hwlwnjkpzld58r96ilc5s3";
       type = "gem";
     };
-    version = "1.8.1";
+    version = "1.8.2";
   };
   websocket = {
     groups = ["default" "test"];

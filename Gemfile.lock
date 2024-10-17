@@ -121,7 +121,7 @@ GEM
     docile (1.4.0)
     drb (2.2.1)
     dry-cli (1.1.0)
-    erb_lint (0.6.0)
+    erb_lint (0.7.0)
       activesupport
       better_html (>= 2.0.1)
       parser (>= 2.7.1.4)

@@ -354,10 +354,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1kam8msbqx6jhw8ydxrlg85adjpndwwkf21642mj3s9fg5vqydij";
+      sha256 = "1vn2ssgid25fknmcla3k3gxym4l5ymn7hvggs33q11frc9zp53ki";
       type = "gem";
     };
-    version = "0.6.0";
+    version = "0.7.0";
   };
   erubi = {
     groups = ["default" "development" "production" "test"];

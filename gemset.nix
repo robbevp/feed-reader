@@ -343,10 +343,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "18cxi596f5x1vglnma4hhm6z15m7yma6yparsybyfz3a2z0iqc08";
+      sha256 = "0nyrgj4a0ppk0qfp8cny4wb3hsr2cw55ynh2w973brhf54xxz5wc";
       type = "gem";
     };
-    version = "1.1.0";
+    version = "1.2.0";
   };
   erb_lint = {
     dependencies = ["activesupport" "better_html" "parser" "rainbow" "rubocop" "smart_properties"];
@@ -1372,10 +1372,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1k4bllg0zpmpkjfmk1gybc2ygca4v40l2fmlplf9h0jqwniqa3mr";
+      sha256 = "0kl28wxbsf7wiqx90q90b9503284rslpig56g0i14lhn47w1bz65";
       type = "gem";
     };
-    version = "3.0.17";
+    version = "3.0.18";
   };
   vite_ruby = {
     dependencies = ["dry-cli" "logger" "rack-proxy" "zeitwerk"];
@@ -1467,9 +1467,9 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1923v8ivfihd59jbyzmcbgqybnhhyqw0l49lp1qvbpzjc5l88k54";
+      sha256 = "0mi7b90hvc6nqv37q27df4i2m27yy56yfy2ki5073474a1h9hi89";
       type = "gem";
     };
-    version = "2.7.0";
+    version = "2.7.1";
   };
 }

@@ -930,15 +930,15 @@
     version = "2.1.0";
   };
   rackup = {
-    dependencies = ["rack" "webrick"];
-    groups = ["default" "development" "test"];
+    dependencies = ["rack"];
+    groups = ["default" "development" "production" "test"];
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0kbcka30g681cqasw47pq93fxjscq7yvs5zf8lp3740rb158ijvf";
+      sha256 = "0galx82kpns9dp02mmrhlivzxszr5rdv364rrf97cj9j1q65scvj";
       type = "gem";
     };
-    version = "2.1.0";
+    version = "2.2.0";
   };
   rails = {
     dependencies = ["actioncable" "actionmailbox" "actionmailer" "actionpack" "actiontext" "actionview" "activejob" "activemodel" "activerecord" "activestorage" "activesupport" "railties"];
@@ -1382,10 +1382,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0kl28wxbsf7wiqx90q90b9503284rslpig56g0i14lhn47w1bz65";
+      sha256 = "005mbcprdhjqx27561mb54kssjwxwij157x6wya1yp60gdkl8p0r";
       type = "gem";
     };
-    version = "3.0.18";
+    version = "3.0.19";
   };
   vite_ruby = {
     dependencies = ["dry-cli" "logger" "rack-proxy" "zeitwerk"];
@@ -1419,16 +1419,6 @@
       type = "gem";
     };
     version = "3.24.0";
-  };
-  webrick = {
-    groups = ["default" "development" "production" "test"];
-    platforms = [];
-    source = {
-      remotes = ["https://rubygems.org"];
-      sha256 = "089gy5494j560b242vi173wnbj2913hwlwnjkpzld58r96ilc5s3";
-      type = "gem";
-    };
-    version = "1.8.2";
   };
   websocket = {
     groups = ["default" "test"];

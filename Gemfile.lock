@@ -168,7 +168,7 @@ GEM
       reline (>= 0.4.2)
     json (2.7.5)
     language_server-protocol (3.17.0.3)
-    logger (1.6.1)
+    logger (1.6.3)
     loofah (2.23.1)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
@@ -185,6 +185,7 @@ GEM
     mini_portile2 (2.8.7)
     minitest (5.25.1)
     msgpack (1.7.2)
+    mutex_m (0.3.0)
     net-imap (0.5.0)
       date
       net-protocol
@@ -343,9 +344,10 @@ GEM
     vite_rails (3.0.19)
       railties (>= 5.1, < 9)
       vite_ruby (~> 3.0, >= 3.2.2)
-    vite_ruby (3.9.0)
+    vite_ruby (3.9.1)
       dry-cli (>= 0.7, < 2)
       logger (~> 1.6)
+      mutex_m
       rack-proxy (~> 0.6, >= 0.6.1)
       zeitwerk (~> 2.2)
     web-console (4.2.1)

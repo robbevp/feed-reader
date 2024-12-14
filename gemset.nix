@@ -472,10 +472,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "17jn2b57b33i30nygxhszp485cciq3g14327kfkz13ci7xvrkbzq";
+      sha256 = "0ji67mvykmccmqhp0skgrkb3zay1w8hicjlm0y8ijmnpyab7wa55";
       type = "gem";
     };
-    version = "4.4.2";
+    version = "4.6.0";
   };
   hashdiff = {
     groups = ["default" "test"];
@@ -1339,10 +1339,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "16mvvsmx90023wrhf8dxc1lpqh0m8alk65shb7xcya6a9gflw7vg";
+      sha256 = "06fcniirx82hrljzfn5wb3634n8648v8qgy006jzgclfz5gjvjla";
       type = "gem";
     };
-    version = "0.4.1";
+    version = "0.4.2";
   };
   turbo-rails = {
     dependencies = ["actionpack" "activejob" "railties"];

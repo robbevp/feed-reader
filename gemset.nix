@@ -131,18 +131,15 @@
     };
     version = "2.8.7";
   };
-  annotate = {
-    dependencies = ["activerecord" "rake"];
+  annotaterb = {
     groups = ["development"];
     platforms = [];
     source = {
-      fetchSubmodules = false;
-      rev = "099acde2ff0c1b7e64f70c996a77f907ee1121be";
-      sha256 = "1pq4wqkmidbpwmqfbdnf53sv99mnbff8r8gdkn1c5903kv4svqk6";
-      type = "git";
-      url = "https://github.com/robbevp/annotate_models.git";
+      remotes = ["https://rubygems.org"];
+      sha256 = "1w9gdd5cqygm0ppsfxpv3szlw4yh8zg34havcqssgvrg0092jivg";
+      type = "gem";
     };
-    version = "3.1.1";
+    version = "4.13.0";
   };
   ast = {
     groups = ["default" "development"];

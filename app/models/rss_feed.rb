@@ -1,5 +1,17 @@
 # frozen_string_literal: true
 
+# == Schema Information
+#
+# Table name: rss_feeds
+#
+#  id               :bigint           not null, primary key
+#  last_etag        :string
+#  last_fetched_at  :datetime
+#  last_modified_at :datetime
+#  url              :text             not null
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#
 class RssFeed < ApplicationRecord
   has_one :subscription, as: :subscribable, dependent: :destroy
   has_many :entries, through: :subscription

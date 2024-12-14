@@ -1,12 +1,3 @@
-GIT
-  remote: https://github.com/robbevp/annotate_models.git
-  revision: 099acde2ff0c1b7e64f70c996a77f907ee1121be
-  branch: enhc/support-virtual-columns
-  specs:
-    annotate (3.1.1)
-      activerecord (>= 3.2, < 8.0)
-      rake (>= 10.4, < 14.0)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -83,6 +74,7 @@ GEM
       tzinfo (~> 2.0, >= 2.0.5)
     addressable (2.8.7)
       public_suffix (>= 2.0.2, < 7.0)
+    annotaterb (4.13.0)
     ast (2.4.2)
     base64 (0.2.0)
     bcrypt (3.1.20)
@@ -374,7 +366,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  annotate!
+  annotaterb
   bcrypt
   bootsnap
   brakeman

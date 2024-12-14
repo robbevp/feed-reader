@@ -1,5 +1,32 @@
 # frozen_string_literal: true
 
+# == Schema Information
+#
+# Table name: entries
+#
+#  id              :bigint           not null, primary key
+#  author          :text
+#  body            :text
+#  data            :jsonb            not null
+#  published_at    :datetime
+#  read_at         :datetime
+#  summary         :text
+#  title           :text
+#  url             :text
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  external_id     :text
+#  subscription_id :bigint           not null
+#
+# Indexes
+#
+#  index_entries_on_external_id_and_subscription_id  (external_id,subscription_id) UNIQUE
+#  index_entries_on_subscription_id                  (subscription_id)
+#
+# Foreign Keys
+#
+#  fk_rails_...  (subscription_id => subscriptions.id)
+#
 FactoryBot.define do
   factory :entry do
     subscription

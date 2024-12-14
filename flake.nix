@@ -102,6 +102,10 @@
                   eval = "1";
                 }
               ];
+              serviceGroups.server.services = {
+                web.command = "rdbg -O -n -c \"rails s -p 3000\"";
+                vite.command = "vite dev";
+              };
               commands = [
                 {
                   name = "pg:setup";

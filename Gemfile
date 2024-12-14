@@ -42,6 +42,7 @@ group :development do
   gem 'rubocop-performance'
   gem 'rubocop-rails'
   gem 'ruby-lsp'
+  gem 'ruby-lsp-rails'
   gem 'web-console' # Use console on exceptions pages [https://github.com/rails/web-console]
 end
 

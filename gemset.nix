@@ -1139,6 +1139,17 @@
     };
     version = "0.21.3";
   };
+  ruby-lsp-rails = {
+    dependencies = ["ruby-lsp"];
+    groups = ["development"];
+    platforms = [];
+    source = {
+      remotes = ["https://rubygems.org"];
+      sha256 = "0lb39frvjwm25iw0q7bzbv6hyh2p2p634fsnplkxz9vqgb0r53pm";
+      type = "gem";
+    };
+    version = "0.3.26";
+  };
   ruby-progressbar = {
     groups = ["default" "development"];
     platforms = [];

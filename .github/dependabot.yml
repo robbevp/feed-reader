@@ -32,6 +32,10 @@ updates:
       patterns:
         - "rubocop"
         - "rubocop-*"
+    ruby-lsp:
+      patterns:
+        - "ruby-lsp"
+        - "ruby-lsp-*"
     sentry:
       patterns:
         - "sentry-*"

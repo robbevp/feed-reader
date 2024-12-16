@@ -3122,11 +3122,11 @@
       };
     }
     {
-      name = "stylelint___stylelint_16.11.0.tgz";
+      name = "stylelint___stylelint_16.12.0.tgz";
       path = fetchurl {
-        name = "stylelint___stylelint_16.11.0.tgz";
-        url  = "https://registry.yarnpkg.com/stylelint/-/stylelint-16.11.0.tgz";
-        sha512 = "zrl4IrKmjJQ+h9FoMp69UMCq5SxeHk0URhxUBj4d3ISzo/DplOFBJZc7t7Dr6otB+1bfbbKNLOmCDpzKSlW+Nw==";
+        name = "stylelint___stylelint_16.12.0.tgz";
+        url  = "https://registry.yarnpkg.com/stylelint/-/stylelint-16.12.0.tgz";
+        sha512 = "F8zZ3L/rBpuoBZRvI4JVT20ZanPLXfQLzMOZg1tzPflRVh9mKpOZ8qcSIhh1my3FjAjZWG4T2POwGnmn6a6hbg==";
       };
     }
     {
@@ -3178,11 +3178,11 @@
       };
     }
     {
-      name = "table___table_6.8.2.tgz";
+      name = "table___table_6.9.0.tgz";
       path = fetchurl {
-        name = "table___table_6.8.2.tgz";
-        url  = "https://registry.yarnpkg.com/table/-/table-6.8.2.tgz";
-        sha512 = "w2sfv80nrAh2VCbqR5AK27wswXhqcck2AhfnNW76beQXskGZ1V12GwS//yYVa3d3fcvAip2OUnbDAjW2k3v9fA==";
+        name = "table___table_6.9.0.tgz";
+        url  = "https://registry.yarnpkg.com/table/-/table-6.9.0.tgz";
+        sha512 = "9kY+CygyYM6j02t5YFHbNz2FN5QmYGv9zAjVp4lCDjlCw7amdckXlEt/bjMhUIfj4ThGRE4gCUH5+yGnNuPo5A==";
       };
     }
     {

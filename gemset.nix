@@ -197,10 +197,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1gi7zqgmqwi5lizggs1jhc3zlwaqayy9rx2ah80sxy24bbnng558";
+      sha256 = "1k6qzammv9r6b2cw3siasaik18i6wjc5m0gw5nfdc6jj64h79z1g";
       type = "gem";
     };
-    version = "3.1.8";
+    version = "3.1.9";
   };
   bindex = {
     groups = ["default" "development"];
@@ -556,10 +556,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1kvbzh8530pp3qf63zvx9hnb708x7plv9wfn5ibns3h3knnvs3kw";
+      sha256 = "048danb0x10mpch6mf88mky35zjn6wk4hpbqq68ssbq58i3fzgfj";
       type = "gem";
     };
-    version = "2.9.0";
+    version = "2.9.1";
   };
   language_server-protocol = {
     groups = ["default" "development"];
@@ -1054,10 +1054,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0yb3iycaj3krvlnicijm99qxvfbrbi0pd81i2cpdhjc3xmbhcqjb";
+      sha256 = "0qccah61pjvzyyg6mrp27w27dlv6vxlbznzipxjcswl7x3fhsvyb";
       type = "gem";
     };
-    version = "2.9.3";
+    version = "2.10.0";
   };
   reline = {
     dependencies = ["io-console"];
@@ -1138,10 +1138,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1zplyab5n8gh7zzbwrrxrkzb2406afrjm6a3a3zdx72k17swx9n3";
+      sha256 = "0597va115fhajd45wc4vfgdq20yxlrjl5skgasmxrrhkxbcvwrs9";
       type = "gem";
     };
-    version = "2.27.0";
+    version = "2.28.0";
   };
   ruby-lsp = {
     dependencies = ["language_server-protocol" "prism" "rbs" "sorbet-runtime"];

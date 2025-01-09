@@ -266,14 +266,14 @@
     version = "1.3.4";
   };
   connection_pool = {
-    groups = ["default" "development" "test"];
+    groups = ["default" "development" "production" "test"];
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1x32mcpm2cl5492kd6lbjbaf17qsssmpx9kdyr7z1wcif2cwyh0g";
+      sha256 = "1z7bag6zb2vwi7wp2bkdkmk7swkj6zfnbsnc949qq0wfsgw94fr3";
       type = "gem";
     };
-    version = "2.4.1";
+    version = "2.5.0";
   };
   crack = {
     dependencies = ["bigdecimal" "rexml"];
@@ -369,10 +369,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1vn2ssgid25fknmcla3k3gxym4l5ymn7hvggs33q11frc9zp53ki";
+      sha256 = "06mxg2kwcqvqh0waky9hnlpkdfrhcq2fyl70vzdvhlps7d4vzlg4";
       type = "gem";
     };
-    version = "0.7.0";
+    version = "0.8.0";
   };
   erubi = {
     groups = ["default" "development" "production" "test"];

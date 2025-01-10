@@ -1149,10 +1149,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0x8wdj97nv77lyvwnh4d11vyg12r9fx2gskyjvrqqiz5qrijnd7z";
+      sha256 = "0vdjlq3rig3qw4vqj5cxs7zpr22p114ynl8rsc2fc86f8p40rahs";
       type = "gem";
     };
-    version = "0.23.1";
+    version = "0.23.3";
   };
   ruby-lsp-rails = {
     dependencies = ["ruby-lsp"];
@@ -1306,10 +1306,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1xsnqz84krza275jr0j228pfnb23ry1y0h9vlm33r09sppv44lck";
+      sha256 = "0im6dzj00644d3qkm3cdkk0wb7jmafq4v3yzl8whmyz8nzshb4iy";
       type = "gem";
     };
-    version = "0.5.11725";
+    version = "0.5.11742";
   };
   stringio = {
     groups = ["default" "development" "production" "test"];

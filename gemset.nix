@@ -434,10 +434,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1mkbq9n999bmbmwkrpv817kpb03jbh7lbgrh9950hbz8kyj6k85n";
+      sha256 = "013nipab93pks4i83wy5q6l0kmid5ffib626m9qmcmkybj15r96w";
       type = "gem";
     };
-    version = "3.2.3";
+    version = "3.2.4";
   };
   ffi = {
     groups = ["default"];

@@ -45,6 +45,10 @@ class Subscription < ApplicationRecord
     subscribable.respond_to? :refresh!
   end
 
+  def any_unread?
+    entries.unread.exists?
+  end
+
   def last_fetched_info
     return nil unless refreshable? && subscribable.last_fetched_at.present?
 

@@ -91,7 +91,11 @@ Rails.application.routes.draw do
   root 'entries#index'
 
   # Resource based routes
-  resources :subscriptions
+  resources :subscriptions do
+    member do
+      post :mark_all_as_read
+    end
+  end
   resources :entries, only: %i[index show update destroy]
 
   # Special routes for sign in/out and profile

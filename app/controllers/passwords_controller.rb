@@ -41,7 +41,7 @@ class PasswordsController < ApplicationController
   end
 
   def transformed_attributes
-    params.require(:password).permit(:password, :password_confirmation)
+    params.expect(password: %i[password password_confirmation])
           .with_defaults!({ password: '', password_confirmation: '' })
   end
 end

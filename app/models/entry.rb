@@ -27,6 +27,8 @@
 #
 #  fk_rails_...  (subscription_id => subscriptions.id)
 #
+require 'addressable/uri'
+
 class Entry < ApplicationRecord
   FEEDJIRA_KEYS_MAP = {
     author: :author,
@@ -72,8 +74,7 @@ class Entry < ApplicationRecord
   end
 
   def normalize_url(input)
-    # Some urls might contain spaces, so we replace these
-    uri = URI(input.gsub(' ', '%20'))
+    uri = Addressable::URI.heuristic_parse(input).normalize
     # Some entries might contain absolute/relative path to the page they were on
     uri = URI(url).merge(uri) if url.present?
     uri.to_s

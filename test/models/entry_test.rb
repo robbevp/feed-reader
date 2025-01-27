@@ -71,10 +71,22 @@ class EntryTest < ActiveSupport::TestCase
   end
 
   # Methods
-  test 'should be able to normalize urls found in post' do
+  test 'should be able to normalize urls found in post when containing spaces' do
     entry = build(:entry, url: 'https://example.com/posts/first.html')
 
     assert_equal 'https://example.com/image%201.jpg', entry.normalize_url('https://example.com/image 1.jpg')
+  end
+
+  test 'should be able to normalize urls found in post when containing unicode' do
+    entry = build(:entry, url: 'https://example.com/posts/first.html')
+
+    assert_equal 'https://example.com/image%F0%9F%96%A41.jpg', entry.normalize_url('https://example.com/image🖤1.jpg')
+    assert_equal 'https://example.com/image%E2%80%941.jpg', entry.normalize_url('https://example.com/image—1.jpg')
+  end
+
+  test 'should be able to normalize urls found in post when missing host' do
+    entry = build(:entry, url: 'https://example.com/posts/first.html')
+
     assert_equal 'https://example.com/image.jpg', entry.normalize_url('/image.jpg')
   end
 end

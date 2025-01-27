@@ -7,6 +7,7 @@ ruby '~> 3.3.1'
 
 gem 'rails', '~> 8.0.1'
 
+gem 'addressable' # More standards-compliant URI parser
 gem 'bcrypt' # Use Active Model has_secure_password
 gem 'bootsnap', require: false # Reduces boot times through caching; required in config/boot.rb
 gem 'feedjira' # Parse RSS feeds

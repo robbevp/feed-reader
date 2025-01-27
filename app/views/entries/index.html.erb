@@ -4,7 +4,7 @@
   <div class="homepage__filters">
     <%= form_with model: @entry_search, scope: :search, method: :get, url: url_for do |form| %>
       <%= form.input :include_read, as: :boolean %>
-      <%= form.input :category_id, as: :radio_tree, options: @category_options, value_method: :id, label_method: :name %>
+      <%= form.input :category_id, as: :radio_tree, options: @category_options, value_method: :id, label_method: :name, show_all: t('.all_categories') %>
       <%= form.submit t('.search') %>
     <% end %>
   </div>

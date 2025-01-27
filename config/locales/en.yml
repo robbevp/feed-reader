@@ -16,6 +16,7 @@ en:
       published_at_unknown: "Unknown"
       show: Show
       search: 'Search'
+      all_categories: "All categories"
     show:
       page_title: "%{subscription_name} :: %{entry_title}"
       mark_as_read: Mark as read

@@ -97,6 +97,17 @@ class SubscriptionsControllerTest < ActionDispatch::IntegrationTest
     assert_response :unprocessable_entity
   end
 
+  # Mark all as read
+  test 'should mark all as read' do
+    entries = create_list :entry, 5, :with_all_details, subscription: @subscription
+
+    post mark_all_as_read_subscription_url(@subscription)
+
+    assert_redirected_to subscription_url(@subscription)
+
+    assert_equal((Array.new(5) { true }), (entries.map { |it| it.reload.read? }))
+  end
+
   # Destroy
   test 'should destroy subscription' do
     assert_difference 'Subscription.count', -1 do

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class SubscriptionsController < ApplicationController
-  before_action :set_subscription, only: %i[show edit update destroy]
+  before_action :set_subscription, only: %i[show edit update mark_all_as_read destroy]
   def index
     authorize Subscription
     @subscriptions = policy_scope(Subscription)
@@ -40,6 +40,11 @@ class SubscriptionsController < ApplicationController
     else
       render :edit, status: :unprocessable_entity
     end
+  end
+
+  def mark_all_as_read
+    @subscription.entries.unread.each { |it| it.update(read_at: DateTime.current) }
+    redirect_to @subscription
   end
 
   def destroy

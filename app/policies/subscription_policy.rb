@@ -23,6 +23,10 @@ class SubscriptionPolicy < ApplicationPolicy
     record.user_id == user&.id
   end
 
+  def mark_all_as_read?
+    record.user_id == user&.id
+  end
+
   def destroy?
     record.user_id == user&.id
   end

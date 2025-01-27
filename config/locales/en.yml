@@ -17,7 +17,7 @@ en:
       show: Show
       search: 'Search'
     show:
-      page_title: "%{entry_title}"
+      page_title: "%{subscription_name} :: %{entry_title}"
       mark_as_read: Mark as read
       mark_as_unread: Mark as unread
       delete: Delete

@@ -31,6 +31,10 @@
 
 .entry-nav__item--link,
 .entry-nav__button {
+  display: flex;
+  gap: 0.625rem;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   padding-block: 0.875rem 0.75rem;
   padding-inline: 1rem;
@@ -61,4 +65,16 @@
 
 .entry-nav__item--next {
   grid-column-start: 3;
+}
+
+.entry-nav__icon {
+  transition: transform 250ms ease-in-out;
+}
+
+.entry-nav__item--prev:hover .entry-nav__icon {
+  transform: translateX(-35%);
+}
+
+.entry-nav__item--next:hover .entry-nav__icon {
+  transform: translateX(35%);
 }

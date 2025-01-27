@@ -28,6 +28,10 @@
   /* Colours */
   --color-white: oklch(100% 0 0deg);
   --color-black: oklch(24.42% 0.006 0.59deg);
+  --color-green: green;
+  --color-grey: grey;
+  --color-orange: orange;
+  --color-red: red;
 
   /* Our primary color is color indigo-6 from open-color: https://yeun.github.io/open-color/ */
   --color-primary: oklch(58.96% 0.2054 268.62deg);

@@ -5,9 +5,11 @@
 # Table name: rss_feeds
 #
 #  id               :bigint           not null, primary key
+#  error_count      :integer          default(0), not null
 #  last_etag        :string
 #  last_fetched_at  :datetime
 #  last_modified_at :datetime
+#  latest_error     :string
 #  url              :text             not null
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
@@ -131,7 +133,7 @@ class RssFeedTest < ActiveSupport::TestCase
     assert_not_nil feed.last_fetched_at
   end
 
-  test 'should raise error if feed redirects more than 5 times' do
+  test 'should save error if feed redirects more than 5 times' do
     stub_request(:any, 'https://example.com').to_return(status: 302, headers: { 'Location' => 'https://example.be' })
     stub_request(:any, 'https://example.be').to_return(status: 302, headers: { 'Location' => 'https://example.fr' })
     stub_request(:any, 'https://example.fr').to_return(status: 302, headers: { 'Location' => 'https://example.de' })
@@ -141,22 +143,22 @@ class RssFeedTest < ActiveSupport::TestCase
 
     feed = create(:rss_feed, url: 'https://example.com')
 
-    assert_raises TooManyRedirectsError do
-      feed.refresh!
-    end
+    feed.refresh!
 
+    assert_predicate feed, :any_error?
+    assert_predicate feed.latest_error, :present?
     assert_nil feed.last_fetched_at
   end
 
-  test 'should raise error if feed returns error' do
+  test 'should save error if feed returns error' do
     stub_request(:any, 'https://example.com').to_return(status: 403)
 
     feed = create(:rss_feed, url: 'https://example.com')
 
-    assert_raises Net::HTTPClientException do
-      feed.refresh!
-    end
+    feed.refresh!
 
+    assert_predicate feed, :any_error?
+    assert_predicate feed.latest_error, :present?
     assert_nil feed.last_fetched_at
   end
 end

@@ -25,8 +25,13 @@
         <%= content_tag :td, entry.title, class: 'table__cell' %>
         <%= content_tag :td, entry.author, class: 'table__cell' %>
         <%= content_tag :td, entry.published_at.present? ? l(entry.published_at) : t('.published_at_unknown'), class: 'table__cell' %>
-        <%= content_tag :td, class: 'table__cell' do %>
-          <%= link_to t('.show'), entry, class: 'table__link' %>
+        <%= content_tag :td, class: 'table__cell table__cell--actions' do %>
+          <%= link_to entry, class: 'table__link', aria: { label: t('.show') } do %>
+            <%= inline_svg_tag 'images/icons/eye.svg', class: 'icon' %>
+          <% end %>
+          <%= link_to entry.url, class: 'table__link', aria: { label: t('.go_to_original') } do %>
+            <%= inline_svg_tag 'images/icons/arrow-top-right-on-square.svg', class: 'icon' %>
+          <% end %>
         <% end %>
       </tr>
     <%- end %>

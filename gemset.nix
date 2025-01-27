@@ -514,6 +514,17 @@
     };
     version = "1.13.0";
   };
+  inline_svg = {
+    dependencies = ["activesupport" "nokogiri"];
+    groups = ["default"];
+    platforms = [];
+    source = {
+      remotes = ["https://rubygems.org"];
+      sha256 = "03x1z55sh7cpb63g46cbd6135jmp13idcgqzqsnzinbg4cs2jrav";
+      type = "gem";
+    };
+    version = "1.10.0";
+  };
   io-console = {
     groups = ["default" "development" "production" "test"];
     platforms = [{

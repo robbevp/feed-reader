@@ -6,12 +6,3 @@ html {
   font-size: var(--text-base);
   font-family: var(--font-body);
 }
-
-.table__cell--actions {
-  white-space: nowrap;
-}
-
-.icon {
-  width: 2rem;
-  height: 2rem;
-}

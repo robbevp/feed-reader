@@ -1,0 +1,10 @@
+.icon {
+  --size: 2rem;
+
+  width: var(--size);
+  height: var(--size);
+}
+
+.icon--sm {
+  --size: 1.25rem;
+}

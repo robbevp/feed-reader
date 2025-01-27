@@ -24,9 +24,9 @@ en:
       delete: Delete
       delete_confirm: "Are you sure? This can not be undone. Note that rss feed entries might show up again when the feed refreshes."
       mark_all_as_read: Mark all as read
-      next: "Next entry"
-      previous: "Previous entry"
-      nav_pagination_label: "Pagination navigation"
+      next: "Next"
+      previous: "Previous"
+      nav_pagination_label: "Entry pagination"
   subscriptions:
     form:
       category_hint: "You can nest categories using `>`. For example: `Music > Bands`"

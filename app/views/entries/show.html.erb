@@ -1,20 +1,23 @@
 <%= content_for :page_title, t('.page_title', subscription_name: @entry.subscription.name, entry_title: @entry.title) %>
 
-<%- if @entry.read? %>
-  <%= button_to t('.mark_as_unread'), entry_path(@entry, params: { entry: { read: false } }), method: :patch %>
-<%- else %>
-  <%= button_to t('.mark_as_read'), entry_path(@entry, params: { entry: { read: true } }), method: :patch %>
-<%- end %>
-
 <%= link_to t('.delete'), entry_path(@entry), data: { turbo_confirm: t('.delete_confirm'), turbo_method: :delete } %>
 
-<%= render EntryComponent.new(entry: @entry) %>
-
-<%= content_tag :nav, aria: { label: t('.nav_pagination_label') } do %>
+<%= content_tag :nav, class: 'entry-nav', aria: { label: t('.nav_pagination_label') } do %>
   <%- if @previous_entry.present? %>
-    <%= link_to t('.previous'), entry_path(@previous_entry) %>
+    <%= link_to entry_path(@previous_entry), class: 'entry-nav__item entry-nav__item--link entry-nav__item--prev' do %>
+      <%= inline_svg_tag 'images/icons/arrow-left.svg', class: 'entry-nav__icon icon icon--sm', aria_hidden: true %>
+      <%= t('.previous') %>
+    <% end %>
   <%- end %>
+
+  <%= button_to t(@entry.read? ? '.mark_as_unread' : '.mark_as_read'), entry_path(@entry, params: { entry: { read: !@entry.read? } }), method: :patch, form_class: 'entry-nav__item entry-nav__item--status entry-nav__item--form', class: 'entry-nav__button' %>
+
   <%- if @next_entry.present? %>
-    <%= link_to t('.next'), entry_path(@next_entry) %>
+    <%= link_to entry_path(@next_entry), class: 'entry-nav__item entry-nav__item--link entry-nav__item--next' do %>
+        <%= t('.next') %>
+        <%= inline_svg_tag 'images/icons/arrow-right.svg', class: 'entry-nav__icon icon icon--sm', aria_hidden: true %>
+    <% end %>
   <%- end %>
 <%- end %>
+
+<%= render EntryComponent.new(entry: @entry) %>

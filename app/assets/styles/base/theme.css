@@ -24,4 +24,8 @@
   /* Colours */
   --color-white: oklch(100% 0 0deg);
   --color-black: oklch(24.42% 0.006 0.59deg);
+
+  /* Border radius */
+  --rounded: 1rem;
+  --rounded-full: 9999px;
 }

@@ -3,6 +3,13 @@
 
   <%# ROOTS %>
   <ul class="radio-buttons__options" data-tree-level="0">
+  <%- if show_all? %>
+    <li>
+      <%= form.radio_button name, '', class: 'radio-buttons__option-field', disabled: %>
+      <%= form.label name, show_all, value: '', class: 'radio-buttons__option-label' %>
+    </li>
+  <%- end %>
+
   <%- roots.each do |root| %>
     <li>
       <%= form.radio_button name, root.send(value_method), class: 'radio-buttons__option-field', disabled: %>

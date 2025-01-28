@@ -32,9 +32,11 @@
               <%= link_to entry, class: 'table__link', aria: { label: t('.show') } do %>
                 <%= inline_svg_tag 'images/icons/eye.svg', class: 'icon' %>
               <% end %>
-              <%= link_to entry.url, class: 'table__link', aria: { label: t('.go_to_original') } do %>
-                <%= inline_svg_tag 'images/icons/arrow-top-right-on-square.svg', class: 'icon' %>
-              <% end %>
+              <%- if entry.url.present? %>
+                <%= link_to entry.url, class: 'table__link', aria: { label: t('.go_to_original') } do %>
+                  <%= inline_svg_tag 'images/icons/arrow-top-right-on-square.svg', class: 'icon' %>
+                <% end %>
+              <%- end %>
             <% end %>
           </tr>
         <%- end %>

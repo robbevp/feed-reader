@@ -3,7 +3,7 @@
 class SessionsController < ApplicationController
   def new
     authorize :session
-    redirect_to edit_user_path if current_user.present?
+    redirect_to root_path if current_user.present?
   end
 
   def create
@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
     if @user&.authenticate(params[:session][:password])
       # TODO: Allow option to have long-lived sessions
       session[:user_id] = @user.id
-      redirect_to edit_user_path
+      redirect_to root_path
     else
       render 'new', status: :unprocessable_entity
     end

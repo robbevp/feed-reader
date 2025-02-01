@@ -28,7 +28,7 @@ class EntriesController < ApplicationController
   private
 
   def set_entry
-    @entry = policy_scope(Entry).find params[:id]
+    @entry = Entry.find params[:id]
     authorize @entry
   end
 

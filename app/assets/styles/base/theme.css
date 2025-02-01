@@ -24,6 +24,10 @@
   /* Colours */
   --color-white: oklch(100% 0 0deg);
   --color-black: oklch(24.42% 0.006 0.59deg);
+  --color-green: green;
+  --color-grey: grey;
+  --color-orange: orange;
+  --color-red: red;
 
   /* Border radius */
   --rounded: 1rem;

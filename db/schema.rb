@@ -10,10 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_10_09_061712) do
+ActiveRecord::Schema[8.0].define(version: 2025_01_27_142830) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
-  enable_extension "plpgsql"
+  enable_extension "pg_catalog.plpgsql"
 
   create_table "action_mailbox_inbound_emails", force: :cascade do |t|
     t.integer "status", default: 0, null: false
@@ -193,6 +193,8 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_09_061712) do
     t.datetime "updated_at", null: false
     t.datetime "last_modified_at"
     t.string "last_etag"
+    t.integer "error_count", default: 0, null: false
+    t.string "latest_error"
   end
 
   create_table "subscriptions", force: :cascade do |t|

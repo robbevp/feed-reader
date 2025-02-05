@@ -55,6 +55,7 @@ en:
       subscriptions: All subscriptions
       good_job: Good job dashboard
       home: Home
+      profile: Profile
       sign_out: Sign out
   sessions:
     new:

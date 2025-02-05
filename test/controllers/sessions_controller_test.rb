@@ -18,13 +18,13 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
 
     get new_session_url
 
-    assert_redirected_to user_url
+    assert_redirected_to root_url
   end
 
   test 'should log in user' do
     post session_url, params: { session: { email: 'example@example.org', password: 'password1234' } }
 
-    assert_redirected_to user_url
+    assert_redirected_to root_url
     assert_equal @user.id, session[:user_id]
   end
 

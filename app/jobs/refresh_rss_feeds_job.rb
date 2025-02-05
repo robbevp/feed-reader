@@ -5,7 +5,7 @@ class RefreshRssFeedsJob < ApplicationJob
 
   def perform
     RssFeed.find_each do |feed|
-      RefreshRssFeedJob.perform_later(feed)
+      RefreshRssFeedJob.perform_later(feed) if feed.should_refresh?
     end
   end
 end

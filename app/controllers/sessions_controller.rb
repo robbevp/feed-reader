@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
     if @user&.authenticate(params[:session][:password])
       # TODO: Allow option to have long-lived sessions
       session[:user_id] = @user.id
-      redirect_to root_path
+      redirect_to after_sign_in_path
     else
       render 'new', status: :unprocessable_entity
     end
@@ -22,5 +22,11 @@ class SessionsController < ApplicationController
     authorize :session
     session[:user_id] = nil
     redirect_to new_session_path
+  end
+
+  private
+
+  def after_sign_in_path
+    session.delete(:redirect_after_sign_in) || root_path
   end
 end

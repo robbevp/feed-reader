@@ -21,6 +21,7 @@ class EntriesControllerTest < ActionDispatch::IntegrationTest
     get entries_url
 
     assert_redirected_to new_session_path
+    assert_equal entries_path, session[:redirect_after_sign_in]
   end
 
   test 'should get store search in session' do

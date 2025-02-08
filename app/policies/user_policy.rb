@@ -11,7 +11,7 @@ class UserPolicy < ApplicationPolicy
   end
 
   def update?
-    record == user
+    record.present? && record == user
   end
 
   def permitted_attributes

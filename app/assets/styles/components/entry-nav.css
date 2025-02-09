@@ -1,19 +1,34 @@
 .entry-nav {
+  --element-color: var(--color-black);
+  --element-opacity: 70%;
+  --text-color: var(--color-white);
+  --border-color: color-mix(in oklab, var(--color-white) 80%, transparent);
+
   position: fixed;
   inset-block-end: 0;
   inset-inline: 0;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   width: 100vw;
-  color: var(--color-white);
+  color: var(--text-color);
   border-radius: var(--rounded) var(--rounded) 0 0;
-  background-color: var(--color-black);
-  background-color: color-mix(in oklab, var(--color-black) 70%, transparent);
+  background-color: var(--element-color);
+  background-color: color-mix(
+    in oklab,
+    var(--element-color) var(--element-opacity),
+    transparent
+  );
   box-shadow: 0 4px 30px rgb(0 0 0 / 10%);
   backdrop-filter: blur(4px);
   overflow: hidden;
-  border-block-start: 1px solid
-    color-mix(in oklab, var(--color-black) 80%, transparent);
+  border-block-start: 1px solid var(--border-color);
+
+  @media (--dark-mode) {
+    --element-color: var(--color-white);
+    --element-opacity: 96%;
+    --text-color: var(--color-black);
+    --border-color: color-mix(in oklab, var(--color-black) 20%, transparent);
+  }
 
   @media (--screen-md) {
     inset-block-end: 0.5rem;
@@ -25,8 +40,7 @@
 
 .entry-nav__item {
   width: 100%;
-  border-inline: 1px solid
-    color-mix(in oklab, var(--color-black) 80%, transparent);
+  border-inline: 1px solid var(--border-color);
 }
 
 .entry-nav__item--link,
@@ -51,7 +65,11 @@
 
   &:hover {
     text-decoration: underline;
-    background-color: color-mix(in oklab, var(--color-black) 40%, transparent);
+    background-color: color-mix(
+      in oklab,
+      var(--element-color) 40%,
+      transparent
+    );
   }
 
   &:focus-visible {

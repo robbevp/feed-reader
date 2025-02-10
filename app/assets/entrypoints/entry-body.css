@@ -3,6 +3,10 @@
  * We explicitly try to limit the selector specificity as much as possible, so that we only override the browser's default styles.
  */
 
+:root {
+  color-scheme: light dark;
+}
+
 :where(html) {
   font-family: system-ui, sans-serif; /* Use sane fonts by default  */
   overflow-wrap: break-word; /* Make sure we wrap words when needed */

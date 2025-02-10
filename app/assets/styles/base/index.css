@@ -1,8 +1,16 @@
 @import url("./reset.css");
 @import url("./theme.css");
 
+:root {
+  color-scheme: light dark;
+}
+
 html {
   color: var(--color-black);
   font-size: var(--text-base);
   font-family: var(--font-body);
+
+  @media (--dark-mode) {
+    color: var(--color-white);
+  }
 }

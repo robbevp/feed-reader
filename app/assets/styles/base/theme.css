@@ -9,6 +9,10 @@
 @custom-media --motion-ok (prefers-reduced-motion: no-preference);
 @custom-media --motion-not-ok (prefers-reduced-motion: reduce);
 
+/* Light/Dark mode */
+@custom-media --light-mode (prefers-color-scheme: light);
+@custom-media --dark-mode (prefers-color-scheme: dark);
+
 :root {
   /* Screen size */
   --screen-sm: 640px;

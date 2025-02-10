@@ -44,11 +44,12 @@ class ActiveSupport::TestCase
 end
 
 module SessionHelper
-  def sign_in(user)
+  def sign_in(user, with_cookie: false)
     # NOTE: We currently sent a request to get the proper cookies back, but maybe we can fake/mock this in some way?
-    post session_url, params: { session: { email: user.email, password: user.password } }
+    post session_url,
+         params: { session: { email: user.email, password: user.password, remember_me: with_cookie ? '1' : '0' } }
 
-    # We return the user for convinience
+    # We return the user for convenience
     user
   end
 

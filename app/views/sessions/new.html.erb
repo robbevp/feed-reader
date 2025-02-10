@@ -2,6 +2,8 @@
 <%= form_with scope: :session, class: 'form' do |form| %>
   <%= form.input :email %>
   <%= form.input :password %>
+  <%= form.input :remember_me, as: :boolean %>
+
   <%= form.submit %>
 <% end %>
 

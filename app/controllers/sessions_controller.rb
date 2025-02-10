@@ -10,8 +10,9 @@ class SessionsController < ApplicationController
     authorize :session
     @user = User.find_by(email: params[:session][:email])
     if @user&.authenticate(params[:session][:password])
-      # TODO: Allow option to have long-lived sessions
       session[:user_id] = @user.id
+      set_remember_cookie
+
       redirect_to after_sign_in_path
     else
       render 'new', status: :unprocessable_entity
@@ -20,7 +21,8 @@ class SessionsController < ApplicationController
 
   def destroy
     authorize :session
-    session[:user_id] = nil
+    session.delete(:user_id)
+    cookies.delete(:_feed_reader_user_id)
     redirect_to new_session_path
   end
 
@@ -28,5 +30,14 @@ class SessionsController < ApplicationController
 
   def after_sign_in_path
     session.delete(:redirect_after_sign_in) || root_path
+  end
+
+  def set_remember_cookie
+    return unless params[:session][:remember_me] == '1'
+
+    cookies.signed[:_feed_reader_user_id] = {
+      value: @user.id,
+      expires: 2.months
+    }
   end
 end

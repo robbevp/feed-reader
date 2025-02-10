@@ -17,12 +17,15 @@ class ApplicationController < ActionController::Base
   private
 
   def user_not_authorized
-    if current_user.present?
-      flash[:danger] = t 'application_controller.helpers.user_not_authorized.forbidden'
-      redirect_to request.referer || root_url
-    else
-      flash[:danger] = t 'application_controller.helpers.user_not_authorized.sign_in'
-      redirect_to new_session_path
-    end
+    return user_not_present if current_user.blank?
+
+    flash[:danger] = t 'application_controller.helpers.user_not_authorized.forbidden'
+    redirect_to request.referer || root_url
+  end
+
+  def user_not_present
+    flash[:danger] = t 'application_controller.helpers.user_not_authorized.sign_in'
+    session[:redirect_after_sign_in] = request.fullpath
+    redirect_to new_session_path
   end
 end

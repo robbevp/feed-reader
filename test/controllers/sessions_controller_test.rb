@@ -13,7 +13,7 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test 'should redirect to `user_url` if user id is present' do
+  test 'should redirect to root if user id is present' do
     sign_in(@user)
 
     get new_session_url
@@ -25,6 +25,16 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
     post session_url, params: { session: { email: 'example@example.org', password: 'password1234' } }
 
     assert_redirected_to root_url
+    assert_equal @user.id, session[:user_id]
+  end
+
+  test 'should redirect to previous path after sign in' do
+    # Make a request so our session cookie contains the previous path
+    get entries_url
+
+    post session_url, params: { session: { email: 'example@example.org', password: 'password1234' } }
+
+    assert_redirected_to entries_url
     assert_equal @user.id, session[:user_id]
   end
 

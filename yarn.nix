@@ -306,6 +306,14 @@
       };
     }
     {
+      name = "_eslint_core___core_0.11.0.tgz";
+      path = fetchurl {
+        name = "_eslint_core___core_0.11.0.tgz";
+        url  = "https://registry.yarnpkg.com/@eslint/core/-/core-0.11.0.tgz";
+        sha512 = "DWUB2pksgNEb6Bz2fggIy1wh6fGgZP4Xyy/Mt0QZPiloKKXerbqq9D3SBQTlCRYOrcRPu4vuz+CGjwdfqxnoWA==";
+      };
+    }
+    {
       name = "_eslint_eslintrc___eslintrc_3.2.0.tgz";
       path = fetchurl {
         name = "_eslint_eslintrc___eslintrc_3.2.0.tgz";
@@ -314,11 +322,11 @@
       };
     }
     {
-      name = "_eslint_js___js_9.19.0.tgz";
+      name = "_eslint_js___js_9.20.0.tgz";
       path = fetchurl {
-        name = "_eslint_js___js_9.19.0.tgz";
-        url  = "https://registry.yarnpkg.com/@eslint/js/-/js-9.19.0.tgz";
-        sha512 = "rbq9/g38qjfqFLOVPvwjIvFFdNziEC5S65jmjPw5r6A//QH+W91akh9irMwjDN8zKUTak6W9EsAv4m/7Wnw0UQ==";
+        name = "_eslint_js___js_9.20.0.tgz";
+        url  = "https://registry.yarnpkg.com/@eslint/js/-/js-9.20.0.tgz";
+        sha512 = "iZA07H9io9Wn836aVTytRaNqh00Sad+EamwOVJT12GTLw1VGMFV/4JaME+JjLtr9fiGaoWgYnS54wrfWsSs4oQ==";
       };
     }
     {
@@ -1314,11 +1322,11 @@
       };
     }
     {
-      name = "eslint___eslint_9.19.0.tgz";
+      name = "eslint___eslint_9.20.0.tgz";
       path = fetchurl {
-        name = "eslint___eslint_9.19.0.tgz";
-        url  = "https://registry.yarnpkg.com/eslint/-/eslint-9.19.0.tgz";
-        sha512 = "ug92j0LepKlbbEv6hD911THhoRHmbdXt2gX+VDABAW/Ir7D3nqKdv5Pf5vtlyY6HQMTEP2skXY43ueqTCWssEA==";
+        name = "eslint___eslint_9.20.0.tgz";
+        url  = "https://registry.yarnpkg.com/eslint/-/eslint-9.20.0.tgz";
+        sha512 = "aL4F8167Hg4IvsW89ejnpTwx+B/UQRzJPGgbIOl+4XqffWsahVVsLEWoZvnrVuwpWmnRd7XeXmQI1zlKcFDteA==";
       };
     }
     {
@@ -2754,11 +2762,11 @@
       };
     }
     {
-      name = "prettier___prettier_3.4.2.tgz";
+      name = "prettier___prettier_3.5.0.tgz";
       path = fetchurl {
-        name = "prettier___prettier_3.4.2.tgz";
-        url  = "https://registry.yarnpkg.com/prettier/-/prettier-3.4.2.tgz";
-        sha512 = "e9MewbtFo+Fevyuxn/4rrcDAaq0IYxPGLvObpQjiZBMAzB9IGmzlnG9RZy3FFas+eBMu2vA0CszMeduow5dIuQ==";
+        name = "prettier___prettier_3.5.0.tgz";
+        url  = "https://registry.yarnpkg.com/prettier/-/prettier-3.5.0.tgz";
+        sha512 = "quyMrVt6svPS7CjQ9gKb3GLEX/rl3BCL2oa/QkNcXv4YNVBC9olt3s+H7ukto06q7B1Qz46PbrKLO34PR6vXcA==";
       };
     }
     {

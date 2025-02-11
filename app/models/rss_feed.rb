@@ -5,9 +5,11 @@
 # Table name: rss_feeds
 #
 #  id               :bigint           not null, primary key
+#  error_count      :integer          default(0), not null
 #  last_etag        :string
 #  last_fetched_at  :datetime
 #  last_modified_at :datetime
+#  latest_error     :string
 #  url              :text             not null
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
@@ -18,18 +20,48 @@ class RssFeed < ApplicationRecord
 
   validates :url, presence: true
 
+  before_save :reset_error, if: :will_save_change_to_url?
+
   after_create_commit -> { RefreshRssFeedJob.perform_later(self) }
 
   def refresh!
-    fetch_feed!
+    begin
+      fetch_feed!
+      reset_error
+      self.last_fetched_at = DateTime.current
+    rescue TooManyRedirectsError
+      self.error = I18n.t('rss_feed.errors.too_many_redirects')
+    rescue Net::HTTPClientException => e
+      self.error = e.message
+    end
 
-    self.last_fetched_at = DateTime.current
     save!
+  end
+
+  def should_refresh?
+    error_count < 5
+  end
+
+  def any_error?
+    error_count.positive?
   end
 
   delegate :user, to: :subscription
 
   private
+
+  def error=(error_text)
+    self.latest_error = error_text
+    self.error_count = if error_text.present?
+                         error_count + 1
+                       else
+                         0
+                       end
+  end
+
+  def reset_error
+    self.error = nil
+  end
 
   def handle_response(response)
     # We set the values from the headers here, but save them at the end of `refresh!`

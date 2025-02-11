@@ -5,6 +5,7 @@
 <table class="table">
   <thead class="table__head">
     <tr class="table__row table__row--head">
+      <%= content_tag :td, t('.status'), class: 'table__cell' %>
       <%= content_tag :td, Subscription.human_attribute_name(:name), class: 'table__cell' %>
       <%= content_tag :td, Subscription.human_attribute_name(:entries), class: 'table__cell' %>
       <%= content_tag :td, Subscription.human_attribute_name(:last_fetched_at), class: 'table__cell' %>
@@ -14,6 +15,12 @@
   <tbody class="table__body">
     <%- @subscriptions.each do |subscription| %>
       <tr class="table__row">
+        <%= content_tag :td, class: 'table__cell' do %>
+          <%- if subscription.refreshable? %>
+            <%- status_info = subscription_status_info(subscription) %>
+            <i class="subscription__status <%= status_info[:class] %>" aria-label="<%= status_info[:label] %>" />
+          <%- end %>
+        <% end %>
         <%= content_tag :td, subscription.name, class: 'table__cell' %>
         <%= content_tag :td, subscription.entries_count, class: 'table__cell' %>
         <%= content_tag :td, subscription.last_fetched_info, class: 'table__cell' %>

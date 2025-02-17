@@ -27,6 +27,9 @@ en:
       next: "Next"
       previous: "Previous"
       nav_pagination_label: "Entry pagination"
+  rss_feed:
+    errors:
+      too_many_redirects: RSS feed redirected too many times.
   subscriptions:
     form:
       category_hint: "You can nest categories using `>`. For example: `Music > Bands`"
@@ -36,6 +39,12 @@ en:
       add_new: Add new
       show: Show
       edit: Edit
+      status: Status
+      statuses:
+        none: Not fetched yet
+        error: Too many errors
+        warning: Last fetch failed
+        success: Last fetch was successful
     new:
       page_title: Add new subscription
       show: Show
@@ -48,6 +57,7 @@ en:
     show:
       page_title: "%{subscription_name}"
       actions: Actions
+      recent_failure: 'The last fetch of this feed failed with the following error: %{error}'
     update:
       success: Updated subscription
   layouts:

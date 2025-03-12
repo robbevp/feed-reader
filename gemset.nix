@@ -954,10 +954,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1xz82qz7f1vc4yhvacrlnh19q3wcwa5kmznfpkkmf3c9ajki249b";
+      sha256 = "0h65a1f9gsqx2ryisdy4lrd9a9l8gdv65dcscw9ynwwjr1ak1n00";
       type = "gem";
     };
-    version = "3.1.11";
+    version = "3.1.12";
   };
   rack-mini-profiler = {
     dependencies = ["rack"];
@@ -1292,10 +1292,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "17rd3bbvbh6jprn7mx8gmx4nbdximvq66v7cl5lfnzgcf8dw7vvr";
+      sha256 = "1i6y53hkif95091m2pq07gx3l30f85fmkj6phblc2hz3hlybqb4d";
       type = "gem";
     };
-    version = "5.22.4";
+    version = "5.23.0";
   };
   sentry-ruby = {
     dependencies = ["bigdecimal" "concurrent-ruby"];
@@ -1303,10 +1303,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0b58j70cxv65wxzlnf139zr2w2wvw85j0v4giy59b1mk180az3g4";
+      sha256 = "1k45ydlbl99c9ivbafzw8lpm9diiw4m7z55szi87l9kalpwv52wf";
       type = "gem";
     };
-    version = "5.22.4";
+    version = "5.23.0";
   };
   simplecov = {
     dependencies = ["docile" "simplecov-html" "simplecov_json_formatter"];

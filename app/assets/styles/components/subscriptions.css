@@ -1,0 +1,22 @@
+.subscription__status {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border-radius: var(--rounded-full);
+}
+
+.subscription__status--none {
+  background-color: var(--color-grey);
+}
+
+.subscription__status--success {
+  background-color: var(--color-green);
+}
+
+.subscription__status--warning {
+  background-color: var(--color-orange);
+}
+
+.subscription__status--error {
+  background-color: var(--color-red);
+}

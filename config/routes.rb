@@ -114,7 +114,9 @@ Rails.application.routes.draw do
   end
 
   # Only allow access to GoodJob dashboard if user is an admin
-  constraints(->(request) { User.find_by(id: request.session[:user_id])&.admin? }) do
+  constraints(lambda { |request|
+    User.find_by(id: request.session[:user_id] || cookies.signed[:_feed_reader_user_id])&.admin?
+  }) do
     mount GoodJob::Engine => 'good_job'
   end
 end

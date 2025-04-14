@@ -434,10 +434,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "013nipab93pks4i83wy5q6l0kmid5ffib626m9qmcmkybj15r96w";
+      sha256 = "1prrqmj2q9nbmvcwl16wd0727bnx08pb2fkw3v12z877df36wn9y";
       type = "gem";
     };
-    version = "3.2.4";
+    version = "3.2.5";
   };
   ffi = {
     groups = ["default"];
@@ -775,10 +775,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0npx535cs8qc33n0lpbbwl0p9fi3a5bczn6ayqhxvknh9yqw77vb";
+      sha256 = "0cgv8vzp7kl20ip8qdzmrbr1vaaw4mjjy4mksg8k13z4xxfzyqvb";
       type = "gem";
     };
-    version = "1.18.3";
+    version = "1.18.7";
   };
   pagy = {
     groups = ["default"];

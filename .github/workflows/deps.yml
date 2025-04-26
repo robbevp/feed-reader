@@ -22,7 +22,7 @@ jobs:
           nix_path: nixpkgs=channel:nixos-23.05
       - name: Run bundix
         run: nix-shell -p bundix --run "bundix"
-      - uses: stefanzweifel/git-auto-commit-action@v5.1.0
+      - uses: stefanzweifel/git-auto-commit-action@v5.2.0
         with:
           commit_message: "Update gemset.nix"
           commit_user_name: robbevp
@@ -30,7 +30,7 @@ jobs:
           commit_author: robbe[bot] <bot@robbevp.be>
       - name: Run yarn2nix
         run: nix-shell -p yarn2nix --run "yarn2nix > yarn.nix"
-      - uses: stefanzweifel/git-auto-commit-action@v5.1.0
+      - uses: stefanzweifel/git-auto-commit-action@v5.2.0
         with:
           commit_message: "Update yarn.nix"
           commit_user_name: robbevp

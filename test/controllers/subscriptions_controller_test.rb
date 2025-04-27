@@ -105,7 +105,7 @@ class SubscriptionsControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to subscription_url(@subscription)
 
-    assert_equal((Array.new(5) { true }), (entries.map { |it| it.reload.read? }))
+    assert_equal(Array.new(5) { true }, entries.map { |it| it.reload.read? })
   end
 
   # Destroy

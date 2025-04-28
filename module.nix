@@ -59,7 +59,8 @@ let
     ${exports}
     export $(${pkgs.coreutils}/bin/cat ${cfg.environmentFile} | ${pkgs.findutils}/bin/xargs)
     cd ${feed-reader}
-    ${feed-reader.env}/bin/bundle exec rails action_mailbox:ingress:postfix URL='https://${cfg.hostname}/rails/action_mailbox/relay/inbound_emails' INGRESS_PASSWORD=$RAILS_INBOUND_EMAIL_PASSWORD
+    # NOTE: We capture the stdout and stderr and only repeat the last line. This prevents any previous output from causing issues for postfix to parse the output from rails
+    ${feed-reader.env}/bin/bundle exec rails action_mailbox:ingress:postfix URL='https://${cfg.hostname}/rails/action_mailbox/relay/inbound_emails' INGRESS_PASSWORD=$RAILS_INBOUND_EMAIL_PASSWORD 2>&1  | tail -n 1
   '';
 in
 {

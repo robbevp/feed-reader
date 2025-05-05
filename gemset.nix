@@ -1281,10 +1281,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1s80s7mgpwpfj4df2f43f5im37ks884xkbcxd9fxpk93xs7dicnx";
+      sha256 = "1zlamvlgszczfx2f2v1b34q0lka15cqj46krwb4ymgl6nlkxznr0";
       type = "gem";
     };
-    version = "4.31.0";
+    version = "4.32.0";
   };
   sentry-rails = {
     dependencies = ["railties" "sentry-ruby"];

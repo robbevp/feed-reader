@@ -218,10 +218,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0mdgj9yw1hmx3xh2qxyjc31y8igmxzd9h0c245ay2zkz76pl4k5c";
+      sha256 = "0s9gj7l460vi9h18i5rx8lip23l57c7yy8pmkq9msg60rihgilwj";
       type = "gem";
     };
-    version = "1.18.4";
+    version = "1.18.5";
   };
   brakeman = {
     dependencies = ["racc"];
@@ -700,10 +700,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1a5adcb7bwan09mqhj3wi9ib52hmdzmqg7q08pggn3adibyn5asr";
+      sha256 = "0cnpnbn2yivj9gxkh8mjklbgnpx6nf7b8j2hky01dl0040hy0k76";
       type = "gem";
     };
-    version = "1.7.2";
+    version = "1.8.0";
   };
   mutex_m = {
     groups = ["default"];

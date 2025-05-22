@@ -260,10 +260,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0chwfdq2a6kbj6xz9l6zrdfnyghnh32si82la1dnpa5h75ir5anl";
+      sha256 = "1ipbrgvf0pp6zxdk5ascp6i29aybz2bx9wdrlchjmpx6mhvkwfw1";
       type = "gem";
     };
-    version = "1.3.4";
+    version = "1.3.5";
   };
   connection_pool = {
     groups = ["default" "development" "production" "test"];
@@ -348,10 +348,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0h5kbj9hvg5hb3c7l425zpds0vb42phvln2knab8nmazg2zp5m79";
+      sha256 = "0wrkl7yiix268s2md1h6wh91311w95ikd8fy8m5gx589npyxc00b";
       type = "gem";
     };
-    version = "2.2.1";
+    version = "2.2.3";
   };
   dry-cli = {
     groups = ["default"];
@@ -1477,10 +1477,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1igjy24vbf4vbdn4ig202rfxlldwg67ycddkjh6p3a3pxfmm1qvh";
+      sha256 = "1vdprqcb3kxaa5z9md00khh3lqmkxqnr65wwq7816688drhymf7s";
       type = "gem";
     };
-    version = "3.22.0";
+    version = "3.23.0";
   };
   vite_rails = {
     dependencies = ["railties" "vite_ruby"];

@@ -1193,10 +1193,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1kpmvzny34ks8kj6f9w40v9z99vfkfyn72fanmc810ykzqivw8b0";
+      sha256 = "10bspwnz1bn2n0hvfgydjymw20xdfb4dxx8qp1b1anyl8f0am5zr";
       type = "gem";
     };
-    version = "0.38.0";
+    version = "0.38.1";
   };
   rubocop-performance = {
     dependencies = ["lint_roller" "rubocop" "rubocop-ast"];

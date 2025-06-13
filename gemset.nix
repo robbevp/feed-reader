@@ -156,10 +156,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "01qml0yilb9basf7is2614skjp8384h2pycfx86cr8023arfj98g";
+      sha256 = "0yx9yn47a8lkfcjmigk79fykxvr80r4m1i35q82sxzynpbm7lcr7";
       type = "gem";
     };
-    version = "0.2.0";
+    version = "0.3.0";
   };
   bcrypt = {
     groups = ["default"];
@@ -176,10 +176,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0jl71qcgamm96dzyqk695j24qszhcc7liw74qc83fpjljp2gh4hg";
+      sha256 = "1kicilpma5l0lwayqjb5577bm0hbjndj2gh150xz09xsgc1l1vyl";
       type = "gem";
     };
-    version = "0.4.0";
+    version = "0.4.1";
   };
   better_html = {
     dependencies = ["actionview" "activesupport" "ast" "erubi" "parser" "smart_properties"];
@@ -197,10 +197,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0qh7m151nyl3x3f467smrnpvkyinwjz96cdj5vh092yr0x7c687j";
+      sha256 = "1p2szbr4jdvmwaaj2kxlbv1rp0m6ycbgfyp0kjkkkswmniv5y21r";
       type = "gem";
     };
-    version = "3.2.0";
+    version = "3.2.2";
   };
   bindex = {
     groups = ["default" "development"];
@@ -1091,10 +1091,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "17850wcwkgi30p7yqh60960ypn7yibacjjha0av78zaxwvd3ijs6";
+      sha256 = "14s4jdcs1a4saam9qmzbsa2bsh85rj9zfxny5z315x3gg0nhkxcn";
       type = "gem";
     };
-    version = "13.2.1";
+    version = "13.3.0";
   };
   rbs = {
     dependencies = ["logger"];
@@ -1310,10 +1310,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "17ll5h8lzn7xm5xv637a6p681rwkbgwg5ch671waikiiwf6hqspv";
+      sha256 = "1nh3yw7wcgzwfaysp51qqshih0kd3afwi6v6ycvpa46z4d77qrph";
       type = "gem";
     };
-    version = "5.24.0";
+    version = "5.25.0";
   };
   sentry-ruby = {
     dependencies = ["bigdecimal" "concurrent-ruby"];
@@ -1321,10 +1321,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0dy4f2wf5kpl8ahnljjmwcgi3byb5cld4wybqkfwzw8wv3s1a2s2";
+      sha256 = "1s1gwmw2pvm8179xqzfmv2p03pi6jjqm3qka6mm0fhjprkrag3dm";
       type = "gem";
     };
-    version = "5.24.0";
+    version = "5.25.0";
   };
   simplecov = {
     dependencies = ["docile" "simplecov-html" "simplecov_json_formatter"];

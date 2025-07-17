@@ -1222,15 +1222,15 @@
     version = "2.32.0";
   };
   ruby-lsp = {
-    dependencies = ["language_server-protocol" "prism" "rbs" "sorbet-runtime"];
+    dependencies = ["language_server-protocol" "prism" "rbs"];
     groups = ["development"];
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1pn8w91d6iwj3pf0pfll1j08pir4nbw8c0b17srj6yk2r467xmbq";
+      sha256 = "0fpk4fi0pbakdxl6hj4p43i3glvigp2i0jqsgcgl59hnlmz2aazd";
       type = "gem";
     };
-    version = "0.24.2";
+    version = "0.25.0";
   };
   ruby-lsp-rails = {
     dependencies = ["ruby-lsp"];
@@ -1238,10 +1238,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0jvy695nsap3k9li0z3d1d76h0zj7in1ny64j3zc7pvl0cdvlp1q";
+      sha256 = "075ib75jgg629s4i84jnx3miwzpi1dlj23qgjwawzwxapvgsnhyb";
       type = "gem";
     };
-    version = "0.4.6";
+    version = "0.4.7";
   };
   ruby-progressbar = {
     groups = ["default" "development"];
@@ -1378,16 +1378,6 @@
       type = "gem";
     };
     version = "1.17.0";
-  };
-  sorbet-runtime = {
-    groups = ["default" "development"];
-    platforms = [];
-    source = {
-      remotes = ["https://rubygems.org"];
-      sha256 = "0hfxshkcmqarj60yyyfkx74pd75bac659hdzpdlhxrqd0gccn66d";
-      type = "gem";
-    };
-    version = "0.5.12194";
   };
   stringio = {
     groups = ["default" "development" "production" "test"];

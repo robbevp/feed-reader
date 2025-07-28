@@ -3026,11 +3026,11 @@
       };
     }
     {
-      name = "picomatch___picomatch_4.0.2.tgz";
+      name = "picomatch___picomatch_4.0.3.tgz";
       path = fetchurl {
-        name = "picomatch___picomatch_4.0.2.tgz";
-        url  = "https://registry.yarnpkg.com/picomatch/-/picomatch-4.0.2.tgz";
-        sha512 = "M7BAV6Rlcy5u+m6oPhAPFgJTzAioX/6B0DxyvDlo9l8+T3nLKbrczg2WLUyzd45L8RqfUMyGPzekbMvX2Ldkwg==";
+        name = "picomatch___picomatch_4.0.3.tgz";
+        url  = "https://registry.yarnpkg.com/picomatch/-/picomatch-4.0.3.tgz";
+        sha512 = "5gTmgEY/sqK6gFXLIsQNH19lWb4ebPDLA4SdLP7dsWkIXHWlG66oPuVvXSGFPppYZz8ZDZq0dYYrbHfBCVUb1Q==";
       };
     }
     {
@@ -3882,11 +3882,11 @@
       };
     }
     {
-      name = "vite___vite_7.0.3.tgz";
+      name = "vite___vite_7.0.6.tgz";
       path = fetchurl {
-        name = "vite___vite_7.0.3.tgz";
-        url  = "https://registry.yarnpkg.com/vite/-/vite-7.0.3.tgz";
-        sha512 = "y2L5oJZF7bj4c0jgGYgBNSdIu+5HF+m68rn2cQXFbGoShdhV1phX9rbnxy9YXj82aS8MMsCLAAFkRxZeWdldrQ==";
+        name = "vite___vite_7.0.6.tgz";
+        url  = "https://registry.yarnpkg.com/vite/-/vite-7.0.6.tgz";
+        sha512 = "MHFiOENNBd+Bd9uvc8GEsIzdkn1JxMmEeYX35tI3fv0sJBUTfW5tQsoaOwuY4KhBI09A3dUJ/DXf2yxPVPUceg==";
       };
     }
     {

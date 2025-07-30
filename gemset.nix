@@ -663,16 +663,6 @@
     };
     version = "0.4.2";
   };
-  method_source = {
-    groups = ["default"];
-    platforms = [];
-    source = {
-      remotes = ["https://rubygems.org"];
-      sha256 = "1igmc3sq9ay90f8xjvfnswd1dybj1s3fi0dwd53inwsvqk4h24qq";
-      type = "gem";
-    };
-    version = "1.1.0";
-  };
   mini_magick = {
     dependencies = ["benchmark" "logger"];
     groups = ["default"];
@@ -1481,15 +1471,15 @@
     version = "0.16.11";
   };
   view_component = {
-    dependencies = ["activesupport" "concurrent-ruby" "method_source"];
+    dependencies = ["activesupport" "concurrent-ruby"];
     groups = ["default"];
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0aw962shs2x52dy1vhzkw1qc0b5vxmgaab6lld7hggrqkr5ysbrw";
+      sha256 = "1iinzbai7nyp00i0s7b6akjhpzfvrk0lynvc6lp0x4pszcgl6vcw";
       type = "gem";
     };
-    version = "3.23.2";
+    version = "4.0.0";
   };
   vite_rails = {
     dependencies = ["railties" "vite_ruby"];

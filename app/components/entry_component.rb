@@ -4,7 +4,7 @@ class EntryComponent < ViewComponent::Base
   attr_reader :entry
 
   def initialize(entry:)
-    super
+    super()
     @entry = entry
   end
 

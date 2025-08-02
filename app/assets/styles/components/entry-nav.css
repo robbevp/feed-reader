@@ -63,13 +63,19 @@
     padding-inline: 2rem;
   }
 
-  &:hover {
-    text-decoration: underline;
-    background-color: color-mix(
-      in oklab,
-      var(--element-color) 40%,
-      transparent
-    );
+  /* We only specify a hover effect if the user's input can actually hover
+   * This is a workaround for an issue in iOS' safari and FF on android (seen in 141.0.1)
+   * In those cases a button/link would show as if the user was hovering after clicking.
+   */
+  @media (hover: hover) {
+    &:hover {
+      text-decoration: underline;
+      background-color: color-mix(
+        in oklab,
+        var(--element-color) 40%,
+        transparent
+      );
+    }
   }
 
   &:focus-visible {

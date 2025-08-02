@@ -6,7 +6,7 @@ class Forms::BaseComponent < ViewComponent::Base
   # rubocop:disable Metrics/ParameterLists
   # We need to have a lot of parameters here, since this is a very generic component
   def initialize(form:, name:, hint: nil, error: nil, disabled: false, **html_attrs)
-    super
+    super()
     @form = form
     @name = name
     @hint = hint

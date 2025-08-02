@@ -11,7 +11,13 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
   def current_user
-    @current_user ||= User.find_by(id: session[:user_id] || cookies.signed[:_feed_reader_user_id])
+    @current_user ||= begin
+      # If the user uses the long term cookie, we set the user id in the session
+      if session[:user_id].nil? && cookies.signed[:_feed_reader_user_id].present?
+        session[:user_id] = cookies.signed[:_feed_reader_user_id]
+      end
+      User.find_by(id: session[:user_id])
+    end
   end
 
   private

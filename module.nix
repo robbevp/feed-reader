@@ -268,8 +268,12 @@ in
             "argv=${relayMailScript}"
           ];
         };
-        sslCert = "${certDir}/cert.pem";
-        sslKey = "${certDir}/key.pem";
+        config = {
+          smtpd_tls_chain_files = [
+            "${certDir}/key.pem"
+            "${certDir}/cert.pem"
+          ];
+        };
         extraConfig = ''
           notify_classes = resource, software, delay, 2bounce, bounce
         '';

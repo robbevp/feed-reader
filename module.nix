@@ -274,7 +274,7 @@ in
             "${certDir}/cert.pem"
           ];
         };
-        extraConfig = ''
+        settings.main = ''
           notify_classes = resource, software, delay, 2bounce, bounce
         '';
       };

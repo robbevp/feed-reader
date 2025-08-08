@@ -3602,11 +3602,11 @@
       };
     }
     {
-      name = "stylelint___stylelint_16.23.0.tgz";
+      name = "stylelint___stylelint_16.23.1.tgz";
       path = fetchurl {
-        name = "stylelint___stylelint_16.23.0.tgz";
-        url  = "https://registry.yarnpkg.com/stylelint/-/stylelint-16.23.0.tgz";
-        sha512 = "69T5aS2LUY306ekt1Q1oaSPwz/jaG9HjyMix3UMrai1iEbuOafBe2Dh8xlyczrxFAy89qcKyZWWtc42XLx3Bbw==";
+        name = "stylelint___stylelint_16.23.1.tgz";
+        url  = "https://registry.yarnpkg.com/stylelint/-/stylelint-16.23.1.tgz";
+        sha512 = "dNvDTsKV1U2YtiUDfe9d2gp902veFeo3ecCWdGlmLm2WFrAV0+L5LoOj/qHSBABQwMsZPJwfC4bf39mQm1S5zw==";
       };
     }
     {

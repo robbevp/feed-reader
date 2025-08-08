@@ -274,9 +274,9 @@ in
             "${certDir}/cert.pem"
           ];
         };
-        settings.main = ''
-          notify_classes = resource, software, delay, 2bounce, bounce
-        '';
+        settings.main = {
+          notify_classes = "resource, software, delay, 2bounce, bounce";
+        };
       };
 
     networking.firewall.allowedTCPPorts = [ 25 ];

@@ -16,13 +16,7 @@
 
 .entry__progress {
   --background-color: transparent;
-
-  /* --value-color: var(--color-primary); */
-  --value-color: color-mix(
-    in oklch shorter hue,
-    var(--color-primary) var(--progress, 0),
-    transparent
-  );
+  --value-color: var(--color-primary);
 
   position: fixed;
   inset-block-start: 0;
@@ -32,6 +26,7 @@
   border: none;
   border-radius: 0;
   background-color: transparent;
+  opacity: var(--progress);
 
   &::-moz-progress-bar {
     background-color: var(--value-color);

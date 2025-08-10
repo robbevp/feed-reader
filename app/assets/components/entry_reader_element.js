@@ -33,11 +33,10 @@ export class EntryReaderElement extends SprinklesElement {
     if (Number.isNaN(progress)) progress = 1;
 
     const clammedProgress = Math.min(1, Math.max(0, progress));
-    const asPercentage = `${Math.round(clammedProgress * 100)}%`;
 
     this.refs.progress.toggleAttribute("data-fits-page", target <= 0);
     this.refs.progress.value = clammedProgress;
-    this.refs.progress.style.setProperty("--progress", asPercentage);
-    this.refs.progress.innerText = asPercentage;
+    this.refs.progress.style.setProperty("--progress", clammedProgress);
+    this.refs.progress.innerText = `${Math.round(clammedProgress * 100)}%`;
   }
 }

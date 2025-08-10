@@ -247,7 +247,6 @@ in
       in
       {
         enable = true;
-        hostname = "mail.${cfg.mailer.inboundDomain}";
         postmasterAlias = cfg.mailer.postmasterAlias;
         virtual = ''
           @${cfg.mailer.inboundDomain} feed_reader@${cfg.mailer.inboundDomain}
@@ -255,27 +254,29 @@ in
         transport = ''
           ${cfg.mailer.inboundDomain} forward_to_feed_reader:
         '';
-        relayDomains = [
-          cfg.mailer.inboundDomain
-        ];
-        masterConfig.forward_to_feed_reader = {
-          command = "pipe";
-          privileged = true;
-          args = [
-            # See pipe manual for details on these settings https://www.postfix.org/pipe.8.html
-            "flags=Xhq"
-            "user=feed_reader"
-            "argv=${relayMailScript}"
-          ];
-        };
-        config = {
-          smtpd_tls_chain_files = [
-            "${certDir}/key.pem"
-            "${certDir}/cert.pem"
-          ];
-        };
-        settings.main = {
-          notify_classes = "resource, software, delay, 2bounce, bounce";
+
+        settings = {
+          main = {
+            myhostname = "mail.${cfg.mailer.inboundDomain}";
+            notify_classes = "resource, software, delay, 2bounce, bounce";
+            relay_domains = [
+              cfg.mailer.inboundDomain
+            ];
+            smtpd_tls_chain_files = [
+              "${certDir}/key.pem"
+              "${certDir}/cert.pem"
+            ];
+          };
+          master.forward_to_feed_reader = {
+            command = "pipe";
+            privileged = true;
+            args = [
+              # See pipe manual for details on these settings https://www.postfix.org/pipe.8.html
+              "flags=Xhq"
+              "user=feed_reader"
+              "argv=${relayMailScript}"
+            ];
+          };
         };
       };
 

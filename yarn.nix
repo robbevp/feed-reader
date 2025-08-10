@@ -3402,6 +3402,14 @@
       };
     }
     {
+      name = "sprinkles_js___sprinkles_js_0.2.1.tgz";
+      path = fetchurl {
+        name = "sprinkles_js___sprinkles_js_0.2.1.tgz";
+        url  = "https://registry.yarnpkg.com/sprinkles-js/-/sprinkles-js-0.2.1.tgz";
+        sha512 = "rvRIZsXfr+lQnHFx9eN90+yis2BR/PFRKEnVYZpFzzmrJ69dXr+d/MzOIN2tVvxbyXUPFq4TxRkiBOSWb6pnDA==";
+      };
+    }
+    {
       name = "string_width___string_width_4.2.3.tgz";
       path = fetchurl {
         name = "string_width___string_width_4.2.3.tgz";

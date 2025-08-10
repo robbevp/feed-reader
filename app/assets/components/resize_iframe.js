@@ -1,25 +1,20 @@
-import { SprinklesComponent } from "../lib/sprinkles";
+import { SprinklesElement } from "sprinkles-js";
 
-export default class ResizeIframeComponent extends SprinklesComponent {
-  connect() {
-    this.element.contentWindow.addEventListener(
-      "load",
-      this.setCorrectHeight.bind(this),
-    );
-    window.addEventListener("resize", this.setCorrectHeight.bind(this));
+export class ResizeIframeElement extends SprinklesElement {
+  static tagName = "resize-iframe";
+  static refs = ["iframe"];
+  static events = {
+    resize: { method: "updateHeight", element: window },
+    load: { method: "updateHeight", ref: "iframe" },
+  };
 
-    // Already set height in next frame (when text is loaded, but resources might not be)
-    window.requestAnimationFrame(this.setCorrectHeight.bind(this));
+  afterConnected() {
+    window.requestAnimationFrame(this.updateHeight.bind(this));
   }
 
-  disconnect() {
-    document.removeEventListener("load", this.setCorrectHeight.bind(this));
-    window.removeEventListener("resize", this.setCorrectHeight.bind(this));
-  }
-
-  setCorrectHeight() {
-    const height = this.element.contentDocument.body?.scrollHeight || 500;
+  updateHeight() {
+    const height = this.refs.iframe.contentDocument.body?.scrollHeight || 500;
     // Add extra padding, since the body margin is not taken into account
-    this.element.height = `${height + 40}px`;
+    this.refs.iframe.height = `${height + 40}px`;
   }
 }

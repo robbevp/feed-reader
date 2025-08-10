@@ -19,8 +19,8 @@ class EntryComponentTest < ViewComponent::TestCase
 
     render_inline(EntryComponent.new(entry:))
 
-    assert_selector '.entry__content'
-    assert_includes page.find('.entry__content')[:srcdoc], '<body><div></div></body>'
+    assert_selector '.entry__iframe'
+    assert_includes page.find('.entry__iframe')[:srcdoc], '<body><div></div></body>'
   end
 
   test 'should use summary if body is nil' do
@@ -29,7 +29,7 @@ class EntryComponentTest < ViewComponent::TestCase
 
     render_inline(EntryComponent.new(entry:))
 
-    assert_selector '.entry__content'
+    assert_selector '.entry__iframe'
     assert_selector 'img', count: 0
   end
 
@@ -39,8 +39,8 @@ class EntryComponentTest < ViewComponent::TestCase
 
     render_inline(EntryComponent.new(entry:))
 
-    assert_selector '.entry__content'
-    assert_includes page.find('.entry__content')[:srcdoc], '<body><div><img src="https://example.com/image.jpg"></div></body>'
+    assert_selector '.entry__iframe'
+    assert_includes page.find('.entry__iframe')[:srcdoc], '<body><div><img src="https://example.com/image.jpg"></div></body>'
   end
 
   test 'should replace image src when proxied' do
@@ -53,11 +53,11 @@ class EntryComponentTest < ViewComponent::TestCase
 
     render_inline(EntryComponent.new(entry:))
 
-    assert_selector '.entry__content'
+    assert_selector '.entry__iframe'
 
     regex = %r{<img src="/rails/active_storage/blobs/redirect/[A-z\d\=\-]+/image.jpg">}
 
-    assert_match regex, page.find('.entry__content')[:srcdoc]
+    assert_match regex, page.find('.entry__iframe')[:srcdoc]
   end
 
   test 'should replace style element urls when proxied' do
@@ -70,11 +70,11 @@ class EntryComponentTest < ViewComponent::TestCase
 
     render_inline(EntryComponent.new(entry:))
 
-    assert_selector '.entry__content'
+    assert_selector '.entry__iframe'
 
     regex = %r{<style>.class{background:url\(/rails/active_storage/blobs/redirect/[A-z\d\=\-]+/image.jpg\)}</style>}
 
-    assert_match regex, page.find('.entry__content')[:srcdoc]
+    assert_match regex, page.find('.entry__iframe')[:srcdoc]
   end
 
   test 'should replace inline style urls when proxied' do
@@ -87,11 +87,11 @@ class EntryComponentTest < ViewComponent::TestCase
 
     render_inline(EntryComponent.new(entry:))
 
-    assert_selector '.entry__content'
+    assert_selector '.entry__iframe'
 
     regex = %r{<div style="background:url\(/rails/active_storage/blobs/redirect/[A-z\d\=\-]+/image.jpg\)"></div>}
 
-    assert_match regex, page.find('.entry__content')[:srcdoc]
+    assert_match regex, page.find('.entry__iframe')[:srcdoc]
   end
 
   test 'should inject `entry-body` stylesheet in head' do
@@ -100,10 +100,10 @@ class EntryComponentTest < ViewComponent::TestCase
 
     render_inline(EntryComponent.new(entry:))
 
-    assert_selector '.entry__content'
+    assert_selector '.entry__iframe'
     regex = %r{<head>[\s\S]*<link rel="stylesheet" href="/vite-test/assets/entry-body-[\dA-z\-]+.css">[\s\S]*</head>}
 
-    assert_match regex, page.find('.entry__content')[:srcdoc]
+    assert_match regex, page.find('.entry__iframe')[:srcdoc]
   end
 
   test 'should inject base with target in head' do
@@ -112,9 +112,9 @@ class EntryComponentTest < ViewComponent::TestCase
 
     render_inline(EntryComponent.new(entry:))
 
-    assert_selector '.entry__content'
+    assert_selector '.entry__iframe'
     regex = %r{<head>[\s\S]*<base target="_parent">[\s\S]*</head>}
 
-    assert_match regex, page.find('.entry__content')[:srcdoc]
+    assert_match regex, page.find('.entry__iframe')[:srcdoc]
   end
 end

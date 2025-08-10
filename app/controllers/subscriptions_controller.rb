@@ -23,7 +23,7 @@ class SubscriptionsController < ApplicationController
       flash[:success] = t '.success'
       redirect_to @subscription
     else
-      render :new, status: :unprocessable_entity
+      render :new, status: :unprocessable_content
     end
   end
 
@@ -38,7 +38,7 @@ class SubscriptionsController < ApplicationController
       flash[:success] = t '.success'
       redirect_to @subscription
     else
-      render :edit, status: :unprocessable_entity
+      render :edit, status: :unprocessable_content
     end
   end
 

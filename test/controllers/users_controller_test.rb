@@ -39,7 +39,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
                               password_challenge: 'password1234' } }
     end
 
-    assert_response :unprocessable_entity
+    assert_response :unprocessable_content
   end
 
   test 'should return edit if user did not include confirmation' do
@@ -47,7 +47,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
       patch user_url, params: { user: { password: 'password5678', password_challenge: 'password1234' } }
     end
 
-    assert_response :unprocessable_entity
+    assert_response :unprocessable_content
   end
 
   test 'should return edit if user did not include password challenge' do
@@ -55,6 +55,6 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
       patch user_url, params: { user: { password: 'password5678', password_confirmation: 'password5678' } }
     end
 
-    assert_response :unprocessable_entity
+    assert_response :unprocessable_content
   end
 end

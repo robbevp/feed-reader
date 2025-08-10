@@ -23,7 +23,7 @@ class PasswordsController < ApplicationController
       flash[:success] = t '.success'
       redirect_to new_session_path
     else
-      render :edit, status: :unprocessable_entity
+      render :edit, status: :unprocessable_content
     end
   end
 

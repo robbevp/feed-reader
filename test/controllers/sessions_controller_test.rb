@@ -54,13 +54,13 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
   test 'should return new if email could not be found' do
     post session_url, params: { session: { email: 'example2@example.org', password: 'password1234' } }
 
-    assert_response :unprocessable_entity
+    assert_response :unprocessable_content
   end
 
   test 'should return new if password was not correct' do
     post session_url, params: { session: { email: 'example@example.org', password: 'password12345' } }
 
-    assert_response :unprocessable_entity
+    assert_response :unprocessable_content
   end
 
   test 'should remove user id and cookie from sessions on sign out' do

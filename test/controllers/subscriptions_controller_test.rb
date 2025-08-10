@@ -49,7 +49,7 @@ class SubscriptionsControllerTest < ActionDispatch::IntegrationTest
       post subscriptions_url, params: { subscription: { name: 'My blog', subscribable_type: nil } }
     end
 
-    assert_response :unprocessable_entity
+    assert_response :unprocessable_content
   end
 
   # Show
@@ -94,7 +94,7 @@ class SubscriptionsControllerTest < ActionDispatch::IntegrationTest
       patch subscription_url(@subscription), params: { subscription: { name: nil } }
     end
 
-    assert_response :unprocessable_entity
+    assert_response :unprocessable_content
   end
 
   # Mark all as read

@@ -76,7 +76,7 @@ class PasswordsControllerTest < ActionDispatch::IntegrationTest
       patch password_url, params: { token:, password: { password: 'a' * 12, password_confirmation: 'b' * 12 } }
     end
 
-    assert_response :unprocessable_entity
+    assert_response :unprocessable_content
   end
 
   test 'should return edit if user tries to skip confirmation' do
@@ -86,6 +86,6 @@ class PasswordsControllerTest < ActionDispatch::IntegrationTest
       patch password_url, params: { token:, password: { password: 'a' * 12 } }
     end
 
-    assert_response :unprocessable_entity
+    assert_response :unprocessable_content
   end
 end

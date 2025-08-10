@@ -1,20 +1,43 @@
 import { SprinklesElement } from "sprinkles-js";
+import { throttle } from "../helpers/throttle";
 
 export class ResizeIframeElement extends SprinklesElement {
   static tagName = "resize-iframe";
-  static refs = ["iframe"];
+  static refs = ["iframe", "progress"];
   static events = {
     resize: { method: "updateHeight", element: window },
     load: { method: "updateHeight", ref: "iframe" },
+    scroll: { method: "throttledProgress", element: document },
   };
+
+  throttledProgress = throttle(this.#updateProgress.bind(this), 20);
 
   afterConnected() {
     window.requestAnimationFrame(this.updateHeight.bind(this));
   }
 
   updateHeight() {
-    const height = this.refs.iframe.contentDocument.body?.scrollHeight || 500;
-    // Add extra padding, since the body margin is not taken into account
-    this.refs.iframe.height = `${height + 40}px`;
+    const height =
+      this.refs.iframe.contentDocument.documentElement?.scrollHeight;
+    this.refs.iframe.height = `${height || 500}px`;
+
+    this.throttledProgress();
+  }
+
+  #updateProgress() {
+    const target =
+      document.documentElement.scrollHeight -
+      document.documentElement.clientHeight;
+    let progress = document.documentElement.scrollTop / target;
+    // If progress is NaN, the target was probably exactly 0
+    if (Number.isNaN(progress)) progress = 1;
+
+    const clammedProgress = Math.min(1, Math.max(0, progress));
+    const asPercentage = `${Math.round(clammedProgress * 100)}%`;
+
+    this.refs.progress.toggleAttribute("data-fits-page", target <= 0);
+    this.refs.progress.value = clammedProgress;
+    this.refs.progress.style.setProperty("--progress", asPercentage);
+    this.refs.progress.innerText = asPercentage;
   }
 }

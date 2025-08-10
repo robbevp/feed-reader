@@ -29,6 +29,9 @@
   --color-white: oklch(100% 0 0deg);
   --color-black: oklch(24.42% 0.006 0.59deg);
 
+  /* Our primary color is color indigo-6 from open-color: https://yeun.github.io/open-color/ */
+  --color-primary: oklch(58.96% 0.2054 268.62deg);
+
   /* Border radius */
   --rounded: 1rem;
   --rounded-full: 9999px;

@@ -27,6 +27,8 @@ en:
       next: "Next"
       previous: "Previous"
       nav_pagination_label: "Entry pagination"
+  entry_component:
+    reading_progress: "Reading progress"
   subscriptions:
     form:
       category_hint: "You can nest categories using `>`. For example: `Music > Bands`"

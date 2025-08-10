@@ -6,6 +6,8 @@
   <% end %>
   <% if content? %>
     <resize-iframe class="entry__content">
+      <%# We hide the progress indicator for SR %>
+      <%= tag.progress '0%', value: 0, class: 'entry__progress', data: { resize_iframe_ref: :progress }, aria: { label: t('.reading_progress') } %>
       <%= content_tag :iframe, '', sandbox: 'allow-same-origin allow-top-navigation allow-top-navigation-by-user-activation', srcdoc: transformed_content, class: 'entry__iframe', height: '500px', data: { resize_iframe_ref: 'iframe' } %>
     </resize-iframe>
   <% end %>

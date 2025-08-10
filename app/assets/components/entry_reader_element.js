@@ -1,8 +1,8 @@
 import { SprinklesElement } from "sprinkles-js";
 import { throttle } from "../helpers/throttle";
 
-export class ResizeIframeElement extends SprinklesElement {
-  static tagName = "resize-iframe";
+export class EntryReaderElement extends SprinklesElement {
+  static tagName = "entry-reader";
   static refs = ["iframe", "progress"];
   static events = {
     resize: { method: "updateHeight", element: window },

@@ -1122,10 +1122,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0h6dq0cy9mrkj8z4d8w0c7r7b6s92fls2pm57p79726ifns7ipfr";
+      sha256 = "1vir4x1wg7vc3gcpl0ymvf6hbid71l2h3nhz91a8rqr25nwnamjs";
       type = "gem";
     };
-    version = "2.11.0";
+    version = "2.11.1";
   };
   reline = {
     dependencies = ["io-console"];
@@ -1206,10 +1206,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1404nfa0gw3p0xzmv4b9zg9v1da0nwc4m7796pl73zi2hwy65k4z";
+      sha256 = "02ixk7mzfvhm4afg8ib160jy5ags7a334w7nmkj8p64dq60hnskf";
       type = "gem";
     };
-    version = "2.32.0";
+    version = "2.33.0";
   };
   ruby-lsp = {
     dependencies = ["language_server-protocol" "prism" "rbs"];

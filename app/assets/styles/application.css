@@ -6,7 +6,6 @@
 @import url("./components/homepage.css");
 @import url("./components/page.css");
 @import url("./components/pagination.css");
-@import url("./components/subscriptions.css");
 
 .table__cell--actions {
   white-space: nowrap;

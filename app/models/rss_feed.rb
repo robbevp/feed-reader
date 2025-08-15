@@ -15,6 +15,8 @@
 #  updated_at       :datetime         not null
 #
 class RssFeed < ApplicationRecord
+  MAX_ERRORS = 24
+
   has_one :subscription, as: :subscribable, dependent: :destroy
   has_many :entries, through: :subscription
 
@@ -30,8 +32,8 @@ class RssFeed < ApplicationRecord
       reset_error
       self.last_fetched_at = DateTime.current
     rescue TooManyRedirectsError
-      self.error = I18n.t('rss_feed.errors.too_many_redirects')
-    rescue Net::HTTPClientException => e
+      self.error = I18n.t('rss_feeds.errors.too_many_redirects')
+    rescue Net::HTTPClientException, Errno::EBUSY, Errno::ENETUNREACH, Net::HTTPFatalError, Socket::ResolutionError => e
       self.error = e.message
     end
 
@@ -39,7 +41,7 @@ class RssFeed < ApplicationRecord
   end
 
   def should_refresh?
-    error_count < 5
+    error_count < MAX_ERRORS
   end
 
   def any_error?
@@ -52,15 +54,12 @@ class RssFeed < ApplicationRecord
 
   def error=(error_text)
     self.latest_error = error_text
-    self.error_count = if error_text.present?
-                         error_count + 1
-                       else
-                         0
-                       end
+    self.error_count = error_count + 1
   end
 
   def reset_error
     self.error = nil
+    self.error_count = 0
   end
 
   def handle_response(response)

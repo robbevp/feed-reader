@@ -17,8 +17,7 @@
       <tr class="table__row">
         <%= content_tag :td, class: 'table__cell' do %>
           <%- if subscription.refreshable? %>
-            <%- status_info = subscription_status_info(subscription) %>
-            <i class="subscription__status <%= status_info[:class] %>" aria-label="<%= status_info[:label] %>" />
+            <%= render SubscriptionStatusComponent.new(subscription:) %>
           <%- end %>
         <% end %>
         <%= content_tag :td, subscription.name, class: 'table__cell' %>

@@ -22,3 +22,8 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+## Icons
+
+When introducing new icons, please use them from https://heroicons.com/.

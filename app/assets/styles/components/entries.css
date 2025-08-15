@@ -14,6 +14,38 @@
   width: 100%;
 }
 
+.entry__progress {
+  --background-color: transparent;
+  --value-color: var(--color-primary);
+
+  position: fixed;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  width: 100vw;
+  height: 0.25rem;
+  border: none;
+  border-radius: 0;
+  background-color: transparent;
+  opacity: calc(var(--progress, 0) / 2 + 0.5);
+
+  &::-moz-progress-bar {
+    background-color: var(--value-color);
+  }
+
+  &::-webkit-progress-bar {
+    background-color: var(--background-color);
+  }
+
+  &::-webkit-progress-value {
+    background-color: var(--value-color);
+  }
+
+  /* If the whole page fits in the viewport, we hide the progress element */
+  &[data-fits-page] {
+    display: none;
+  }
+}
+
 .entry__iframe {
   width: 100%;
   max-width: 48rem;

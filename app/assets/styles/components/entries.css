@@ -26,7 +26,7 @@
   border: none;
   border-radius: 0;
   background-color: transparent;
-  opacity: var(--progress);
+  opacity: calc(var(--progress, 0) / 2 + 0.5);
 
   &::-moz-progress-bar {
     background-color: var(--value-color);

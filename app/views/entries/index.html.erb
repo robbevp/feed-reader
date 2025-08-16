@@ -42,6 +42,6 @@
         <%- end %>
       </tbody>
     </table>
-    <%== pagy_nav(@pagy) %>
+    <%= render PaginationComponent.new(pagy: @pagy) %>
   </div>
 </div>

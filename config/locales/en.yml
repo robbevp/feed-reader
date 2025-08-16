@@ -46,7 +46,6 @@ en:
         none: Not fetched yet
         error: Too many errors
         warning: Last fetch failed
-        success: Last fetch was successful
     new:
       page_title: Add new subscription
       show: Show

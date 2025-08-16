@@ -7,9 +7,9 @@
 <%- end %>
 
 <%- if @subscription.refreshable? && @subscription.subscribable.any_error? %>
-    <p>
-        <%= t('.recent_failure', error: @subscription.subscribable.latest_error) %>
-    </p>
+  <p>
+    <%= t('.recent_failure', error: @subscription.subscribable.latest_error) %>
+  </p>
 <%- end %>
 
 <%- if @subscription.any_unread? %>

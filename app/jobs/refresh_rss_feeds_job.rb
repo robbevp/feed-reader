@@ -4,8 +4,8 @@ class RefreshRssFeedsJob < ApplicationJob
   queue_as :default
 
   def perform
-    RssFeed.find_each do |feed|
-      RefreshRssFeedJob.perform_later(feed) if feed.should_refresh?
+    RssFeed.for_refresh.find_each do |feed|
+      RefreshRssFeedJob.perform_later(feed)
     end
   end
 end

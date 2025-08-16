@@ -26,6 +26,8 @@ class RssFeed < ApplicationRecord
 
   after_create_commit -> { RefreshRssFeedJob.perform_later(self) }
 
+  scope :for_refresh, -> { where(error_count: ..MAX_ERRORS) }
+
   def refresh!
     begin
       fetch_feed!

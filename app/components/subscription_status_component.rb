@@ -14,6 +14,13 @@ class SubscriptionStatusComponent < ViewComponent::Base
     @subscription = subscription
   end
 
+  def render?
+    return false unless subscription.refreshable?
+    return false if status == :success
+
+    true
+  end
+
   def label
     I18n.t("subscriptions.index.statuses.#{status}")
   end
@@ -21,6 +28,8 @@ class SubscriptionStatusComponent < ViewComponent::Base
   def svg_name
     SVG_NAMES[status]
   end
+
+  private
 
   def status
     return :error unless subscription.subscribable.should_refresh?

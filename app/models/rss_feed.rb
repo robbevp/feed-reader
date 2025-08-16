@@ -22,7 +22,7 @@ class RssFeed < ApplicationRecord
 
   validates :url, presence: true
 
-  before_save :reset_error, if: :will_save_change_to_url?
+  before_update :reset_error, if: :will_save_change_to_url?
 
   after_create_commit -> { RefreshRssFeedJob.perform_later(self) }
 

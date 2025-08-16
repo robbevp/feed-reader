@@ -5,31 +5,64 @@
 # Table name: rss_feeds
 #
 #  id               :bigint           not null, primary key
+#  error_count      :integer          default(0), not null
 #  last_etag        :string
 #  last_fetched_at  :datetime
 #  last_modified_at :datetime
+#  latest_error     :string
 #  url              :text             not null
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
 #
 class RssFeed < ApplicationRecord
+  MAX_ERRORS = 24
+
   has_one :subscription, as: :subscribable, dependent: :destroy
   has_many :entries, through: :subscription
 
   validates :url, presence: true
 
+  before_update :reset_error, if: :will_save_change_to_url?
+
   after_create_commit -> { RefreshRssFeedJob.perform_later(self) }
 
-  def refresh!
-    fetch_feed!
+  scope :should_refresh, -> { where(error_count: ..MAX_ERRORS) }
 
-    self.last_fetched_at = DateTime.current
+  def refresh!
+    begin
+      fetch_feed!
+      reset_error
+      self.last_fetched_at = DateTime.current
+    rescue TooManyRedirectsError
+      self.error = I18n.t('rss_feeds.errors.too_many_redirects')
+    rescue Net::HTTPClientException, Errno::EBUSY, Errno::ENETUNREACH, Net::HTTPFatalError, Socket::ResolutionError => e
+      self.error = e.message
+    end
+
     save!
+  end
+
+  def should_refresh?
+    error_count < MAX_ERRORS
+  end
+
+  def any_error?
+    error_count.positive?
   end
 
   delegate :user, to: :subscription
 
   private
+
+  def error=(error_text)
+    self.latest_error = error_text
+    self.error_count = error_count + 1
+  end
+
+  def reset_error
+    self.error = nil
+    self.error_count = 0
+  end
 
   def handle_response(response)
     # We set the values from the headers here, but save them at the end of `refresh!`

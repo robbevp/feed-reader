@@ -12,4 +12,12 @@ class RefreshRssFeedsJobTest < ActiveJob::TestCase
       RefreshRssFeedsJob.perform_now
     end
   end
+
+  test 'should not schedule job for feed with too high error count' do
+    create(:rss_feed, error_count: 25)
+
+    assert_enqueued_jobs 1 do
+      RefreshRssFeedsJob.perform_now
+    end
+  end
 end

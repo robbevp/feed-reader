@@ -194,6 +194,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_28_063814) do
     t.datetime "updated_at", null: false
     t.datetime "last_modified_at"
     t.string "last_etag"
+    t.integer "error_count", default: 0, null: false
+    t.string "latest_error"
   end
 
   create_table "subscriptions", force: :cascade do |t|

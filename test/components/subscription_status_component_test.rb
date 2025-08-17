@@ -24,27 +24,30 @@ class SubscriptionStatusComponentTest < ViewComponent::TestCase
   end
 
   test 'should return correct SVG and label when not fetched yet' do
-    component = SubscriptionStatusComponent.new(subscription: @subscription)
+    render_inline SubscriptionStatusComponent.new(subscription: @subscription)
 
-    assert_equal 'Not fetched yet', component.label
-    assert_equal 'clock', component.svg_name
+    assert_selector '.icon[aria-labelledby]'
+    assert_equal I18n.t('subscriptions.index.statuses.none'), page.find('svg title').text
+    assert_selector ".icon[data-icon-name='clock']"
   end
 
   test 'should return correct SVG and label when it has errors' do
     @subscription.subscribable.update(error_count: 5)
 
-    component = SubscriptionStatusComponent.new(subscription: @subscription)
+    render_inline SubscriptionStatusComponent.new(subscription: @subscription)
 
-    assert_equal 'Last fetch failed', component.label
-    assert_equal 'exclamation-triangle', component.svg_name
+    assert_selector '.icon[aria-labelledby]'
+    assert_equal I18n.t('subscriptions.index.statuses.warning'), page.find('svg title').text
+    assert_selector ".icon[data-icon-name='exclamation-triangle']"
   end
 
   test 'should return correct SVG and label when it has too many errors' do
     @subscription.subscribable.update(error_count: 25)
 
-    component = SubscriptionStatusComponent.new(subscription: @subscription)
+    render_inline SubscriptionStatusComponent.new(subscription: @subscription)
 
-    assert_equal 'Too many errors', component.label
-    assert_equal 'x-mark', component.svg_name
+    assert_selector '.icon[aria-labelledby]'
+    assert_equal I18n.t('subscriptions.index.statuses.error'), page.find('svg title').text
+    assert_selector ".icon[data-icon-name='x-mark']"
   end
 end

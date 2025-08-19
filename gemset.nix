@@ -448,15 +448,15 @@
     version = "3.5.2";
   };
   feedjira = {
-    dependencies = ["loofah" "sax-machine"];
+    dependencies = ["logger" "loofah" "sax-machine"];
     groups = ["default"];
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1prrqmj2q9nbmvcwl16wd0727bnx08pb2fkw3v12z877df36wn9y";
+      sha256 = "008w71rwpvndvlcivmzwj39n2wy2b6ar1pvaxd2anqgwp0q3f1sx";
       type = "gem";
     };
-    version = "3.2.5";
+    version = "3.2.6";
   };
   ffi = {
     groups = ["default"];

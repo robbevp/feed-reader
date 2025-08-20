@@ -35,6 +35,8 @@ class RssFeed < ApplicationRecord
       self.last_fetched_at = DateTime.current
     rescue TooManyRedirectsError
       self.error = I18n.t('rss_feeds.errors.too_many_redirects')
+    rescue Feedjira::NoParserAvailable
+      self.error = I18n.t('rss_feeds.errors.invalid_feed')
     rescue Net::HTTPClientException, Errno::EBUSY, Errno::ENETUNREACH, Net::HTTPFatalError, Socket::ResolutionError => e
       self.error = e.message
     end

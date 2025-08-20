@@ -150,6 +150,18 @@ class RssFeedTest < ActiveSupport::TestCase
     assert_nil feed.last_fetched_at
   end
 
+  test 'should save error if feed can not be parsed' do
+    stub_request(:any, 'https://example.com/rss.xml').to_return(body: 'Not valid XML')
+
+    feed = create(:rss_feed, url: 'https://example.com/rss.xml')
+
+    feed.refresh!
+
+    assert_predicate feed, :any_error?
+    assert_equal I18n.t('rss_feeds.errors.invalid_feed'), feed.latest_error
+    assert_nil feed.last_fetched_at
+  end
+
   test 'should save error if feed returns error' do
     stub_request(:any, 'https://example.com').to_return(status: 403)
 

@@ -32,6 +32,7 @@ en:
   rss_feeds:
     errors:
       too_many_redirects: RSS feed redirected too many times.
+      invalid_feed: "The provided URL does not contain a valid RSS feed"
   subscriptions:
     form:
       category_hint: "You can nest categories using `>`. For example: `Music > Bands`"

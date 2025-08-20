@@ -1530,11 +1530,11 @@
       };
     }
     {
-      name = "fdir___fdir_6.4.6.tgz";
+      name = "fdir___fdir_6.5.0.tgz";
       path = fetchurl {
-        name = "fdir___fdir_6.4.6.tgz";
-        url  = "https://registry.yarnpkg.com/fdir/-/fdir-6.4.6.tgz";
-        sha512 = "hiFoqpyZcfNm1yc4u8oWCf9A2c4D3QjCrks3zmoVKVxpQRzmPNar1hUJcBG2RQHvEVGDN+Jm81ZheVLAQMK6+w==";
+        name = "fdir___fdir_6.5.0.tgz";
+        url  = "https://registry.yarnpkg.com/fdir/-/fdir-6.5.0.tgz";
+        sha512 = "tIbYtZbucOs0BRGqPJkshJUYdL+SDH7dVM8gjy+ERp3WAUjLEFJE+02kanyHtwjWOnwrKYBiwAmM0p4kLJAnXg==";
       };
     }
     {
@@ -3850,11 +3850,11 @@
       };
     }
     {
-      name = "vite___vite_7.1.2.tgz";
+      name = "vite___vite_7.1.3.tgz";
       path = fetchurl {
-        name = "vite___vite_7.1.2.tgz";
-        url  = "https://registry.yarnpkg.com/vite/-/vite-7.1.2.tgz";
-        sha512 = "J0SQBPlQiEXAF7tajiH+rUooJPo0l8KQgyg4/aMunNtrOa7bwuZJsJbDWzeljqQpgftxuq5yNJxQ91O9ts29UQ==";
+        name = "vite___vite_7.1.3.tgz";
+        url  = "https://registry.yarnpkg.com/vite/-/vite-7.1.3.tgz";
+        sha512 = "OOUi5zjkDxYrKhTV3V7iKsoS37VUM7v40+HuwEmcrsf11Cdx9y3DIr2Px6liIcZFwt3XSRpQvFpL3WVy7ApkGw==";
       };
     }
     {

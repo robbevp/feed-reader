@@ -453,10 +453,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "008w71rwpvndvlcivmzwj39n2wy2b6ar1pvaxd2anqgwp0q3f1sx";
+      sha256 = "1ihd76rm295lmw08zhf7n8l3m0bxixha6wn4kkx7ldlibr96q0zc";
       type = "gem";
     };
-    version = "3.2.6";
+    version = "4.0.0";
   };
   ffi = {
     groups = ["default"];

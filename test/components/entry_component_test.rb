@@ -55,7 +55,7 @@ class EntryComponentTest < ViewComponent::TestCase
 
     assert_selector '.entry__iframe'
 
-    regex = %r{<img src="/rails/active_storage/blobs/redirect/[A-z\d\=\-]+/image.jpg">}
+    regex = %r{<img src="/rails/active_storage/blobs/redirect/[A-Za-z\d=-]+/image.jpg">}
 
     assert_match regex, page.find('.entry__iframe')[:srcdoc]
   end
@@ -72,7 +72,7 @@ class EntryComponentTest < ViewComponent::TestCase
 
     assert_selector '.entry__iframe'
 
-    regex = %r{<style>.class{background:url\(/rails/active_storage/blobs/redirect/[A-z\d\=\-]+/image.jpg\)}</style>}
+    regex = %r{<style>.class{background:url\(/rails/active_storage/blobs/redirect/[A-Za-z\d=-]+/image.jpg\)}</style>}
 
     assert_match regex, page.find('.entry__iframe')[:srcdoc]
   end
@@ -89,7 +89,7 @@ class EntryComponentTest < ViewComponent::TestCase
 
     assert_selector '.entry__iframe'
 
-    regex = %r{<div style="background:url\(/rails/active_storage/blobs/redirect/[A-z\d\=\-]+/image.jpg\)"></div>}
+    regex = %r{<div style="background:url\(/rails/active_storage/blobs/redirect/[A-Za-z\d=-]+/image.jpg\)"></div>}
 
     assert_match regex, page.find('.entry__iframe')[:srcdoc]
   end
@@ -101,7 +101,7 @@ class EntryComponentTest < ViewComponent::TestCase
     render_inline(EntryComponent.new(entry:))
 
     assert_selector '.entry__iframe'
-    regex = %r{<head>[\s\S]*<link rel="stylesheet" href="/vite-test/assets/entry-body-[\dA-z\-]+.css">[\s\S]*</head>}
+    regex = %r{<head>[\s\S]*<link rel="stylesheet" href="/vite-test/assets/entry-body-[\dA-Za-z-]+.css">[\s\S]*</head>}
 
     assert_match regex, page.find('.entry__iframe')[:srcdoc]
   end

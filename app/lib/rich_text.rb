@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class RichText
-  STYLE_URL_REGEXP = /url\((http[^\)]+)\)/i
+  STYLE_URL_REGEXP = /url\((http[^)]+)\)/i
 
   attr_accessor :doc
 

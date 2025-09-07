@@ -46,6 +46,32 @@ class EntrySearchTest < ActiveSupport::TestCase
     assert_equal next_entry, search.next(Entry, current)
   end
 
+  test 'should handle duplicate timestamps when getting previous entry' do
+    previous = create(:entry, published_at: DateTime.current)
+    duplicate = create(:entry, published_at: 2.minutes.ago)
+    current = create(:entry, published_at: duplicate.published_at) # This value needs to be exactly the same
+    next_entry = create(:entry, published_at: 4.minutes.ago)
+
+    search = EntrySearch.new
+
+    assert_equal duplicate, search.previous(Entry, next_entry)
+    assert_equal current, search.previous(Entry, duplicate)
+    assert_equal previous, search.previous(Entry, current)
+  end
+
+  test 'should handle duplicate timestamps when getting next entry' do
+    previous = create(:entry, published_at: DateTime.current)
+    duplicate = create(:entry, published_at: 2.minutes.ago)
+    current = create(:entry, published_at: duplicate.published_at) # This value needs to be exactly the same
+    next_entry = create(:entry, published_at: 4.minutes.ago)
+
+    search = EntrySearch.new
+
+    assert_equal current, search.next(Entry, previous)
+    assert_equal duplicate, search.next(Entry, current)
+    assert_equal next_entry, search.next(Entry, duplicate)
+  end
+
   test 'should respect filter when getting next and previous entry' do
     create(:entry, :read, published_at: 3.minutes.ago)
     create(:entry, :read, published_at: 1.minute.ago)

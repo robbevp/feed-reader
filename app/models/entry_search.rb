@@ -13,15 +13,19 @@ class EntrySearch
 
   def apply(entry_scope)
     scopes.inject(entry_scope) { |entries, scope| entries.send(*scope) }
-          .order(published_at: :desc, id: :asc)
+          .order(published_at: :desc, id: :desc)
   end
 
   def next(entry_scope, current)
-    apply(entry_scope).where.not(id: current.id).find_by(published_at: ..current.published_at)
+    apply(entry_scope).where.not(id: current.id)
+                      .find_by('published_at < :published_at OR (published_at = :published_at AND id < :id)',
+                               { published_at: current.published_at, id: current.id })
   end
 
   def previous(entry_scope, current)
-    apply(entry_scope).reverse_order.where.not(id: current.id).find_by(published_at: current.published_at..)
+    apply(entry_scope).reverse_order.where.not(id: current.id)
+                      .find_by('published_at > :published_at OR (published_at = :published_at AND id > :id)',
+                               { published_at: current.published_at, id: current.id })
   end
 
   def to_hash

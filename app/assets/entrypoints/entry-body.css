@@ -10,7 +10,7 @@
 :where(html) {
   font-family: system-ui, sans-serif; /* Use sane fonts by default  */
   overflow-wrap: break-word; /* Make sure we wrap words when needed */
-  overflow: hidden; /* Prevent scrolling inside body  */
+  overflow: scroll hidden; /* Only allow horizontal scroll in body */
 }
 
 :where(body) {

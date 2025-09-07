@@ -16,7 +16,7 @@
 :where(body) {
   margin: 0;
   font-size: 1.125em; /* Bump font size for better readability  */
-  line-height: 1.3; /* Slightly higher line height  */
+  line-height: 1.4; /* Slightly higher line height  */
 }
 
 :where(img, video) {

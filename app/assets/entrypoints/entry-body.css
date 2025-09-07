@@ -32,3 +32,7 @@
 :where(p) {
   max-width: 72ch; /* Set a reasonable character width */
 }
+
+:where(sup) {
+  line-height: 1; /* Prevent sup from increasing the line height for that specific line */
+}

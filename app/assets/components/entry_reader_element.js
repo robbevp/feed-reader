@@ -8,12 +8,14 @@ export class EntryReaderElement extends SprinklesElement {
     resize: { method: "updateHeight", element: window },
     load: { method: "updateHeight", ref: "iframe" },
     scroll: { method: "throttledProgress", element: document },
+    hashchange: { method: "scrollToAnchor", element: window },
   };
 
   throttledProgress = throttle(this.#updateProgress.bind(this), 20);
 
   afterConnected() {
     window.requestAnimationFrame(this.updateHeight.bind(this));
+    window.requestAnimationFrame(this.scrollToAnchor.bind(this));
   }
 
   updateHeight() {
@@ -22,6 +24,18 @@ export class EntryReaderElement extends SprinklesElement {
     this.refs.iframe.height = `${height || 500}px`;
 
     this.throttledProgress();
+  }
+
+  scrollToAnchor() {
+    const anchor = window.location.hash;
+    if (anchor === undefined) return;
+
+    const element = this.refs.iframe.contentDocument.querySelector(anchor);
+    if (element === null) return;
+
+    const { y: iframeTop } = this.refs.iframe.getBoundingClientRect();
+    const { y: elementTop } = element.getBoundingClientRect();
+    window.scrollBy(0, iframeTop + elementTop - 16);
   }
 
   #updateProgress() {

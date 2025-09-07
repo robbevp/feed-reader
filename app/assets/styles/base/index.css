@@ -14,3 +14,10 @@ html {
     color: var(--color-white);
   }
 }
+
+/* Turn on smooth scrolling for users without reduced motion */
+@media (--motion-ok) {
+  * {
+    scroll-behavior: smooth;
+  }
+}

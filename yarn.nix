@@ -3674,11 +3674,11 @@
       };
     }
     {
-      name = "tinyglobby___tinyglobby_0.2.14.tgz";
+      name = "tinyglobby___tinyglobby_0.2.15.tgz";
       path = fetchurl {
-        name = "tinyglobby___tinyglobby_0.2.14.tgz";
-        url  = "https://registry.yarnpkg.com/tinyglobby/-/tinyglobby-0.2.14.tgz";
-        sha512 = "tX5e7OM1HnYr2+a2C/4V0htOcSQcoSTH9KgJnVvNm5zm/cyEWKJ7j7YutsH9CxMdtOkkLFy2AHrMci9IM8IPZQ==";
+        name = "tinyglobby___tinyglobby_0.2.15.tgz";
+        url  = "https://registry.yarnpkg.com/tinyglobby/-/tinyglobby-0.2.15.tgz";
+        sha512 = "j2Zq4NyQYG5XMST4cbs02Ak8iJUdxRM0XI5QyxXuZOzKOINmWurp3smXu3y5wDcJrptwpSjgXHzIQxR0omXljQ==";
       };
     }
     {
@@ -3850,11 +3850,11 @@
       };
     }
     {
-      name = "vite___vite_7.1.4.tgz";
+      name = "vite___vite_7.1.5.tgz";
       path = fetchurl {
-        name = "vite___vite_7.1.4.tgz";
-        url  = "https://registry.yarnpkg.com/vite/-/vite-7.1.4.tgz";
-        sha512 = "X5QFK4SGynAeeIt+A7ZWnApdUyHYm+pzv/8/A57LqSGcI88U6R6ipOs3uCesdc6yl7nl+zNO0t8LmqAdXcQihw==";
+        name = "vite___vite_7.1.5.tgz";
+        url  = "https://registry.yarnpkg.com/vite/-/vite-7.1.5.tgz";
+        sha512 = "4cKBO9wR75r0BeIWWWId9XK9Lj6La5X846Zw9dFfzMRw38IlTk2iCcUt6hsyiDRcPidc55ZParFYDXi0nXOeLQ==";
       };
     }
     {

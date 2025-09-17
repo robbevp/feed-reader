@@ -86,8 +86,6 @@ Style/HashTransformValues:
   Enabled: true
 Style/ExponentialNotation:
   Enabled: true
-Style/ItAssignment:
-  Enabled: false # We use `it` in cases where we can drop the assignment in ruby 3.4
 Style/SlicingWithRange:
   Enabled: true
 Style/RedundantFetchBlock:

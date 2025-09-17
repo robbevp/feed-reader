@@ -17,18 +17,18 @@ class RichText
   # Iterate over all urls in the document
   # If the block returns a new url, the element gets replaced
   # rubocop:disable Metrics/AbcSize
-  def handle_img_urls(&block)
+  def handle_img_urls(&)
     css('img[src]').each do |node|
       node.set_attribute('src', yield(node['src']))
     end
     css('img[srcset],picture source[srcset]').each do |node|
-      node.set_attribute('srcset', urls_in_srcset(node['srcset'], &block))
+      node.set_attribute('srcset', urls_in_srcset(node['srcset'], &))
     end
     css('style:contains("url")').each do |node|
-      node.content = urls_in_styles(node.text, &block)
+      node.content = urls_in_styles(node.text, &)
     end
     css('[style*="url"]').each do |node|
-      node.set_attribute('style', urls_in_styles(node['style'], &block))
+      node.set_attribute('style', urls_in_styles(node['style'], &))
     end
   end
   # rubocop:enable Metrics/AbcSize

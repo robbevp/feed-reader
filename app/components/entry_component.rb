@@ -19,6 +19,7 @@ class EntryComponent < ViewComponent::Base
   def transformed_content
     text = RichText.new(text: content)
     text.handle_img_urls { |url| find_proxy_blob_for_url(url) }
+    text.swap_youtube_embeds
     text.add_to_head(helpers.vite_stylesheet_tag('entry-body.css'))
     text.add_to_head(helpers.tag(:base, target: '_parent'))
     text.to_html

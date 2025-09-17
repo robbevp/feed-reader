@@ -37,6 +37,13 @@ class RichText
     at_css('head').add_child(node_or_string)
   end
 
+  # Swap youtube embeds with youtube-nocookie
+  def swap_youtube_embeds
+    css('iframe[src*="youtube.com/embed"]').each do |node|
+      node.set_attribute('src', node['src'].gsub('youtube.com', 'youtube-nocookie.com'))
+    end
+  end
+
   delegate :to_html, :css, :at_css, to: :doc
 
   private

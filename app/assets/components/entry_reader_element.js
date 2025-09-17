@@ -28,7 +28,7 @@ export class EntryReaderElement extends SprinklesElement {
 
   scrollToAnchor() {
     const anchor = window.location.hash;
-    if (anchor === undefined) return;
+    if (anchor === undefined || anchor === "") return;
 
     const element = this.refs.iframe.contentDocument.querySelector(anchor);
     if (element === null) return;

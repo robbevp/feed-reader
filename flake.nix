@@ -23,7 +23,7 @@
           };
           gems = pkgs.bundlerEnv rec {
             name = "feed-reader-env";
-            ruby = pkgs.ruby_3_3;
+            ruby = pkgs.ruby_3_4;
             gemfile = ./Gemfile;
             lockfile = ./Gemfile.lock;
             gemset = ./gemset.nix;
@@ -177,7 +177,7 @@
                   category = "Dependencies";
                   help = "Update `Gemfile.lock` and `gemset.nix`";
                   command = ''
-                    ${pkgs.ruby_3_3}/bin/bundle lock
+                    ${pkgs.ruby_3_4}/bin/bundle lock
                     ${pkgs.bundix}/bin/bundix
                   '';
                 }

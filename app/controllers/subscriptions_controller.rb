@@ -43,7 +43,7 @@ class SubscriptionsController < ApplicationController
   end
 
   def mark_all_as_read
-    @subscription.entries.unread.each { |it| it.update(read_at: DateTime.current) }
+    @subscription.entries.unread.each { it.update(read_at: DateTime.current) }
     redirect_to @subscription
   end
 

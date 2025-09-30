@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@hotwired/turbo-rails": "^7.3.0",
-    "lightningcss": "^1.30.1",
+    "lightningcss": "^1.30.2",
     "sprinkles-js": "^0.2.1",
     "vite": "^7.1.7",
     "vite-plugin-ruby": "^5.1.1"

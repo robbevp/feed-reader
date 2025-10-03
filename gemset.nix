@@ -582,14 +582,14 @@
     version = "1.15.2";
   };
   json = {
-    groups = ["default" "development"];
+    groups = ["default" "development" "test"];
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0p5dafxjp6kqkf3yx737gz9lwpaljlkc1raynkvcn6yql68d895w";
+      sha256 = "0s5vklcy2fgdxa9c6da34jbfrqq7xs6mryjglqqb5iilshcg3q82";
       type = "gem";
     };
-    version = "2.15.0";
+    version = "2.13.2";
   };
   language_server-protocol = {
     groups = ["default" "development"];
@@ -878,14 +878,14 @@
     version = "0.2.0";
   };
   prism = {
-    groups = ["default" "development"];
+    groups = ["default" "development" "test"];
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0d3i31npmlhmigcs1zlb9lksg7z7lv6nffams71wrz5rriv1n35l";
+      sha256 = "0gkhpdjib9zi9i27vd9djrxiwjia03cijmd6q8yj2q1ix403w3nw";
       type = "gem";
     };
-    version = "1.5.1";
+    version = "1.4.0";
   };
   psych = {
     dependencies = ["date" "stringio"];
@@ -1151,10 +1151,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "05y4lwzci16c2xgckmpxkzq4czgkyaiiqhvrabdgaym3aj2jd10k";
+      sha256 = "0hninnbvqd2pn40h863lbrn9p11gvdxp928izkag5ysx8b1s5q0r";
       type = "gem";
     };
-    version = "3.4.2";
+    version = "3.4.4";
   };
   rubocop = {
     dependencies = ["json" "language_server-protocol" "lint_roller" "parallel" "parser" "rainbow" "regexp_parser" "rubocop-ast" "ruby-progressbar" "unicode-display_width"];
@@ -1259,10 +1259,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "19xqyp8ixshf9mv0vy3d5qsi6acffh7849i6rrba3f9xz4pz7fwb";
+      sha256 = "0ww2jngp1874a4anpqsdg2vs6q05s59dyxjdj731hw23av8pvjal";
       type = "gem";
     };
-    version = "3.0.1";
+    version = "3.1.1";
   };
   sax-machine = {
     groups = ["default"];
@@ -1285,15 +1285,15 @@
     version = "0.4.1";
   };
   selenium-webdriver = {
-    dependencies = ["base64" "logger" "rexml" "rubyzip" "websocket"];
+    dependencies = ["base64" "json" "logger" "prism" "rexml" "rubyzip" "websocket"];
     groups = ["test"];
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "16rmdnc8c779gmphv7n4rcx8bc6yv24i555lzqx2drmrqk721jbg";
+      sha256 = "17qwwz5lvv3prccpr73g7wrbaibx707pa4fm104jhwhp06c2h8ns";
       type = "gem";
     };
-    version = "4.35.0";
+    version = "4.36.0";
   };
   sentry-rails = {
     dependencies = ["railties" "sentry-ruby"];

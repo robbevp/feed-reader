@@ -582,14 +582,14 @@
     version = "1.15.2";
   };
   json = {
-    groups = ["default" "development" "test"];
+    groups = ["default" "development"];
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0s5vklcy2fgdxa9c6da34jbfrqq7xs6mryjglqqb5iilshcg3q82";
+      sha256 = "128bp3mihh175l9wm7hgg9sdisp6hd3kf36fw01iksqnq7kv5hdi";
       type = "gem";
     };
-    version = "2.13.2";
+    version = "2.15.1";
   };
   language_server-protocol = {
     groups = ["default" "development"];
@@ -878,14 +878,14 @@
     version = "0.2.0";
   };
   prism = {
-    groups = ["default" "development" "test"];
+    groups = ["default" "development"];
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0gkhpdjib9zi9i27vd9djrxiwjia03cijmd6q8yj2q1ix403w3nw";
+      sha256 = "0sqwckzzpj1mmmjnqcvqmq6adlxbhkf5ij3b6ir4i33ih4d2ih5z";
       type = "gem";
     };
-    version = "1.4.0";
+    version = "1.6.0";
   };
   psych = {
     dependencies = ["date" "stringio"];
@@ -1259,10 +1259,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0ww2jngp1874a4anpqsdg2vs6q05s59dyxjdj731hw23av8pvjal";
+      sha256 = "1krcvkqqijg4vlflf83xn2zljq7lbsg30bp46nr78cw9369w4xki";
       type = "gem";
     };
-    version = "3.1.1";
+    version = "3.2.0";
   };
   sax-machine = {
     groups = ["default"];
@@ -1285,15 +1285,15 @@
     version = "0.4.1";
   };
   selenium-webdriver = {
-    dependencies = ["base64" "json" "logger" "prism" "rexml" "rubyzip" "websocket"];
+    dependencies = ["base64" "logger" "rexml" "rubyzip" "websocket"];
     groups = ["test"];
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "17qwwz5lvv3prccpr73g7wrbaibx707pa4fm104jhwhp06c2h8ns";
+      sha256 = "19knp6r09dbp4ibfhcbvpimg5zjbmkn6a3s1i82211vcmlb3r1sh";
       type = "gem";
     };
-    version = "4.36.0";
+    version = "4.37.0";
   };
   sentry-rails = {
     dependencies = ["railties" "sentry-ruby"];

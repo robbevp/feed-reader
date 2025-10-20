@@ -3410,11 +3410,11 @@
       };
     }
     {
-      name = "sprinkles_js___sprinkles_js_0.2.1.tgz";
+      name = "sprinkles_js___sprinkles_js_0.3.0.tgz";
       path = fetchurl {
-        name = "sprinkles_js___sprinkles_js_0.2.1.tgz";
-        url  = "https://registry.yarnpkg.com/sprinkles-js/-/sprinkles-js-0.2.1.tgz";
-        sha512 = "rvRIZsXfr+lQnHFx9eN90+yis2BR/PFRKEnVYZpFzzmrJ69dXr+d/MzOIN2tVvxbyXUPFq4TxRkiBOSWb6pnDA==";
+        name = "sprinkles_js___sprinkles_js_0.3.0.tgz";
+        url  = "https://registry.yarnpkg.com/sprinkles-js/-/sprinkles-js-0.3.0.tgz";
+        sha512 = "L521nt7O633ymdv1K1xHJIUnkF4GIF+dWJZKuvuUQdV/hAXjvzLYOvIoKaDEierRTp9U5RYGEzcgtFmPfsVmsw==";
       };
     }
     {

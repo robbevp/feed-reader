@@ -1162,10 +1162,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0d8n87wx2r8vkva5qi4m3hi4s9b6qhmzgw85qgv14hsa65prlaim";
+      sha256 = "0hpgpyzpzgmp28pirlyrif3albsk5kni2k67h5yvxfvr3g55w2d7";
       type = "gem";
     };
-    version = "1.81.1";
+    version = "1.81.6";
   };
   rubocop-ast = {
     dependencies = ["parser" "prism"];

@@ -1093,10 +1093,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1mx533jn2nv29xc5faw9g5xj9qbdaiwl9wv2byv98bgw6gqwhhlf";
+      sha256 = "1c0r26dhdr4jiklc0g7wjmr5q56dp7hwcfa8z75khkp8mrhazfpa";
       type = "gem";
     };
-    version = "3.9.4";
+    version = "3.9.5";
   };
   rdoc = {
     dependencies = ["erb" "psych"];
@@ -1217,10 +1217,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "050qg73g4qs3xza441nafy7610daa3k4ra0pbi3sdlawy9fwfh6i";
+      sha256 = "0xnrl4zlrk0nlhla2qx7pdarj65byabm21hzz7l3libxv5hdmq5l";
       type = "gem";
     };
-    version = "0.26.1";
+    version = "0.26.2";
   };
   ruby-lsp-rails = {
     dependencies = ["ruby-lsp"];

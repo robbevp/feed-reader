@@ -1259,10 +1259,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1krcvkqqijg4vlflf83xn2zljq7lbsg30bp46nr78cw9369w4xki";
+      sha256 = "0baixaaaqv0xijxaslkcn68zy7vidiirq7ljf4yvldkswh4pgrd8";
       type = "gem";
     };
-    version = "3.2.0";
+    version = "3.2.1";
   };
   sax-machine = {
     groups = ["default"];
@@ -1290,10 +1290,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "19knp6r09dbp4ibfhcbvpimg5zjbmkn6a3s1i82211vcmlb3r1sh";
+      sha256 = "0bqhpwc6494zq1zsayjssi4xwcsbq9dkl399v7l4lfb6xwgyg10a";
       type = "gem";
     };
-    version = "4.37.0";
+    version = "4.38.0";
   };
   sentry-rails = {
     dependencies = ["railties" "sentry-ruby"];

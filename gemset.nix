@@ -1530,10 +1530,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0w1x1k3bkkvi1438kx9qa1b9hn6zff1ykh55278fjrax1nycsa6d";
+      sha256 = "1mqw7ca931zmqgad0fq4gw7z3gwb0pwx9cmd1b12ga4hgjsnysag";
       type = "gem";
     };
-    version = "3.26.0";
+    version = "3.26.1";
   };
   websocket = {
     groups = ["default" "test"];

@@ -10,20 +10,32 @@
         nixpkgs.follows = "nixpkgs";
       };
     };
+    bundix = {
+      url = "github:inscapist/bundix";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+      };
+    };
   };
 
-  outputs = { self, nixpkgs, flake-utils, devshell }:
+  outputs = { self, nixpkgs, flake-utils, devshell, bundix }:
     flake-utils.lib.eachDefaultSystem
       (system:
         let
           version = "0.1.0";
           pkgs = import nixpkgs {
             inherit system;
-            overlays = [ devshell.overlays.default ];
+            overlays = [
+              devshell.overlays.default
+              (self: super: {
+                bundix = bundix;
+              })
+            ];
           };
+          ruby = pkgs.ruby_3_4;
           gems = pkgs.bundlerEnv rec {
             name = "feed-reader-env";
-            ruby = pkgs.ruby_3_4;
+            inherit ruby;
             gemfile = ./Gemfile;
             lockfile = ./Gemfile.lock;
             gemset = ./gemset.nix;
@@ -82,7 +94,7 @@
               name = "Feed Reader";
               packages = [
                 gems
-                (pkgs.lowPrio gems.wrappedRuby)
+                (pkgs.lib.lowPrio gems.wrappedRuby)
                 pkgs.nixpkgs-fmt
                 pkgs.nodejs_20
                 pkgs.postgresql_15
@@ -177,7 +189,7 @@
                   category = "Dependencies";
                   help = "Update `Gemfile.lock` and `gemset.nix`";
                   command = ''
-                    ${pkgs.ruby_3_4}/bin/bundle lock
+                    ${pkgs.ruby_3_4}/bin/bundle lock --add-checksums
                     ${pkgs.bundix}/bin/bundix
                   '';
                 }
@@ -218,6 +230,15 @@
                     nixpkgs-fmt flake.nix module.nix
                   '';
                 }
+              ];
+            };
+            # A mini-shell that only includes bundix and yarn2nix.
+            # This only meant to have the right version of these dependencies in our workflows
+            deps = pkgs.devshell.mkShell {
+              packages = [
+                ruby
+                pkgs.bundix
+                pkgs.yarn2nix
               ];
             };
           };

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
-  include Pagy::Backend
+  include Pagy::Method
   include Pundit::Authorization
 
   default_form_builder ::ComponentFormBuilder

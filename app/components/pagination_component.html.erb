@@ -2,16 +2,16 @@
   <%# Previous link %>
   <%# We need to use `tag.a`, so that the `href`-attribute is dropped if the value is nil.
     # This does not work for `link_to` %>
-  <%= tag.a href: previous_link, class: 'pagination__link', aria: { disabled: pagy.prev.nil?, label: t('.previous') } do %>
+  <%= tag.a href: previous_link, class: 'pagination__link', aria: { disabled: pagy.previous.nil?, label: t('.previous') } do %>
     <%= helpers.inline_svg_tag 'images/icons/chevron-left.svg', class: 'pagination__icon icon icon--sm' %>
   <% end %>
 
   <%# Page links (series example: [1, :gap, 7, 8, "9", 10, 11, :gap, 36]) %>
-  <% pagy.series.each do |item| %>
+  <% pagy.send(:series).each do |item| %>
     <% if item.is_a?(Integer) %>
-      <%= link_to item, pagy_url_for(pagy, item), class: 'pagination__link' %>
+      <%= link_to item, page_url(item), class: 'pagination__link' %>
     <% elsif item.is_a?(String) %>
-      <a role="link" class="pagination__link" aria-disabled="true" aria-current="page" class="pagination__link"><%= item %></a>
+      <a role="link" class="pagination__link" aria-disabled="true" aria-current="page"><%= item %></a>
     <% elsif item == :gap %>
       <a role="link" class="pagination__gap" aria-disabled="true">&hellip;</a>
     <% end %>

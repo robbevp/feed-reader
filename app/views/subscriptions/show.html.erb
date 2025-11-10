@@ -44,4 +44,4 @@
   </tbody>
 </table>
 
-<%= render PaginationComponent.new(pagy: @pagy) if @pagy.pages > 1 %>
+<%= render PaginationComponent.new(pagy: @pagy) if @pagy.last > 1 %>

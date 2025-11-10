@@ -955,16 +955,17 @@
     version = "1.18.10";
   };
   pagy = {
+    dependencies = ["json" "yaml"];
     groups = ["default"];
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0f77pkbkib8jild1wyzrp4wkw0wd3sl65gkqizqmahb87w22wgyv";
+      sha256 = "1zb8y33ajp01zdgw7bkpvmsf357xawavj12nsafv1vmqv2fshln0";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "9.4.0";
+    version = "43.0.0";
   };
   parallel = {
     groups = ["default" "development"];
@@ -1893,6 +1894,18 @@
     };
     targets = [];
     version = "3.2.0";
+  };
+  yaml = {
+    groups = ["default"];
+    platforms = [];
+    source = {
+      remotes = ["https://rubygems.org"];
+      sha256 = "0hhr8z9m9yq2kf7ls0vf8ap1hqma1yd72y2r13b88dffwv8nj3i4";
+      target = "ruby";
+      type = "gem";
+    };
+    targets = [];
+    version = "0.4.0";
   };
   zeitwerk = {
     groups = ["default" "development" "production" "test"];

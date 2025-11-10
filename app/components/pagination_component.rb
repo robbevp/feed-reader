@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-class PaginationComponent < ViewComponent::Base
-  include Pagy::Frontend
+require 'pagy/toolbox/helpers/support/series'
 
+class PaginationComponent < ViewComponent::Base
   attr_reader :pagy
 
   def initialize(pagy:, **opts)
@@ -12,14 +12,16 @@ class PaginationComponent < ViewComponent::Base
   end
 
   def previous_link
-    return nil unless pagy.prev
+    return nil unless pagy.previous
 
-    @previous_link ||= pagy_url_for(pagy, pagy.prev)
+    @previous_link ||= page_url(pagy.previous)
   end
 
   def next_link
     return nil unless pagy.next
 
-    @next_link ||= pagy_url_for(pagy, pagy.next)
+    @next_link ||= page_url(pagy.next)
   end
+
+  delegate :page_url, to: :pagy
 end

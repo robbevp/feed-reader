@@ -1,12 +1,14 @@
 # frozen_string_literal: true
 
 require 'test_helper'
+require 'pagy/classes/request'
 
 class PaginationComponentTest < ViewComponent::TestCase
   setup do
     @array = Array.new(100) { |i| i }
-    # This mimics the behaviour if the `pagy` method in our controller, see https://ddnexus.github.io/pagy/docs/api/backend/#writing-your-own-pagy-methods
-    @pagy = Pagy.new(count: @array.count, page: 1, limit: 5)
+    # This mimics the behaviour if the `pagy` method in our controller
+    request = Pagy::Request.new({ base_url: 'http://www.example.com', path: '/path', query: { 'param1' => 1234 } })
+    @pagy = Pagy::Offset.new(count: @array.count, page: 1, limit: 5, request:)
   end
 
   test 'should render links' do

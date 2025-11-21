@@ -462,12 +462,12 @@
     }];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0rqfmrgp4ihwmnpi9ah0y6pah7rr7d3pid94z2cqd93bgc2m6vjn";
+      sha256 = "0y95ynlfngs0s5x1w6mwralszhbi9d75lcdbdkqk75wcklzqjc17";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "5.1.3";
+    version = "6.0.0";
   };
   erb_lint = {
     dependencies = ["activesupport" "better_html" "parser" "rainbow" "rubocop" "smart_properties"];
@@ -1375,12 +1375,12 @@
     }];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0ii8l0q5zkang3lxqlsamzfz5ja7jc8ln905isfdawl802k2db8x";
+      sha256 = "0d8q5c4nh2g9pp758kizh8sfrvngynrjlm0i1zn3cnsnfd4v160i";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "0.6.2";
+    version = "0.6.3";
   };
   rexml = {
     groups = ["default" "test"];
@@ -1565,12 +1565,12 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1wpqr3k2ivcpixkdly01vzc6fsza1xxmy0zf9ddzyc7nzs8jjhjm";
+      sha256 = "09b5xhxki2d579drnj2ghz483mpxl9p6rkjwv4a5j4b5h7wapfvp";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "6.1.0";
+    version = "6.1.1";
   };
   sentry-ruby = {
     dependencies = ["bigdecimal" "concurrent-ruby"];
@@ -1578,12 +1578,12 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1yad840qq3lwi6c475xkp4s19mx6qyz94wkj11qx35dcs4fb805c";
+      sha256 = "12paz68pc3nsmqj6scfhaygc2by24i1ff8xqfjy0z3ajxwm96pl9";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "6.1.0";
+    version = "6.1.1";
   };
   simplecov = {
     dependencies = ["docile" "simplecov-html" "simplecov_json_formatter"];
@@ -1662,12 +1662,12 @@
     }];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1yh78pg6lm28c3k0pfd2ipskii1fsraq46m6zjs5yc9a4k5vfy2v";
+      sha256 = "1v74k5yw7ndikr53wgbjn6j51p83qnzqbn9z4b53r102jcx3ri4r";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "3.1.7";
+    version = "3.1.8";
   };
   thor = {
     groups = ["default" "development" "production" "test"];

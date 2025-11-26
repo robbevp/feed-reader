@@ -148,12 +148,12 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0cl2qpvwiffym62z991ynks7imsm87qmgxf0yfsmlwzkgi9qcaa6";
+      sha256 = "0mxhjgihzsx45l9wh2n0ywl9w0c6k70igm5r0d63dxkcagwvh4vw";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "2.8.7";
+    version = "2.8.8";
   };
   annotaterb = {
     dependencies = ["activerecord" "activesupport"];
@@ -1088,12 +1088,12 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1543ap9w3ydhx39ljcd675cdz9cr948x9mp00ab8qvq6118wv9xz";
+      sha256 = "15dhl6k4gbax0xz8frfs4nsb6lg5zgax9vkr1pqzjmhfxddhn2gp";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "6.0.2";
+    version = "7.0.0";
   };
   puma = {
     dependencies = ["nio4r"];

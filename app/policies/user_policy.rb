@@ -6,7 +6,7 @@ class UserPolicy < ApplicationPolicy
       return scope.none if user.blank?
       return scope.where(id: user.id) unless user.admin?
 
-      scope
+      scope.all
     end
   end
 

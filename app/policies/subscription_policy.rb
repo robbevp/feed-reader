@@ -16,23 +16,31 @@ class SubscriptionPolicy < ApplicationPolicy
   end
 
   def show?
-    record.user_id == user&.id
+    user_owns_record?
   end
 
   def update?
-    record.user_id == user&.id
+    user_owns_record?
   end
 
   def mark_all_as_read?
-    record.user_id == user&.id
+    user_owns_record?
   end
 
   def destroy?
-    record.user_id == user&.id
+    user_owns_record?
   end
 
   def permitted_attributes
+    return if user.blank?
+
     own = %i[name subscribable_type category_text]
     own + [subscribable_attributes: %i[id url]]
+  end
+
+  private
+
+  def user_owns_record?
+    record.user_id == user&.id
   end
 end

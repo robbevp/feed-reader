@@ -53,6 +53,7 @@ group :test do
   gem 'capybara'
   gem 'factory_bot_rails'
   gem 'faker'
+  gem 'pundit_assertions'
   gem 'selenium-webdriver'
   gem 'simplecov', require: false
   gem 'simplecov-cobertura'

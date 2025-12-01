@@ -58,6 +58,14 @@
       };
     }
     {
+      name = "_csstools_css_syntax_patches_for_csstree___css_syntax_patches_for_csstree_1.0.20.tgz";
+      path = fetchurl {
+        name = "_csstools_css_syntax_patches_for_csstree___css_syntax_patches_for_csstree_1.0.20.tgz";
+        url  = "https://registry.yarnpkg.com/@csstools/css-syntax-patches-for-csstree/-/css-syntax-patches-for-csstree-1.0.20.tgz";
+        sha512 = "8BHsjXfSciZxjmHQOuVdW2b8WLUPts9a+mfL13/PzEviufUEW2xnvQuOlKs9dRBHgRqJ53SF/DUoK9+MZk72oQ==";
+      };
+    }
+    {
       name = "_csstools_css_tokenizer___css_tokenizer_3.0.4.tgz";
       path = fetchurl {
         name = "_csstools_css_tokenizer___css_tokenizer_3.0.4.tgz";
@@ -3122,11 +3130,11 @@
       };
     }
     {
-      name = "prettier___prettier_3.7.1.tgz";
+      name = "prettier___prettier_3.7.3.tgz";
       path = fetchurl {
-        name = "prettier___prettier_3.7.1.tgz";
-        url  = "https://registry.yarnpkg.com/prettier/-/prettier-3.7.1.tgz";
-        sha512 = "RWKXE4qB3u5Z6yz7omJkjWwmTfLdcbv44jUVHC5NpfXwFGzvpQM798FGv/6WNK879tc+Cn0AAyherCl1KjbyZQ==";
+        name = "prettier___prettier_3.7.3.tgz";
+        url  = "https://registry.yarnpkg.com/prettier/-/prettier-3.7.3.tgz";
+        sha512 = "QgODejq9K3OzoBbuyobZlUhznP5SKwPqp+6Q6xw6o8gnhr4O85L2U915iM2IDcfF2NPXVaM9zlo9tdwipnYwzg==";
       };
     }
     {
@@ -3658,11 +3666,11 @@
       };
     }
     {
-      name = "stylelint___stylelint_16.26.0.tgz";
+      name = "stylelint___stylelint_16.26.1.tgz";
       path = fetchurl {
-        name = "stylelint___stylelint_16.26.0.tgz";
-        url  = "https://registry.yarnpkg.com/stylelint/-/stylelint-16.26.0.tgz";
-        sha512 = "Y/3AVBefrkqqapVYH3LBF5TSDZ1kw+0XpdKN2KchfuhMK6lQ85S4XOG4lIZLcrcS4PWBmvcY6eS2kCQFz0jukQ==";
+        name = "stylelint___stylelint_16.26.1.tgz";
+        url  = "https://registry.yarnpkg.com/stylelint/-/stylelint-16.26.1.tgz";
+        sha512 = "v20V59/crfc8sVTAtge0mdafI3AdnzQ2KsWe6v523L4OA1bJO02S7MO2oyXDCS6iWb9ckIPnqAFVItqSBQr7jw==";
       };
     }
     {

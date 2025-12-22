@@ -15,7 +15,7 @@
 #  url             :text
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
-#  external_id     :text
+#  external_id     :text             not null
 #  subscription_id :bigint           not null
 #
 # Indexes
@@ -34,7 +34,14 @@ class EntryTest < ActiveSupport::TestCase
     entry = build(:entry, data: nil)
 
     assert_not_predicate entry, :valid?
-    assert_includes entry.errors['data'], "can't be blank"
+    assert_error_of_kind entry, :data, :blank
+  end
+
+  test 'should not be valid if external id is blank' do
+    entry = build(:entry, external_id: '')
+
+    assert_not_predicate entry, :valid?
+    assert_error_of_kind entry, :external_id, :blank
   end
 
   test 'should not be valid if external_id is not unique for subscription' do

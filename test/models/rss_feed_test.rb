@@ -52,12 +52,27 @@ class RssFeedTest < ActiveSupport::TestCase
     assert_not_nil feed.last_fetched_at
   end
 
+  test 'should use url as external id if id is missing from entry' do
+    feed = create(:rss_feed)
+    stub_request(:any, feed.url)
+      .to_return(body: Rails.root.join('test/fixtures/files/entry_without_id.xml').read)
+
+    assert_difference 'Entry.count' do
+      feed.refresh!
+    end
+
+    entry = Entry.last!
+
+    assert_not_nil entry.external_id
+    assert_equal entry.url, entry.external_id
+  end
+
   test 'should ignore existing entries based on url when refreshing feed' do
     feed = create(:rss_feed)
     stub_request(:any, feed.url)
       .to_return(body: Rails.root.join('test/fixtures/files/entry_without_id.xml').read)
 
-    create(:entry, subscription: feed.subscription, url: 'http://example.org/2023/08/30/entry1')
+    create(:entry, subscription: feed.subscription, external_id: 'http://example.org/2023/08/30/entry1')
 
     assert_no_difference 'Entry.count' do
       feed.refresh!

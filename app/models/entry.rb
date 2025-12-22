@@ -43,7 +43,7 @@ class Entry < ApplicationRecord
   belongs_to :subscription, inverse_of: :entries
   has_and_belongs_to_many :proxied_images
 
-  validates :data, presence: true
+  validates :data, :external_id, presence: true
   validates :external_id, uniqueness: { scope: :subscription }
 
   after_create_commit -> { DetectEntryImagesJob.perform_later(self) }
@@ -58,15 +58,13 @@ class Entry < ApplicationRecord
     FEEDJIRA_KEYS_MAP.each_pair do |old_key, new_key|
       attrs[new_key] = entry.send(old_key)
     end
+    # If the RSSFeed does not contain an id, we use the url as the id
+    attrs[:external_id] = entry.url if attrs[:external_id].blank?
     new(data: entry.to_h, **attrs)
   end
 
   def same?(feedjira_entry)
-    if feedjira_entry.entry_id.present?
-      external_id == feedjira_entry.entry_id
-    else
-      url == feedjira_entry.url
-    end
+    external_id == (feedjira_entry.entry_id.presence || feedjira_entry.url)
   end
 
   def read?

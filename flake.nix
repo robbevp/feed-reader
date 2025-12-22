@@ -209,7 +209,7 @@
                   command = ''
                     set +e
                     rubocop
-                    erblint --lint-all
+                    erb_lint --lint-all
                     brakeman
                     yarn lint:js
                     yarn lint:css
@@ -223,7 +223,7 @@
                   command = ''
                     set +e
                     rubocop -A
-                    erblint --lint-all -a
+                    erb_lint --lint-all -a
                     brakeman
                     yarn lint:js --fix
                     yarn lint:css --fix

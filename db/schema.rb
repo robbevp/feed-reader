@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2025_12_20_082257) do
+ActiveRecord::Schema[8.1].define(version: 2025_12_22_090832) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
   enable_extension "pg_catalog.plpgsql"
@@ -66,7 +66,7 @@ ActiveRecord::Schema[8.1].define(version: 2025_12_20_082257) do
     t.text "body"
     t.datetime "created_at", null: false
     t.jsonb "data", null: false
-    t.text "external_id"
+    t.text "external_id", null: false
     t.datetime "published_at"
     t.datetime "read_at"
     t.bigint "subscription_id", null: false

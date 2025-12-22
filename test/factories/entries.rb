@@ -15,7 +15,7 @@
 #  url             :text
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
-#  external_id     :text
+#  external_id     :text             not null
 #  subscription_id :bigint           not null
 #
 # Indexes
@@ -31,6 +31,7 @@ FactoryBot.define do
   factory :entry do
     subscription
     data { { title: 'Entry title' } }
+    external_id { Faker::Alphanumeric.unique.alphanumeric(number: 10) }
 
     trait :read do
       read_at { DateTime.current }
@@ -39,7 +40,6 @@ FactoryBot.define do
     trait :with_all_details do
       author { Faker::Name.name }
       body { Faker::Lorem.paragraphs(number: 4) }
-      external_id { Faker::Alphanumeric.unique.alphanumeric(number: 10) }
       summary { Faker::Lorem.paragraph(sentence_count: 2) }
       published_at { Faker::Time.between_dates(from: Date.current - 2.days, to: Date.current, period: :all) }
       title { Faker::Lorem.sentence(word_count: 3) }

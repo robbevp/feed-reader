@@ -37,8 +37,8 @@ class RssFeed < ApplicationRecord
       self.error = I18n.t('rss_feeds.errors.too_many_redirects')
     rescue Feedjira::NoParserAvailable
       self.error = I18n.t('rss_feeds.errors.invalid_feed')
-    rescue Net::HTTPClientException, Errno::EBUSY, Errno::ENETUNREACH, Net::HTTPFatalError, Socket::ResolutionError,
-           Net::OpenTimeout, Net::ReadTimeout, OpenSSL::SSL::SSLError => e
+    rescue Net::HTTPClientException, Errno::EBUSY, Errno::ECONNREFUSED, Errno::EHOSTUNREACH, Errno::ENETUNREACH,
+           Net::HTTPFatalError, Socket::ResolutionError, Net::OpenTimeout, Net::ReadTimeout, OpenSSL::SSL::SSLError => e
       self.error = e.message
     end
 

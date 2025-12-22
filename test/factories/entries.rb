@@ -15,7 +15,7 @@
 #  url             :text
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
-#  external_id     :text
+#  external_id     :text             not null
 #  subscription_id :bigint           not null
 #
 # Indexes

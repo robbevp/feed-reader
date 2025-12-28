@@ -259,12 +259,12 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0l9wp4bm9gggzglv49qkg6wahw77wfpd8lrnxk2ia0a4zjgmc2zh";
+      sha256 = "14qb2gy6ypnqri92v9x8szbq7fzw27pc1z5cl367n5f5cpd2rmks";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "1.20.0";
+    version = "1.20.1";
   };
   brakeman = {
     dependencies = ["racc"];

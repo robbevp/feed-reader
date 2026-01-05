@@ -38,6 +38,8 @@ jobs:
           cache: 'yarn'
       - name: Install dependencies
         run: yarn install
+      - name: Install libvips
+        run: sudo apt-get install -y libvips
       - name: Compile assets
         run: RAILS_ENV=test bundle exec rails assets:precompile
       - name: Run tests
@@ -120,5 +122,7 @@ jobs:
           cache: 'yarn'
       - name: Install dependencies
         run: yarn install
+      - name: Install libvips
+        run: sudo apt-get install -y libvips
       - name: Compile assets
         run: bundle exec rails assets:precompile

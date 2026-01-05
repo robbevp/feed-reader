@@ -40,6 +40,19 @@
             lockfile = ./Gemfile.lock;
             gemset = ./gemset.nix;
             groups = [ "default" "development" "test" "production" ];
+            gemConfig = pkgs.defaultGemConfig // {
+              ruby-vips = attrs: {
+                # We override the postInstall from nixpkgs, as ruby-vips changed this a bit in v2.3.0
+                postInstall = ''
+                  cd "$(cat $out/nix-support/gem-meta/install-path)"
+
+                  substituteInPlace lib/vips.rb \
+                    --replace 'FFI.library_name("vips", 42)' '"${pkgs.lib.getLib pkgs.vips}/lib/libvips${pkgs.stdenv.hostPlatform.extensions.sharedLibrary}"' \
+                    --replace 'FFI.library_name("glib-2.0", 0)' '"${pkgs.glib.out}/lib/libglib-2.0${pkgs.stdenv.hostPlatform.extensions.sharedLibrary}"' \
+                    --replace 'FFI.library_name("gobject-2.0", 0)' '"${pkgs.glib.out}/lib/libgobject-2.0${pkgs.stdenv.hostPlatform.extensions.sharedLibrary}"'
+                '';
+              };
+            };
           };
           node-modules = pkgs.mkYarnModules {
             pname = "feed-reader-modules";

@@ -1502,12 +1502,12 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "14nwdsd73c4ygjb7sfldnndlbzn5yyl02llnlzafmmjwh0d2pla1";
+      sha256 = "0x2k5x272m2zs0vmznl2jac14bj9a2g0365xxcnr2s9rq41fr1g6";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "2.2.3";
+    version = "2.3.0";
   };
   rubyzip = {
     groups = ["default" "test"];

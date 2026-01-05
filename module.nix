@@ -272,8 +272,7 @@ in
             args = [
               # See pipe manual for details on these settings https://www.postfix.org/pipe.8.html
               "flags=Xhq"
-              "chroot=/nix/store"
-              "directory=${feed-reader}"
+              "chroot=${feed-reader}"
               "user=feed_reader"
               "argv=${relayMailScript}"
             ];

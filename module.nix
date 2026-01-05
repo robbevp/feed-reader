@@ -268,11 +268,11 @@ in
           };
           master.forward_to_feed_reader = {
             command = "pipe";
-            chroot = false;
             privileged = true;
             args = [
               # See pipe manual for details on these settings https://www.postfix.org/pipe.8.html
               "flags=Xhq"
+              "directory=${feed-reader}"
               "user=feed_reader"
               "argv=${relayMailScript}"
             ];

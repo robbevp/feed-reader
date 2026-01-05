@@ -59,7 +59,7 @@ let
     ${exports}
     export $(${pkgs.coreutils}/bin/cat ${cfg.environmentFile} | ${pkgs.findutils}/bin/xargs)
     cd ${feed-reader}
-    ${feed-reader.env}/bin/bundle exec rails runner 'puts Vips::VERSION' 
+    ${feed-reader.env}/bin/bundle exec rails action_mailbox:ingress:postfix URL='https://${cfg.hostname}/rails/action_mailbox/relay/inbound_emails' INGRESS_PASSWORD=$RAILS_INBOUND_EMAIL_PASSWORD
   '';
 in
 {
@@ -272,6 +272,7 @@ in
             args = [
               # See pipe manual for details on these settings https://www.postfix.org/pipe.8.html
               "flags=Xhq"
+              "chroot=/nix/store"
               "directory=${feed-reader}"
               "user=feed_reader"
               "argv=${relayMailScript}"

@@ -51,7 +51,7 @@ let
 
   console = pkgs.writeShellScriptBin "feed-reader-interactive" ''
     ${exports}
-    export $(cat ${cfg.environmentFile} | xargs)
+    export $(${pkgs.coreutils}/bin/cat ${cfg.environmentFile} | ${pkgs.findutils}/bin/xargs)
     cd ${feed-reader}
     ${feed-reader.env}/bin/bundle exec rails "$@"
   '';

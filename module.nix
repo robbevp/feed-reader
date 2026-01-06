@@ -59,7 +59,7 @@ let
     ${exports}
     export $(${pkgs.coreutils}/bin/cat ${cfg.environmentFile} | ${pkgs.findutils}/bin/xargs)
     cd ${feed-reader}
-    FILENAME=/var/log/feed_reader/postfix-`date +"%Y-%m-%d %T.%N"`.log
+    FILENAME=/var/log/feed_reader/postfix-`${pkgs.coreutils}/bin/date +"%Y-%m-%d %T.%N"`.log
     ${feed-reader.env}/bin/bundle exec rails action_mailbox:ingress:postfix URL='https://${cfg.hostname}/rails/action_mailbox/relay/inbound_emails' INGRESS_PASSWORD=$RAILS_INBOUND_EMAIL_PASSWORD >$FILENAME 2>&1
     ${pkgs.coreutils}/bin/tail -n 1 $FILENAME
   '';

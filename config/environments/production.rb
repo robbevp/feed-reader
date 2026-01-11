@@ -68,12 +68,13 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     address: ENV.fetch('RAILS_SMTP_ADDRESS'),
-    port: 587,
+    port: ENV.fetch('RAILS_SMTP_PORT', 465),
     domain: ENV.fetch('RAILS_SMTP_DOMAIN'),
     user_name: ENV.fetch('RAILS_SMTP_USER_NAME'),
     password: ENV.fetch('RAILS_SMTP_PASSWORD'),
     authentication: 'login',
-    enable_starttls_auto: true
+    enable_starttls_auto: true,
+    tls: true
   }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to

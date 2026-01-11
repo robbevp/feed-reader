@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_01_06_191445) do
+ActiveRecord::Schema[8.0].define(version: 2026_01_11_153345) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
   enable_extension "pg_catalog.plpgsql"
@@ -172,6 +172,21 @@ ActiveRecord::Schema[8.0].define(version: 2026_01_06_191445) do
     t.index ["priority", "scheduled_at"], name: "index_good_jobs_on_priority_scheduled_at_unfinished_unlocked", where: "((finished_at IS NULL) AND (locked_by_id IS NULL))"
     t.index ["queue_name", "scheduled_at"], name: "index_good_jobs_on_queue_name_and_scheduled_at", where: "(finished_at IS NULL)"
     t.index ["scheduled_at"], name: "index_good_jobs_on_scheduled_at", where: "(finished_at IS NULL)"
+  end
+
+  create_table "ingress_checks", force: :cascade do |t|
+    t.text "public_id", null: false
+    t.datetime "received_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["public_id"], name: "index_ingress_checks_on_public_id", unique: true
+  end
+
+  create_table "mailbox_tests", force: :cascade do |t|
+    t.text "secret", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["secret"], name: "index_mailbox_tests_on_secret", unique: true
   end
 
   create_table "newsletters", force: :cascade do |t|

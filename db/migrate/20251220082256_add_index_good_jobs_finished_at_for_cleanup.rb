@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class AddIndexGoodJobsFinishedAtForCleanup < ActiveRecord::Migration[8.1]
+class AddIndexGoodJobsFinishedAtForCleanup < ActiveRecord::Migration[8.0]
   disable_ddl_transaction!
 
   def change

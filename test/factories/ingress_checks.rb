@@ -15,6 +15,8 @@
 #
 FactoryBot.define do
   factory :ingress_check do
-    # No attributes to define
+    trait :received do
+      received_at { DateTime.current }
+    end
   end
 end

@@ -9,6 +9,11 @@ Rails.application.configure do
       cron: 'every hour', # cron-style scheduling format by fugit gem
       class: 'RefreshRssFeedsJob', # reference the Job class with a string
       description: 'Recurring job that fetches new entries in rss feeds'
+    },
+    ingress_check: {
+      cron: 'every hour',
+      class: 'RunIngressCheck',
+      description: 'Recurring job that performs actions around ingress check'
     }
   }
 end

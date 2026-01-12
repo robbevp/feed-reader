@@ -12,7 +12,7 @@ Rails.application.configure do
     },
     ingress_check: {
       cron: 'every hour',
-      class: 'RunIngressCheck',
+      class: 'RunIngressCheckJob',
       description: 'Recurring job that performs actions around ingress check'
     }
   }

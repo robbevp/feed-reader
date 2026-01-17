@@ -5,7 +5,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '~> 3.4.5'
 
-gem 'rails', '~> 8.0.4' # We need to pin rails to 8.0.x, since 8.1.x breaks our postfix ingress
+gem 'rails', '~> 8.1.2' # We need to pin rails to 8.0.x, since 8.1.x breaks our postfix ingress
 
 gem 'addressable' # More standards-compliant URI parser
 gem 'bcrypt' # Use Active Model has_secure_password

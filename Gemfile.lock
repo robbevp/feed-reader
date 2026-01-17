@@ -116,7 +116,7 @@ GEM
       reline (>= 0.3.8)
     docile (1.4.1)
     drb (2.2.3)
-    dry-cli (1.2.0)
+    dry-cli (1.4.0)
     erb (6.0.1)
     erb_lint (0.9.0)
       activesupport
@@ -361,7 +361,7 @@ GEM
       actionview (>= 7.1.0)
       activesupport (>= 7.1.0)
       concurrent-ruby (~> 1)
-    vite_rails (3.0.19)
+    vite_rails (3.0.20)
       railties (>= 5.1, < 9)
       vite_ruby (~> 3.0, >= 3.2.2)
     vite_ruby (3.9.2)
@@ -466,7 +466,7 @@ CHECKSUMS
   debug (1.11.1) sha256=2e0b0ac6119f2207a6f8ac7d4a73ca8eb4e440f64da0a3136c30343146e952b6
   docile (1.4.1) sha256=96159be799bfa73cdb721b840e9802126e4e03dfc26863db73647204c727f21e
   drb (2.2.3) sha256=0b00d6fdb50995fe4a45dea13663493c841112e4068656854646f418fda13373
-  dry-cli (1.2.0) sha256=8c97df3b290ee6354ee2025a5f0a67226b381627de32741d06f35ea0887cd95b
+  dry-cli (1.4.0) sha256=eda5b9082aa31909c086825e049bd749b67afba17d1003d53171e3e574e3178f
   erb (6.0.1) sha256=28ecdd99c5472aebd5674d6061e3c6b0a45c049578b071e5a52c2a7f13c197e5
   erb_lint (0.9.0) sha256=dfb5e40ad839e8d1f0d56ca85ec9a7ac4c9cd966ec281138282f35b323ca7c31
   erubi (1.13.1) sha256=a082103b0885dbc5ecf1172fede897f9ebdb745a4b97a5e8dc63953db1ee4ad9
@@ -568,7 +568,7 @@ CHECKSUMS
   uri (1.1.1) sha256=379fa58d27ffb1387eaada68c749d1426738bd0f654d812fcc07e7568f5c57c6
   useragent (0.16.11) sha256=700e6413ad4bb954bb63547fa098dddf7b0ebe75b40cc6f93b8d54255b173844
   view_component (4.2.0) sha256=f250a3397a794336354f73c229b3b7549af0b24906551b99a03492b54cb5233d
-  vite_rails (3.0.19) sha256=195c44677bc05c1f94e7a69f1264e49d4bad2729ab06538ee858c2962f5bb500
+  vite_rails (3.0.20) sha256=582bf9aa3bc3b4d9b0a48c17862b4fa9bd17384ac597a57b7a38d2f95d96e682
   vite_ruby (3.9.2) sha256=e10a7c851b590cccab57904bc96c2eb078ed6e22560a778db1dcefa3818a4972
   web-console (4.2.1) sha256=e7bcf37a10ea2b4ec4281649d1cee461b32232d0a447e82c786e6841fd22fe20
   webmock (3.26.1) sha256=4f696fb57c90a827c20aadb2d4f9058bbff10f7f043bd0d4c3f58791143b1cd7

@@ -427,12 +427,12 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0nyrgj4a0ppk0qfp8cny4wb3hsr2cw55ynh2w973brhf54xxz5wc";
+      sha256 = "13qpwdsfbqvi67ah643xl7xpmdj9sydh8pl2hv00j6d3584bk9gd";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "1.2.0";
+    version = "1.4.0";
   };
   erb = {
     groups = ["default" "development" "production" "test"];
@@ -1798,12 +1798,12 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "005mbcprdhjqx27561mb54kssjwxwij157x6wya1yp60gdkl8p0r";
+      sha256 = "10p6jrfzkliqg9xsb5y598w1ggd99wmqc5wcljqdkd637fmgjasq";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "3.0.19";
+    version = "3.0.20";
   };
   vite_ruby = {
     dependencies = ["dry-cli" "logger" "mutex_m" "rack-proxy" "zeitwerk"];

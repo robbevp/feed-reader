@@ -14,7 +14,7 @@
     "lightningcss": "^1.30.2",
     "sprinkles-js": "^0.3.1",
     "vite": "^7.3.0",
-    "vite-plugin-ruby": "^5.1.1"
+    "vite-plugin-ruby": "^5.1.2"
   },
   "devDependencies": {
     "@tree-company/eslint-config": "^0.5.0",

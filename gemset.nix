@@ -921,12 +921,12 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1a9www524fl1ykspznz54i0phfqya4x45hqaz67in9dvw1lfwpfr";
+      sha256 = "18fwy5yqnvgixq3cn0h63lm8jaxsjjxkmj8rhiv8wpzv9271d43c";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "2.7.4";
+    version = "2.7.5";
   };
   nokogiri = {
     dependencies = ["mini_portile2" "racc"];
@@ -1101,12 +1101,12 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1pa9zpr51kqnsq549p6apvnr95s9flx6bnwqii24s8jg2b5i0p74";
+      sha256 = "1a3jd9qakasizrf7dkq5mqv51fjf02r2chybai2nskjaa6mz93mz";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "7.1.0";
+    version = "7.2.0";
   };
   pundit = {
     dependencies = ["activesupport"];

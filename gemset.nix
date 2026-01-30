@@ -577,12 +577,12 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1sbw6b66r7cwdx3jhs46s4lr991969hvigkjpbdl7y3i31qpdgvh";
+      sha256 = "04gzhqvsm4z4l12r9dkac9a75ah45w186ydhl0i4andldsnkkih5";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "1.2.1";
+    version = "1.3.0";
   };
   good_job = {
     dependencies = ["activejob" "activerecord" "concurrent-ruby" "fugit" "railties" "thor"];
@@ -590,12 +590,12 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "14szwmbisc0v9glpfk1dsm50fwf692x4ra6f4axrin3nzyyasysp";
+      sha256 = "1ldqfmvwnsbfdfib206f30zccrng57akay8vhqr52v09v0rb03n1";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "4.13.1";
+    version = "4.13.2";
   };
   hashdiff = {
     groups = ["default" "test"];

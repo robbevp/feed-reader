@@ -671,7 +671,7 @@
     version = "0.8.2";
   };
   irb = {
-    dependencies = ["pp" "rdoc" "reline"];
+    dependencies = ["pp" "prism" "rdoc" "reline"];
     groups = ["default" "development" "production" "test"];
     platforms = [{
       engine = "maglev";
@@ -686,12 +686,12 @@
     }];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "01h8bdksg0cr8bw5dhlhr29ix33rp822jmshy6rdqz4lmk4mdgia";
+      sha256 = "1bishrxfn2anwlagw8rzly7i2yicjnr947f48nh638yqjgdlv30n";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "1.16.0";
+    version = "1.17.0";
   };
   json = {
     groups = ["default" "development"];
@@ -1339,12 +1339,12 @@
     }];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0qvky4s2fx5xbaz1brxanalqbcky3c7xbqd6dicpih860zgrjj29";
+      sha256 = "14iiyb4yi1chdzrynrk74xbhmikml3ixgdayjma3p700singfl46";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "7.1.0";
+    version = "7.2.0";
   };
   regexp_parser = {
     groups = ["default" "development" "test"];
@@ -1564,25 +1564,25 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1vrygb8y6yp0w0im0gc1j2l26j7kgbcbgnmkchbn422vdnx5m89f";
+      sha256 = "1dz988bn6y2rpyibz1fccl47g15nw97h300i84psj815qnmf1k2k";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "6.3.0";
+    version = "6.3.1";
   };
   sentry-ruby = {
-    dependencies = ["bigdecimal" "concurrent-ruby"];
+    dependencies = ["bigdecimal" "concurrent-ruby" "logger"];
     groups = ["production"];
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "19gj8svz38xrq49hgb53plwc0j6bf0cys8cyjl11046m4mmq1d8l";
+      sha256 = "0m71q9c16ybap0h0n0z9awqx6i1bg9hpak92yhv3l1d1mndlxpmj";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "6.3.0";
+    version = "6.3.1";
   };
   simplecov = {
     dependencies = ["docile" "simplecov-html" "simplecov_json_formatter"];

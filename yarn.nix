@@ -50,11 +50,11 @@
       };
     }
     {
-      name = "_csstools_css_calc___css_calc_3.0.1.tgz";
+      name = "_csstools_css_calc___css_calc_3.1.1.tgz";
       path = fetchurl {
-        name = "_csstools_css_calc___css_calc_3.0.1.tgz";
-        url  = "https://registry.yarnpkg.com/@csstools/css-calc/-/css-calc-3.0.1.tgz";
-        sha512 = "bsDKIP6f4ta2DO9t+rAbSSwv4EMESXy5ZIvzQl1afmD6Z1XHkVu9ijcG9QR/qSgQS1dVa+RaQ/MfQ7FIB/Dn1Q==";
+        name = "_csstools_css_calc___css_calc_3.1.1.tgz";
+        url  = "https://registry.yarnpkg.com/@csstools/css-calc/-/css-calc-3.1.1.tgz";
+        sha512 = "HJ26Z/vmsZQqs/o3a6bgKslXGFAungXGbinULZO3eMsOyNJHeBBZfup5FiZInOghgoM4Hwnmw+OgbJCNg1wwUQ==";
       };
     }
     {
@@ -3498,11 +3498,11 @@
       };
     }
     {
-      name = "string_width___string_width_8.1.0.tgz";
+      name = "string_width___string_width_8.1.1.tgz";
       path = fetchurl {
-        name = "string_width___string_width_8.1.0.tgz";
-        url  = "https://registry.yarnpkg.com/string-width/-/string-width-8.1.0.tgz";
-        sha512 = "Kxl3KJGb/gxkaUMOjRsQ8IrXiGW75O4E3RPjFIINOVH8AMl2SQ/yWdTzWwF3FevIX9LcMAjJW+GRwAlAbTSXdg==";
+        name = "string_width___string_width_8.1.1.tgz";
+        url  = "https://registry.yarnpkg.com/string-width/-/string-width-8.1.1.tgz";
+        sha512 = "KpqHIdDL9KwYk22wEOg/VIqYbrnLeSApsKT/bSj6Ez7pn3CftUiLAv2Lccpq1ALcpLV9UX1Ppn92npZWu2w/aw==";
       };
     }
     {
@@ -3690,11 +3690,11 @@
       };
     }
     {
-      name = "stylelint___stylelint_17.2.0.tgz";
+      name = "stylelint___stylelint_17.3.0.tgz";
       path = fetchurl {
-        name = "stylelint___stylelint_17.2.0.tgz";
-        url  = "https://registry.yarnpkg.com/stylelint/-/stylelint-17.2.0.tgz";
-        sha512 = "602jhMkRt6P1dSh9kEzbFIaOKY//h4D0E7u/w2WHKxmi5VAjjMqe6P8rQPJuCWdbB3apOkjOFN5kcg6qWPIZWQ==";
+        name = "stylelint___stylelint_17.3.0.tgz";
+        url  = "https://registry.yarnpkg.com/stylelint/-/stylelint-17.3.0.tgz";
+        sha512 = "1POV91lcEMhj6SLVaOeA0KlS9yattS+qq+cyWqP/nYzWco7K5jznpGH1ExngvPlTM9QF1Kjd2bmuzJu9TH2OcA==";
       };
     }
     {

@@ -942,17 +942,17 @@
     version = "1.19.0";
   };
   pagy = {
-    dependencies = ["json" "yaml"];
+    dependencies = ["json" "uri" "yaml"];
     groups = ["default"];
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0vi7pp7d4f9grc2bgl6q6kwzjxsmizf2k3jciwz8i213ly6pq5ka";
+      sha256 = "10699g8nssvjnbcv4d1f2hz0xk9kjal6w7v2kjjyh5fawpnkjia9";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "43.2.9";
+    version = "43.2.10";
   };
   parallel = {
     groups = ["default" "development"];

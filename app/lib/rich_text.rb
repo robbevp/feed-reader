@@ -11,13 +11,15 @@ class RichText
     # Iterate over all images and unlink tracking pixels
     css('img[src]').each do |node|
       node.unlink if TrackingDetection.tracking_pixel?(node)
+
+      # Don't send referrer when requesting images
+      node.set_attribute('referrerpolicy', 'no-referrer')
     end
   end
 
   # Iterate over all urls in the document
   # If the block returns a new url, the element gets replaced
-  # rubocop:disable Metrics/AbcSize
-  def handle_img_urls(&)
+  def handle_img_urls(&) # rubocop:disable Metrics/AbcSize
     css('img[src]').each do |node|
       node.set_attribute('src', yield(node['src']))
     end
@@ -31,7 +33,6 @@ class RichText
       node.set_attribute('style', urls_in_styles(node['style'], &))
     end
   end
-  # rubocop:enable Metrics/AbcSize
 
   def add_to_head(node_or_string)
     at_css('head').add_child(node_or_string)

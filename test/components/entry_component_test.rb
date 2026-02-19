@@ -40,7 +40,8 @@ class EntryComponentTest < ViewComponent::TestCase
     render_inline(EntryComponent.new(entry:))
 
     assert_selector '.entry__iframe'
-    assert_includes page.find('.entry__iframe')[:srcdoc], '<body><div><img src="https://example.com/image.jpg"></div></body>'
+    assert_includes page.find('.entry__iframe')[:srcdoc],
+                    '<body><div><img src="https://example.com/image.jpg" referrerpolicy="no-referrer"></div></body>'
   end
 
   test 'should replace image src when proxied' do
@@ -55,7 +56,7 @@ class EntryComponentTest < ViewComponent::TestCase
 
     assert_selector '.entry__iframe'
 
-    regex = %r{<img src="/rails/active_storage/blobs/redirect/[A-Za-z\d=-]+/image.jpg">}
+    regex = %r{<img src="/rails/active_storage/blobs/redirect/[A-Za-z\d=-]+/image.jpg"}
 
     assert_match regex, page.find('.entry__iframe')[:srcdoc]
   end

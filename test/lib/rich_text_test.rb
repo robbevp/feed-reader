@@ -3,6 +3,14 @@
 require 'test_helper'
 
 class RichTextTest < ActiveSupport::TestCase
+  test 'should set no-referrer for all images' do
+    text = RichText.new(
+      text: '<div><img src="https://example.com/image.jpg" /></div>'
+    )
+
+    assert_includes text.to_html, '<img src="https://example.com/image.jpg" referrerpolicy="no-referrer">'
+  end
+
   # Handle_img_urls
   test 'should detect url is srcset' do
     text = RichText.new(

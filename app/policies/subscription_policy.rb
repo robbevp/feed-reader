@@ -35,7 +35,7 @@ class SubscriptionPolicy < ApplicationPolicy
     return if user.blank?
 
     own = %i[name subscribable_type category_text]
-    own + [subscribable_attributes: %i[id url]]
+    own + [{ subscribable_attributes: %i[id url] }]
   end
 
   private

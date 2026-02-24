@@ -730,11 +730,11 @@
       };
     }
     {
-      name = "ajv___ajv_6.12.6.tgz";
+      name = "ajv___ajv_6.14.0.tgz";
       path = fetchurl {
-        name = "ajv___ajv_6.12.6.tgz";
-        url  = "https://registry.yarnpkg.com/ajv/-/ajv-6.12.6.tgz";
-        sha512 = "j3fVLgvTo527anyYyJOGTYJbG+vnnQYvE0m5mmkc1TK+nxAppkCLMIL0aZ4dblVCNoGShhm+kzE4ZUykBoMg4g==";
+        name = "ajv___ajv_6.14.0.tgz";
+        url  = "https://registry.yarnpkg.com/ajv/-/ajv-6.14.0.tgz";
+        sha512 = "IWrosm/yrn43eiKqkfkHis7QioDleaXQHdDVPKg0FSwwd/DuvyX79TZnFOnYpB7dcsFAMmtFztZuXPDvSePkFw==";
       };
     }
     {
@@ -1474,11 +1474,11 @@
       };
     }
     {
-      name = "eslint___eslint_10.0.1.tgz";
+      name = "eslint___eslint_10.0.2.tgz";
       path = fetchurl {
-        name = "eslint___eslint_10.0.1.tgz";
-        url  = "https://registry.yarnpkg.com/eslint/-/eslint-10.0.1.tgz";
-        sha512 = "20MV9SUdeN6Jd84xESsKhRly+/vxI+hwvpBMA93s+9dAcjdCuCojn4IqUGS3lvVaqjVYGYHSRMCpeFtF2rQYxQ==";
+        name = "eslint___eslint_10.0.2.tgz";
+        url  = "https://registry.yarnpkg.com/eslint/-/eslint-10.0.2.tgz";
+        sha512 = "uYixubwmqJZH+KLVYIVKY1JQt7tysXhtj21WSvjcSmU5SVNzMus1bgLe+pAt816yQ8opKfheVVoPLqvVMGejYw==";
       };
     }
     {

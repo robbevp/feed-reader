@@ -705,6 +705,19 @@
     targets = [];
     version = "2.18.1";
   };
+  json-schema = {
+    dependencies = ["addressable" "bigdecimal"];
+    groups = ["default" "development"];
+    platforms = [];
+    source = {
+      remotes = ["https://rubygems.org"];
+      sha256 = "00n73lr2gwlpf3safdmxxa44qchg36l3y298v835mzbdzcn0mxvb";
+      target = "ruby";
+      type = "gem";
+    };
+    targets = [];
+    version = "6.1.0";
+  };
   language_server-protocol = {
     groups = ["default" "development"];
     platforms = [];
@@ -790,6 +803,19 @@
     };
     targets = [];
     version = "0.4.2";
+  };
+  mcp = {
+    dependencies = ["json-schema"];
+    groups = ["default" "development"];
+    platforms = [];
+    source = {
+      remotes = ["https://rubygems.org"];
+      sha256 = "1izi2hyyifn8m5b9s1yj8v1d4a453mrhga8yk06ssawmssapi5ps";
+      target = "ruby";
+      type = "gem";
+    };
+    targets = [];
+    version = "0.7.1";
   };
   mini_magick = {
     dependencies = ["benchmark" "logger"];
@@ -1394,17 +1420,17 @@
     version = "3.4.4";
   };
   rubocop = {
-    dependencies = ["json" "language_server-protocol" "lint_roller" "parallel" "parser" "rainbow" "regexp_parser" "rubocop-ast" "ruby-progressbar" "unicode-display_width"];
+    dependencies = ["json" "language_server-protocol" "lint_roller" "mcp" "parallel" "parser" "rainbow" "regexp_parser" "rubocop-ast" "ruby-progressbar" "unicode-display_width"];
     groups = ["development"];
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0pxzipl8a1bv62jdfykh7j4ymdr4aiffjvwsny6drwv886jwx4jn";
+      sha256 = "00cclinxd2xdwdcdc775g1vcxwbadcfrwbsdyra7v841nvz0fx1i";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "1.84.2";
+    version = "1.85.0";
   };
   rubocop-ast = {
     dependencies = ["parser" "prism"];

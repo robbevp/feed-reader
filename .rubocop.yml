@@ -86,11 +86,15 @@ Style/HashTransformValues:
   Enabled: true
 Style/ExponentialNotation:
   Enabled: true
-Style/SlicingWithRange:
+Style/OneClassPerFile:
   Enabled: true
+  Exclude:
+    - "test/test_helper.rb"
 Style/RedundantFetchBlock:
   Enabled: true
 Style/RedundantRegexpCharacterClass:
   Enabled: true
 Style/RedundantRegexpEscape:
+  Enabled: true
+Style/SlicingWithRange:
   Enabled: true

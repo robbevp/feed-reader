@@ -144,16 +144,16 @@
   };
   addressable = {
     dependencies = ["public_suffix"];
-    groups = ["default" "test"];
+    groups = ["default" "development" "test"];
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0mxhjgihzsx45l9wh2n0ywl9w0c6k70igm5r0d63dxkcagwvh4vw";
+      sha256 = "11ali533wx91fh93xlk88gjqq8w0p7kxw09nlh41hwc9wv5ly5fc";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "2.8.8";
+    version = "2.8.9";
   };
   annotaterb = {
     dependencies = ["activerecord" "activesupport"];
@@ -1110,16 +1110,16 @@
     version = "5.3.1";
   };
   public_suffix = {
-    groups = ["default" "test"];
+    groups = ["default" "development" "test"];
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "15dhl6k4gbax0xz8frfs4nsb6lg5zgax9vkr1pqzjmhfxddhn2gp";
+      sha256 = "0mx84s7gn3xabb320hw8060v7amg6gmcyyhfzp0kawafiq60j54i";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "7.0.0";
+    version = "7.0.2";
   };
   puma = {
     dependencies = ["nio4r"];

@@ -1114,12 +1114,12 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0mx84s7gn3xabb320hw8060v7amg6gmcyyhfzp0kawafiq60j54i";
+      sha256 = "08znfv30pxmdkjyihvbjqbvv874dj3nybmmyscl958dy3f7v12qs";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "7.0.2";
+    version = "7.0.5";
   };
   puma = {
     dependencies = ["nio4r"];
@@ -1863,12 +1863,12 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1mqw7ca931zmqgad0fq4gw7z3gwb0pwx9cmd1b12ga4hgjsnysag";
+      sha256 = "142cbab47mjxmg8gc89d94sd3h7an9ligh38r9n88wb3xbr5cibp";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "3.26.1";
+    version = "3.26.2";
   };
   websocket = {
     groups = ["default" "test"];

@@ -810,12 +810,12 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1izi2hyyifn8m5b9s1yj8v1d4a453mrhga8yk06ssawmssapi5ps";
+      sha256 = "1yrl1igajy1z0wg23cxg4rilyx2jby06zlkghr98h5lfpd3d32xf";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "0.7.1";
+    version = "0.8.0";
   };
   mini_magick = {
     dependencies = ["benchmark" "logger"];
@@ -1114,12 +1114,12 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0mx84s7gn3xabb320hw8060v7amg6gmcyyhfzp0kawafiq60j54i";
+      sha256 = "08znfv30pxmdkjyihvbjqbvv874dj3nybmmyscl958dy3f7v12qs";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "7.0.2";
+    version = "7.0.5";
   };
   puma = {
     dependencies = ["nio4r"];
@@ -1425,12 +1425,12 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "00cclinxd2xdwdcdc775g1vcxwbadcfrwbsdyra7v841nvz0fx1i";
+      sha256 = "0xyc0rs1xaiqln7x611v0f3kjpna7n8h6apbxrvc795sc7lzkg1x";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "1.85.0";
+    version = "1.85.1";
   };
   rubocop-ast = {
     dependencies = ["parser" "prism"];

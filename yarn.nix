@@ -2954,6 +2954,14 @@
       };
     }
     {
+      name = "obug___obug_2.1.1.tgz";
+      path = fetchurl {
+        name = "obug___obug_2.1.1.tgz";
+        url  = "https://registry.yarnpkg.com/obug/-/obug-2.1.1.tgz";
+        sha512 = "uTqF9MuPraAQ+IsnPf366RG4cP9RtUi7MLO1N3KEc+wb0a6yKpeL0lmk2IB1jY5KHPAlTc6T/JRdC/YqxHNwkQ==";
+      };
+    }
+    {
       name = "optionator___optionator_0.9.3.tgz";
       path = fetchurl {
         name = "optionator___optionator_0.9.3.tgz";
@@ -3914,11 +3922,11 @@
       };
     }
     {
-      name = "vite_plugin_ruby___vite_plugin_ruby_5.1.3.tgz";
+      name = "vite_plugin_ruby___vite_plugin_ruby_5.2.0.tgz";
       path = fetchurl {
-        name = "vite_plugin_ruby___vite_plugin_ruby_5.1.3.tgz";
-        url  = "https://registry.yarnpkg.com/vite-plugin-ruby/-/vite-plugin-ruby-5.1.3.tgz";
-        sha512 = "vpTOKbR6AmnupmXvQccRcr/jIY+oobNuCbNJHUzkT8oQ2BBQSlp22Xec3zszBBc7GjwDGn2+E+IQoNRXdEY7Ig==";
+        name = "vite_plugin_ruby___vite_plugin_ruby_5.2.0.tgz";
+        url  = "https://registry.yarnpkg.com/vite-plugin-ruby/-/vite-plugin-ruby-5.2.0.tgz";
+        sha512 = "FoCaok2pV7GrcAqdxniI1r5XWBlSg9HwEwaxdQdXUVFfYkyINVakPeyrSK4PqOVhonBCuoc633g6bDTEC7wkcA==";
       };
     }
     {

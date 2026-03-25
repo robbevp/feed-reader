@@ -1837,12 +1837,12 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1x5kxg8b78hr6mnwc13mywfw0kry6rll9v9vhy1a2qg1pjnnhi3x";
+      sha256 = "08nkhycypxqcyi7yxnmh2dinwsl924gk1lp7g096qqdcdgs82fzi";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "3.10.0";
+    version = "3.10.1";
   };
   web-console = {
     dependencies = ["actionview" "bindex" "railties"];

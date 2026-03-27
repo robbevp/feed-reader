@@ -66,11 +66,11 @@
       };
     }
     {
-      name = "_csstools_css_syntax_patches_for_csstree___css_syntax_patches_for_csstree_1.1.1.tgz";
+      name = "_csstools_css_syntax_patches_for_csstree___css_syntax_patches_for_csstree_1.1.2.tgz";
       path = fetchurl {
-        name = "_csstools_css_syntax_patches_for_csstree___css_syntax_patches_for_csstree_1.1.1.tgz";
-        url  = "https://registry.yarnpkg.com/@csstools/css-syntax-patches-for-csstree/-/css-syntax-patches-for-csstree-1.1.1.tgz";
-        sha512 = "BvqN0AMWNAnLk9G8jnUT77D+mUbY/H2b3uDTvg2isJkHaOufUE2R3AOwxWo7VBQKT1lOdwdvorddo2B/lk64+w==";
+        name = "_csstools_css_syntax_patches_for_csstree___css_syntax_patches_for_csstree_1.1.2.tgz";
+        url  = "https://registry.yarnpkg.com/@csstools/css-syntax-patches-for-csstree/-/css-syntax-patches-for-csstree-1.1.2.tgz";
+        sha512 = "5GkLzz4prTIpoyeUiIu3iV6CSG3Plo7xRVOFPKI7FVEJ3mZ0A8SwK0XU3Gl7xAkiQ+mDyam+NNp875/C5y+jSA==";
       };
     }
     {
@@ -3474,11 +3474,11 @@
       };
     }
     {
-      name = "stylelint___stylelint_17.5.0.tgz";
+      name = "stylelint___stylelint_17.6.0.tgz";
       path = fetchurl {
-        name = "stylelint___stylelint_17.5.0.tgz";
-        url  = "https://registry.yarnpkg.com/stylelint/-/stylelint-17.5.0.tgz";
-        sha512 = "o/NS6zhsPZFmgUm5tXX4pVNg1XDOZSlucLdf2qow/lVn4JIyzZIQ5b3kad1ugqUj3GSIgr2u5lQw7X8rjqw33g==";
+        name = "stylelint___stylelint_17.6.0.tgz";
+        url  = "https://registry.yarnpkg.com/stylelint/-/stylelint-17.6.0.tgz";
+        sha512 = "tokrsMIVAR9vAQ/q3UVEr7S0dGXCi7zkCezPRnS2kqPUulvUh5Vgfwngrk4EoAoW7wnrThqTdnTFN5Ra7CaxIg==";
       };
     }
     {
@@ -3818,11 +3818,11 @@
       };
     }
     {
-      name = "write_file_atomic___write_file_atomic_7.0.0.tgz";
+      name = "write_file_atomic___write_file_atomic_7.0.1.tgz";
       path = fetchurl {
-        name = "write_file_atomic___write_file_atomic_7.0.0.tgz";
-        url  = "https://registry.yarnpkg.com/write-file-atomic/-/write-file-atomic-7.0.0.tgz";
-        sha512 = "YnlPC6JqnZl6aO4uRc+dx5PHguiR9S6WeoLtpxNT9wIG+BDya7ZNE1q7KOjVgaA73hKhKLpVPgJ5QA9THQ5BRg==";
+        name = "write_file_atomic___write_file_atomic_7.0.1.tgz";
+        url  = "https://registry.yarnpkg.com/write-file-atomic/-/write-file-atomic-7.0.1.tgz";
+        sha512 = "OTIk8iR8/aCRWBqvxrzxR0hgxWpnYBblY1S5hDWBQfk/VFmJwzmJgQFN3WsoUKHISv2eAwe+PpbUzyL1CKTLXg==";
       };
     }
     {

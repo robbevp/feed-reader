@@ -203,7 +203,7 @@ GEM
     nokogiri (1.19.2)
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
-    pagy (43.4.3)
+    pagy (43.4.4)
       json
       uri
       yaml
@@ -510,7 +510,7 @@ CHECKSUMS
   net-smtp (0.5.1) sha256=ed96a0af63c524fceb4b29b0d352195c30d82dd916a42f03c62a3a70e5b70736
   nio4r (2.7.5) sha256=6c90168e48fb5f8e768419c93abb94ba2b892a1d0602cb06eef16d8b7df1dca1
   nokogiri (1.19.2) sha256=38fdd8b59db3d5ea9e7dfb14702e882b9bf819198d5bf976f17ebce12c481756
-  pagy (43.4.3) sha256=0fc7608c5314cbd565d7c5d7eaeb3ef38b9c1721ffbe5c70ee7c2cc186604853
+  pagy (43.4.4) sha256=b41a57328a0aabfd222266a89e9de3dc3a735c17bd57f8113829c95fece5bef6
   parallel (1.27.0) sha256=4ac151e1806b755fb4e2dc2332cbf0e54f2e24ba821ff2d3dcf86bf6dc4ae130
   parser (3.3.10.2) sha256=6f60c84aa4bdcedb6d1a2434b738fe8a8136807b6adc8f7f53b97da9bc4e9357
   pg (1.6.3) sha256=1388d0563e13d2758c1089e35e973a3249e955c659592d10e5b77c468f628a99

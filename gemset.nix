@@ -947,12 +947,12 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0ls8c23c2b3wxrq5rgpz44brr2zk7vmymmy5sxjxbjqlaf661iqg";
+      sha256 = "1xmywpn5zj99708zhmxx2xf76fnwwffrxa3648igvaqai8r5f6ml";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "43.4.3";
+    version = "43.4.4";
   };
   parallel = {
     groups = ["default" "development"];

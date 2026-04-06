@@ -144,16 +144,16 @@
   };
   addressable = {
     dependencies = ["public_suffix"];
-    groups = ["default" "development" "test"];
+    groups = ["default" "test"];
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "11ali533wx91fh93xlk88gjqq8w0p7kxw09nlh41hwc9wv5ly5fc";
+      sha256 = "1by7h2lwziiblizpd5yx87jsq8ppdhzvwf08ga34wzqgcv1nmpvz";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "2.8.9";
+    version = "2.9.0";
   };
   annotaterb = {
     dependencies = ["activerecord" "activesupport"];

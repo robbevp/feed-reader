@@ -2922,11 +2922,11 @@
       };
     }
     {
-      name = "postcss___postcss_8.5.8.tgz";
+      name = "postcss___postcss_8.5.10.tgz";
       path = fetchurl {
-        name = "postcss___postcss_8.5.8.tgz";
-        url  = "https://registry.yarnpkg.com/postcss/-/postcss-8.5.8.tgz";
-        sha512 = "OW/rX8O/jXnm82Ey1k44pObPtdblfiuWnrd8X7GJ7emImCOstunGbXUpp7HdBrFQX6rJzn3sPT397Wp5aCwCHg==";
+        name = "postcss___postcss_8.5.10.tgz";
+        url  = "https://registry.yarnpkg.com/postcss/-/postcss-8.5.10.tgz";
+        sha512 = "pMMHxBOZKFU6HgAZ4eyGnwXF/EvPGGqUr0MnZ5+99485wwW41kW91A4LOGxSHhgugZmSChL5AlElNdwlNgcnLQ==";
       };
     }
     {
@@ -3474,11 +3474,11 @@
       };
     }
     {
-      name = "stylelint___stylelint_17.7.0.tgz";
+      name = "stylelint___stylelint_17.8.0.tgz";
       path = fetchurl {
-        name = "stylelint___stylelint_17.7.0.tgz";
-        url  = "https://registry.yarnpkg.com/stylelint/-/stylelint-17.7.0.tgz";
-        sha512 = "n/+4RheCRl+cecGnF+S/Adz59iCRaK9BVznJYB+a7GOksfwNzjiOPnYv17pTO0HgRse9IiqbMtekGNhOb2tVYQ==";
+        name = "stylelint___stylelint_17.8.0.tgz";
+        url  = "https://registry.yarnpkg.com/stylelint/-/stylelint-17.8.0.tgz";
+        sha512 = "oHkld9T60LDSaUQ4CSVc+tlt9eUoDlxhaGWShsUCKyIL14boZfmK5bSphZqx64aiC5tCqX+BsQMTMoSz8D1zIg==";
       };
     }
     {

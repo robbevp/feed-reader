@@ -526,12 +526,12 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0vlyqqxhw4ybkv99zgdgwgypsx0gjvc3d42w2p2h9ijivck9yv5r";
+      sha256 = "1z1yfmqwml3gr1hjnjx6qbchmvr29j6z317wlhkhzabkvw4b6iy1";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "3.7.1";
+    version = "3.8.0";
   };
   feedjira = {
     dependencies = ["logger" "loofah" "sax-machine"];

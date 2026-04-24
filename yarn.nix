@@ -50,11 +50,11 @@
       };
     }
     {
-      name = "_csstools_css_calc___css_calc_3.1.1.tgz";
+      name = "_csstools_css_calc___css_calc_3.2.0.tgz";
       path = fetchurl {
-        name = "_csstools_css_calc___css_calc_3.1.1.tgz";
-        url  = "https://registry.yarnpkg.com/@csstools/css-calc/-/css-calc-3.1.1.tgz";
-        sha512 = "HJ26Z/vmsZQqs/o3a6bgKslXGFAungXGbinULZO3eMsOyNJHeBBZfup5FiZInOghgoM4Hwnmw+OgbJCNg1wwUQ==";
+        name = "_csstools_css_calc___css_calc_3.2.0.tgz";
+        url  = "https://registry.yarnpkg.com/@csstools/css-calc/-/css-calc-3.2.0.tgz";
+        sha512 = "bR9e6o2BDB12jzN/gIbjHa5wLJ4UjD1CB9pM7ehlc0ddk6EBz+yYS1EV2MF55/HUxrHcB/hehAyt5vhsA3hx7w==";
       };
     }
     {
@@ -3474,11 +3474,11 @@
       };
     }
     {
-      name = "stylelint___stylelint_17.8.0.tgz";
+      name = "stylelint___stylelint_17.9.0.tgz";
       path = fetchurl {
-        name = "stylelint___stylelint_17.8.0.tgz";
-        url  = "https://registry.yarnpkg.com/stylelint/-/stylelint-17.8.0.tgz";
-        sha512 = "oHkld9T60LDSaUQ4CSVc+tlt9eUoDlxhaGWShsUCKyIL14boZfmK5bSphZqx64aiC5tCqX+BsQMTMoSz8D1zIg==";
+        name = "stylelint___stylelint_17.9.0.tgz";
+        url  = "https://registry.yarnpkg.com/stylelint/-/stylelint-17.9.0.tgz";
+        sha512 = "xO0jeY6z1/urFL5L/BZLmB1yYlbRiRMQnYH6ArZIDWJ+SZXGssOY7XoYb1JIv/L220+EBnwwJXJS4Mt/F96SvA==";
       };
     }
     {

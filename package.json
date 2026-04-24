@@ -12,7 +12,7 @@
   "dependencies": {
     "@hotwired/turbo-rails": "^7.3.0",
     "sprinkles-js": "^0.3.2",
-    "vite": "^8.0.9",
+    "vite": "^8.0.10",
     "vite-plugin-ruby": "^5.2.1"
   },
   "devDependencies": {

@@ -5,10 +5,10 @@
     platforms = [];
     source = {
       fetchSubmodules = false;
-      rev = "592ea10f8b7d410544b22a4c70dc1fa477458556";
-      sha256 = "1y7331vxr6174m18sm9hmfrglv6ay4y46mf81i8ysaxrb193jzrs";
+      rev = "c62ddb138881fa04e081bb68b3ea48e92a10d40e";
+      sha256 = "1928w3m3z10hw8s4ck1dllzxang8k2lpzzx6xcq9gbma81nqhj8p";
       type = "git";
-      url = "https://github.com/rails/rails.git";
+      url = "https://github.com/robbevp/rails.git";
     };
     version = "8.1.0.alpha";
   };
@@ -18,10 +18,10 @@
     platforms = [];
     source = {
       fetchSubmodules = false;
-      rev = "592ea10f8b7d410544b22a4c70dc1fa477458556";
-      sha256 = "1y7331vxr6174m18sm9hmfrglv6ay4y46mf81i8ysaxrb193jzrs";
+      rev = "c62ddb138881fa04e081bb68b3ea48e92a10d40e";
+      sha256 = "1928w3m3z10hw8s4ck1dllzxang8k2lpzzx6xcq9gbma81nqhj8p";
       type = "git";
-      url = "https://github.com/rails/rails.git";
+      url = "https://github.com/robbevp/rails.git";
     };
     version = "8.1.0.alpha";
   };
@@ -31,10 +31,10 @@
     platforms = [];
     source = {
       fetchSubmodules = false;
-      rev = "592ea10f8b7d410544b22a4c70dc1fa477458556";
-      sha256 = "1y7331vxr6174m18sm9hmfrglv6ay4y46mf81i8ysaxrb193jzrs";
+      rev = "c62ddb138881fa04e081bb68b3ea48e92a10d40e";
+      sha256 = "1928w3m3z10hw8s4ck1dllzxang8k2lpzzx6xcq9gbma81nqhj8p";
       type = "git";
-      url = "https://github.com/rails/rails.git";
+      url = "https://github.com/robbevp/rails.git";
     };
     version = "8.1.0.alpha";
   };
@@ -44,10 +44,10 @@
     platforms = [];
     source = {
       fetchSubmodules = false;
-      rev = "592ea10f8b7d410544b22a4c70dc1fa477458556";
-      sha256 = "1y7331vxr6174m18sm9hmfrglv6ay4y46mf81i8ysaxrb193jzrs";
+      rev = "c62ddb138881fa04e081bb68b3ea48e92a10d40e";
+      sha256 = "1928w3m3z10hw8s4ck1dllzxang8k2lpzzx6xcq9gbma81nqhj8p";
       type = "git";
-      url = "https://github.com/rails/rails.git";
+      url = "https://github.com/robbevp/rails.git";
     };
     version = "8.1.0.alpha";
   };
@@ -57,10 +57,10 @@
     platforms = [];
     source = {
       fetchSubmodules = false;
-      rev = "592ea10f8b7d410544b22a4c70dc1fa477458556";
-      sha256 = "1y7331vxr6174m18sm9hmfrglv6ay4y46mf81i8ysaxrb193jzrs";
+      rev = "c62ddb138881fa04e081bb68b3ea48e92a10d40e";
+      sha256 = "1928w3m3z10hw8s4ck1dllzxang8k2lpzzx6xcq9gbma81nqhj8p";
       type = "git";
-      url = "https://github.com/rails/rails.git";
+      url = "https://github.com/robbevp/rails.git";
     };
     version = "8.1.0.alpha";
   };
@@ -70,10 +70,10 @@
     platforms = [];
     source = {
       fetchSubmodules = false;
-      rev = "592ea10f8b7d410544b22a4c70dc1fa477458556";
-      sha256 = "1y7331vxr6174m18sm9hmfrglv6ay4y46mf81i8ysaxrb193jzrs";
+      rev = "c62ddb138881fa04e081bb68b3ea48e92a10d40e";
+      sha256 = "1928w3m3z10hw8s4ck1dllzxang8k2lpzzx6xcq9gbma81nqhj8p";
       type = "git";
-      url = "https://github.com/rails/rails.git";
+      url = "https://github.com/robbevp/rails.git";
     };
     version = "8.1.0.alpha";
   };
@@ -83,10 +83,10 @@
     platforms = [];
     source = {
       fetchSubmodules = false;
-      rev = "592ea10f8b7d410544b22a4c70dc1fa477458556";
-      sha256 = "1y7331vxr6174m18sm9hmfrglv6ay4y46mf81i8ysaxrb193jzrs";
+      rev = "c62ddb138881fa04e081bb68b3ea48e92a10d40e";
+      sha256 = "1928w3m3z10hw8s4ck1dllzxang8k2lpzzx6xcq9gbma81nqhj8p";
       type = "git";
-      url = "https://github.com/rails/rails.git";
+      url = "https://github.com/robbevp/rails.git";
     };
     version = "8.1.0.alpha";
   };
@@ -96,10 +96,10 @@
     platforms = [];
     source = {
       fetchSubmodules = false;
-      rev = "592ea10f8b7d410544b22a4c70dc1fa477458556";
-      sha256 = "1y7331vxr6174m18sm9hmfrglv6ay4y46mf81i8ysaxrb193jzrs";
+      rev = "c62ddb138881fa04e081bb68b3ea48e92a10d40e";
+      sha256 = "1928w3m3z10hw8s4ck1dllzxang8k2lpzzx6xcq9gbma81nqhj8p";
       type = "git";
-      url = "https://github.com/rails/rails.git";
+      url = "https://github.com/robbevp/rails.git";
     };
     version = "8.1.0.alpha";
   };
@@ -109,10 +109,10 @@
     platforms = [];
     source = {
       fetchSubmodules = false;
-      rev = "592ea10f8b7d410544b22a4c70dc1fa477458556";
-      sha256 = "1y7331vxr6174m18sm9hmfrglv6ay4y46mf81i8ysaxrb193jzrs";
+      rev = "c62ddb138881fa04e081bb68b3ea48e92a10d40e";
+      sha256 = "1928w3m3z10hw8s4ck1dllzxang8k2lpzzx6xcq9gbma81nqhj8p";
       type = "git";
-      url = "https://github.com/rails/rails.git";
+      url = "https://github.com/robbevp/rails.git";
     };
     version = "8.1.0.alpha";
   };
@@ -122,10 +122,10 @@
     platforms = [];
     source = {
       fetchSubmodules = false;
-      rev = "592ea10f8b7d410544b22a4c70dc1fa477458556";
-      sha256 = "1y7331vxr6174m18sm9hmfrglv6ay4y46mf81i8ysaxrb193jzrs";
+      rev = "c62ddb138881fa04e081bb68b3ea48e92a10d40e";
+      sha256 = "1928w3m3z10hw8s4ck1dllzxang8k2lpzzx6xcq9gbma81nqhj8p";
       type = "git";
-      url = "https://github.com/rails/rails.git";
+      url = "https://github.com/robbevp/rails.git";
     };
     version = "8.1.0.alpha";
   };
@@ -135,10 +135,10 @@
     platforms = [];
     source = {
       fetchSubmodules = false;
-      rev = "592ea10f8b7d410544b22a4c70dc1fa477458556";
-      sha256 = "1y7331vxr6174m18sm9hmfrglv6ay4y46mf81i8ysaxrb193jzrs";
+      rev = "c62ddb138881fa04e081bb68b3ea48e92a10d40e";
+      sha256 = "1928w3m3z10hw8s4ck1dllzxang8k2lpzzx6xcq9gbma81nqhj8p";
       type = "git";
-      url = "https://github.com/rails/rails.git";
+      url = "https://github.com/robbevp/rails.git";
     };
     version = "8.1.0.alpha";
   };
@@ -222,12 +222,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0mdgwlc02f43svy92p0k5v1hipibpzxcdjm774lkz2j8s58kav04";
-      target = "ruby";
+      sha256 = "0xngv2yj85hiw8lgb4kqp807a41wmbl3bgrv6c4bg5lnn1mbd2p6";
       type = "gem";
     };
-    targets = [];
-    version = "2.1.1";
+    version = "2.2.0";
   };
   bigdecimal = {
     groups = ["default" "development" "production" "test"];
@@ -500,12 +498,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1gpgcr5dfrq7hs3wafxaqrkx84zm2rlfwbwamd6p1d71mrfjjnff";
-      target = "ruby";
+      sha256 = "0xz02xlnfhj418g51w06asfpcjccf7b66dx6ly3c1k2d45rv7ghj";
       type = "gem";
     };
-    targets = [];
-    version = "6.5.5";
+    version = "6.5.6";
   };
   factory_bot_rails = {
     dependencies = ["factory_bot" "railties"];
@@ -551,12 +547,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0fgwn1grxf4zxmyqmb9i4z2hr111585n9jnk17y6y7hhs7dv1xi6";
-      target = "ruby";
+      sha256 = "1kqasqvy8d7r09ri4n6bkdwbk63j7afd9ilsw34nzlgh0qp69ldw";
       type = "gem";
     };
-    targets = [];
-    version = "1.17.1";
+    version = "1.17.4";
   };
   fugit = {
     dependencies = ["et-orbi" "raabro"];
@@ -784,25 +778,21 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1h2cgkpzkh3dd0flnnwfq6f3nl2b1zff9lvqz8xs853ssv5kq23i";
-      target = "ruby";
+      sha256 = "0nscas3a4mmrp1rc07cdjlbbpb2rydkindmbj3v3z5y1viyspmd0";
       type = "gem";
     };
-    targets = [];
-    version = "0.4.2";
+    version = "0.4.3";
   };
   mini_magick = {
-    dependencies = ["benchmark" "logger"];
+    dependencies = ["logger"];
     groups = ["default"];
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0zlsc8dj0ak37snw3icag1jk56iq7j5mdayp3rmzinam5hm12mrc";
-      target = "ruby";
+      sha256 = "1i2ilgjfjqc6sw4cwa4g9w3ngs41yvvazr9y82vapp5sfvymsf99";
       type = "gem";
     };
-    targets = [];
-    version = "5.1.2";
+    version = "5.3.1";
   };
   mini_mime = {
     groups = ["default" "test"];
@@ -883,12 +873,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1bgjhb65r1bl52wdym6wpbb0r3j7va8s44grggp0jvarfvw7bawv";
-      target = "ruby";
+      sha256 = "0ax0f0r97jm83q462vsrcbdxprs894fyyc44v62c48ihgb39hmcs";
       type = "gem";
     };
-    targets = [];
-    version = "0.6.3";
+    version = "0.6.4";
   };
   net-pop = {
     dependencies = ["net-protocol"];
@@ -972,12 +960,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0z9cbfdfr83k8xhrh1nr4f4z8ryfivfr3gv3fpk22hczwg9q4xrk";
-      target = "ruby";
+      sha256 = "0mlkn1vhh9lr7vljibpgspwsswk7mzm8nw6bbr616c9fbj35hlmk";
       type = "gem";
     };
-    targets = [];
-    version = "2.0.1";
+    version = "2.1.0";
   };
   parser = {
     dependencies = ["ast" "racc"];
@@ -1253,10 +1239,10 @@
     platforms = [];
     source = {
       fetchSubmodules = false;
-      rev = "592ea10f8b7d410544b22a4c70dc1fa477458556";
-      sha256 = "1y7331vxr6174m18sm9hmfrglv6ay4y46mf81i8ysaxrb193jzrs";
+      rev = "c62ddb138881fa04e081bb68b3ea48e92a10d40e";
+      sha256 = "1928w3m3z10hw8s4ck1dllzxang8k2lpzzx6xcq9gbma81nqhj8p";
       type = "git";
-      url = "https://github.com/rails/rails.git";
+      url = "https://github.com/robbevp/rails.git";
     };
     version = "8.1.0.alpha";
   };
@@ -1292,10 +1278,10 @@
     platforms = [];
     source = {
       fetchSubmodules = false;
-      rev = "592ea10f8b7d410544b22a4c70dc1fa477458556";
-      sha256 = "1y7331vxr6174m18sm9hmfrglv6ay4y46mf81i8ysaxrb193jzrs";
+      rev = "c62ddb138881fa04e081bb68b3ea48e92a10d40e";
+      sha256 = "1928w3m3z10hw8s4ck1dllzxang8k2lpzzx6xcq9gbma81nqhj8p";
       type = "git";
-      url = "https://github.com/rails/rails.git";
+      url = "https://github.com/robbevp/rails.git";
     };
     version = "8.1.0.alpha";
   };
@@ -1515,12 +1501,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "14nwdsd73c4ygjb7sfldnndlbzn5yyl02llnlzafmmjwh0d2pla1";
-      target = "ruby";
+      sha256 = "0x2k5x272m2zs0vmznl2jac14bj9a2g0365xxcnr2s9rq41fr1g6";
       type = "gem";
     };
-    targets = [];
-    version = "2.2.3";
+    version = "2.3.0";
   };
   ruby2_keywords = {
     groups = ["default" "test"];
@@ -1730,17 +1714,15 @@
     version = "0.2.0";
   };
   turbo-rails = {
-    dependencies = ["actionpack" "activejob" "railties"];
+    dependencies = ["actionpack" "railties"];
     groups = ["default"];
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0gm8qzkhnpryqwmddh8kasgjdgghm58ifgwvf9vh555h5xvcq9ml";
-      target = "ruby";
+      sha256 = "0priz7ww23h2j9j5zicc4np3rr357n01xw8zymn0bzxg79rr03gf";
       type = "gem";
     };
-    targets = [];
-    version = "1.5.0";
+    version = "2.0.23";
   };
   tzinfo = {
     dependencies = ["concurrent-ruby"];

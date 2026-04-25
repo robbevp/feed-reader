@@ -16,12 +16,12 @@
     platforms = [];
     source = {
       fetchSubmodules = false;
-      rev = "049e83293d7c2f1ac994c8e874b3b9f7bf57fb7c";
-      sha256 = "084a7zsivcgscyn9p20qxjijgzgks6jwk6bpxs3nnnpznfk2ig94";
+      rev = "5abed4e6e7fbc7de5fff1d201451487b06632a8d";
+      sha256 = "1nm1rzvz2xn86q320kq81rl6p49hlyjnr6f3b0wr9a6hslwxaxnl";
       type = "git";
       url = "https://github.com/robbevp/rails.git";
     };
-    version = "8.1.0.alpha";
+    version = "8.1.0.beta1";
   };
   actionmailbox = {
     dependencies = ["actionpack" "activejob" "activerecord" "activestorage" "activesupport" "mail"];
@@ -29,12 +29,12 @@
     platforms = [];
     source = {
       fetchSubmodules = false;
-      rev = "049e83293d7c2f1ac994c8e874b3b9f7bf57fb7c";
-      sha256 = "084a7zsivcgscyn9p20qxjijgzgks6jwk6bpxs3nnnpznfk2ig94";
+      rev = "5abed4e6e7fbc7de5fff1d201451487b06632a8d";
+      sha256 = "1nm1rzvz2xn86q320kq81rl6p49hlyjnr6f3b0wr9a6hslwxaxnl";
       type = "git";
       url = "https://github.com/robbevp/rails.git";
     };
-    version = "8.1.0.alpha";
+    version = "8.1.0.beta1";
   };
   actionmailer = {
     dependencies = ["actionpack" "actionview" "activejob" "activesupport" "mail" "rails-dom-testing"];
@@ -42,12 +42,12 @@
     platforms = [];
     source = {
       fetchSubmodules = false;
-      rev = "049e83293d7c2f1ac994c8e874b3b9f7bf57fb7c";
-      sha256 = "084a7zsivcgscyn9p20qxjijgzgks6jwk6bpxs3nnnpznfk2ig94";
+      rev = "5abed4e6e7fbc7de5fff1d201451487b06632a8d";
+      sha256 = "1nm1rzvz2xn86q320kq81rl6p49hlyjnr6f3b0wr9a6hslwxaxnl";
       type = "git";
       url = "https://github.com/robbevp/rails.git";
     };
-    version = "8.1.0.alpha";
+    version = "8.1.0.beta1";
   };
   actionpack = {
     dependencies = ["actionview" "activesupport" "nokogiri" "rack" "rack-session" "rack-test" "rails-dom-testing" "rails-html-sanitizer" "useragent"];
@@ -55,12 +55,12 @@
     platforms = [];
     source = {
       fetchSubmodules = false;
-      rev = "049e83293d7c2f1ac994c8e874b3b9f7bf57fb7c";
-      sha256 = "084a7zsivcgscyn9p20qxjijgzgks6jwk6bpxs3nnnpznfk2ig94";
+      rev = "5abed4e6e7fbc7de5fff1d201451487b06632a8d";
+      sha256 = "1nm1rzvz2xn86q320kq81rl6p49hlyjnr6f3b0wr9a6hslwxaxnl";
       type = "git";
       url = "https://github.com/robbevp/rails.git";
     };
-    version = "8.1.0.alpha";
+    version = "8.1.0.beta1";
   };
   actiontext = {
     dependencies = ["action_text-trix" "actionpack" "activerecord" "activestorage" "activesupport" "globalid" "nokogiri"];
@@ -68,12 +68,12 @@
     platforms = [];
     source = {
       fetchSubmodules = false;
-      rev = "049e83293d7c2f1ac994c8e874b3b9f7bf57fb7c";
-      sha256 = "084a7zsivcgscyn9p20qxjijgzgks6jwk6bpxs3nnnpznfk2ig94";
+      rev = "5abed4e6e7fbc7de5fff1d201451487b06632a8d";
+      sha256 = "1nm1rzvz2xn86q320kq81rl6p49hlyjnr6f3b0wr9a6hslwxaxnl";
       type = "git";
       url = "https://github.com/robbevp/rails.git";
     };
-    version = "8.1.0.alpha";
+    version = "8.1.0.beta1";
   };
   actionview = {
     dependencies = ["activesupport" "builder" "erubi" "rails-dom-testing" "rails-html-sanitizer"];
@@ -81,12 +81,12 @@
     platforms = [];
     source = {
       fetchSubmodules = false;
-      rev = "049e83293d7c2f1ac994c8e874b3b9f7bf57fb7c";
-      sha256 = "084a7zsivcgscyn9p20qxjijgzgks6jwk6bpxs3nnnpznfk2ig94";
+      rev = "5abed4e6e7fbc7de5fff1d201451487b06632a8d";
+      sha256 = "1nm1rzvz2xn86q320kq81rl6p49hlyjnr6f3b0wr9a6hslwxaxnl";
       type = "git";
       url = "https://github.com/robbevp/rails.git";
     };
-    version = "8.1.0.alpha";
+    version = "8.1.0.beta1";
   };
   activejob = {
     dependencies = ["activesupport" "globalid"];
@@ -94,12 +94,12 @@
     platforms = [];
     source = {
       fetchSubmodules = false;
-      rev = "049e83293d7c2f1ac994c8e874b3b9f7bf57fb7c";
-      sha256 = "084a7zsivcgscyn9p20qxjijgzgks6jwk6bpxs3nnnpznfk2ig94";
+      rev = "5abed4e6e7fbc7de5fff1d201451487b06632a8d";
+      sha256 = "1nm1rzvz2xn86q320kq81rl6p49hlyjnr6f3b0wr9a6hslwxaxnl";
       type = "git";
       url = "https://github.com/robbevp/rails.git";
     };
-    version = "8.1.0.alpha";
+    version = "8.1.0.beta1";
   };
   activemodel = {
     dependencies = ["activesupport"];
@@ -107,12 +107,12 @@
     platforms = [];
     source = {
       fetchSubmodules = false;
-      rev = "049e83293d7c2f1ac994c8e874b3b9f7bf57fb7c";
-      sha256 = "084a7zsivcgscyn9p20qxjijgzgks6jwk6bpxs3nnnpznfk2ig94";
+      rev = "5abed4e6e7fbc7de5fff1d201451487b06632a8d";
+      sha256 = "1nm1rzvz2xn86q320kq81rl6p49hlyjnr6f3b0wr9a6hslwxaxnl";
       type = "git";
       url = "https://github.com/robbevp/rails.git";
     };
-    version = "8.1.0.alpha";
+    version = "8.1.0.beta1";
   };
   activerecord = {
     dependencies = ["activemodel" "activesupport" "timeout"];
@@ -120,12 +120,12 @@
     platforms = [];
     source = {
       fetchSubmodules = false;
-      rev = "049e83293d7c2f1ac994c8e874b3b9f7bf57fb7c";
-      sha256 = "084a7zsivcgscyn9p20qxjijgzgks6jwk6bpxs3nnnpznfk2ig94";
+      rev = "5abed4e6e7fbc7de5fff1d201451487b06632a8d";
+      sha256 = "1nm1rzvz2xn86q320kq81rl6p49hlyjnr6f3b0wr9a6hslwxaxnl";
       type = "git";
       url = "https://github.com/robbevp/rails.git";
     };
-    version = "8.1.0.alpha";
+    version = "8.1.0.beta1";
   };
   activestorage = {
     dependencies = ["actionpack" "activejob" "activerecord" "activesupport" "marcel"];
@@ -133,12 +133,12 @@
     platforms = [];
     source = {
       fetchSubmodules = false;
-      rev = "049e83293d7c2f1ac994c8e874b3b9f7bf57fb7c";
-      sha256 = "084a7zsivcgscyn9p20qxjijgzgks6jwk6bpxs3nnnpznfk2ig94";
+      rev = "5abed4e6e7fbc7de5fff1d201451487b06632a8d";
+      sha256 = "1nm1rzvz2xn86q320kq81rl6p49hlyjnr6f3b0wr9a6hslwxaxnl";
       type = "git";
       url = "https://github.com/robbevp/rails.git";
     };
-    version = "8.1.0.alpha";
+    version = "8.1.0.beta1";
   };
   activesupport = {
     dependencies = ["base64" "benchmark" "bigdecimal" "concurrent-ruby" "connection_pool" "drb" "i18n" "logger" "minitest" "securerandom" "tzinfo" "uri"];
@@ -146,12 +146,12 @@
     platforms = [];
     source = {
       fetchSubmodules = false;
-      rev = "049e83293d7c2f1ac994c8e874b3b9f7bf57fb7c";
-      sha256 = "084a7zsivcgscyn9p20qxjijgzgks6jwk6bpxs3nnnpznfk2ig94";
+      rev = "5abed4e6e7fbc7de5fff1d201451487b06632a8d";
+      sha256 = "1nm1rzvz2xn86q320kq81rl6p49hlyjnr6f3b0wr9a6hslwxaxnl";
       type = "git";
       url = "https://github.com/robbevp/rails.git";
     };
-    version = "8.1.0.alpha";
+    version = "8.1.0.beta1";
   };
   addressable = {
     dependencies = ["public_suffix"];
@@ -1250,12 +1250,12 @@
     platforms = [];
     source = {
       fetchSubmodules = false;
-      rev = "049e83293d7c2f1ac994c8e874b3b9f7bf57fb7c";
-      sha256 = "084a7zsivcgscyn9p20qxjijgzgks6jwk6bpxs3nnnpznfk2ig94";
+      rev = "5abed4e6e7fbc7de5fff1d201451487b06632a8d";
+      sha256 = "1nm1rzvz2xn86q320kq81rl6p49hlyjnr6f3b0wr9a6hslwxaxnl";
       type = "git";
       url = "https://github.com/robbevp/rails.git";
     };
-    version = "8.1.0.alpha";
+    version = "8.1.0.beta1";
   };
   rails-dom-testing = {
     dependencies = ["activesupport" "minitest" "nokogiri"];
@@ -1289,12 +1289,12 @@
     platforms = [];
     source = {
       fetchSubmodules = false;
-      rev = "049e83293d7c2f1ac994c8e874b3b9f7bf57fb7c";
-      sha256 = "084a7zsivcgscyn9p20qxjijgzgks6jwk6bpxs3nnnpznfk2ig94";
+      rev = "5abed4e6e7fbc7de5fff1d201451487b06632a8d";
+      sha256 = "1nm1rzvz2xn86q320kq81rl6p49hlyjnr6f3b0wr9a6hslwxaxnl";
       type = "git";
       url = "https://github.com/robbevp/rails.git";
     };
-    version = "8.1.0.alpha";
+    version = "8.1.0.beta1";
   };
   rainbow = {
     groups = ["default" "development"];

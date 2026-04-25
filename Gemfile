@@ -54,6 +54,7 @@ group :test do
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'minitest', '~> 5.27' # Pin minitest to 6.x until we update to rails >= 8.1.2
+  gem 'mocha'
   gem 'pundit_assertions'
   gem 'selenium-webdriver'
   gem 'simplecov', require: false

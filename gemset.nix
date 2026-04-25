@@ -840,6 +840,19 @@
     targets = [];
     version = "5.27.0";
   };
+  mocha = {
+    dependencies = ["ruby2_keywords"];
+    groups = ["test"];
+    platforms = [];
+    source = {
+      remotes = ["https://rubygems.org"];
+      sha256 = "0mhx9qyiig73mw3zrk8f28ca8dqx8gwgipw94jri07zvxdljvx3m";
+      target = "ruby";
+      type = "gem";
+    };
+    targets = [];
+    version = "3.1.0";
+  };
   msgpack = {
     groups = ["default"];
     platforms = [];
@@ -1508,6 +1521,18 @@
     };
     targets = [];
     version = "2.2.3";
+  };
+  ruby2_keywords = {
+    groups = ["default" "test"];
+    platforms = [];
+    source = {
+      remotes = ["https://rubygems.org"];
+      sha256 = "1vz322p8n39hz3b4a9gkmz9y7a5jaz41zrm2ywf31dvkqm03glgz";
+      target = "ruby";
+      type = "gem";
+    };
+    targets = [];
+    version = "0.0.5";
   };
   rubyzip = {
     groups = ["default" "test"];

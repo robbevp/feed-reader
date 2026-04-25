@@ -21,6 +21,7 @@ end
 require_relative '../config/environment'
 require 'rails/test_help'
 require 'faker'
+require 'mocha/minitest'
 require 'webmock/minitest'
 
 module ValidationAssertions

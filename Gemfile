@@ -5,7 +5,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '~> 3.4.5'
 
-gem 'rails', github: 'rails/rails', branch: '8-1-stable'
+gem 'rails', github: 'rails/rails', ref: '592ea10f8b'
 
 gem 'addressable' # More standards-compliant URI parser
 gem 'bcrypt' # Use Active Model has_secure_password

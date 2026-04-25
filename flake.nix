@@ -28,7 +28,7 @@
             overlays = [
               devshell.overlays.default
               (self: super: {
-                bundix = bundix;
+                # bundix = bundix;
               })
             ];
           };

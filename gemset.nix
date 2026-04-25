@@ -1265,12 +1265,12 @@
     groups = ["default"];
     platforms = [];
     source = {
-      remotes = ["https://rubygems.org"];
-      sha256 = "1lww7i686rm9s50d34hb596y2kfl46dida2kjy8gr64c6jjpn0bd";
-      target = "ruby";
-      type = "gem";
+      fetchSubmodules = false;
+      rev = "576d542f06a82333108f3a059520a4738cceafef";
+      sha256 = "1vh3zv5q6kbvjic1rmrrzm433rcmbhl7lg3s43ana4cr510yx43n";
+      type = "git";
+      url = "https://github.com/rails/rails.git";
     };
-    targets = [];
     version = "8.1.3";
   };
   rails-dom-testing = {

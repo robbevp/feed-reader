@@ -1,7 +1,7 @@
 GIT
   remote: https://github.com/robbevp/rails.git
-  revision: c62ddb138881fa04e081bb68b3ea48e92a10d40e
-  branch: try-c62ddb13
+  revision: 049e83293d7c2f1ac994c8e874b3b9f7bf57fb7c
+  ref: 049e83293d7c2f1ac994c8e874b3b9f7bf57fb7c
   specs:
     actioncable (8.1.0.alpha)
       actionpack (= 8.1.0.alpha)
@@ -34,6 +34,7 @@ GIT
       rails-html-sanitizer (~> 1.6)
       useragent (~> 0.16)
     actiontext (8.1.0.alpha)
+      action_text-trix (~> 2.1.15)
       actionpack (= 8.1.0.alpha)
       activerecord (= 8.1.0.alpha)
       activestorage (= 8.1.0.alpha)
@@ -95,11 +96,14 @@ GIT
       rackup (>= 1.0.0)
       rake (>= 12.2)
       thor (~> 1.0, >= 1.2.2)
+      tsort (>= 0.2)
       zeitwerk (~> 2.6)
 
 GEM
   remote: https://rubygems.org/
   specs:
+    action_text-trix (2.1.18)
+      railties
     addressable (2.9.0)
       public_suffix (>= 2.0.2, < 8.0)
     annotaterb (4.22.0)
@@ -446,6 +450,7 @@ DEPENDENCIES
   webmock
 
 CHECKSUMS
+  action_text-trix (2.1.18) sha256=3fdb83f8bff4145d098be283cdd47ac41caf5110bfa6df4695ed7127d7fb3642
   actioncable (8.1.0.alpha)
   actionmailbox (8.1.0.alpha)
   actionmailer (8.1.0.alpha)

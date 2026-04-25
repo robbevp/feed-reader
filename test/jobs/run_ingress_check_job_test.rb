@@ -19,6 +19,16 @@ class RunIngressCheckJobTest < ActiveJob::TestCase
     end
   end
 
+  test 'should not create ingress check if mail can not be send' do
+    SystemMailer.expects(:ingress_check).raises(ArgumentError, 'Some error')
+
+    assert_no_difference 'IngressCheck.count' do
+      assert_raises ArgumentError do
+        RunIngressCheckJob.perform_now
+      end
+    end
+  end
+
   test 'should destroy checks that are more than 10 days old' do
     travel_to((10.days + 1.hour).ago) { create(:ingress_check, :received) }
     travel_to(9.days.ago) { create(:ingress_check, :received) }

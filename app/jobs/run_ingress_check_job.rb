@@ -20,8 +20,11 @@ class RunIngressCheckJob < ApplicationJob
   def send_new_ingress_check!
     return if IngressCheck.exists?(created_at: SEND_EVERY.ago..)
 
-    check = IngressCheck.create!
-    SystemMailer.ingress_check(check).deliver_now
+    # If we can't send the mail, we don't want to save the check
+    ActiveRecord::Base.transaction do
+      check = IngressCheck.create!
+      SystemMailer.ingress_check(check).deliver_now
+    end
   end
 
   def check_undelivered_checks

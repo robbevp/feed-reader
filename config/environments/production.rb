@@ -73,7 +73,6 @@ Rails.application.configure do
     user_name: ENV.fetch('RAILS_SMTP_USER_NAME'),
     password: ENV.fetch('RAILS_SMTP_PASSWORD'),
     authentication: 'login',
-    enable_starttls_auto: true,
     tls: true
   }
 

@@ -40,6 +40,7 @@
             lockfile = ./Gemfile.lock;
             gemset = ./gemset.nix;
             groups = [ "default" "development" "test" "production" ];
+            ignoreCollisions = true;
           };
           node-modules = pkgs.mkYarnModules {
             pname = "feed-reader-modules";

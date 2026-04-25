@@ -1228,8 +1228,8 @@
     platforms = [];
     source = {
       fetchSubmodules = false;
-      rev = "6cca34340a3079ce89a8d6ef3ae5e09d70dea27a";
-      sha256 = "1b94fnf005xlkhasg4mafzmdpgpx5b7mz0j502l38r0vq9vpd9rh";
+      rev = "163f7b76037a1ad3ca477b61c243bb8aa6d076fc";
+      sha256 = "1jhn5hlhvw6i2s6s7w05g0cms55289kpd5vlwc1i8s3vqm7h2xz0";
       type = "git";
       url = "https://github.com/robbevp/rails.git";
     };

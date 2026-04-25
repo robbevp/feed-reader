@@ -341,7 +341,7 @@ in
       feed-reader = {
         wantedBy = [ "sockets.target" ];
         wants = [ "feed-reader.service" ];
-        listenStreams = [ "[::]:3000" "/run/feed_reader/server.sock" ];
+        listenStreams = [ "/run/feed_reader/server.sock" ];
         socketConfig = {
           # Socket options matching Puma defaults
           NoDelay = true;

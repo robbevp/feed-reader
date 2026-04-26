@@ -5,21 +5,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '~> 3.4.5'
 
-ref = '367445d037b8f0d0baea684d14c0343ee29e8da1'
-
-gem 'actioncable', github: 'robbevp/rails', ref: ref
-gem 'actionmailbox', github: 'robbevp/rails', ref: ref
-gem 'actionmailer', github: 'robbevp/rails', ref: ref
-gem 'actionpack', github: 'robbevp/rails', ref: ref
-gem 'actiontext', github: 'robbevp/rails', ref: ref
-gem 'actionview', github: 'robbevp/rails', ref: ref
-gem 'activejob', github: 'robbevp/rails', ref: ref
-gem 'activemodel', github: 'robbevp/rails', ref: ref
-gem 'activerecord', github: 'robbevp/rails', ref: ref
-gem 'activestorage', github: 'robbevp/rails', ref: ref
-gem 'activesupport', github: 'robbevp/rails', ref: ref
-gem 'rails', github: 'robbevp/rails', ref: ref
-gem 'railties', github: 'robbevp/rails', ref: ref
+gem 'rails', '~> 8.1'
 
 gem 'addressable' # More standards-compliant URI parser
 gem 'bcrypt' # Use Active Model has_secure_password

@@ -1,7 +1,7 @@
 GIT
   remote: https://github.com/robbevp/rails.git
-  revision: 179726184f219e99b32fbe0fd67d16a2d5bbdfe7
-  ref: 179726184f219e99b32fbe0fd67d16a2d5bbdfe7
+  revision: 46758bdf3de6ee21e4de88ba442349115f1f9549
+  ref: 46758bdf3de6ee21e4de88ba442349115f1f9549
   specs:
     actioncable (8.1.0.beta1)
       actionpack (= 8.1.0.beta1)

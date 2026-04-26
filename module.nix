@@ -58,7 +58,6 @@ let
   relayMailScript = pkgs.writeShellScript "feed-reader-mail-relay" ''
     ${exports}
     export $(${pkgs.coreutils}/bin/cat ${cfg.environmentFile} | ${pkgs.findutils}/bin/xargs)
-    export RAILS_DISABLE_AS_VARIANT=1
     cd ${feed-reader}
     ${feed-reader.env}/bin/bundle exec rails action_mailbox:ingress:postfix URL='https://${cfg.hostname}/rails/action_mailbox/relay/inbound_emails' INGRESS_PASSWORD=$RAILS_INBOUND_EMAIL_PASSWORD
   '';

@@ -5,7 +5,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '~> 3.4.5'
 
-ref = 'd01517aeaca2f92a1b786c76d0bd4d3a84222c91'
+ref = '367445d037b8f0d0baea684d14c0343ee29e8da1'
 
 gem 'actioncable', github: 'robbevp/rails', ref: ref
 gem 'actionmailbox', github: 'robbevp/rails', ref: ref
@@ -26,7 +26,7 @@ gem 'bcrypt' # Use Active Model has_secure_password
 gem 'bootsnap', require: false # Reduces boot times through caching; required in config/boot.rb
 gem 'feedjira' # Parse RSS feeds
 gem 'good_job' # Multithreaded, Postgres-based, ActiveJob backend for Ruby on Rails
-gem 'image_processing' # Use Active Storage variants
+gem 'image_processing', require: 'image_processing/vips' # Use Active Storage variants
 gem 'inline_svg' # Render inline SVGs
 gem 'pagy' # Use pagy for pagination
 gem 'pg' # Use postgresql as the database for Active Record

@@ -16,8 +16,8 @@
     platforms = [];
     source = {
       fetchSubmodules = false;
-      rev = "a20ee82fb14a955f55e49ae9db76779b250b3d9a";
-      sha256 = "1vygfnhr9b83i90i5wlhjpr1dlpgcsqjdmmx3bfihqg39n2pzqgv";
+      rev = "4755a099b6ef16e7773354108a29ed6b50d401f9";
+      sha256 = "18bzirvq3sbz6fiidd4dr6m65ffa1s4286njl1bkzx6k8f9288ir";
       type = "git";
       url = "https://github.com/robbevp/rails.git";
     };
@@ -29,8 +29,8 @@
     platforms = [];
     source = {
       fetchSubmodules = false;
-      rev = "a20ee82fb14a955f55e49ae9db76779b250b3d9a";
-      sha256 = "1vygfnhr9b83i90i5wlhjpr1dlpgcsqjdmmx3bfihqg39n2pzqgv";
+      rev = "4755a099b6ef16e7773354108a29ed6b50d401f9";
+      sha256 = "18bzirvq3sbz6fiidd4dr6m65ffa1s4286njl1bkzx6k8f9288ir";
       type = "git";
       url = "https://github.com/robbevp/rails.git";
     };
@@ -42,8 +42,8 @@
     platforms = [];
     source = {
       fetchSubmodules = false;
-      rev = "a20ee82fb14a955f55e49ae9db76779b250b3d9a";
-      sha256 = "1vygfnhr9b83i90i5wlhjpr1dlpgcsqjdmmx3bfihqg39n2pzqgv";
+      rev = "4755a099b6ef16e7773354108a29ed6b50d401f9";
+      sha256 = "18bzirvq3sbz6fiidd4dr6m65ffa1s4286njl1bkzx6k8f9288ir";
       type = "git";
       url = "https://github.com/robbevp/rails.git";
     };
@@ -55,8 +55,8 @@
     platforms = [];
     source = {
       fetchSubmodules = false;
-      rev = "a20ee82fb14a955f55e49ae9db76779b250b3d9a";
-      sha256 = "1vygfnhr9b83i90i5wlhjpr1dlpgcsqjdmmx3bfihqg39n2pzqgv";
+      rev = "4755a099b6ef16e7773354108a29ed6b50d401f9";
+      sha256 = "18bzirvq3sbz6fiidd4dr6m65ffa1s4286njl1bkzx6k8f9288ir";
       type = "git";
       url = "https://github.com/robbevp/rails.git";
     };
@@ -68,8 +68,8 @@
     platforms = [];
     source = {
       fetchSubmodules = false;
-      rev = "a20ee82fb14a955f55e49ae9db76779b250b3d9a";
-      sha256 = "1vygfnhr9b83i90i5wlhjpr1dlpgcsqjdmmx3bfihqg39n2pzqgv";
+      rev = "4755a099b6ef16e7773354108a29ed6b50d401f9";
+      sha256 = "18bzirvq3sbz6fiidd4dr6m65ffa1s4286njl1bkzx6k8f9288ir";
       type = "git";
       url = "https://github.com/robbevp/rails.git";
     };
@@ -81,8 +81,8 @@
     platforms = [];
     source = {
       fetchSubmodules = false;
-      rev = "a20ee82fb14a955f55e49ae9db76779b250b3d9a";
-      sha256 = "1vygfnhr9b83i90i5wlhjpr1dlpgcsqjdmmx3bfihqg39n2pzqgv";
+      rev = "4755a099b6ef16e7773354108a29ed6b50d401f9";
+      sha256 = "18bzirvq3sbz6fiidd4dr6m65ffa1s4286njl1bkzx6k8f9288ir";
       type = "git";
       url = "https://github.com/robbevp/rails.git";
     };
@@ -94,8 +94,8 @@
     platforms = [];
     source = {
       fetchSubmodules = false;
-      rev = "a20ee82fb14a955f55e49ae9db76779b250b3d9a";
-      sha256 = "1vygfnhr9b83i90i5wlhjpr1dlpgcsqjdmmx3bfihqg39n2pzqgv";
+      rev = "4755a099b6ef16e7773354108a29ed6b50d401f9";
+      sha256 = "18bzirvq3sbz6fiidd4dr6m65ffa1s4286njl1bkzx6k8f9288ir";
       type = "git";
       url = "https://github.com/robbevp/rails.git";
     };
@@ -107,8 +107,8 @@
     platforms = [];
     source = {
       fetchSubmodules = false;
-      rev = "a20ee82fb14a955f55e49ae9db76779b250b3d9a";
-      sha256 = "1vygfnhr9b83i90i5wlhjpr1dlpgcsqjdmmx3bfihqg39n2pzqgv";
+      rev = "4755a099b6ef16e7773354108a29ed6b50d401f9";
+      sha256 = "18bzirvq3sbz6fiidd4dr6m65ffa1s4286njl1bkzx6k8f9288ir";
       type = "git";
       url = "https://github.com/robbevp/rails.git";
     };
@@ -120,8 +120,8 @@
     platforms = [];
     source = {
       fetchSubmodules = false;
-      rev = "a20ee82fb14a955f55e49ae9db76779b250b3d9a";
-      sha256 = "1vygfnhr9b83i90i5wlhjpr1dlpgcsqjdmmx3bfihqg39n2pzqgv";
+      rev = "4755a099b6ef16e7773354108a29ed6b50d401f9";
+      sha256 = "18bzirvq3sbz6fiidd4dr6m65ffa1s4286njl1bkzx6k8f9288ir";
       type = "git";
       url = "https://github.com/robbevp/rails.git";
     };
@@ -133,8 +133,8 @@
     platforms = [];
     source = {
       fetchSubmodules = false;
-      rev = "a20ee82fb14a955f55e49ae9db76779b250b3d9a";
-      sha256 = "1vygfnhr9b83i90i5wlhjpr1dlpgcsqjdmmx3bfihqg39n2pzqgv";
+      rev = "4755a099b6ef16e7773354108a29ed6b50d401f9";
+      sha256 = "18bzirvq3sbz6fiidd4dr6m65ffa1s4286njl1bkzx6k8f9288ir";
       type = "git";
       url = "https://github.com/robbevp/rails.git";
     };
@@ -146,8 +146,8 @@
     platforms = [];
     source = {
       fetchSubmodules = false;
-      rev = "a20ee82fb14a955f55e49ae9db76779b250b3d9a";
-      sha256 = "1vygfnhr9b83i90i5wlhjpr1dlpgcsqjdmmx3bfihqg39n2pzqgv";
+      rev = "4755a099b6ef16e7773354108a29ed6b50d401f9";
+      sha256 = "18bzirvq3sbz6fiidd4dr6m65ffa1s4286njl1bkzx6k8f9288ir";
       type = "git";
       url = "https://github.com/robbevp/rails.git";
     };
@@ -1250,8 +1250,8 @@
     platforms = [];
     source = {
       fetchSubmodules = false;
-      rev = "a20ee82fb14a955f55e49ae9db76779b250b3d9a";
-      sha256 = "1vygfnhr9b83i90i5wlhjpr1dlpgcsqjdmmx3bfihqg39n2pzqgv";
+      rev = "4755a099b6ef16e7773354108a29ed6b50d401f9";
+      sha256 = "18bzirvq3sbz6fiidd4dr6m65ffa1s4286njl1bkzx6k8f9288ir";
       type = "git";
       url = "https://github.com/robbevp/rails.git";
     };
@@ -1289,8 +1289,8 @@
     platforms = [];
     source = {
       fetchSubmodules = false;
-      rev = "a20ee82fb14a955f55e49ae9db76779b250b3d9a";
-      sha256 = "1vygfnhr9b83i90i5wlhjpr1dlpgcsqjdmmx3bfihqg39n2pzqgv";
+      rev = "4755a099b6ef16e7773354108a29ed6b50d401f9";
+      sha256 = "18bzirvq3sbz6fiidd4dr6m65ffa1s4286njl1bkzx6k8f9288ir";
       type = "git";
       url = "https://github.com/robbevp/rails.git";
     };

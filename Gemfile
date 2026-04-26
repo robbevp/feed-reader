@@ -5,7 +5,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '~> 3.4.5'
 
-ref = 'a20ee82fb14a955f55e49ae9db76779b250b3d9a'
+ref = '4755a099b6ef16e7773354108a29ed6b50d401f9'
 
 gem 'actioncable', github: 'robbevp/rails', ref: ref
 gem 'actionmailbox', github: 'robbevp/rails', ref: ref

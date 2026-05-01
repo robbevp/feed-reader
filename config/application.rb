@@ -23,5 +23,6 @@ module FeedReader
 
     # Set default time zone
     config.time_zone = 'Europe/Brussels'
+    Vips
   end
 end

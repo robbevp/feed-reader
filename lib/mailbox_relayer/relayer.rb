@@ -62,7 +62,7 @@ module MailboxRelayer
       client.post uri, source,
                   'Content-Type' => CONTENT_TYPE,
                   'User-Agent' => USER_AGENT,
-                  'Authorization' => "Basic #{Base64.strict_encode64(username + ':' + password)}"
+                  'Authorization' => "Basic #{Base64.strict_encode64("#{username}:#{password}")}"
     end
 
     def client

@@ -288,7 +288,7 @@ in
               # See pipe manual for details on these settings https://www.postfix.org/pipe.8.html
               "flags=Xhq"
               "user=feed_reader"
-              "argv=${relayMailScript}"
+              "argv=${relayMailScript}/bin/feed-reader-mail-relay"
             ];
           };
         };

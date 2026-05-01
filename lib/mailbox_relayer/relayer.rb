@@ -3,6 +3,7 @@
 # NOTE: This file is a copy from https://github.com/rails/rails/blob/main/actionmailbox/lib/action_mailbox/relayer.rb,
 # but slightly reworked so that we don't fully need to load rails to send a post request
 
+require 'base64'
 require 'net/http'
 require 'uri'
 

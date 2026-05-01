@@ -72,7 +72,7 @@ let
       export $(cat ${cfg.environmentFile} | xargs)
       cd ${feed-reader}
       FILENAME=/var/log/feed_reader/postfix-debug.log
-      ${feed-reader.env}/bin/bundle exec rails action_mailbox:ingress:postfix URL='https://${cfg.hostname}/rails/action_mailbox/relay/inbound_emails' INGRESS_PASSWORD="$RAILS_INBOUND_EMAIL_PASSWORD" >$FILENAME 2>&1
+      ${feed-reader.env}/bin/rails action_mailbox:ingress:postfix URL='https://${cfg.hostname}/rails/action_mailbox/relay/inbound_emails' INGRESS_PASSWORD="$RAILS_INBOUND_EMAIL_PASSWORD" >$FILENAME 2>&1
       cat $FILENAME
     '';
   };

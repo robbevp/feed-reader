@@ -60,7 +60,7 @@ let
     
     export URL='https://${cfg.hostname}/rails/action_mailbox/relay/inbound_emails'
     export INGRESS_PASSWORD=$RAILS_INBOUND_EMAIL_PASSWORD
-    ${feed-reader.env.wrappedRuby} ${feed-reader}/lib/mailbox_relayer/ingress.rb
+    ${feed-reader.env.wrappedRuby}/bin/ruby ${feed-reader}/lib/mailbox_relayer/ingress.rb
   '';
 in
 {

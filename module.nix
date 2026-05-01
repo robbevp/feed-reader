@@ -65,7 +65,7 @@ let
       findutils
     ];
 
-    env = env;
+    runtimeEnv = env;
 
     text = ''
       export cat ${cfg.environmentFile} | xargs)

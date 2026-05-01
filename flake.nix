@@ -41,24 +41,6 @@
             gemset = ./gemset.nix;
             groups = [ "default" "development" "test" "production" ];
             ignoreCollisions = true;
-            gemConfig = pkgs.defaultGemConfig // {
-              ruby-vips = attrs: {
-                # We override the postInstall from nixpkgs, so that we can remove the call to try `g_malloc`.
-                # We're sure that vips 
-                postInstall = ''
-                  cd "$(cat $out/nix-support/gem-meta/install-path)"
-
-                  substituteInPlace lib/vips.rb \
-                    --replace 'FFI.library_name("vips", 42)' '"${pkgs.lib.getLib pkgs.vips}/lib/libvips${pkgs.stdenv.hostPlatform.extensions.sharedLibrary}"' \
-                    --replace 'FFI.library_name("glib-2.0", 0)' '"${pkgs.glib.out}/lib/libglib-2.0${pkgs.stdenv.hostPlatform.extensions.sharedLibrary}"' \
-                    --replace 'FFI.library_name("gobject-2.0", 0)' '"${pkgs.glib.out}/lib/libgobject-2.0${pkgs.stdenv.hostPlatform.extensions.sharedLibrary}"' \
-                    --replace 'library_name("vips", 42)' '"${pkgs.lib.getLib pkgs.vips}/lib/libvips${pkgs.stdenv.hostPlatform.extensions.sharedLibrary}"' \
-                    --replace 'library_name("glib-2.0", 0)' '"${pkgs.glib.out}/lib/libglib-2.0${pkgs.stdenv.hostPlatform.extensions.sharedLibrary}"' \
-                    --replace 'library_name("gobject-2.0", 0)' '"${pkgs.glib.out}/lib/libgobject-2.0${pkgs.stdenv.hostPlatform.extensions.sharedLibrary}"' \
-                    --replace 'attach_function :g_malloc, [:size_t], :pointer' '""'
-                '';
-              };
-            };
           };
           node-modules = pkgs.mkYarnModules {
             pname = "feed-reader-modules";

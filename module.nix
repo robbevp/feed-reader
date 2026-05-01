@@ -59,8 +59,8 @@ let
     name = "feed-reader-mail-relay";
 
     runtimeInputs = [
-      feed_reader.env
-      feed_reader.env.wrappedRuby
+      feed-reader.env
+      feed-reader.env.wrappedRuby
       coreutils
       findutils
     ];

@@ -8,6 +8,8 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+pp 'loading'
+
 module FeedReader
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
@@ -23,6 +25,5 @@ module FeedReader
 
     # Set default time zone
     config.time_zone = 'Europe/Brussels'
-    Vips
   end
 end

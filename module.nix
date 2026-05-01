@@ -61,8 +61,8 @@ let
     runtimeInputs = [
       feed-reader.env
       feed-reader.env.wrappedRuby
-      coreutils
-      findutils
+      pkgs.coreutils
+      pkgs.findutils
     ];
 
     runtimeEnv = env;

@@ -12,7 +12,7 @@ gem 'bcrypt' # Use Active Model has_secure_password
 gem 'bootsnap', require: false # Reduces boot times through caching; required in config/boot.rb
 gem 'feedjira' # Parse RSS feeds
 gem 'good_job' # Multithreaded, Postgres-based, ActiveJob backend for Ruby on Rails
-gem 'image_processing', require: 'image_processing/vips' # Use Active Storage variants
+gem 'image_processing' # Use Active Storage variants
 gem 'inline_svg' # Render inline SVGs
 gem 'pagy' # Use pagy for pagination
 gem 'pg' # Use postgresql as the database for Active Record

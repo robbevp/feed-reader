@@ -56,10 +56,10 @@ let
     ${feed-reader.env}/bin/bundle exec rails "$@"
   '';
   relayMailScript = pkgs.writeShellScript "feed-reader-mail-relay" ''
-    ${exports}
     export $(${pkgs.coreutils}/bin/cat ${cfg.environmentFile} | ${pkgs.findutils}/bin/xargs)
-    cd ${feed-reader}
-    ${feed-reader.env}/bin/bundle exec rails action_mailbox:ingress:postfix URL='https://${cfg.hostname}/rails/action_mailbox/relay/inbound_emails' INGRESS_PASSWORD=$RAILS_INBOUND_EMAIL_PASSWORD
+    export URL='https://${cfg.hostname}/rails/action_mailbox/relay/inbound_emails'
+    export INGRESS_PASSWORD=$RAILS_INBOUND_EMAIL_PASSWORD
+    ${feed-reader.env.wrappedRuby}/bin/ruby ${feed-reader}/lib/mailbox_relayer/ingress.rb
   '';
 in
 {

@@ -41,18 +41,14 @@
             gemset = ./gemset.nix;
             groups = [ "default" "development" "test" "production" ];
           };
-          node-modules = pkgs.mkYarnModules {
-            pname = "feed-reader-modules";
-            inherit version;
-            packageJSON = ./package.json;
-            yarnLock = ./yarn.lock;
-            yarnNix = ./yarn.nix;
-          };
+          update-yarn-hash = pkgs.writeShellScriptBin "update-yarn-hash" ''
+            nix-hash --type sha256 --to-sri $(${pkgs.prefetch-yarn-deps}/bin/prefetch-yarn-deps 2>/dev/null) > yarn.lock.hash
+          '';
         in
         {
           packages = rec {
             default = feed-reader;
-            feed-reader = pkgs.stdenv.mkDerivation rec {
+            feed-reader = pkgs.stdenv.mkDerivation (finalAttrs: {
               pname = "feed-reader";
               inherit version;
               src = pkgs.lib.cleanSourceWith {
@@ -61,8 +57,17 @@
                 src = ./.;
                 name = "source";
               };
+              yarnOfflineCache = pkgs.fetchYarnDeps {
+                yarnLock = ./yarn.lock;
+                hash = builtins.readFile ./yarn.lock.hash;
+              };
 
-              buildInputs = [ pkgs.yarn ];
+              buildInputs = [
+                pkgs.yarnConfigHook
+                pkgs.yarnBuildHook
+                pkgs.yarnInstallHook
+                pkgs.nodejs_24
+              ];
 
               buildPhase = ''
                 # 1. Set revision
@@ -72,12 +77,11 @@
                 ${gems}/bin/bundle exec bootsnap precompile --gemfile app/ lib/
 
                 # 3. Compile assets 
-                ln -s ${node-modules}/node_modules .
-
                 # We need to compile with the production flag, so vite_rails compiles to the right folder
-                # We also need to provide rails with _some_ SECRET_KEY_BASE, so we just provide a dummy value
-                VITE_RUBY_SKIP_ASSETS_PRECOMPILE_INSTALL=true RAILS_ENV=production ${gems}/bin/bundle exec vite build
-                rm node_modules
+                RAILS_ENV=production ${gems}/bin/bundle exec vite build
+
+                # 4. Remove the node modules (these aren't needed at runtime)
+                rm -r node_modules
               '';
 
               installPhase = ''
@@ -86,7 +90,7 @@
               '';
 
               passthru.env = gems;
-            };
+            });
           };
           devShells = rec {
             default = feed-reader;
@@ -96,7 +100,7 @@
                 gems
                 (pkgs.lib.lowPrio gems.wrappedRuby)
                 pkgs.nixpkgs-fmt
-                pkgs.nodejs_20
+                pkgs.nodejs_24
                 pkgs.postgresql_15
                 pkgs.yarn
               ];
@@ -196,10 +200,10 @@
                 {
                   name = "update:yarn";
                   category = "Dependencies";
-                  help = "Update `yarn.lock` and `yarn.nix`";
+                  help = "Update `yarn.lock` and `yarn.lock.hash`";
                   command = ''
                     ${pkgs.yarn}/bin/yarn install
-                    ${pkgs.yarn2nix}/bin/yarn2nix > yarn.nix
+                    ${update-yarn-hash}/bin/update-yarn-hash
                   '';
                 }
                 {
@@ -238,7 +242,7 @@
               packages = [
                 ruby
                 pkgs.bundix
-                pkgs.yarn2nix
+                update-yarn-hash
               ];
             };
           };

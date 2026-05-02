@@ -2,8 +2,11 @@
 
 # == Route Map
 #
+# Routes for application:
 #                                   Prefix Verb   URI Pattern                                                                                       Controller#Action
+#                       rails_health_check GET    /up(.:format)                                                                                     rails/health#show
 #                                     root GET    /                                                                                                 entries#index
+#            mark_all_as_read_subscription POST   /subscriptions/:id/mark_all_as_read(.:format)                                                     subscriptions#mark_all_as_read
 #                            subscriptions GET    /subscriptions(.:format)                                                                          subscriptions#index
 #                                          POST   /subscriptions(.:format)                                                                          subscriptions#create
 #                         new_subscription GET    /subscriptions/new(.:format)                                                                      subscriptions#new
@@ -17,6 +20,8 @@
 #                                          PATCH  /entries/:id(.:format)                                                                            entries#update
 #                                          PUT    /entries/:id(.:format)                                                                            entries#update
 #                                          DELETE /entries/:id(.:format)                                                                            entries#destroy
+#                           ingress_checks GET    /ingress_checks(.:format)                                                                         ingress_checks#index
+#                                          POST   /ingress_checks(.:format)                                                                         ingress_checks#create
 #                              new_session GET    /users/sign_in(.:format)                                                                          sessions#new
 #                                  session POST   /users/sign_in(.:format)                                                                          sessions#create
 #                          destroy_session DELETE /users/sign_out(.:format)                                                                         sessions#destroy
@@ -57,6 +62,7 @@
 #                     rails_direct_uploads POST   /rails/active_storage/direct_uploads(.:format)                                                    active_storage/direct_uploads#create
 #
 # Routes for GoodJob::Engine:
+#              Prefix Verb   URI Pattern                               Controller#Action
 #                root GET    /                                         good_job/jobs#redirect_to_index
 #    mass_update_jobs GET    /jobs/mass_update(.:format)               redirect(301, path: jobs)
 #                     PUT    /jobs/mass_update(.:format)               good_job/jobs#mass_update
@@ -80,9 +86,12 @@
 #           processes GET    /processes(.:format)                      good_job/processes#index
 #   performance_index GET    /performance(.:format)                    good_job/performance#index
 #         performance GET    /performance/:id(.:format)                good_job/performance#show
+#              pauses POST   /pauses(.:format)                         good_job/pauses#create
+#                     DELETE /pauses(.:format)                         good_job/pauses#destroy
+#                     GET    /pauses(.:format)                         good_job/pauses#index
 #       cleaner_index GET    /cleaner(.:format)                        good_job/cleaner#index
-#     frontend_module GET    /frontend/modules/:version/:id(.:format)  good_job/frontends#module {:version=>"4-6-0", :format=>"js"}
-#     frontend_static GET    /frontend/static/:version/:id(.:format)   good_job/frontends#static {:version=>"4-6-0"}
+#     frontend_module GET    /frontend/modules/:version/:id(.:format)  good_job/frontends#module {version: "4-18-2", format: "js"}
+#     frontend_static GET    /frontend/static/:version/:id(.:format)   good_job/frontends#static {version: "4-18-2"}
 
 Rails.application.routes.draw do
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -101,6 +110,7 @@ Rails.application.routes.draw do
     end
   end
   resources :entries, only: %i[index show update destroy]
+  resources :ingress_checks, only: %i[index create]
 
   # Special routes for sign in/out and profile
   scope :users do

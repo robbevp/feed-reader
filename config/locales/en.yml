@@ -29,6 +29,11 @@ en:
       nav_pagination_label: "Entry pagination"
   entry_component:
     reading_progress: "Reading progress"
+  ingress_checks:
+    index:
+      page_title: "Ingress checks"
+      create: "Send new check"
+      not_received: "Not received"
   rss_feeds:
     errors:
       too_many_redirects: RSS feed redirected too many times.
@@ -69,6 +74,7 @@ en:
       home: Home
       profile: Profile
       sign_out: Sign out
+      ingress_checks: "Ingress checks"
   sessions:
     new:
       page_title: Sign in

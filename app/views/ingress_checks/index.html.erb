@@ -1,0 +1,22 @@
+<%= content_for :page_title, t('.page_title') %>
+
+<%= button_to t('.create'), ingress_checks_path %>
+
+<table class="table">
+  <thead class="table__head">
+    <tr class="table__row table__row--head">
+      <%= content_tag :td, IngressCheck.human_attribute_name(:id), class: 'table__cell' %>
+      <%= content_tag :td, IngressCheck.human_attribute_name(:created_at), class: 'table__cell' %>
+      <%= content_tag :td, IngressCheck.human_attribute_name(:received_at), class: 'table__cell' %>
+    </tr>
+  </thead>
+  <tbody class="table__body">
+    <%- @checks.each do |check| %>
+      <tr class="table__row">
+        <%= content_tag :td, check.id, class: 'table__cell' %>
+        <%= content_tag :td, check.created_at, class: 'table__cell' %>
+        <%= content_tag :td, check.received_at.presence || t('.not_received'), class: 'table__cell' %>
+      </tr>
+    <%- end %>
+  </tbody>
+</table>

@@ -1836,12 +1836,12 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0yhh5b9zw87hvmv19micvrx187d00a9kfzgzv7l47h3h91ap2i4c";
+      sha256 = "0md8zry4dvcj436mssd4mf4fmi6n7xsvk9aldyz3yz6xl4db32bf";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "3.10.0";
+    version = "3.11.0";
   };
   vite_ruby = {
     dependencies = ["dry-cli" "logger" "mutex_m" "rack-proxy" "zeitwerk"];

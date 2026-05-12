@@ -1823,12 +1823,12 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1byvsyhfxm1b97lfpdjj49m790n97k219y95jsqqn56h3s1z16gm";
+      sha256 = "1ydsr5mcwvzb96kg2d2lprbbd7sadskb2rbzs38s6kgaww79d1ly";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "4.9.0";
+    version = "4.10.0";
   };
   vite_rails = {
     dependencies = ["railties" "vite_ruby"];

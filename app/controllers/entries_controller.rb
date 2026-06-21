@@ -28,7 +28,7 @@ class EntriesController < ApplicationController
   private
 
   def set_entry
-    @entry = Entry.find params[:id]
+    @entry = Entry.find params.expect(:id)
     authorize @entry
   end
 

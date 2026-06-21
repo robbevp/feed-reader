@@ -57,7 +57,7 @@ class SubscriptionsController < ApplicationController
   private
 
   def set_subscription
-    @subscription = policy_scope(Subscription).find(params[:id])
+    @subscription = policy_scope(Subscription).find(params.expect(:id))
     authorize @subscription
   end
 end

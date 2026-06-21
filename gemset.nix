@@ -310,12 +310,12 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1aymcakhzl83k77g2f2krz07bg1cbafbcd2ghvwr4lky3rz86mkb";
+      sha256 = "1c2i64xsd35vijnb50rxb70g508s0x674xi0qpyyb8jy7bncl4j4";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "1.3.6";
+    version = "1.3.7";
   };
   connection_pool = {
     groups = ["default" "development" "production" "test"];
@@ -604,12 +604,12 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1994i044vdmzzkyr76g8rpl1fq1532wf0sb21xg5r1ilj5iphmr8";
+      sha256 = "1dfikmmd9dllirsfq0kjiyxpmlq0afkxm5sslsr97r9g85ifpy80";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "1.14.8";
+    version = "1.15.2";
   };
   image_processing = {
     groups = ["default"];
@@ -947,12 +947,12 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0z9cbfdfr83k8xhrh1nr4f4z8ryfivfr3gv3fpk22hczwg9q4xrk";
+      sha256 = "0mlkn1vhh9lr7vljibpgspwsswk7mzm8nw6bbr616c9fbj35hlmk";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "2.0.1";
+    version = "2.1.0";
   };
   parser = {
     dependencies = ["ast" "racc"];
@@ -1387,12 +1387,12 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0ca5inh368d4l24a2v2nbd3p4xc6s0pqs91j27h226nh04zmyha4";
+      sha256 = "02wfn0s1f9058hk0i9si1gddv9wnng20m4d2r15z63idcvqxs874";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "1.86.1";
+    version = "1.88.0";
   };
   rubocop-ast = {
     dependencies = ["parser" "prism"];
@@ -1439,12 +1439,12 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1llsxc8wm2pq8glpv5mczd1h36fazbri3wwrh7dfqra80a4pklqh";
+      sha256 = "1qrz1wdjx1zkwk3vjhbfnd2dlk5j9g2hg1ifqsd8xfh2c29kq2zh";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "2.34.3";
+    version = "2.35.5";
   };
   ruby-lsp = {
     dependencies = ["language_server-protocol" "prism" "rbs"];

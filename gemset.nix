@@ -711,12 +711,12 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0n9ch455pnvl9vxs2f3j77bpdmxg5g3mn3vyr9wxa0a87raii2i1";
+      sha256 = "1anz6a6n33x4s3906s0bz6x161kk1ns3h7xxsn3rpxkfsw7k2m33";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "2.19.5";
+    version = "2.19.8";
   };
   language_server-protocol = {
     groups = ["default" "development"];
@@ -1102,12 +1102,12 @@
     }];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0x0r3gc66abv8i4dw0x0370b5hrshjfp6kpp7wbp178cy775fypb";
+      sha256 = "1dx5bc3s1mb1i53np4cdkypg7ccygnvagr3hglyndbqilrljvxql";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "5.3.1";
+    version = "5.4.0";
   };
   public_suffix = {
     groups = ["default" "development" "test"];
@@ -1602,12 +1602,12 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1r5031qb02xmwmkrrz8ald4gc35xgcgz2h089873w33l5kcd9ygb";
+      sha256 = "045v4kxwbrgrf5gr0hnlq9r78n7wra57izpa2zf84b7iri9v7h6r";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "6.5.0";
+    version = "6.6.0";
   };
   sentry-ruby = {
     dependencies = ["bigdecimal" "concurrent-ruby" "logger"];
@@ -1615,12 +1615,12 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0srsbyw11h4gkr75vv4xcws8b9a9h7ii8wf3kb6syyh1d86swmrw";
+      sha256 = "0yl8qb29dpr9kmqc0ksn5wvndmyxrmj868pllkzmqx3pl7psmv05";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "6.5.0";
+    version = "6.6.0";
   };
   simplecov = {
     dependencies = ["docile" "simplecov-html" "simplecov_json_formatter"];
@@ -1949,11 +1949,11 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1pbkiwwla5gldgb3saamn91058nl1sq1344l5k36xsh9ih995nnq";
+      sha256 = "04hx33lsnp4q0qf8982mz0acs1dap5s2bsmihi0n0g08249sc4kj";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "2.7.5";
+    version = "2.8.2";
   };
 }

@@ -83,7 +83,6 @@ GEM
     ast (2.4.3)
     base64 (0.3.0)
     bcrypt (3.1.22)
-    benchmark (0.5.0)
     better_html (2.1.1)
       actionview (>= 6.0)
       activesupport (>= 6.0)
@@ -142,7 +141,6 @@ GEM
       logger (>= 1.0, < 2)
       loofah (>= 2.3.1, < 3)
       sax-machine (>= 1.0, < 2)
-    ffi (1.17.1)
     fugit (1.12.1)
       et-orbi (~> 1.4)
       raabro (~> 1.4)
@@ -158,9 +156,7 @@ GEM
     hashdiff (1.2.1)
     i18n (1.14.8)
       concurrent-ruby (~> 1.0)
-    image_processing (1.14.0)
-      mini_magick (>= 4.9.5, < 6)
-      ruby-vips (>= 2.0.17, < 3)
+    image_processing (2.0.0)
     inline_svg (1.10.0)
       activesupport (>= 3.0)
       nokogiri (>= 1.6)
@@ -185,9 +181,6 @@ GEM
       net-smtp
     marcel (1.1.0)
     matrix (0.4.2)
-    mini_magick (5.1.2)
-      benchmark
-      logger
     mini_mime (1.1.5)
     mini_portile2 (2.8.9)
     minitest (5.27.0)
@@ -324,9 +317,6 @@ GEM
     ruby-lsp-rails (0.4.8)
       ruby-lsp (>= 0.26.0, < 0.27.0)
     ruby-progressbar (1.13.0)
-    ruby-vips (2.2.3)
-      ffi (~> 1.12)
-      logger
     ruby2_keywords (0.0.5)
     rubyzip (3.2.2)
     sax-machine (1.3.2)
@@ -463,7 +453,6 @@ CHECKSUMS
   ast (2.4.3) sha256=954615157c1d6a382bc27d690d973195e79db7f55e9765ac7c481c60bdb4d383
   base64 (0.3.0) sha256=27337aeabad6ffae05c265c450490628ef3ebd4b67be58257393227588f5a97b
   bcrypt (3.1.22) sha256=1f0072e88c2d705d94aff7f2c5cb02eb3f1ec4b8368671e19112527489f29032
-  benchmark (0.5.0) sha256=465df122341aedcb81a2a24b4d3bd19b6c67c1530713fd533f3ff034e419236c
   better_html (2.1.1) sha256=046c3551d1488a3f2939a7cac6fabf2bde08c32e135c91fcd683380118e5af55
   bigdecimal (4.1.2) sha256=53d217666027eab4280346fba98e7d5b66baaae1b9c3c1c0ffe89d48188a3fbd
   bindex (0.8.1) sha256=7b1ecc9dc539ed8bccfc8cb4d2732046227b09d6f37582ff12e50a5047ceb17e
@@ -489,13 +478,12 @@ CHECKSUMS
   factory_bot_rails (6.5.1) sha256=d3cc4851eae4dea8a665ec4a4516895045e710554d2b5ac9e68b94d351bc6d68
   faker (3.8.0) sha256=c147b308df73a90f27a4fc84f18d4c22ef0ad9c2a64b2b61c86fd0ca71753efc
   feedjira (4.0.2) sha256=3e7a90d24fd66eddc809539e637a86a02de1a7e038cd40157e916ed2f3b5ff71
-  ffi (1.17.1) sha256=26f6b0dbd1101e6ffc09d3ca640b2a21840cc52731ad8a7ded9fb89e5fb0fc39
   fugit (1.12.1) sha256=5898f478ede9b415f0804e42b8f3fd53f814bd85eebffceebdbc34e1107aaf68
   globalid (1.3.0) sha256=05c639ad6eb4594522a0b07983022f04aa7254626ab69445a0e493aa3786ff11
   good_job (4.19.0) sha256=7fad3ce174d2c1b4bfde4e84056076b00ac81719b5d679900c53671a721284b9
   hashdiff (1.2.1) sha256=9c079dbc513dfc8833ab59c0c2d8f230fa28499cc5efb4b8dd276cf931457cd1
   i18n (1.14.8) sha256=285778639134865c5e0f6269e0b818256017e8cde89993fdfcbfb64d088824a5
-  image_processing (1.14.0) sha256=754cc169c9c262980889bec6bfd325ed1dafad34f85242b5a07b60af004742fb
+  image_processing (2.0.0) sha256=5c2d821be42b98dd5c49e7f71e2d2a340e115ca0e74aed6332ba118b76555a3a
   inline_svg (1.10.0) sha256=5b652934236fd9f8adc61f3fd6e208b7ca3282698b19f28659971da84bf9a10f
   io-console (0.8.2) sha256=d6e3ae7a7cc7574f4b8893b4fca2162e57a825b223a177b7afa236c5ef9814cc
   irb (1.18.0) sha256=de9454a0703a54704b9811a5ef31a60c86949fbf4013fcf244fabc7c775248e3
@@ -507,7 +495,6 @@ CHECKSUMS
   mail (2.9.0) sha256=6fa6673ecd71c60c2d996260f9ee3dd387d4673b8169b502134659ece6d34941
   marcel (1.1.0) sha256=fdcfcfa33cc52e93c4308d40e4090a5d4ea279e160a7f6af988260fa970e0bee
   matrix (0.4.2) sha256=71083ccbd67a14a43bfa78d3e4dc0f4b503b9cc18e5b4b1d686dc0f9ef7c4cc0
-  mini_magick (5.1.2) sha256=2c57112a2c55d9f86b1ed7ab568b3c389a3265788ac5c1ad3e632a201b629a7e
   mini_mime (1.1.5) sha256=8681b7e2e4215f2a159f9400b5816d85e9d8c6c6b491e96a12797e798f8bccef
   mini_portile2 (2.8.9) sha256=0cd7c7f824e010c072e33f68bc02d85a00aeb6fce05bb4819c03dfd3c140c289
   minitest (5.27.0) sha256=2d3b17f8a36fe7801c1adcffdbc38233b938eb0b4966e97a6739055a45fa77d5
@@ -560,7 +547,6 @@ CHECKSUMS
   ruby-lsp (0.26.9) sha256=33a01c001c00a76b4e821efc04ed7572983430f31ca5d6f3e343d0b6ccab4129
   ruby-lsp-rails (0.4.8) sha256=f09d1f926d4063deeb2f3049311925c20dfe6c912371e3bcd04a265a865c44ae
   ruby-progressbar (1.13.0) sha256=80fc9c47a9b640d6834e0dc7b3c94c9df37f08cb072b7761e4a71e22cff29b33
-  ruby-vips (2.2.3) sha256=41d12b1a805cd6ead4a7965201a8f7c5fe459bb58d3a7d967c9eb0719a6edc92
   ruby2_keywords (0.0.5) sha256=ffd13740c573b7301cf7a2e61fc857b2a8e3d3aff32545d6f8300d8bae10e3ef
   rubyzip (3.2.2) sha256=c0ed99385f0625415c8f05bcae33fe649ed2952894a95ff8b08f26ca57ea5b3c
   sax-machine (1.3.2) sha256=a1112678039eea4c402827ca0d377744e0f882fd6386f29f7b0023d938750d3a

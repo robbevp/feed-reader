@@ -1590,12 +1590,12 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1iaxj8lfcl5cfr4qa64mcapqw4qprf4bvrdjfhhwlrf96am3hzvd";
+      sha256 = "0h47i30bb7awmnrn52ykrkr2zilbrxf93dnfb87b5z3phrjh5mvh";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "3.1.0";
+    version = "3.2.0";
   };
   simplecov-html = {
     groups = ["default" "test"];

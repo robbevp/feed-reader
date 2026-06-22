@@ -922,12 +922,12 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1s30b7h7qpyim30m8060xs415mbr3ci7i5hdg09chh1aqfx2qcbq";
+      sha256 = "1d9safb4dly6qmc2g06444l0zifby52yy6j1a5fa1g4j3ihm3jah";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "1.19.3";
+    version = "1.19.4";
   };
   pagy = {
     dependencies = ["json" "uri" "yaml"];
@@ -1772,12 +1772,12 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1ydsr5mcwvzb96kg2d2lprbbd7sadskb2rbzs38s6kgaww79d1ly";
+      sha256 = "1d6wvjn7jdvwxw4jjpw50h0rkcxac7v8csm046ma5ss33jfrg9dr";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "4.10.0";
+    version = "4.12.0";
   };
   vite_rails = {
     dependencies = ["railties" "vite_ruby"];

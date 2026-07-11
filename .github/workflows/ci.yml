@@ -5,7 +5,7 @@ on:
     branches:
       - main
     tags:
-      - '*'
+      - "*"
   pull_request:
 
 jobs:
@@ -22,7 +22,7 @@ jobs:
           POSTGRES_PASSWORD: "feed_reader"
           POSTGRES_USER: feed_reader
         ports:
-        - 5432:5432
+          - 5432:5432
         options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
     timeout-minutes: 10
     steps:
@@ -33,11 +33,11 @@ jobs:
           bundler-cache: true
       - name: Set up Node
         uses: actions/setup-node@v6
-        with: 
-          node-version: 'lts/*'
-          cache: 'yarn'
+        with:
+          node-version: "lts/*"
+          cache: "npm"
       - name: Install dependencies
-        run: yarn install
+        run: npm ci
       - name: Compile assets
         run: RAILS_ENV=test bundle exec rails assets:precompile
       - name: Run tests
@@ -73,15 +73,15 @@ jobs:
       - uses: actions/checkout@v7
       - name: Set up Node
         uses: actions/setup-node@v6
-        with: 
-          node-version: 'lts/*'
-          cache: 'yarn'
+        with:
+          node-version: "lts/*"
+          cache: "npm"
       - name: Install dependencies
-        run: yarn install
+        run: npm ci
       - name: Lint with eslint
-        run: yarn run lint:js --no-fix --max-warnings 0
+        run: npm run lint:js -- --no-fix --max-warnings 0
       - name: Lint with stylelint
-        run: yarn run lint:css --max-warnings 0
+        run: npm run lint:css -- --max-warnings 0
   lint-nix:
     runs-on: ubuntu-latest
     timeout-minutes: 10
@@ -105,7 +105,7 @@ jobs:
           POSTGRES_PASSWORD: "feed_reader"
           POSTGRES_USER: feed_reader
         ports:
-        - 5432:5432
+          - 5432:5432
         options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
     steps:
       - uses: actions/checkout@v7
@@ -115,10 +115,10 @@ jobs:
           bundler-cache: true
       - name: Set up Node
         uses: actions/setup-node@v6
-        with: 
-          node-version: 'lts/*'
-          cache: 'yarn'
+        with:
+          node-version: "lts/*"
+          cache: "npm"
       - name: Install dependencies
-        run: yarn install
+        run: npm ci
       - name: Compile assets
         run: bundle exec rails assets:precompile

@@ -5,8 +5,6 @@ on:
     paths:
       - Gemfile
       - Gemfile.lock
-      - package.json
-      - yarn.lock
 
 jobs:
   update:
@@ -25,14 +23,6 @@ jobs:
       - uses: stefanzweifel/git-auto-commit-action@v7.2.0
         with:
           commit_message: "Update gemset.nix"
-          commit_user_name: robbevp
-          commit_user_email: bot@robbevp.be
-          commit_author: robbe[bot] <bot@robbevp.be>
-      - name: Run yarn2nix
-        run: nix develop .#deps --command update-yarn-hash
-      - uses: stefanzweifel/git-auto-commit-action@v7.2.0
-        with:
-          commit_message: "Update yarn.nix"
           commit_user_name: robbevp
           commit_user_email: bot@robbevp.be
           commit_author: robbe[bot] <bot@robbevp.be>

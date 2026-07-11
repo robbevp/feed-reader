@@ -33,6 +33,7 @@
             ];
           };
           ruby = pkgs.ruby_3_4;
+          nodejs = pkgs.nodejs_24;
           gems = pkgs.bundlerEnv rec {
             name = "feed-reader-env";
             inherit ruby;
@@ -41,13 +42,18 @@
             gemset = ./gemset.nix;
             groups = [ "default" "development" "test" "production" ];
           };
-          update-yarn-hash = pkgs.writeShellScriptBin "update-yarn-hash" ''
-            nix-hash --type sha256 --to-sri $(${pkgs.prefetch-yarn-deps}/bin/prefetch-yarn-deps 2>/dev/null) > yarn.lock.hash
-          '';
+          node-modules = pkgs.importNpmLock.buildNodeModules {
+            npmRoot = ./.;
+            inherit nodejs;
+            derivationArgs = {
+              npmFlags = [ "--legacy-peer-deps" ];
+            };
+          };
         in
         {
           packages = rec {
             default = feed-reader;
+            modules = node-modules;
             feed-reader = pkgs.stdenv.mkDerivation (finalAttrs: {
               pname = "feed-reader";
               inherit version;
@@ -57,17 +63,13 @@
                 src = ./.;
                 name = "source";
               };
-              yarnOfflineCache = pkgs.fetchYarnDeps {
-                yarnLock = ./yarn.lock;
-                hash = builtins.readFile ./yarn.lock.hash;
-              };
 
               buildInputs = [
-                pkgs.yarnConfigHook
-                pkgs.yarnBuildHook
-                pkgs.yarnInstallHook
-                pkgs.nodejs_24
+                pkgs.importNpmLock.hooks.linkNodeModulesHook
+                nodejs
               ];
+
+              npmDeps = node-modules;
 
               buildPhase = ''
                 # 1. Set revision
@@ -100,9 +102,8 @@
                 gems
                 (pkgs.lib.lowPrio gems.wrappedRuby)
                 pkgs.nixpkgs-fmt
-                pkgs.nodejs_24
+                nodejs
                 pkgs.postgresql_15
-                pkgs.yarn
               ];
               env = [
                 {
@@ -198,15 +199,6 @@
                   '';
                 }
                 {
-                  name = "update:yarn";
-                  category = "Dependencies";
-                  help = "Update `yarn.lock` and `yarn.lock.hash`";
-                  command = ''
-                    ${pkgs.yarn}/bin/yarn install
-                    ${update-yarn-hash}/bin/update-yarn-hash
-                  '';
-                }
-                {
                   name = "lint:check";
                   category = "Linting";
                   help = "Check for linting errors";
@@ -215,8 +207,8 @@
                     rubocop
                     erb_lint --lint-all
                     brakeman
-                    yarn lint:js
-                    yarn lint:css
+                    npm run lint:js
+                    npm run lint:css
                     nixpkgs-fmt --check flake.nix module.nix
                   '';
                 }
@@ -229,20 +221,19 @@
                     rubocop -A
                     erb_lint --lint-all -a
                     brakeman
-                    yarn lint:js --fix
-                    yarn lint:css --fix
+                    npm run lint:js -- --fix
+                    npm run lint:css -- --fix
                     nixpkgs-fmt flake.nix module.nix
                   '';
                 }
               ];
             };
-            # A mini-shell that only includes bundix and yarn2nix.
+            # A mini-shell that only includes bundix
             # This only meant to have the right version of these dependencies in our workflows
             deps = pkgs.devshell.mkShell {
               packages = [
                 ruby
                 pkgs.bundix
-                update-yarn-hash
               ];
             };
           };

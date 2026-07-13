@@ -399,18 +399,6 @@
     targets = [];
     version = "1.11.1";
   };
-  docile = {
-    groups = ["default" "test"];
-    platforms = [];
-    source = {
-      remotes = ["https://rubygems.org"];
-      sha256 = "07pj4z3h8wk4fgdn6s62vw1lwvhj0ac0x10vfbdkr9xzk7krn5cn";
-      target = "ruby";
-      type = "gem";
-    };
-    targets = [];
-    version = "1.4.1";
-  };
   drb = {
     groups = ["default" "development" "production" "test"];
     platforms = [];
@@ -1559,17 +1547,16 @@
     version = "6.6.2";
   };
   simplecov = {
-    dependencies = ["docile" "simplecov-html" "simplecov_json_formatter"];
     groups = ["test"];
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "198kcbrjxhhzca19yrdcd6jjj9sb51aaic3b0sc3pwjghg3j49py";
+      sha256 = "1a6wg03yasnmrd9qz2nha6f4f127p9hmvgx41n33r2saz90hpidx";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "0.22.0";
+    version = "1.0.0";
   };
   simplecov-cobertura = {
     dependencies = ["rexml" "simplecov"];
@@ -1577,36 +1564,12 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0h47i30bb7awmnrn52ykrkr2zilbrxf93dnfb87b5z3phrjh5mvh";
+      sha256 = "1sh15q3lv4imxn5awgnjibkj6lrh2632ligm8idm9spcn5ck3yz4";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "3.2.0";
-  };
-  simplecov-html = {
-    groups = ["default" "test"];
-    platforms = [];
-    source = {
-      remotes = ["https://rubygems.org"];
-      sha256 = "0ikjfwydgs08nm3xzc4cn4b6z6rmcrj2imp84xcnimy2wxa8w2xx";
-      target = "ruby";
-      type = "gem";
-    };
-    targets = [];
-    version = "0.13.2";
-  };
-  simplecov_json_formatter = {
-    groups = ["default" "test"];
-    platforms = [];
-    source = {
-      remotes = ["https://rubygems.org"];
-      sha256 = "0a5l0733hj7sk51j81ykfmlk2vd5vaijlq9d5fn165yyx3xii52j";
-      target = "ruby";
-      type = "gem";
-    };
-    targets = [];
-    version = "0.1.4";
+    version = "4.0.0";
   };
   smart_properties = {
     groups = ["default" "development"];

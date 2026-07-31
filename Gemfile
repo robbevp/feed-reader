@@ -5,7 +5,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '~> 3.4.5'
 
-gem 'rails', '~> 8.1'
+gem 'rails', '~> 8.1.3.1'
 
 gem 'addressable' # More standards-compliant URI parser
 gem 'bcrypt' # Use Active Model has_secure_password
@@ -18,6 +18,7 @@ gem 'pagy' # Use pagy for pagination
 gem 'pg' # Use postgresql as the database for Active Record
 gem 'puma' # Use the Puma web server [https://github.com/puma/puma]
 gem 'pundit' # Use pundit for easy authorization
+gem 'ruby-vips' # Use vips to transform images
 gem 'turbo-rails' # Use Turbo for progressive enhancement of requests
 gem 'view_component' # Use ViewComponent to replace partials
 gem 'vite_rails' # Use ViteRails to compile assets

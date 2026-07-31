@@ -36,6 +36,8 @@ jobs:
         with:
           node-version: "lts/*"
           cache: "npm"
+      - name: Install libvips
+        run: sudo apt-get update && sudo apt-get install libvips
       - name: Install dependencies
         run: npm ci
       - name: Compile assets
@@ -118,6 +120,8 @@ jobs:
         with:
           node-version: "lts/*"
           cache: "npm"
+      - name: Install libvips
+        run: sudo apt-get update && sudo apt-get install libvips
       - name: Install dependencies
         run: npm ci
       - name: Compile assets

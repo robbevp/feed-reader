@@ -616,12 +616,12 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1ylwg4cn1r6d2cj04dg2qz62pfxmyi5h85j9l6qyyr1dhq7rkkyh";
+      sha256 = "0fpjaysc4fk3fvxksbmshiicffdjik7hml5zssid1vbhhkrk6gkr";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "2.0.2";
+    version = "2.0.3";
   };
   inline_svg = {
     dependencies = ["activesupport" "nokogiri"];

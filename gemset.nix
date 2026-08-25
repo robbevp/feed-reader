@@ -1140,12 +1140,12 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0y1x4rc7bz8x3zn8p6g21rw6ivbjml6a2vl9dhchiy8i6b110n28";
+      sha256 = "1q822cwrs4khc4l4jgc6dsnvw7iz46rgchqam2dqs759gw4bmicr";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "4.0.1";
+    version = "5.0.0";
   };
   rack-proxy = {
     dependencies = ["rack"];

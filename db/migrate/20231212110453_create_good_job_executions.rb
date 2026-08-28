@@ -25,9 +25,8 @@ class CreateGoodJobExecutions < ActiveRecord::Migration[7.1]
     end
 
     change_table :good_jobs, bulk: true do |t|
-      # rubocop:disable Rails/ThreeStateBooleanColumn
+      # rubocop:disable-next Rails/ThreeStateBooleanColumn
       t.boolean :is_discrete
-      # rubocop:enable Rails/ThreeStateBooleanColumn
       t.integer :executions_count
       t.text :job_class
     end

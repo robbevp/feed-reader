@@ -9,7 +9,7 @@ def string_blank?(string)
   !string.is_a?(String) || string.empty?
 end
 
-# rubocop:disable Rails/Exit, Rails/Output
+# rubocop:disable-next Rails/Exit, Rails/Output
 def main
   url, password = ENV.values_at('URL', 'INGRESS_PASSWORD')
 
@@ -23,6 +23,5 @@ def main
     exit result.success?
   end
 end
-# rubocop:enable Rails/Exit, Rails/Output
 
 main

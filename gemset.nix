@@ -1153,12 +1153,12 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "02zz3ym580wa317snbcq3d70nfrysbvjs3bigrj5k73dpqvnli0y";
+      sha256 = "1mz3sswgbq0wfy0r044zg6qq72kzxar96kf0c2nbc5rmvh8jcx6d";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "0.8.3";
+    version = "1.0.1";
   };
   rack-session = {
     dependencies = ["base64" "rack"];
@@ -1751,12 +1751,12 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "11lsr9c9v7xpyz0z6yxvw992aaqxcxivm5pmh7fbn2hqxd8m8inv";
+      sha256 = "17p4vmjawciz1s3vg397zjvw4flxw37q48dhc1ihn75k3jz95vp9";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "3.10.2";
+    version = "3.10.5";
   };
   web-console = {
     dependencies = ["actionview" "bindex" "railties"];

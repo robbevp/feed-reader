@@ -226,8 +226,8 @@ GEM
     rack (3.2.7)
     rack-mini-profiler (5.0.0)
       rack (>= 1.2.0)
-    rack-proxy (0.8.3)
-      rack
+    rack-proxy (1.0.1)
+      rack (>= 2.0, < 4)
     rack-session (2.1.2)
       base64 (>= 0.1.0)
       rack (>= 3.0.0)
@@ -361,11 +361,11 @@ GEM
     vite_rails (3.11.1)
       railties (>= 5.1, < 9)
       vite_ruby (~> 3.0, >= 3.2.2)
-    vite_ruby (3.10.2)
+    vite_ruby (3.10.5)
       dry-cli (>= 0.7, < 2)
       logger (~> 1.6)
       mutex_m
-      rack-proxy (~> 0.6, >= 0.6.1)
+      rack-proxy (>= 0.6.1)
       zeitwerk (~> 2.2)
     web-console (4.3.0)
       actionview (>= 8.0.0)
@@ -518,7 +518,7 @@ CHECKSUMS
   racc (1.8.1) sha256=4a7f6929691dbec8b5209a0b373bc2614882b55fc5d2e447a21aaa691303d62f
   rack (3.2.7) sha256=93e13e1c24f93556671d85d2d79fa228c3485815c50d7e2f265b5330c6528fb7
   rack-mini-profiler (5.0.0) sha256=99c5ba087fa91c8d9ba80a43f6b2213f1ebead6e863d49286170129d391302e1
-  rack-proxy (0.8.3) sha256=1e446a37be6d9c59647e710d2df7d23e3b0b4e1b982dab4f188a0354aa1fff0b
+  rack-proxy (1.0.1) sha256=cd742611dc3517b6ac60c04d93b2ea7f8a83b1799f109081771ce0f5b8d6e3d7
   rack-session (2.1.2) sha256=595434f8c0c3473ae7d7ac56ecda6cc6dfd9d37c0b2b5255330aa1576967ffe8
   rack-test (2.2.0) sha256=005a36692c306ac0b4a9350355ee080fd09ddef1148a5f8b2ac636c720f5c463
   rackup (2.3.1) sha256=6c79c26753778e90983761d677a48937ee3192b3ffef6bc963c0950f94688868
@@ -563,7 +563,7 @@ CHECKSUMS
   useragent (0.16.11) sha256=700e6413ad4bb954bb63547fa098dddf7b0ebe75b40cc6f93b8d54255b173844
   view_component (4.14.0) sha256=3db7d7772d55ceada7f4c254ebf1726502e4e892d98cab5d1c56234a3a341d04
   vite_rails (3.11.1) sha256=61fa4a7c9248fc28f22a05e0760810bf79f645b776c721d888a815c5d21dd338
-  vite_ruby (3.10.2) sha256=db465451eb180abbdc81f596ba63671d2b2552e2bb7bf3c1f7b79f9d58ca9a86
+  vite_ruby (3.10.5) sha256=e9ee92be1cb31c0b6360b02182cfe09d3ac2b7fc278db7870e3f32ae64dde49e
   web-console (4.3.0) sha256=e13b71301cdfc2093f155b5aa3a622db80b4672d1f2f713119cc7ec7ac6a6da4
   webmock (3.26.3) sha256=77c612816bdcb2fc43db0e42fd98b19be7d4770fd708816fdde65a006664ddec
   websocket (1.2.11) sha256=b7e7a74e2410b5e85c25858b26b3322f29161e300935f70a0e0d3c35e0462737

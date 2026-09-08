@@ -2,15 +2,13 @@
 
 ENV['RAILS_ENV'] ||= 'test'
 
-# Clear existing coverage assets due to https://github.com/simplecov-ruby/simplecov/issues/741
-Pathname.new(__FILE__).join('../../coverage/assets').tap { |cov| FileUtils.rm_rf cov if cov.exist? }
-
 require 'simplecov'
 SimpleCov.start 'rails' do
   enable_coverage :branch
-  add_filter 'vendor'
-  add_group 'Components', 'app/components'
-  add_group 'Policies', 'app/policies'
+  skip 'vendor'
+  group 'Components', 'app/components'
+  group 'Policies', 'app/policies'
+  cover_views
 end
 
 if ENV['CI'].present? && ENV['SKIP_CODECOV'].blank?

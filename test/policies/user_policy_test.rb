@@ -31,8 +31,8 @@ class UserPolicyTest < ActiveSupport::TestCase
   end
 
   test 'should allow permitted attributes for any user' do
-    assert_permitted_attributes @admin, User
-    assert_permitted_attributes @user, User
+    assert_has_permitted_attributes @admin, User
+    assert_has_permitted_attributes @user, User
     assert_no_permitted_attributes nil, User
   end
 

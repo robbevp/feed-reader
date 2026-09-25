@@ -63,7 +63,7 @@ class SubscriptionPolicyTest < ActiveSupport::TestCase
   end
 
   test 'should allow permitted attributes for user' do
-    assert_permitted_attributes @user, Subscription
+    assert_has_permitted_attributes @user, Subscription
     assert_no_permitted_attributes nil, Subscription
   end
 

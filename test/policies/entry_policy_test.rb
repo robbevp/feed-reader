@@ -38,12 +38,12 @@ class EntryPolicyTest < ActiveSupport::TestCase
   end
 
   test 'should return permitted attributes for user' do
-    assert_permitted_attributes @user, Entry
+    assert_has_permitted_attributes @user, Entry
     assert_no_permitted_attributes nil, Entry
   end
 
   test 'should return permitted attributes for user on index' do
-    assert_permitted_attributes @user, Entry, :index
+    assert_has_permitted_attributes @user, Entry, :index
     assert_no_permitted_attributes nil, Entry, :index
   end
 

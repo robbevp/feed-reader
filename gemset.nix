@@ -1502,12 +1502,12 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "15dnb2admqpyw6ipxbaqj4cnfwldwkm11gwrzlf2sa329pa99296";
+      sha256 = "08g1sfv1s8vs9yaz27vjpmgihcycx9nm3wq6j29plabmvaa95hb5";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "3.6.0";
+    version = "3.7.0";
   };
   sax-machine = {
     groups = ["default"];
@@ -1534,17 +1534,17 @@
     version = "0.4.1";
   };
   selenium-webdriver = {
-    dependencies = ["base64" "logger" "rexml" "rubyzip" "websocket"];
+    dependencies = ["base64" "logger" "rubyzip" "websocket"];
     groups = ["test"];
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "12fwks0kf5byamizamckh4bv11gkwkh34qbgdcsvpfnalf8z0c5l";
+      sha256 = "1jqg0v5xcl0n4iwja8918nfbp9wn93pqsszd512g8fn3bc198byi";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "4.49.0";
+    version = "4.50.0";
   };
   sentry-rails = {
     dependencies = ["railties" "sentry-ruby"];

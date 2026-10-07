@@ -1752,12 +1752,12 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0h4k271kzv3znsh29ayhcz7pm9yzf1j2r5x5lypndiizcc8kpg19";
+      sha256 = "1k8df709ajljxx9avmv81rlsq6hrbcfi8pkmas9n7qbar1qnaa2i";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "3.11.0";
+    version = "3.11.1";
   };
   web-console = {
     dependencies = ["actionview" "bindex" "railties"];

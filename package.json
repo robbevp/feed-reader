@@ -13,7 +13,7 @@
     "@hotwired/turbo-rails": "^7.3.0",
     "sprinkles-js": "^0.3.2",
     "vite": "^8.3.2",
-    "vite-plugin-ruby": "^5.2.2"
+    "vite-plugin-ruby": "^5.2.5"
   },
   "devDependencies": {
     "@tree-company/eslint-config": "^0.6.0",

@@ -18,9 +18,9 @@
   "devDependencies": {
     "@tree-company/eslint-config": "^0.6.0",
     "@tree-company/stylelint-config": "^0.6.0",
-    "eslint": "^10.4.0",
-    "prettier": "^3.8.3",
-    "stylelint": "^17.11.1"
+    "eslint": "^10.12.0",
+    "prettier": "^3.9.9",
+    "stylelint": "^17.16.0"
   },
   "stylelint": {
     "extends": [

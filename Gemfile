@@ -24,7 +24,7 @@ gem 'view_component' # Use ViewComponent to replace partials
 gem 'vite_rails' # Use ViteRails to compile assets
 
 # Temporarily pin json, until rails is compatiable
-gem 'json', '=2.21.2'
+gem 'json', '3.0.2'
 
 group :production do
   # Report issues in production

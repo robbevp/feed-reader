@@ -1778,12 +1778,12 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "03fmmb5ym51rby3asas3w5s31hik8mzwf2gvijbfdsqps83a53cd";
+      sha256 = "1g7c0sbfsz181pz5sfv7bdnq4h9g374hfy5b8qs3sl4x051v4m58";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "3.26.4";
+    version = "3.29.0";
   };
   websocket = {
     groups = ["default" "test"];

@@ -32,7 +32,7 @@
               })
             ];
           };
-          ruby = pkgs.ruby_3_4;
+          ruby = pkgs.ruby_4_0;
           nodejs = pkgs.nodejs_24;
           gems = pkgs.bundlerEnv rec {
             name = "feed-reader-env";
@@ -78,7 +78,7 @@
                 # 2. Compile bootsnap cache
                 ${gems}/bin/bundle exec bootsnap precompile --gemfile app/ lib/
 
-                # 3. Compile assets 
+                # 3. Compile assets
                 # We need to compile with the production flag, so vite_rails compiles to the right folder
                 RAILS_ENV=production ${gems}/bin/bundle exec vite build
 
@@ -157,7 +157,7 @@
                   category = "database";
                   help = "Open database console";
                   command = ''
-                    psql --host $PGDATA -U postgres 
+                    psql --host $PGDATA -U postgres
                   '';
                 }
                 {
@@ -194,7 +194,7 @@
                   category = "Dependencies";
                   help = "Update `Gemfile.lock` and `gemset.nix`";
                   command = ''
-                    ${pkgs.ruby_3_4}/bin/bundle lock --add-checksums
+                    ${pkgs.ruby_4_0}/bin/bundle lock --add-checksums
                     ${pkgs.bundix}/bin/bundix
                   '';
                 }

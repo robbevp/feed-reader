@@ -528,12 +528,12 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0wgznprx4vligqal1k9qw2ky2bd0hrx677jk174dsvnn9z990yiy";
+      sha256 = "11z5r2jdg3ckyd04ndspzrn6a4b3fywcnxhw3dd051c04zfidaa3";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "4.0.2";
+    version = "4.0.3";
   };
   ffi = {
     groups = ["default"];

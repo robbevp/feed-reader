@@ -16,14 +16,17 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v7
-      - uses: cachix/install-nix-action@v31
+      - uses: NixOS/nix-installer-action@v1.0.0
         with:
-          github_access_token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Cachix
-        uses: cachix/cachix-action@v17
+          extra-conf: |
+            access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
+            experimental-features = nix-command flakes
+      - name: Attic
+        uses: ryanccn/attic-action@v0.5.2
         with:
-          name: feed-reader
-          authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
+          endpoint: https://attic.robbevp.be
+          cache: feed-reader
+          token: '${{ secrets.ATTIC_AUTH_TOKEN }}'
       - name: Install dependencies
         run: nix develop --command npm ci
       - name: Compile assets
@@ -44,14 +47,17 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v7
-      - uses: cachix/install-nix-action@v31
+      - uses: NixOS/nix-installer-action@v1.0.0
         with:
-          github_access_token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Cachix
-        uses: cachix/cachix-action@v17
+          extra-conf: |
+            access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
+            experimental-features = nix-command flakes
+      - name: Attic
+        uses: ryanccn/attic-action@v0.5.2
         with:
-          name: feed-reader
-          authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
+          endpoint: https://attic.robbevp.be
+          cache: feed-reader
+          token: '${{ secrets.ATTIC_AUTH_TOKEN }}'
       - name: Lint with rubocop
         run: nix develop --command rubocop -c .rubocop.yml
       - name: Lint with erb_lint
@@ -63,14 +69,17 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v7
-      - uses: cachix/install-nix-action@v31
+      - uses: NixOS/nix-installer-action@v1.0.0
         with:
-          github_access_token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Cachix
-        uses: cachix/cachix-action@v17
+          extra-conf: |
+            access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
+            experimental-features = nix-command flakes
+      - name: Attic
+        uses: ryanccn/attic-action@v0.5.2
         with:
-          name: feed-reader
-          authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
+          endpoint: https://attic.robbevp.be
+          cache: feed-reader
+          token: '${{ secrets.ATTIC_AUTH_TOKEN }}'
       - name: Install dependencies
         run: nix develop --command npm ci
       - name: Lint with eslint
@@ -82,9 +91,11 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v7
-      - uses: cachix/install-nix-action@v31
+      - uses: NixOS/nix-installer-action@v1.0.0
         with:
-          github_access_token: ${{ secrets.GITHUB_TOKEN }}
+          extra-conf: |
+            access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
+            experimental-features = nix-command flakes
       - name: Lint with nixpkgs-fmt
         run: nix develop --command nixpkgs-fmt --check flake.nix module.nix
   precompile:
@@ -93,14 +104,17 @@ jobs:
       RAILS_ENV: "test"
     steps:
       - uses: actions/checkout@v7
-      - uses: cachix/install-nix-action@v31
+      - uses: NixOS/nix-installer-action@v1.0.0
         with:
-          github_access_token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Cachix
-        uses: cachix/cachix-action@v17
+          extra-conf: |
+            access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
+            experimental-features = nix-command flakes
+      - name: Attic
+        uses: ryanccn/attic-action@v0.5.2
         with:
-          name: feed-reader
-          authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
+          endpoint: https://attic.robbevp.be
+          cache: feed-reader
+          token: '${{ secrets.ATTIC_AUTH_TOKEN }}'
       - name: Install dependencies
         run: nix develop --command npm ci
       - name: Compile assets

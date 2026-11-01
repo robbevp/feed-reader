@@ -1,0 +1,45 @@
+name: Attic
+
+on:
+  push:
+    branches:
+      - main
+      - 'stable/**'
+
+jobs:
+  packages:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: NixOS/nix-installer-action@v1.0.0
+        with:
+          extra-conf: |
+            access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
+            experimental-features = nix-command flakes
+      - name: Attic
+        uses: ryanccn/attic-action@v0.5.2
+        with:
+          endpoint: https://attic.robbevp.be
+          cache: feed-reader
+          token: '${{ secrets.ATTIC_AUTH_TOKEN }}'
+      - run: nix build -L --no-link --impure ".#feed-reader.env"
+      - run: nix build -L --no-link --impure ".#feed-reader"
+  shell:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [macos-latest, ubuntu-latest]
+    steps:
+      - uses: actions/checkout@v7
+      - uses: NixOS/nix-installer-action@v1.0.0
+        with:
+          extra-conf: |
+            access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
+            experimental-features = nix-command flakes
+      - name: Attic
+        uses: ryanccn/attic-action@v0.5.2
+        with:
+          endpoint: https://attic.robbevp.be
+          cache: feed-reader
+          token: '${{ secrets.ATTIC_AUTH_TOKEN }}'
+      - run: nix build -L --no-link .#devShells.$(nix eval --impure --expr "builtins.currentSystem").feed-reader

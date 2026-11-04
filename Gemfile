@@ -5,7 +5,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '~> 4.0.7'
 
-gem 'rails', '~> 8.1.3.1'
+gem 'rails', '~> 8.1.4.1'
 
 gem 'addressable' # More standards-compliant URI parser
 gem 'bcrypt' # Use Active Model has_secure_password
@@ -22,9 +22,6 @@ gem 'ruby-vips' # Use vips to transform images
 gem 'turbo-rails' # Use Turbo for progressive enhancement of requests
 gem 'view_component' # Use ViewComponent to replace partials
 gem 'vite_rails' # Use ViteRails to compile assets
-
-# Temporarily pin json, until rails is compatiable
-gem 'json', '=2.21.2'
 
 group :production do
   # Report issues in production

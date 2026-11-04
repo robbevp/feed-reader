@@ -161,12 +161,12 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0dawpi010nckmfrrb3d7cg3g1vbbzi0fl7h3im7chmaljijj68gi";
+      sha256 = "0456x4wxahdscbld1z2lqr6kamdf06agnhfffl7261zfsvkwf5wi";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "2.9.1";
+    version = "2.9.2";
   };
   annotaterb = {
     dependencies = ["activerecord" "activesupport"];

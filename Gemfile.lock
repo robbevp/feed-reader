@@ -166,7 +166,7 @@ GEM
       prism (>= 1.3.0)
       rdoc (>= 4.0.0)
       reline (>= 0.4.2)
-    json (2.21.2)
+    json (3.1.0)
     language_server-protocol (3.17.0.6)
     lint_roller (1.1.0)
     logger (1.7.0)
@@ -198,7 +198,7 @@ GEM
     net-smtp (0.5.1)
       net-protocol
     nio4r (2.7.5)
-    nokogiri (1.19.6)
+    nokogiri (1.19.7)
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
     pagy (43.8.1)
@@ -354,7 +354,7 @@ GEM
     unicode-emoji (4.3.0)
     uri (1.1.2)
     useragent (0.16.11)
-    view_component (4.20.0)
+    view_component (4.21.0)
       actionview (>= 7.1.0)
       activesupport (>= 7.1.0)
       prism (>= 1.0)
@@ -482,7 +482,7 @@ CHECKSUMS
   inline_svg (1.10.0) sha256=5b652934236fd9f8adc61f3fd6e208b7ca3282698b19f28659971da84bf9a10f
   io-console (0.9.5) sha256=83dd9bbf4c4680416629245b39cd4212eb5f4d9a4ea91804870c1f6b846414d5
   irb (1.18.0) sha256=de9454a0703a54704b9811a5ef31a60c86949fbf4013fcf244fabc7c775248e3
-  json (2.21.2) sha256=1f1d3b7cf2b3ba1a69beca0bb6db13d5438b80bff3cd54cdaaa620b9b07c1c6a
+  json (3.1.0) sha256=3ce7ccf8fde58960177a3a756c31f292a4c1e1dedee884547096a5b0604e3bd8
   language_server-protocol (3.17.0.6) sha256=5ef2c0c138f8267e1bc631d3328347d354f96724b0af22f2c79516120443b7f0
   lint_roller (1.1.0) sha256=2c0c845b632a7d172cb849cc90c1bce937a28c5c8ccccb50dfd46a485003cc87
   logger (1.7.0) sha256=196edec7cc44b66cfb40f9755ce11b392f21f7967696af15d274dde7edff0203
@@ -501,7 +501,7 @@ CHECKSUMS
   net-protocol (0.2.2) sha256=aa73e0cba6a125369de9837b8d8ef82a61849360eba0521900e2c3713aa162a8
   net-smtp (0.5.1) sha256=ed96a0af63c524fceb4b29b0d352195c30d82dd916a42f03c62a3a70e5b70736
   nio4r (2.7.5) sha256=6c90168e48fb5f8e768419c93abb94ba2b892a1d0602cb06eef16d8b7df1dca1
-  nokogiri (1.19.6) sha256=a61e7192fc2691c23bc0241907c4dbcb70ada6ab904796ce2426a57171022c8f
+  nokogiri (1.19.7) sha256=abe94507c54cb18f872777b16bdca4aad32b1abdc4c52fe843f1c80fbdf992b8
   pagy (43.8.1) sha256=8f136a4bded93b04c87bc385e8be24c8b5adbaab1c0fac1c4c0c63eddae9c2ff
   parallel (2.3.0) sha256=f75a3e904101ce6a1ccb6b8dc800cbafd42166d83330192438dcf29395167a6f
   parser (3.3.13.0) sha256=e02f9b63c2fe05b0c68f692ba4df89b3cb113b663964f75d988fbebfd6c3deca
@@ -561,7 +561,7 @@ CHECKSUMS
   unicode-emoji (4.3.0) sha256=11c02fa73290378c066bb0562cd4c87d8e1b706fbbe0059ca12746a4244de8ce
   uri (1.1.2) sha256=89292e98eabbef6248b0a0ed5e7e398e152f83f17560023a6d94a7f492b169fb
   useragent (0.16.11) sha256=700e6413ad4bb954bb63547fa098dddf7b0ebe75b40cc6f93b8d54255b173844
-  view_component (4.20.0) sha256=b720a646364487b57040a2b15dcb845ef86f9e65db6a9bf845374bab9fca2dd2
+  view_component (4.21.0) sha256=d390f3efa833d3afa89f6cb7840c50fe04feb88dc7bf91e328721d67a51e280f
   vite_rails (3.11.1) sha256=61fa4a7c9248fc28f22a05e0760810bf79f645b776c721d888a815c5d21dd338
   vite_ruby (3.11.1) sha256=51286571c86ae1639356755e141d5b191aac690e68d7ad52ef924a95c0710dcd
   web-console (4.3.0) sha256=e13b71301cdfc2093f155b5aa3a622db80b4672d1f2f713119cc7ec7ac6a6da4

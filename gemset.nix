@@ -686,12 +686,12 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0shwgjqbj856mb6m9kgkpy08nhym2gdvc2yaprlimfmky9y3n78z";
+      sha256 = "1n1v9rhb19cnf1a89s6yvvhw394jy8qnqx9sg8bn12g5zpwcrrrw";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "2.21.2";
+    version = "3.1.0";
   };
   language_server-protocol = {
     groups = ["default" "development"];
@@ -922,12 +922,12 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "13rc09qp39964k79ciwhmfkasw6bvg20f694q0xw5496zj9727m6";
+      sha256 = "1f4jz6yhzj7i8gl2zif4pld2plxalkf6pcbp4y3qzcacql3lbsdb";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "1.19.6";
+    version = "1.19.7";
   };
   pagy = {
     dependencies = ["json" "uri" "yaml"];
@@ -1726,12 +1726,12 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1lidragsnjrp8pw9nsnvcng6zy2yhk5mvcd281qbb1s46r3ac85p";
+      sha256 = "03r83sjnf7bj53ir3gy7inwgw17ya0689dvckylazlrkm3pz746k";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "4.20.0";
+    version = "4.21.0";
   };
   vite_rails = {
     dependencies = ["railties" "vite_ruby"];

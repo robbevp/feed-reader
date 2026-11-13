@@ -20,7 +20,7 @@
     "@tree-company/stylelint-config": "^0.6.0",
     "eslint": "^10.14.0",
     "prettier": "^3.9.10",
-    "stylelint": "^17.16.0"
+    "stylelint": "^18.0.0"
   },
   "stylelint": {
     "extends": [

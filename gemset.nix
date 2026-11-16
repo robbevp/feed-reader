@@ -1726,12 +1726,12 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "00cahmcwiysrvvv2gdmrqf9q6sh96pvwbvsa9m9yrnhy4pk6zjrb";
+      sha256 = "12p97bbqmkk9lar4xyg8almkhl2cq8n14arkaiqmrsk3rl2p9m03";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "4.23.0";
+    version = "4.24.0";
   };
   vite_rails = {
     dependencies = ["railties" "vite_ruby"];

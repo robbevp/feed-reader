@@ -1066,12 +1066,12 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1yw6nvkvddriacmva8hm0za0961d6j96dm7zm6748rmyzcfqgvf8";
+      sha256 = "0p2m65inmzqpza2x8ls6l5zdfa7n8rlinc2ns0cwqkh6rxc0g014";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "8.0.2";
+    version = "8.1.1";
   };
   pundit = {
     dependencies = ["activesupport"];

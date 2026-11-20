@@ -165,7 +165,7 @@
             };
             deps = pkgs.devshell.mkShell {
               packages = [
-                pkgs.feed-reader.ruby
+                pkgs.feed-reader.env.wrappedRuby
                 pkgs.bundix
               ];
             };

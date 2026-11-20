@@ -28,16 +28,16 @@ jobs:
           cache: feed-reader
           token: '${{ secrets.ATTIC_AUTH_TOKEN }}'
       - name: Install dependencies
-        run: nix develop --command npm ci
+        run: nix develop ./dev --command npm ci
       - name: Compile assets
-        run: nix develop --command nix develop --command rails assets:precompile
+        run: nix develop ./dev --command rails assets:precompile
       - name: Setup database
         run: |
-          nix develop --command pg:start
-          nix develop --command rails db:setup
-          nix develop --command rails db:migrate
+          nix develop ./dev --command pg:start
+          nix develop ./dev --command rails db:setup
+          nix develop ./dev --command rails db:migrate
       - name: Run tests
-        run: nix develop --command  rails test
+        run: nix develop ./dev --command  rails test
       - name: Report coverage
         uses: codecov/codecov-action@v7
         with:
@@ -59,11 +59,11 @@ jobs:
           cache: feed-reader
           token: '${{ secrets.ATTIC_AUTH_TOKEN }}'
       - name: Lint with rubocop
-        run: nix develop --command rubocop -c .rubocop.yml
+        run: nix develop ./dev --command rubocop -c .rubocop.yml
       - name: Lint with erb_lint
-        run: nix develop --command erb_lint --lint-all
+        run: nix develop ./dev --command erb_lint --lint-all
       - name: Scan with brakeman
-        run: nix develop --command brakeman --no-pager
+        run: nix develop ./dev --command brakeman --no-pager
   lint-node:
     runs-on: ubuntu-latest
     timeout-minutes: 10
@@ -81,11 +81,11 @@ jobs:
           cache: feed-reader
           token: '${{ secrets.ATTIC_AUTH_TOKEN }}'
       - name: Install dependencies
-        run: nix develop --command npm ci
+        run: nix develop ./dev --command npm ci
       - name: Lint with eslint
-        run: nix develop --command npm run lint:js -- --no-fix --max-warnings 0
+        run: nix develop ./dev --command npm run lint:js -- --no-fix --max-warnings 0
       - name: Lint with stylelint
-        run: nix develop --command npm run lint:css -- --max-warnings 0
+        run: nix develop ./dev --command npm run lint:css -- --max-warnings 0
   lint-nix:
     runs-on: ubuntu-latest
     timeout-minutes: 10
@@ -97,7 +97,7 @@ jobs:
             access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
             experimental-features = nix-command flakes
       - name: Lint with nixpkgs-fmt
-        run: nix develop --command nixpkgs-fmt --check flake.nix module.nix
+        run: nix develop ./dev --command nixpkgs-fmt --check flake.nix module.nix
   precompile:
     runs-on: ubuntu-latest
     env:
@@ -116,6 +116,6 @@ jobs:
           cache: feed-reader
           token: '${{ secrets.ATTIC_AUTH_TOKEN }}'
       - name: Install dependencies
-        run: nix develop --command npm ci
+        run: nix develop ./dev --command npm ci
       - name: Compile assets
-        run: nix develop --command nix develop --command rails assets:precompile
+        run: nix develop ./dev --command rails assets:precompile

@@ -93,7 +93,7 @@ in
       description = ''
         Path to a file or a list of filepath containing secret environment variables that
         should be passed to feed reader.
-        
+
         Currently this has to contain the `MASTER_KEY` and `SECRET_KEY_BASE`
         environment variables, which can be generated using rails secret.
         You should also include `RAILS_SMTP_PASSWORD` for the mailer to work.
@@ -153,7 +153,7 @@ in
 
       smtpDomain = mkOption {
         description = ''
-          Specify the HELO domain. 
+          Specify the HELO domain.
         '';
         example = "noreply@example.org";
         default = cfg.mailer.smtpAddress;
@@ -174,9 +174,9 @@ in
       inboundDomain = mkOption {
         description = ''
           The mail domain on which you want to receive emails. The hostname is used by default.
-          
+
           This will install postfix on mail.DOMAIN.
-          You need to add an MX record from DOMAIN to mail.DOMAIN to your DNS settings. 
+          You need to add an MX record from DOMAIN to mail.DOMAIN to your DNS settings.
         '';
         example = "mail.example.com";
         default = cfg.hostname;
@@ -185,7 +185,7 @@ in
 
       postmasterAlias = mkOption {
         description = ''
-          Set the email on which to reports issues with mail delivery. 
+          Set the email on which to reports issues with mail delivery.
         '';
         example = "you@example.com";
         default = "postmaster@${cfg.mailer.inboundDomain}";

@@ -16,8 +16,6 @@ updates:
     time: "06:00"
     timezone: Europe/Brussels
   open-pull-requests-limit: 10
-  reviewers:
-  - robbevp
 - package-ecosystem: bundler
   directory: "/"
   allow:
@@ -47,8 +45,6 @@ updates:
     time: "06:00"
     timezone: Europe/Brussels
   open-pull-requests-limit: 10
-  reviewers:
-  - robbevp
 - package-ecosystem: github-actions
   directory: "/"
   schedule:
@@ -57,10 +53,10 @@ updates:
     time: "06:00"
     timezone: Europe/Brussels
   open-pull-requests-limit: 10
-  reviewers:
-  - robbevp
 - package-ecosystem: "nix"
-  directory: "/"
+  directories:
+    - "/"
+    - "/dev"
   schedule:
     interval: daily
     time: "06:00"

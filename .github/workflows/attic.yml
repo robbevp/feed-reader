@@ -42,4 +42,5 @@ jobs:
           endpoint: https://attic.robbevp.be
           cache: feed-reader
           token: '${{ secrets.ATTIC_AUTH_TOKEN }}'
-      - run: nix build -L --no-link .#devShells.$(nix eval --impure --expr "builtins.currentSystem").feed-reader
+      - run: nix build -L --no-link ./dev#devShells.$(nix eval --impure --expr "builtins.currentSystem").feed-reader
+      - run: nix build -L --no-link ./dev#devShells.$(nix eval --impure --expr "builtins.currentSystem").deps

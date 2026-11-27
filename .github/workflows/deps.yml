@@ -21,7 +21,7 @@ jobs:
             access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
             experimental-features = nix-command flakes
       - name: Run bundix
-        run: nix develop .dev#deps --command bundix
+        run: nix develop ./dev#deps --command bundix
       - uses: stefanzweifel/git-auto-commit-action@v7.2.1
         with:
           commit_message: "Update gemset.nix"

@@ -591,12 +591,12 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1lbw8lqzjv17vnwb9vy5ki4jiyihybcc5h2rmcrqiz1xa6y9s1ww";
+      sha256 = "0jannv30qa4xanmcb71cs9zhpklqaqbrnj09rhd9dwzyyfw28rqb";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "1.2.1";
+    version = "1.3.0";
   };
   i18n = {
     dependencies = ["concurrent-ruby"];
@@ -1778,12 +1778,12 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0cvbyhsahjmq0a3gqzg5glwjx7l6dfmdmbmcjbalh0f0r2fx5vkj";
+      sha256 = "144pbagz5wfm20m1cgjqydfj0364fxq3w6hz8p21v48f4affk23d";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "3.34.0";
+    version = "3.40.0";
   };
   websocket = {
     groups = ["default" "test"];

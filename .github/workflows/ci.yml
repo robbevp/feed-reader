@@ -96,6 +96,12 @@ jobs:
           extra-conf: |
             access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
             experimental-features = nix-command flakes
+      - name: Attic
+        uses: ryanccn/attic-action@v0.5.2
+        with:
+          endpoint: https://attic.robbevp.be
+          cache: feed-reader
+          token: '${{ secrets.ATTIC_AUTH_TOKEN }}'
       - name: Lint with nixpkgs-fmt
         run: nix develop ./dev --command nixpkgs-fmt --check flake.nix module.nix
   precompile:
